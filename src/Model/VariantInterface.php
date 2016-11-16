@@ -6,7 +6,7 @@ namespace Enm\ShopwareSdk\Model;
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
-interface VariantGroupInterface
+interface VariantInterface
 {
 
 }
