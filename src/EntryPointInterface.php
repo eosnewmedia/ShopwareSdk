@@ -3,30 +3,71 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk;
 
+use Enm\ShopwareSdk\Endpoint\AddressEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\ArticleEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\CategoryEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\CountryEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\CustomerEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\CustomerGroupEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\MediaEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\OrderEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\PropertyGroupEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\VariantEndpointInterface;
+
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
 interface EntryPointInterface
 {
 
-    public function addresses();
+    /**
+     * @return AddressEndpointInterface
+     */
+    public function addresses(): AddressEndpointInterface;
 
-    public function articles();
+    /**
+     * @return ArticleEndpointInterface
+     */
+    public function articles(): ArticleEndpointInterface;
 
-    public function categories();
+    /**
+     * @return CategoryEndpointInterface
+     */
+    public function categories(): CategoryEndpointInterface;
 
-    public function countries();
+    /**
+     * @return CountryEndpointInterface
+     */
+    public function countries(): CountryEndpointInterface;
 
-    public function customerGroups();
+    /**
+     * @return CustomerGroupEndpointInterface
+     */
+    public function customerGroups(): CustomerGroupEndpointInterface;
 
-    public function customers();
+    /**
+     * @return CustomerEndpointInterface
+     */
+    public function customers(): CustomerEndpointInterface;
 
-    public function media();
+    /**
+     * @return MediaEndpointInterface
+     */
+    public function media(): MediaEndpointInterface;
 
-    public function orders();
+    /**
+     * @return OrderEndpointInterface
+     */
+    public function orders(): OrderEndpointInterface;
 
-    public function propertyGroups();
+    /**
+     * @return PropertyGroupEndpointInterface
+     */
+    public function propertyGroups(): PropertyGroupEndpointInterface;
 
-    public function variants();
+    /**
+     * @return VariantEndpointInterface
+     */
+    public function variants(): VariantEndpointInterface;
 
 }
