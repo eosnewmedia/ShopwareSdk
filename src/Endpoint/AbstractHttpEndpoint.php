@@ -3,9 +3,9 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Endpoint;
 
+use Enm\ShopwareSdk\Encoder\ShopwareEncoder;
 use GuzzleHttp\ClientInterface;
 use Psr\Http\Message\ResponseInterface;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\PropertyNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
@@ -83,7 +83,7 @@ abstract class AbstractHttpEndpoint
     protected function serializer(): Serializer
     {
         if (!$this->serializer instanceof Serializer) {
-            $this->serializer = new Serializer([new PropertyNormalizer()], [new JsonEncoder()]);
+            $this->serializer = new Serializer([new PropertyNormalizer()], [new ShopwareEncoder()]);
         }
 
         return $this->serializer;
