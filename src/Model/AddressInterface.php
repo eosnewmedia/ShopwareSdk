@@ -4,7 +4,6 @@ declare(strict_types = 1);
 namespace Enm\ShopwareSdk\Model;
 
 /**
- * @author Dirk Heyka <heyka@eosnewmedia.de>
  * @author Nicklas Reincke <reincke@eosnewmedia.de>
  */
 interface AddressInterface
@@ -12,192 +11,192 @@ interface AddressInterface
     /**
      * @return int
      */
-    public function getId(): int;
+    public function getId() : int;
 
     /**
      * @param int $id
      *
      * @return AddressInterface
      */
-    public function setId(int $id): AddressInterface;
+    public function setId(int $id) : AddressInterface;
 
     /**
      * @return string
      */
-    public function getCompany(): string;
+    public function getCompany() : string;
 
     /**
      * @param string $company
      *
      * @return AddressInterface
      */
-    public function setCompany(string $company): AddressInterface;
+    public function setCompany(string $company) : AddressInterface;
 
     /**
      * @return string
      */
-    public function getDepartment(): string;
+    public function getDepartment() : string;
 
     /**
      * @param string $department
      *
      * @return AddressInterface
      */
-    public function setDepartment(string $department): AddressInterface;
+    public function setDepartment(string $department) : AddressInterface;
 
     /**
      * @return string
      */
-    public function getSalutation(): string;
+    public function getSalutation() : string;
 
     /**
      * @param string $salutation
      *
      * @return AddressInterface
      */
-    public function setSalutation(string $salutation): AddressInterface;
+    public function setSalutation(string $salutation) : AddressInterface;
 
     /**
      * @return string
      */
-    public function getFirstName(): string;
+    public function getFirstName() : string;
 
     /**
      * @param string $firstName
      *
      * @return AddressInterface
      */
-    public function setFirstName(string $firstName): AddressInterface;
+    public function setFirstName(string $firstName) : AddressInterface;
 
     /**
      * @return string
      */
-    public function getLastName(): string;
+    public function getLastName() : string;
 
     /**
      * @param string $lastName
      *
      * @return AddressInterface
      */
-    public function setLastName(string $lastName): AddressInterface;
+    public function setLastName(string $lastName) : AddressInterface;
 
     /**
      * @return string
      */
-    public function getStreet(): string;
+    public function getStreet() : string;
 
     /**
      * @param string $street
      *
      * @return AddressInterface
      */
-    public function setStreet(string $street): AddressInterface;
+    public function setStreet(string $street) : AddressInterface;
 
     /**
      * @return string
      */
-    public function getZipCode(): string;
+    public function getZipCode() : string;
 
     /**
      * @param string $zipCode
      *
      * @return AddressInterface
      */
-    public function setZipCode(string $zipCode): AddressInterface;
+    public function setZipCode(string $zipCode) : AddressInterface;
 
     /**
      * @return string
      */
-    public function getCity(): string;
+    public function getCity() : string;
 
     /**
      * @param string $city
      *
      * @return AddressInterface
      */
-    public function setCity(string $city): AddressInterface;
+    public function setCity(string $city) : AddressInterface;
 
     /**
      * @return string
      */
-    public function getPhone(): string;
+    public function getPhone() : string;
 
     /**
      * @param string $phone
      *
      * @return AddressInterface
      */
-    public function setPhone(string $phone): AddressInterface;
+    public function setPhone(string $phone) : AddressInterface;
 
     /**
      * @return string
      */
-    public function getVatId(): string;
+    public function getVatId() : string;
 
     /**
      * @param string $vatId
      *
      * @return AddressInterface
      */
-    public function setVatId(string $vatId): AddressInterface;
+    public function setVatId(string $vatId) : AddressInterface;
 
     /**
      * @return string
      */
-    public function getFirstAdditionalAddressLine(): string;
+    public function getAdditionalAddressLine1() : string;
 
     /**
-     * @param string $firstAdditionalAddressLine
+     * @param string $additionalAddressLine1
      *
      * @return AddressInterface
      */
-    public function setFirstAdditionalAddressLine(string $firstAdditionalAddressLine): AddressInterface;
+    public function setAdditionalAddressLine1(string $additionalAddressLine1) : AddressInterface;
 
     /**
      * @return string
      */
-    public function getSecondAdditionalAddressLine(): string;
+    public function getAdditionalAddressLine2() : string;
 
     /**
-     * @param string $secondAdditionalAddressLine
+     * @param string $additionalAddressLine2
      *
      * @return AddressInterface
      */
-    public function setSecondAdditionalAddressLine(string $secondAdditionalAddressLine): AddressInterface;
+    public function setAdditionalAddressLine2(string $additionalAddressLine2) : AddressInterface;
 
     /**
      * @return int
      */
-    public function getCountryId(): int;
+    public function getCountryId() : int;
 
     /**
      * @param int $countryId
      *
      * @return AddressInterface
      */
-    public function setCountryId(int $countryId): AddressInterface;
+    public function setCountryId(int $countryId) : AddressInterface;
 
     /**
      * @return int
      */
-    public function getStateId(): int;
+    public function getStateId() : int;
 
     /**
      * @param int $stateId
      *
      * @return AddressInterface
      */
-    public function setStateId(int $stateId): AddressInterface;
+    public function setStateId(int $stateId) : AddressInterface;
 
     /**
      * @return array
      */
-    public function getAttributes(): array;
+    public function getAttributes() : array;
 
     /**
      * @param array $attributes
      *
      * @return AddressInterface
      */
-    public function setAttributes(array $attributes): AddressInterface;
+    public function setAttributes(array $attributes) : AddressInterface;
 }

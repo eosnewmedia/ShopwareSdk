@@ -4,7 +4,6 @@ declare(strict_types = 1);
 namespace Enm\ShopwareSdk\Model;
 
 /**
- * @author Dirk Heyka <heyka@eosnewmedia.de>
  * @author Nicklas Reincke <reincke@eosnewmedia.de>
  */
 interface ArticleInterface
@@ -12,489 +11,480 @@ interface ArticleInterface
     /**
      * @return int
      */
-    public function getId(): int;
+    public function getId() : int;
 
     /**
      * @param int $id
      *
      * @return ArticleInterface
      */
-    public function setId(int $id): ArticleInterface;
+    public function setId(int $id) : ArticleInterface;
 
     /**
      * @return int
      */
-    public function getMainDetailId(): int;
+    public function getMainDetailId() : int;
 
     /**
      * @param int $mainDetailId
      *
      * @return ArticleInterface
      */
-    public function setMainDetailId(int $mainDetailId): ArticleInterface;
+    public function setMainDetailId(int $mainDetailId) : ArticleInterface;
 
     /**
      * @return int
      */
-    public function getSupplierId(): int;
+    public function getSupplierId() : int;
 
     /**
      * @param int $supplierId
      *
      * @return ArticleInterface
      */
-    public function setSupplierId(int $supplierId): ArticleInterface;
+    public function setSupplierId(int $supplierId) : ArticleInterface;
 
     /**
      * @return int
      */
-    public function getTaxId(): int;
+    public function getTaxId() : int;
 
     /**
      * @param int $taxId
      *
      * @return ArticleInterface
      */
-    public function setTaxId(int $taxId): ArticleInterface;
+    public function setTaxId(int $taxId) : ArticleInterface;
 
     /**
      * @return int
      */
-    public function getPriceGroupId(): int;
+    public function getPriceGroupId() : int;
 
     /**
      * @param int $priceGroupId
      *
      * @return ArticleInterface
      */
-    public function setPriceGroupId(int $priceGroupId): ArticleInterface;
+    public function setPriceGroupId(int $priceGroupId) : ArticleInterface;
 
     /**
      * @return int
      */
-    public function getFilterGroupId(): int;
+    public function getFilterGroupId() : int;
 
     /**
      * @param int $filterGroupId
      *
      * @return ArticleInterface
      */
-    public function setFilterGroupId(int $filterGroupId): ArticleInterface;
+    public function setFilterGroupId(int $filterGroupId) : ArticleInterface;
 
     /**
      * @return int
      */
-    public function getConfiguratorSetId(): int;
+    public function getConfiguratorSetId() : int;
 
     /**
      * @param int $configuratorSetId
      *
      * @return ArticleInterface
      */
-    public function setConfiguratorSetId(int $configuratorSetId): ArticleInterface;
+    public function setConfiguratorSetId(int $configuratorSetId) : ArticleInterface;
 
     /**
      * @return string
      */
-    public function getName(): string;
+    public function getName() : string;
 
     /**
      * @param string $name
      *
      * @return ArticleInterface
      */
-    public function setName(string $name): ArticleInterface;
+    public function setName(string $name) : ArticleInterface;
 
     /**
      * @return string
      */
-    public function getDescription(): string;
+    public function getDescription() : string;
 
     /**
      * @param string $description
      *
      * @return ArticleInterface
      */
-    public function setDescription(string $description): ArticleInterface;
+    public function setDescription(string $description) : ArticleInterface;
 
     /**
      * @return string
      */
-    public function getLongDescription(): string;
+    public function getDescriptionLong() : string;
 
     /**
-     * @param string $longDescription
+     * @param string $descriptionLong
      *
      * @return ArticleInterface
      */
-    public function setLongDescription(string $longDescription): ArticleInterface;
+    public function setDescriptionLong(string $descriptionLong) : ArticleInterface;
 
     /**
-     * Get the timestamp from when this article was added. (ISO8601)
-     *
      * @return string
      */
-    public function getAddedTimestamp(): string;
+    public function getAdded() : string;
 
     /**
-     * Set the timestamp from when this article was added. (ISO8601)
-     *
-     * @param string $addedTimestamp
+     * @param string $added
      *
      * @return ArticleInterface
      */
-    public function setAddedTimestamp(string $addedTimestamp): ArticleInterface;
+    public function setAdded(string $added) : ArticleInterface;
 
     /**
-     * @return bool
+     * @return boolean
      */
-    public function isActive(): bool;
+    public function isActive() : bool;
 
     /**
-     * @param bool $isActive
+     * @param boolean $active
      *
      * @return ArticleInterface
      */
-    public function setActive(bool $isActive): ArticleInterface;
+    public function setActive(bool $active) : ArticleInterface;
 
     /**
      * @return int
      */
-    public function getPseudoSales(): int;
+    public function getPseudoSales() : int;
 
     /**
      * @param int $pseudoSales
      *
      * @return ArticleInterface
      */
-    public function setPseudoSales(int $pseudoSales): ArticleInterface;
+    public function setPseudoSales(int $pseudoSales) : ArticleInterface;
 
     /**
-     * @return bool
+     * @return boolean
      */
-    public function isHighlighted(): bool;
+    public function isHighlight() : bool;
 
     /**
-     * @param bool $isHighlighted
+     * @param boolean $highlight
      *
      * @return ArticleInterface
      */
-    public function setHighlighted(bool $isHighlighted): ArticleInterface;
+    public function setHighlight(bool $highlight) : ArticleInterface;
 
     /**
      * @return string
      */
-    public function getKeywords(): string;
+    public function getKeywords() : string;
 
     /**
      * @param string $keywords
      *
      * @return ArticleInterface
      */
-    public function setKeywords(string $keywords): ArticleInterface;
+    public function setKeywords(string $keywords) : ArticleInterface;
 
     /**
      * @return string
      */
-    public function getMetaTitle(): string;
+    public function getMetaTitle() : string;
 
     /**
      * @param string $metaTitle
      *
      * @return ArticleInterface
      */
-    public function setMetaTitle(string $metaTitle): ArticleInterface;
-
-    /**
-     * Get the timestamp from when this article was changed. (ISO8601)
-     *
-     * @return string
-     */
-    public function getChangedTimestamp(): string;
-
-    /**
-     * Set the timestamp from when this article was changed. (ISO8601)
-     *
-     * @param string $changedTimestamp
-     *
-     * @return ArticleInterface
-     */
-    public function setChangedTimestamp(string $changedTimestamp): ArticleInterface;
-
-    /**
-     * @return bool
-     */
-    public function isPriceGroupActive(): bool;
-
-    /**
-     * @param bool $isPriceGroupActive
-     *
-     * @return ArticleInterface
-     */
-    public function setPriceGroupActive(bool $isPriceGroupActive): ArticleInterface;
-
-    /**
-     * @return bool
-     */
-    public function isLastStock(): bool;
-
-    /**
-     * @param bool $isLastStock
-     *
-     * @return ArticleInterface
-     */
-    public function setLastStock(bool $isLastStock): ArticleInterface;
-
-    /**
-     * @return bool
-     */
-    public function hasCrossBundleLook(): bool;
-
-    /**
-     * @param bool $isCrossBundleLook
-     *
-     * @return ArticleInterface
-     */
-    public function setCrossBundleLook(bool $isCrossBundleLook): ArticleInterface;
-
-    /**
-     * @return bool
-     */
-    public function hasNotification(): bool;
-
-    /**
-     * @param bool $notification
-     *
-     * @return ArticleInterface
-     */
-    public function setNotification(bool $notification): ArticleInterface;
+    public function setMetaTitle(string $metaTitle) : ArticleInterface;
 
     /**
      * @return string
      */
-    public function getTemplate(): string;
+    public function getChanged() : string;
+
+    /**
+     * @param string $changed
+     *
+     * @return ArticleInterface
+     */
+    public function setChanged(string $changed) : ArticleInterface;
+
+    /**
+     * @return boolean
+     */
+    public function isPriceGroupActive() : bool;
+
+    /**
+     * @param boolean $priceGroupActive
+     *
+     * @return ArticleInterface
+     */
+    public function setPriceGroupActive(bool $priceGroupActive) : ArticleInterface;
+
+    /**
+     * @return boolean
+     */
+    public function isLastStock() : bool;
+
+    /**
+     * @param boolean $lastStock
+     *
+     * @return ArticleInterface
+     */
+    public function setLastStock(bool $lastStock) : ArticleInterface;
+
+    /**
+     * @return boolean
+     */
+    public function isCrossBundleLook() : bool;
+
+    /**
+     * @param boolean $crossBundleLook
+     *
+     * @return ArticleInterface
+     */
+    public function setCrossBundleLook(bool $crossBundleLook) : ArticleInterface;
+
+    /**
+     * @return boolean
+     */
+    public function isNotification() : bool;
+
+    /**
+     * @param boolean $notification
+     *
+     * @return ArticleInterface
+     */
+    public function setNotification(bool $notification) : ArticleInterface;
+
+    /**
+     * @return string
+     */
+    public function getTemplate() : string;
 
     /**
      * @param string $template
      *
      * @return ArticleInterface
      */
-    public function setTemplate(string $template): ArticleInterface;
+    public function setTemplate(string $template) : ArticleInterface;
 
     /**
      * @return int
      */
-    public function getMode(): int;
+    public function getMode() : int;
 
     /**
      * @param int $mode
      *
      * @return ArticleInterface
      */
-    public function setMode(int $mode): ArticleInterface;
+    public function setMode(int $mode) : ArticleInterface;
 
     /**
-     * Get the timestamp from when this article starts to be available. (ISO8601)
-     *
      * @return string
      */
-    public function getAvailableFromTimestamp(): string;
+    public function getAvailableFrom() : string;
 
     /**
-     * Set the timestamp from when this article starts to be available. (ISO8601)
-     *
-     * @param string $availableFromTimestamp
+     * @param string $availableFrom
      *
      * @return ArticleInterface
      */
-    public function setAvailableFromTimestamp(string $availableFromTimestamp): ArticleInterface;
+    public function setAvailableFrom(string $availableFrom) : ArticleInterface;
 
     /**
-     * Get the timestamp from when this article ends to be available. (ISO8601)
-     *
      * @return string
      */
-    public function getAvailableToTimestamp(): string;
+    public function getAvailableTo() : string;
 
     /**
-     * Set the timestamp from when this article ends to be available. (ISO8601)
-     *
-     * @param string $availableToTimestamp
+     * @param string $availableTo
      *
      * @return ArticleInterface
      */
-    public function setAvailableToTimestamp(string $availableToTimestamp): ArticleInterface;
+    public function setAvailableTo(string $availableTo) : ArticleInterface;
 
     /**
      * @return DetailInterface
      */
-    public function getMainDetail(): DetailInterface;
+    public function getMainDetail() : DetailInterface;
 
     /**
      * @param DetailInterface $mainDetail
      *
      * @return ArticleInterface
      */
-    public function setMailDetail(DetailInterface $mainDetail): ArticleInterface;
+    public function setMainDetail(DetailInterface $mainDetail) : ArticleInterface;
 
     /**
      * @return TaxInterface
      */
-    public function getTax(): TaxInterface;
+    public function getTax() : TaxInterface;
 
     /**
      * @param TaxInterface $tax
      *
      * @return ArticleInterface
      */
-    public function setTax(TaxInterface $tax): ArticleInterface;
+    public function setTax(TaxInterface $tax) : ArticleInterface;
 
     /**
-     * @return PropertyValueInterface
+     * @return PropertyValeInterface
      */
-    public function getPropertyValue(): PropertyValueInterface;
+    public function getPropertyValue() : PropertyValeInterface;
 
     /**
-     * @param PropertyValueInterface $propertyValue
+     * @param PropertyValeInterface $propertyValue
      *
      * @return ArticleInterface
      */
-    public function setPropertyValue(PropertyValueInterface $propertyValue): ArticleInterface;
+    public function setPropertyValue(PropertyValeInterface $propertyValue) : ArticleInterface;
 
     /**
      * @return SupplierInterface
      */
-    public function getSupplier(): SupplierInterface;
+    public function getSupplier() : SupplierInterface;
 
     /**
      * @param SupplierInterface $supplier
      *
      * @return ArticleInterface
      */
-    public function setSupplier(SupplierInterface $supplier): ArticleInterface;
+    public function setSupplier(SupplierInterface $supplier) : ArticleInterface;
 
     /**
      * @return PropertyGroupInterface
      */
-    public function getPropertyGroup(): PropertyGroupInterface;
+    public function getPropertyGroup() : PropertyGroupInterface;
 
     /**
      * @param PropertyGroupInterface $propertyGroup
      *
      * @return ArticleInterface
      */
-    public function setPropertyGroup(PropertyGroupInterface $propertyGroup): ArticleInterface;
+    public function setPropertyGroup(PropertyGroupInterface $propertyGroup) : ArticleInterface;
 
     /**
      * @return CustomerGroupInterface[]
      */
-    public function getCustomerGroups(): array;
+    public function getCustomerGroups() : array;
 
     /**
      * @param CustomerGroupInterface[] $customerGroups
      *
      * @return ArticleInterface
      */
-    public function setCustomerGroups(array $customerGroups): ArticleInterface;
+    public function setCustomerGroups(array $customerGroups) : ArticleInterface;
 
     /**
      * @return ImageInterface[]
      */
-    public function getImages(): array;
+    public function getImages() : array;
 
     /**
      * @param ImageInterface[] $images
      *
      * @return ArticleInterface
      */
-    public function setImages(array $images): ArticleInterface;
+    public function setImages(array $images) : ArticleInterface;
 
     /**
-     * @return ConfiguratorSetInterface
+     * @return ConfiguratorInterface
      */
-    public function getConfiguratorSet(): ConfiguratorSetInterface;
+    public function getConfiguratorSet() : ConfiguratorInterface;
+
+    /**
+     * @param ConfiguratorInterface $configuratorSet
+     *
+     * @return ArticleInterface
+     */
+    public function setConfiguratorSet(ConfiguratorInterface $configuratorSet) : ArticleInterface;
 
     /**
      * @return LinkInterface[]
      */
-    public function getLinks(): array;
+    public function getLinks() : array;
 
     /**
      * @param LinkInterface[] $links
      *
      * @return ArticleInterface
      */
-    public function setLinks(array $links): ArticleInterface;
+    public function setLinks(array $links) : ArticleInterface;
 
     /**
      * @return DownloadInterface[]
      */
-    public function getDownloads(): array;
+    public function getDownloads() : array;
 
     /**
      * @param DownloadInterface[] $downloads
      *
      * @return ArticleInterface
      */
-    public function setDownloads(array $downloads): ArticleInterface;
+    public function setDownloads(array $downloads) : ArticleInterface;
 
     /**
      * @return CategoryInterface[]
      */
-    public function getCategories(): array;
+    public function getCategories() : array;
 
     /**
      * @param CategoryInterface[] $categories
      *
      * @return ArticleInterface
      */
-    public function setCategories(array $categories): ArticleInterface;
+    public function setCategories(array $categories) : ArticleInterface;
 
     /**
      * @return SimilarInterface[]
      */
-    public function getSimilar(): array;
+    public function getSimilar() : array;
 
     /**
      * @param SimilarInterface[] $similar
      *
      * @return ArticleInterface
      */
-    public function setSimilar(array $similar): ArticleInterface;
+    public function setSimilar(array $similar) : ArticleInterface;
 
     /**
      * @return RelatedInterface[]
      */
-    public function getRelated(): array;
+    public function getRelated() : array;
 
     /**
      * @param RelatedInterface[] $related
      *
      * @return ArticleInterface
      */
-    public function setRelated(array $related): ArticleInterface;
+    public function setRelated(array $related) : ArticleInterface;
 
     /**
      * @return DetailInterface[]
      */
-    public function getDetails(): array;
+    public function getDetails() : array;
 
     /**
      * @param DetailInterface[] $details
      *
      * @return ArticleInterface
      */
-    public function setDetails(array $details): ArticleInterface;
+    public function setDetails(array $details) : ArticleInterface;
 
     /**
      * @return TranslationInterface[]
      */
-    public function getTranslations(): array;
+    public function getTranslations() : array;
 
     /**
      * @param TranslationInterface[] $translations
      *
      * @return ArticleInterface
      */
-    public function setTranslations(array $translations): ArticleInterface;
+    public function setTranslations(array $translations) : ArticleInterface;
 }
