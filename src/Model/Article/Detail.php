@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Model\Article;
 
+use JMS\Serializer\Annotation as Serializer;
+
 /**
  * @author Nicklas Reincke <reincke@eosnewmedia.de>
  * @author Dirk Heyka <heyka@eosnewmedia.de>
@@ -12,155 +14,157 @@ class Detail implements DetailInterface
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $id;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $articleId;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $unitId;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $number;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $supplierNumber;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $kind;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $additionalText;
 
     /**
      * @var bool
-     * @SerializerType("boolean")
+     * @Serializer\Type("boolean")
      */
     private $active;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $inStock;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $weight;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $width;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $len;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $height;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $ean;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $position;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $minPurchase;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $purchaseSteps;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $maxPurchase;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $purchaseUnit;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $referenceUnit;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $packUnit;
 
     /**
      * @var bool
-     * @SerializerType("boolean")
+     * @Serializer\Type("boolean")
      */
     private $shippingFree;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $releaseDate;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $shippingTime;
 
     /**
      * @var PriceInterface[]
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Price>")
      */
     private $prices;
 
     /**
      * @var ConfiguratorOptionInterface[]
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Configurator>")
      */
     private $configuratorOptions;
 

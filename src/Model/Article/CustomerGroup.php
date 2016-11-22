@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Model\Article;
 
+use JMS\Serializer\Annotation as Serializer;
+
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
@@ -11,55 +13,55 @@ class CustomerGroup implements CustomerGroupInterface
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $id;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $key;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $name;
 
     /**
      * @var bool
-     * @SerializerType("boolean")
+     * @Serializer\Type("boolean")
      */
     private $tax;
 
     /**
      * @var bool
-     * @SerializerType("boolean")
+     * @Serializer\Type("boolean")
      */
     private $taxInput;
 
     /**
      * @var bool
-     * @SerializerType("boolean")
+     * @Serializer\Type("boolean")
      */
     private $mode;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $discount;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $minimumOrder;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $minimumOrderSurcharge;
 

@@ -3,10 +3,7 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Model\Article;
 
-use Enm\ShopwareSdk\Model\Customer\CustomerGroupInterface;
-use Enm\ShopwareSdk\Model\Property\PropertyGroupInterface;
 use Enm\ShopwareSdk\Model\RootModelInterface;
-use Enm\ShopwareSdk\Model\Tax\TaxInterface;
 
 /**
  * @author Nicklas Reincke <reincke@eosnewmedia.de>

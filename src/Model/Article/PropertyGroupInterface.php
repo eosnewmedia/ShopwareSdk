@@ -20,16 +20,16 @@ interface PropertyGroupInterface
     public function setId(int $id) : PropertyGroupInterface;
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getName();
+    public function getName() : string;
 
     /**
-     * @param mixed $name
+     * @param string $name
      *
      * @return PropertyGroupInterface
      */
-    public function setName($name);
+    public function setName(string $name) : PropertyGroupInterface;
 
     /**
      * @return int

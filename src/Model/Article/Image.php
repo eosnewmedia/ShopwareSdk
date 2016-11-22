@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Model\Article;
 
+use JMS\Serializer\Annotation as Serializer;
+
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
@@ -11,79 +13,79 @@ class Image implements ImageInterface
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $id;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $articleId;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $articleDetailId;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $description;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $path;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $main;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $position;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $width;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $height;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $relations;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $extension;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $parentId;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $mediaId;
 

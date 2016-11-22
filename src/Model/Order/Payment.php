@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Model\Order;
 
+use JMS\Serializer\Annotation as Serializer;
+
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
@@ -11,127 +13,127 @@ class Payment implements PaymentInterface
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $id;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $name;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $description;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $template;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $class;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $table;
 
     /**
      * @var bool
-     * @SerializerType("boolean")
+     * @Serializer\Type("boolean")
      */
     private $hide;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $additionalDescription;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $debitPercent;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $surcharge;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $surchargeString;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $position;
 
     /**
      * @var bool
-     * @SerializerType("boolean")
+     * @Serializer\Type("boolean")
      */
     private $active;
 
     /**
      * @var bool
-     * @SerializerType("boolean")
+     * @Serializer\Type("boolean")
      */
     private $esdActive;
 
     /**
      * @var bool
-     * @SerializerType("boolean")
+     * @Serializer\Type("boolean")
      */
     private $mobileInactive;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $embedIFrame;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $hideProspect;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $action;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $pluginId;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $source;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $attribute;
 

@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Model\Article;
 
+use JMS\Serializer\Annotation as Serializer;
+
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
@@ -11,66 +13,67 @@ class Price implements PriceInterface
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $id;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $articleId;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $articleDetailsId;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $customerGroupKey;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $from;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $to;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $price;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $pseudoPrice;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $basePrice;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $percent;
 
     /**
      * @var CustomerGroupInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\CustomerGroup")
      */
     private $customerGroup;
 

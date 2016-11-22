@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Model\Article;
 
+use JMS\Serializer\Annotation as Serializer;
+
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
@@ -11,30 +13,30 @@ class PropertyGroup implements PropertyGroupInterface
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $id;
 
     /**
-     * @var
+     * @var string
      */
     private $name;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $position;
 
     /**
      * @var bool
-     * @SerializerType("boolean")
+     * @Serializer\Type("boolean")
      */
     private $comparable;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $sortMode;
 
@@ -59,19 +61,19 @@ class PropertyGroup implements PropertyGroupInterface
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      *
      * @return PropertyGroupInterface
      */
-    public function setName($name)
+    public function setName(string $name): PropertyGroupInterface
     {
         $this->name = $name;
 

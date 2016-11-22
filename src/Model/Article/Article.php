@@ -14,151 +14,151 @@ class Article implements ArticleInterface
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $id;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $mainDetailId;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $supplierId;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $taxId;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $priceGroupId;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $filterGroupId;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $configuratorSetId;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $name;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $description;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $descriptionLong;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $added;
 
     /**
      * @var bool
-     * @SerializerType("boolean")
+     * @Serializer\Type("boolean")
      */
     private $active;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $pseudoSales;
 
     /**
      * @var bool
-     * @SerializerType("boolean")
+     * @Serializer\Type("boolean")
      */
     private $highlight;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $keywords;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $metaTitle;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $changed;
 
     /**
      * @var bool
-     * @SerializerType("boolean")
+     * @Serializer\Type("boolean")
      */
     private $priceGroupActive;
 
     /**
      * @var bool
-     * @SerializerType("boolean")
+     * @Serializer\Type("boolean")
      */
     private $lastStock;
 
     /**
      * @var bool
-     * @SerializerType("boolean")
+     * @Serializer\Type("boolean")
      */
     private $crossBundleLook;
 
     /**
      * @var bool
-     * @SerializerType("boolean")
+     * @Serializer\Type("boolean")
      */
     private $notification;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $template;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $mode;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $availableFrom;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $availableTo;
 
@@ -176,57 +176,67 @@ class Article implements ArticleInterface
 
     /**
      * @var SupplierInterface
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Detail")
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Supplier")
      */
     private $supplier;
 
     /**
      * @var PropertyGroupInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\PropertyGroup")
      */
     private $propertyGroup;
 
     /**
      * @var CustomerGroupInterface[]
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\CustomerGroup")
      */
     private $customerGroups;
 
     /**
      * @var ImageInterface[]
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Image")
      */
     private $images;
 
     /**
      * @var ConfiguratorSetInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\ConfiguratorSet")
      */
     private $configuratorSet;
 
     /**
      * @var LinkInterface[]
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Link")
      */
     private $links;
 
     /**
      * @var DownloadInterface[]
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Download")
      */
     private $downloads;
 
     /**
      * @var CategoryInterface[]
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Category")
      */
     private $categories;
 
     /**
      * @var SimilarInterface[]
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Similar")
      */
     private $similar;
 
     /**
      * @var RelatedInterface[]
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Related")
      */
     private $related;
 
     /**
      * @var DetailInterface[]
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Detail")
      */
     private $details;
 

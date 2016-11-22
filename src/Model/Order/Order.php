@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Model\Order;
 
+use JMS\Serializer\Annotation as Serializer;
+
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
@@ -11,67 +13,67 @@ class Order implements OrderInterface
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $id;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $number;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $customerId;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $paymentId;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $dispatchId;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $partnerId;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $shopId;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $invoiceAmount;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $invoiceAmountNet;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $invoiceShipping;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $invoiceShippingNet;
 
@@ -79,55 +81,55 @@ class Order implements OrderInterface
      * Date and time formatted in ISO8601 format.
      *
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $orderTime;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $transactionId;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $comment;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $customerComment;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $internalComment;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $net;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $taxFree;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $temporaryId;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $referer;
 
@@ -135,110 +137,121 @@ class Order implements OrderInterface
      * Date and time formatted in ISO8601 format.
      *
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $clearedDate;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $trackingCode;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $languageIso;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $currency;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $currencyFactor;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $remoteAddress;
 
     /**
      * @var string
-     * @SerializerType("string")
+     * @Serializer\Type("string")
      */
     private $deviceType;
 
     /**
      * @var DetailInterface[]
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Order\Detail>")
      */
     private $details;
 
     /**
      * @var PaymentInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Payment")
      */
     private $payment;
 
     /**
      * @var PaymentStatusInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Order\PaymentStatus")
      */
     private $paymentStatus;
 
     /**
      * @var OrderStatusInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Order\OrderStatus")
      */
     private $orderStatus;
 
     /**
      * @var CustomerInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Customer")
      */
     private $customer;
 
     /**
      * @var PaymentInstanceInterface[]
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Order\PaymentInstance>")
      */
     private $paymentInstances;
 
     /**
      * @var BillingInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Billing")
      */
     private $billing;
 
     /**
      * @var ShippingInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Shipping")
      */
     private $shipping;
 
     /**
      * @var ShopInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Shop")
      */
     private $shop;
 
     /**
      * @var DispatchInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Dispatch")
      */
     private $dispatch;
 
     /**
      * @var LanguageSubShopInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Order\LanguageSubShop")
      */
     private $languageSubShop;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $paymentStatusId;
 
     /**
      * @var int
-     * @SerializerType("integer")
+     * @Serializer\Type("integer")
      */
     private $orderStatusId;
 
