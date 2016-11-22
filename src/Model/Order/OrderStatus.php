@@ -11,31 +11,37 @@ class OrderStatus implements OrderStatusInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $name;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $description;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $position;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $group;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $sendMail;
 

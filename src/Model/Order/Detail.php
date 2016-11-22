@@ -11,66 +11,79 @@ class Detail implements DetailInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $orderId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $articleId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $taxId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $taxRate;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $statusId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $number;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $articleNumber;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $price;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $quantity;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $articleName;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $shipped;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $shippedGroup;
 
@@ -78,36 +91,43 @@ class Detail implements DetailInterface
      * Date and time formatted in ISO8601 format.
      *
      * @var string
+     * @SerializerType("string")
      */
     private $releaseDate;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $mode;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $esdArticle;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $config;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $ean;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $unit;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $packUnit;
 

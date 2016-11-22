@@ -11,141 +11,169 @@ class Dispatch implements DispatchInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $name;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $type;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $description;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $comment;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $active;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $position;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $calculation;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $surchargeCalculation;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $taxCalculation;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $shippingFree;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $multiShopId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $customerGroupId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $bindShippingFree;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $bindTimeFrom;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $bindTimeTo;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $bindInStock;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $bindLastStock;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $bindWeekdayFrom;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $bindWeekdayTo;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $bindWeightFrom;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $bindWeightTo;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $bindPriceFrom;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $bindPriceTo;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $bindSql;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $statusLink;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $calculationSql;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $attribute;
 

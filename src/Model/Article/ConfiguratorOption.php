@@ -11,21 +11,25 @@ class ConfiguratorOption implements ConfiguratorOptionInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $groupId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $name;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $position;
 

@@ -11,21 +11,25 @@ class ConfiguratorSet implements ConfiguratorSetInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $name;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $public;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $type;
 

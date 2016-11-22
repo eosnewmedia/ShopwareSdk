@@ -11,91 +11,109 @@ class Shop implements ShopInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $mainId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $categoryId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $name;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $title;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $position;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $host;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $basePath;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $baseUrl;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $hosts;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $secure;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $alwaysSecure;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $secureHost;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $secureBasePath;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $templateId;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $default;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $active;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $customerScope;
 

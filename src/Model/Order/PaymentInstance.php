@@ -11,66 +11,79 @@ class PaymentInstance implements PaymentInstanceInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $firstName;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $lastName;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $address;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $zipCode;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $city;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $bankName;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $bankCode;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $accountNumber;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $accountHolder;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $bic;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $iban;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $amount;
 
@@ -78,6 +91,7 @@ class PaymentInstance implements PaymentInstanceInterface
      * Date and time formatted in ISO8601 format.
      *
      * @var string
+     * @SerializerType("string")
      */
     private $createdAt;
 

@@ -11,21 +11,25 @@ class Group implements GroupInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $name;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $description;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $position;
 

@@ -12,16 +12,19 @@ class Tax implements TaxInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $tax;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $name;
 

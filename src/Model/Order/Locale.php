@@ -16,16 +16,19 @@ class Locale implements LocaleInterface
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $locale;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $language;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $territory;
 

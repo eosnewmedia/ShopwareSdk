@@ -11,51 +11,61 @@ class Price implements PriceInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $articleId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $articleDetailsId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $customerGroupKey;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $from;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $to;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $price;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $pseudoPrice;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $basePrice;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $percent;
 

@@ -11,96 +11,115 @@ class Billing implements BillingInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $orderId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $customerId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $countryId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $stateId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $company;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $department;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $salutation;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $number;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $firstName;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $lastName;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $street;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $zipCode;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $city;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $phone;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $fax;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $vatId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $additionalAddressLine1;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $additionalAddressLine2;
 

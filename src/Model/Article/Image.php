@@ -11,66 +11,79 @@ class Image implements ImageInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $articleId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $articleDetailId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $description;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $path;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $main;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $position;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $width;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $height;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $relations;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $extension;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $parentId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $mediaId;
 

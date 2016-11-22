@@ -11,11 +11,13 @@ class Similar implements SimilarInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $name;
 

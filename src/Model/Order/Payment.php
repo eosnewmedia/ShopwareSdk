@@ -11,106 +11,127 @@ class Payment implements PaymentInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $name;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $description;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $template;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $class;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $table;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $hide;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $additionalDescription;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $debitPercent;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $surcharge;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $surchargeString;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $position;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $active;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $esdActive;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $mobileInactive;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $embedIFrame;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $hideProspect;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $action;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $pluginId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $source;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $attribute;
 

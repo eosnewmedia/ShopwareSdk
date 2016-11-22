@@ -11,6 +11,7 @@ class PropertyGroup implements PropertyGroupInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
@@ -21,16 +22,19 @@ class PropertyGroup implements PropertyGroupInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $position;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $comparable;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $sortMode;
 

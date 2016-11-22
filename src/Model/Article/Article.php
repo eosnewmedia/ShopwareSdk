@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Model\Article;
 
+use JMS\Serializer\Annotation as Serializer;
+
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  * @author Nicklas Reincke <reincke@eosnewmedia.de>
@@ -12,141 +14,169 @@ class Article implements ArticleInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $mainDetailId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $supplierId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $taxId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $priceGroupId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $filterGroupId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $configuratorSetId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $name;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $description;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $descriptionLong;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $added;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $active;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $pseudoSales;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $highlight;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $keywords;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $metaTitle;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $changed;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $priceGroupActive;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $lastStock;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $crossBundleLook;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $notification;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $template;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $mode;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $availableFrom;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $availableTo;
 
     /**
      * @var DetailInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Detail")
      */
     private $mainDetail;
 
     /**
      * @var TaxInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Tax")
      */
     private $tax;
 
     /**
      * @var SupplierInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Detail")
      */
     private $supplier;
 

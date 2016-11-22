@@ -12,121 +12,145 @@ class Detail implements DetailInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $articleId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $unitId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $number;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $supplierNumber;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $kind;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $additionalText;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $active;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $inStock;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $weight;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $width;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $len;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $height;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $ean;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $position;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $minPurchase;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $purchaseSteps;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $maxPurchase;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $purchaseUnit;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $referenceUnit;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $packUnit;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $shippingFree;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $releaseDate;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $shippingTime;
 

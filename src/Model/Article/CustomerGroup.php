@@ -11,46 +11,55 @@ class CustomerGroup implements CustomerGroupInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $key;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $name;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $tax;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $taxInput;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $mode;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $discount;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $minimumOrder;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $minimumOrderSurcharge;
 

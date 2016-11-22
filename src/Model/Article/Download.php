@@ -11,26 +11,31 @@ class Download implements DownloadInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $articleId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $name;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $file;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $size;
 

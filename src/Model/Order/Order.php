@@ -11,56 +11,67 @@ class Order implements OrderInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $number;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $customerId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $paymentId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $dispatchId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $partnerId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $shopId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $invoiceAmount;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $invoiceAmountNet;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $invoiceShipping;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $invoiceShippingNet;
 
@@ -68,46 +79,55 @@ class Order implements OrderInterface
      * Date and time formatted in ISO8601 format.
      *
      * @var string
+     * @SerializerType("string")
      */
     private $orderTime;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $transactionId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $comment;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $customerComment;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $internalComment;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $net;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $taxFree;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $temporaryId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $referer;
 
@@ -115,36 +135,43 @@ class Order implements OrderInterface
      * Date and time formatted in ISO8601 format.
      *
      * @var string
+     * @SerializerType("string")
      */
     private $clearedDate;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $trackingCode;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $languageIso;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $currency;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $currencyFactor;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $remoteAddress;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $deviceType;
 
@@ -205,11 +232,13 @@ class Order implements OrderInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $paymentStatusId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $orderStatusId;
 

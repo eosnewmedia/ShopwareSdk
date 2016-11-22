@@ -11,76 +11,91 @@ class Country implements CountryInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $name;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $iso;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $isoName;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $position;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $description;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $shippingFree;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $taxFree;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $taxFreeUstId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $taxFreeUstIdChecked;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $active;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $iso3;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $displayStateInRegistration;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $forceStateInRegistration;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $areaId;
 

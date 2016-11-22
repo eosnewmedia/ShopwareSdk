@@ -11,46 +11,55 @@ class Customer implements CustomerInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $paymentId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $groupKey;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $shopId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $priceGroupId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $encoderName;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $hashPassword;
 
     /**
      * @var bool
+     * @SerializerType("boolean")
      */
     private $active;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $email;
 
@@ -58,6 +67,7 @@ class Customer implements CustomerInterface
      * Date and time formatted in ISO8601 format.
      *
      * @var string
+     * @SerializerType("string")
      */
     private $firstLogin;
 
@@ -65,71 +75,85 @@ class Customer implements CustomerInterface
      * Date and time formatted in ISO8601 format.
      *
      * @var string
+     * @SerializerType("string")
      */
     private $lastLogin;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $accountMode;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $confirmationKey;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $sessionId;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $newsletter;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $validation;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $affiliate;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $paymentPreset;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $languageId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $referer;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $internalComment;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $failedLogins;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $lockedUntil;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $debit;
 

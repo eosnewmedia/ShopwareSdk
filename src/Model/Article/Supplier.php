@@ -11,41 +11,49 @@ class Supplier implements SupplierInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $name;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $image;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $link;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $description;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $metaTitle;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $metaDescription;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $metaKeywords;
 
@@ -53,6 +61,7 @@ class Supplier implements SupplierInterface
      * Date and time formatted in ISO8601 format.
      *
      * @var string
+     * @SerializerType("string")
      */
     private $changed;
 

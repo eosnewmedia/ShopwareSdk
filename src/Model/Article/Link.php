@@ -11,26 +11,31 @@ class Link implements LinkInterface
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $id;
 
     /**
      * @var int
+     * @SerializerType("integer")
      */
     private $articleId;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $name;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $link;
 
     /**
      * @var string
+     * @SerializerType("string")
      */
     private $target;
 
