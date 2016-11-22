@@ -145,11 +145,6 @@ class Article implements ArticleInterface
     private $tax;
 
     /**
-     * @var PropertyValueInterface[]
-     */
-    private $propertyValues;
-
-    /**
      * @var ArticleSupplierInterface
      */
     private $supplier;
@@ -740,26 +735,6 @@ class Article implements ArticleInterface
     public function setTax(TaxInterface $tax): ArticleInterface
     {
         $this->tax = $tax;
-
-        return $this;
-    }
-
-    /**
-     * @return PropertyValueInterface[]
-     */
-    public function getPropertyValues(): array
-    {
-        return $this->propertyValues;
-    }
-
-    /**
-     * @param PropertyValueInterface[] $propertyValues
-     *
-     * @return ArticleInterface
-     */
-    public function setPropertyValues(array $propertyValues): ArticleInterface
-    {
-        $this->propertyValues = $propertyValues;
 
         return $this;
     }
