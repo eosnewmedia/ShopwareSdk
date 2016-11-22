@@ -4,14 +4,8 @@ namespace Enm\ShopwareSdk\Model;
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
-interface OrderInterface
+interface OrderInterface extends RootModelInterface
 {
-
-    /**
-     * @return int
-     */
-    public function getId() : int;
-
     /**
      * @param int $id
      *

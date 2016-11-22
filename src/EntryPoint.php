@@ -3,160 +3,139 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk;
 
-use Enm\ShopwareSdk\Endpoint\AddressEndpointInterface;
-use Enm\ShopwareSdk\Endpoint\ArticleEndpointInterface;
-use Enm\ShopwareSdk\Endpoint\CategoryEndpointInterface;
-use Enm\ShopwareSdk\Endpoint\CountryEndpointInterface;
-use Enm\ShopwareSdk\Endpoint\CustomerEndpointInterface;
-use Enm\ShopwareSdk\Endpoint\CustomerGroupEndpointInterface;
-use Enm\ShopwareSdk\Endpoint\MediaEndpointInterface;
-use Enm\ShopwareSdk\Endpoint\OrderEndpointInterface;
-use Enm\ShopwareSdk\Endpoint\PropertyGroupEndpointInterface;
-use Enm\ShopwareSdk\Endpoint\VariantEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\ArticleEndpoint;
+use Enm\ShopwareSdk\Endpoint\Definition\ArticleEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\Definition\OrderEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\OrderEndpoint;
+use Enm\ShopwareSdk\Http\ClientInterface;
+use Enm\ShopwareSdk\Http\GuzzleHttpAdapter;
+use Enm\ShopwareSdk\Model\ArticleInterface;
+use Enm\ShopwareSdk\Model\OrderInterface;
+use Enm\ShopwareSdk\Response\ArticleHandler;
+use Enm\ShopwareSdk\Response\HandlerInterface;
+use Enm\ShopwareSdk\Response\OrderHandler;
 use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
+use JMS\Serializer\SerializerInterface;
 
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
 class EntryPoint implements EntryPointInterface
 {
-
-    /**
-     * @var string
-     */
-    private $baseUri;
-
-    /**
-     * @var string
-     */
-    private $username;
-
-    /**
-     * @var string
-     */
-    private $apiKey;
-
     /**
      * @var ClientInterface
      */
     private $httpClient;
-
+    
     /**
-     * EntryPoint constructor.
-     *
-     * @param string $baseUri
-     * @param string $username
-     * @param string $apiKey
+     * @var HandlerInterface[]
      */
-    public function __construct(string $baseUri, string $username, string $apiKey)
-    {
-        $this->baseUri  = $baseUri;
-        $this->username = $username;
-        $this->apiKey   = $apiKey;
-    }
-
+    private $responseHandlers = [];
+    
+    /**
+     * @var ArticleEndpointInterface
+     */
+    private $articleEndpoint;
+    
+    /**
+     * @var OrderEndpointInterface
+     */
+    private $orderEndpoint;
+    
     /**
      * @param ClientInterface $httpClient
+     */
+    public function __construct(ClientInterface $httpClient)
+    {
+        $this->httpClient = $httpClient;
+    }
+    
+    /**
+     * @param SerializerInterface $serializer
+     * @param string $baseUri
+     * @param string $username
+     * @param string $password
      *
      * @return EntryPoint
      */
-    public function setHttpClient(ClientInterface $httpClient): EntryPoint
+    public static function buildDefault(SerializerInterface $serializer, string $baseUri, string $username, string $password): EntryPoint
     {
-        $this->httpClient = $httpClient;
-
-        return $this;
+        $client = new GuzzleHttpAdapter(new Client());
+        $client->withConfig($baseUri, $username, $password);
+        
+        $entryPoint = new self($client);
+        $entryPoint->addResponseHandler(new ArticleHandler($serializer));
+        $entryPoint->addResponseHandler(new OrderHandler($serializer));
+        
+        return $entryPoint;
     }
-
+    
     /**
      * @return ClientInterface
      */
-    private function httpClient(): ClientInterface
+    protected function httpClient(): ClientInterface
     {
-        if (!$this->httpClient instanceof ClientInterface) {
-            $this->httpClient = new Client();
-        }
-
         return $this->httpClient;
     }
-
+    
     /**
-     * @return AddressEndpointInterface
+     * @param string $type
+     *
+     * @return HandlerInterface
+     * @throws \InvalidArgumentException
      */
-    public function addresses(): AddressEndpointInterface
+    protected function handlerFor(string $type): HandlerInterface
     {
-        // TODO: Implement addresses() method.
+        if (!array_key_exists($type, $this->responseHandlers)) {
+            throw new \InvalidArgumentException('No handler for '.$type);
+        }
+        
+        return $this->responseHandlers[$type];
     }
-
+    
+    /**
+     * @param HandlerInterface $handler
+     *
+     * @return EntryPoint
+     */
+    public function addResponseHandler(HandlerInterface $handler): EntryPoint
+    {
+        foreach ($handler->getSupportedTypes() as $type) {
+            $this->responseHandlers[$type] = $handler;
+        }
+        
+        return $this;
+    }
+    
     /**
      * @return ArticleEndpointInterface
+     * @throws \InvalidArgumentException
      */
     public function articles(): ArticleEndpointInterface
     {
-        // TODO: Implement articles() method.
+        if (!$this->articleEndpoint instanceof ArticleEndpointInterface) {
+            $this->articleEndpoint = new ArticleEndpoint(
+              $this->httpClient(),
+              $this->handlerFor(ArticleInterface::class)
+            );
+        }
+        
+        return $this->articleEndpoint;
     }
-
-    /**
-     * @return CategoryEndpointInterface
-     */
-    public function categories(): CategoryEndpointInterface
-    {
-        // TODO: Implement categories() method.
-    }
-
-    /**
-     * @return CountryEndpointInterface
-     */
-    public function countries(): CountryEndpointInterface
-    {
-        // TODO: Implement countries() method.
-    }
-
-    /**
-     * @return CustomerGroupEndpointInterface
-     */
-    public function customerGroups(): CustomerGroupEndpointInterface
-    {
-        // TODO: Implement customerGroups() method.
-    }
-
-    /**
-     * @return CustomerEndpointInterface
-     */
-    public function customers(): CustomerEndpointInterface
-    {
-        // TODO: Implement customers() method.
-    }
-
-    /**
-     * @return MediaEndpointInterface
-     */
-    public function media(): MediaEndpointInterface
-    {
-        // TODO: Implement media() method.
-    }
-
+    
     /**
      * @return OrderEndpointInterface
+     * @throws \InvalidArgumentException
      */
     public function orders(): OrderEndpointInterface
     {
-        // TODO: Implement orders() method.
-    }
-
-    /**
-     * @return PropertyGroupEndpointInterface
-     */
-    public function propertyGroups(): PropertyGroupEndpointInterface
-    {
-        // TODO: Implement propertyGroups() method.
-    }
-
-    /**
-     * @return VariantEndpointInterface
-     */
-    public function variants(): VariantEndpointInterface
-    {
-        // TODO: Implement variants() method.
+        if (!$this->orderEndpoint instanceof OrderEndpointInterface) {
+            $this->orderEndpoint = new OrderEndpoint(
+              $this->httpClient(),
+              $this->handlerFor(OrderInterface::class)
+            );
+        }
+        
+        return $this->orderEndpoint;
     }
 }

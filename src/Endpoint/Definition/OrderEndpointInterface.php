@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Enm\ShopwareSdk\Endpoint;
+namespace Enm\ShopwareSdk\Endpoint\Definition;
 
 use Enm\ShopwareSdk\Model\OrderInterface;
 
@@ -10,12 +10,12 @@ use Enm\ShopwareSdk\Model\OrderInterface;
  */
 interface OrderEndpointInterface
 {
-
+    
     /**
      * @return OrderInterface[]
      */
     public function findAll(): array;
-
+    
     /**
      * @param int $id
      *
