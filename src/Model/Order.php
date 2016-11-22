@@ -174,7 +174,7 @@ class Order implements OrderInterface
     private $orderStatus;
 
     /**
-     * @var customerInterface
+     * @var CustomerInterface
      */
     private $customer;
 
@@ -863,19 +863,19 @@ class Order implements OrderInterface
     }
 
     /**
-     * @return customerInterface
+     * @return CustomerInterface
      */
-    public function getCustomer(): customerInterface
+    public function getCustomer(): CustomerInterface
     {
         return $this->customer;
     }
 
     /**
-     * @param customerInterface $customer
+     * @param CustomerInterface $customer
      *
      * @return OrderInterface
      */
-    public function setCustomer(customerInterface $customer): OrderInterface
+    public function setCustomer(CustomerInterface $customer): OrderInterface
     {
         $this->customer = $customer;
 

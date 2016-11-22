@@ -392,16 +392,16 @@ interface OrderInterface
     public function setOrderStatus(OrderStatusInterface $orderStatus) : OrderInterface;
 
     /**
-     * @return customerInterface
+     * @return CustomerInterface
      */
-    public function getCustomer() : customerInterface;
+    public function getCustomer() : CustomerInterface;
 
     /**
-     * @param customerInterface $customer
+     * @param CustomerInterface $customer
      *
      * @return OrderInterface
      */
-    public function setCustomer(customerInterface $customer) : OrderInterface;
+    public function setCustomer(CustomerInterface $customer) : OrderInterface;
 
     /**
      * @return PaymentInstanceInterface[]
