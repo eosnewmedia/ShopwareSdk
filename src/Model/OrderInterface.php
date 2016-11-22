@@ -344,18 +344,6 @@ interface OrderInterface
     public function setDetails(array $details) : OrderInterface;
 
     /**
-     * @return DocumentInterface[]
-     */
-    public function getDocuments() : array;
-
-    /**
-     * @param DocumentInterface[] $documents
-     *
-     * @return OrderInterface
-     */
-    public function setDocuments(array $documents) : OrderInterface;
-
-    /**
      * @return PaymentInterface
      */
     public function getPayment() : PaymentInterface;

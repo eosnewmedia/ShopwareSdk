@@ -154,11 +154,6 @@ class Order implements OrderInterface
     private $details;
 
     /**
-     * @var DocumentInterface[]
-     */
-    private $documents;
-
-    /**
      * @var PaymentInterface
      */
     private $payment;
@@ -220,6 +215,7 @@ class Order implements OrderInterface
 
     /**
      * Attribute is not needed
+     * Documents is not needed
      */
 
     /**
@@ -778,26 +774,6 @@ class Order implements OrderInterface
     public function setDetails(array $details): OrderInterface
     {
         $this->details = $details;
-
-        return $this;
-    }
-
-    /**
-     * @return DocumentInterface[]
-     */
-    public function getDocuments(): array
-    {
-        return $this->documents;
-    }
-
-    /**
-     * @param DocumentInterface[] $documents
-     *
-     * @return OrderInterface
-     */
-    public function setDocuments(array $documents): OrderInterface
-    {
-        $this->documents = $documents;
 
         return $this;
     }
