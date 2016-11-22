@@ -5,7 +5,7 @@ namespace Enm\ShopwareSdk\Tests\Endpoint;
 
 use Enm\ShopwareSdk\Endpoint\OrderEndpoint;
 use Enm\ShopwareSdk\Http\ClientInterface;
-use Enm\ShopwareSdk\Model\OrderInterface;
+use Enm\ShopwareSdk\Model\Order\OrderInterface;
 use Enm\ShopwareSdk\Model\RootModelInterface;
 use Enm\ShopwareSdk\Response\HandlerInterface;
 use PHPUnit\Framework\TestCase;

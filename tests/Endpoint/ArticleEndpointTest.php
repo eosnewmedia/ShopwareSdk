@@ -5,7 +5,7 @@ namespace Enm\ShopwareSdk\Tests\Endpoint;
 
 use Enm\ShopwareSdk\Endpoint\ArticleEndpoint;
 use Enm\ShopwareSdk\Http\ClientInterface;
-use Enm\ShopwareSdk\Model\ArticleInterface;
+use Enm\ShopwareSdk\Model\Article\ArticleInterface;
 use Enm\ShopwareSdk\Model\RootModelInterface;
 use Enm\ShopwareSdk\Response\HandlerInterface;
 use PHPUnit\Framework\TestCase;

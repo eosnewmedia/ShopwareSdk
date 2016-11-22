@@ -4,7 +4,7 @@ declare(strict_types = 1);
 namespace Enm\ShopwareSdk\Endpoint;
 
 use Enm\ShopwareSdk\Endpoint\Definition\ArticleEndpointInterface;
-use Enm\ShopwareSdk\Model\ArticleInterface;
+use Enm\ShopwareSdk\Model\Article\ArticleInterface;
 
 /**
  * @author Philipp Marien <marien@eosnewmedia.de>

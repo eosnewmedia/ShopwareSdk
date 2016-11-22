@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Endpoint\Definition;
 
-use Enm\ShopwareSdk\Model\ArticleInterface;
+use Enm\ShopwareSdk\Model\Article\ArticleInterface;
 
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>

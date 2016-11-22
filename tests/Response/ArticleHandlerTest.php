@@ -3,8 +3,8 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Tests\Response;
 
-use Enm\ShopwareSdk\Model\Article;
-use Enm\ShopwareSdk\Model\ArticleInterface;
+use Enm\ShopwareSdk\Model\Article\Article;
+use Enm\ShopwareSdk\Model\Article\ArticleInterface;
 use Enm\ShopwareSdk\Response\ArticleHandler;
 use JMS\Serializer\SerializerInterface;
 use PHPUnit\Framework\TestCase;

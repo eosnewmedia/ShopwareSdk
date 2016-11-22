@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Endpoint\Definition;
 
-use Enm\ShopwareSdk\Model\OrderInterface;
+use Enm\ShopwareSdk\Model\Order\OrderInterface;
 
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>

@@ -3,8 +3,8 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Response;
 
-use Enm\ShopwareSdk\Model\Order;
-use Enm\ShopwareSdk\Model\OrderInterface;
+use Enm\ShopwareSdk\Model\Order\Order;
+use Enm\ShopwareSdk\Model\Order\OrderInterface;
 
 /**
  * @author Philipp Marien <marien@eosnewmedia.de>
