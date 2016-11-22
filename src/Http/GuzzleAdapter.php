@@ -9,7 +9,7 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * @author Philipp Marien <marien@eosnewmedia.de>
  */
-class GuzzleHttpAdapter implements ClientInterface
+class GuzzleAdapter implements ClientInterface
 {
     /**
      * @var string
@@ -137,10 +137,10 @@ class GuzzleHttpAdapter implements ClientInterface
     /**
      * @param ResponseInterface $response
      *
-     * @return GuzzleHttpAdapter
+     * @return GuzzleAdapter
      * @throws \Exception
      */
-    private function handleResponse(ResponseInterface $response): GuzzleHttpAdapter
+    private function handleResponse(ResponseInterface $response): GuzzleAdapter
     {
         if ($response->getStatusCode() >= 400) {
             throw new \InvalidArgumentException((string)$response->getBody());

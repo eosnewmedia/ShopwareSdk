@@ -44,7 +44,6 @@ class OrderEndpoint extends AbstractEndpoint implements OrderEndpointInterface
             throw new \LogicException();
         }
         
-        
         return $order;
     }
 }

@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Tests\Http;
 
-use Enm\ShopwareSdk\Http\GuzzleHttpAdapter;
+use Enm\ShopwareSdk\Http\GuzzleAdapter;
 use GuzzleHttp\ClientInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
@@ -55,7 +55,7 @@ class GuzzleAdapterTest extends TestCase
      */
     public function testErrorRequest()
     {
-        $adapter = new GuzzleHttpAdapter(
+        $adapter = new GuzzleAdapter(
           $this->createConfiguredMock(
             ClientInterface::class,
             [
@@ -71,11 +71,11 @@ class GuzzleAdapterTest extends TestCase
     }
     
     /**
-     * @return GuzzleHttpAdapter
+     * @return GuzzleAdapter
      */
-    private function createAdapter(): GuzzleHttpAdapter
+    private function createAdapter(): GuzzleAdapter
     {
-        return new GuzzleHttpAdapter(
+        return new GuzzleAdapter(
           $this->createConfiguredMock(
             ClientInterface::class,
             [

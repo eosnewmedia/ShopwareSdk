@@ -8,7 +8,7 @@ use Enm\ShopwareSdk\Endpoint\Definition\ArticleEndpointInterface;
 use Enm\ShopwareSdk\Endpoint\Definition\OrderEndpointInterface;
 use Enm\ShopwareSdk\Endpoint\OrderEndpoint;
 use Enm\ShopwareSdk\Http\ClientInterface;
-use Enm\ShopwareSdk\Http\GuzzleHttpAdapter;
+use Enm\ShopwareSdk\Http\GuzzleAdapter;
 use Enm\ShopwareSdk\Model\ArticleInterface;
 use Enm\ShopwareSdk\Model\OrderInterface;
 use Enm\ShopwareSdk\Response\ArticleHandler;
@@ -60,7 +60,7 @@ class EntryPoint implements EntryPointInterface
      */
     public static function buildDefault(SerializerInterface $serializer, string $baseUri, string $username, string $password): EntryPoint
     {
-        $client = new GuzzleHttpAdapter(new Client());
+        $client = new GuzzleAdapter(new Client());
         $client->withConfig($baseUri, $username, $password);
         
         $entryPoint = new self($client);
