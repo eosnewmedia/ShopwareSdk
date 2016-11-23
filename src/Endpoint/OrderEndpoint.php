@@ -37,7 +37,7 @@ class OrderEndpoint extends AbstractEndpoint implements OrderEndpointInterface
      */
     public function find(int $id): OrderInterface
     {
-        $response = $this->shopware()->get('/api/orders');
+        $response = $this->shopware()->get('/api/orders/'.(string)$id);
         
         $order = $this->responseHandler()->handle($response);
         if (!$order instanceof OrderInterface) {
