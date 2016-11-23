@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
+ * @author Nicklas Reincke <reincke@eosnewmedia.de>
  */
 class Price implements PriceInterface
 {
@@ -283,6 +284,14 @@ class Price implements PriceInterface
     public function getCustomerGroup(): CustomerGroupInterface
     {
         return $this->customerGroup;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasCustomerGroup(): bool
+    {
+        return $this->customerGroup !== null;
     }
 
     /**

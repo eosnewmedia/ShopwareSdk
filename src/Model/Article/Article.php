@@ -749,6 +749,14 @@ class Article implements ArticleInterface
     }
 
     /**
+     * @return bool
+     */
+    public function hasMainDetail(): bool
+    {
+        return $this->mainDetail !== null;
+    }
+
+    /**
      * @param DetailInterface $mainDetail
      *
      * @return ArticleInterface
@@ -766,6 +774,14 @@ class Article implements ArticleInterface
     public function getTax(): TaxInterface
     {
         return $this->tax;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasTax(): bool
+    {
+        return $this->tax !== null;
     }
 
     /**
@@ -789,6 +805,14 @@ class Article implements ArticleInterface
     }
 
     /**
+     * @return bool
+     */
+    public function hasSupplier(): bool
+    {
+        return $this->supplier !== null;
+    }
+
+    /**
      * @param SupplierInterface $supplier
      *
      * @return ArticleInterface
@@ -806,6 +830,14 @@ class Article implements ArticleInterface
     public function getPropertyGroup(): PropertyGroupInterface
     {
         return $this->propertyGroup;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasPropertyGroup(): bool
+    {
+        return $this->propertyGroup !== null;
     }
 
     /**
@@ -866,6 +898,14 @@ class Article implements ArticleInterface
     public function getConfiguratorSet(): ConfiguratorSetInterface
     {
         return $this->configuratorSet;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasConfiguratorSet(): bool
+    {
+        return $this->configuratorSet !== null;
     }
 
     /**

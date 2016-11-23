@@ -6,8 +6,8 @@ namespace Enm\ShopwareSdk\Model\Article;
 use Enm\ShopwareSdk\Model\RootModelInterface;
 
 /**
- * @author Nicklas Reincke <reincke@eosnewmedia.de>
  * @author Dirk Heyka <heyka@eosnewmedia.de>
+ * @author Nicklas Reincke <reincke@eosnewmedia.de>
  */
 interface ArticleInterface extends RootModelInterface
 {
@@ -313,6 +313,11 @@ interface ArticleInterface extends RootModelInterface
     public function getMainDetail() : DetailInterface;
 
     /**
+     * @return bool
+     */
+    public function hasMainDetail() : bool;
+
+    /**
      * @param DetailInterface $mainDetail
      *
      * @return ArticleInterface
@@ -323,6 +328,11 @@ interface ArticleInterface extends RootModelInterface
      * @return TaxInterface
      */
     public function getTax() : TaxInterface;
+
+    /**
+     * @return bool
+     */
+    public function hasTax() : bool;
 
     /**
      * @param TaxInterface $tax
@@ -337,6 +347,11 @@ interface ArticleInterface extends RootModelInterface
     public function getSupplier() : SupplierInterface;
 
     /**
+     * @return bool
+     */
+    public function hasSupplier() : bool;
+
+    /**
      * @param SupplierInterface $supplier
      *
      * @return ArticleInterface
@@ -347,6 +362,11 @@ interface ArticleInterface extends RootModelInterface
      * @return PropertyGroupInterface
      */
     public function getPropertyGroup() : PropertyGroupInterface;
+
+    /**
+     * @return bool
+     */
+    public function hasPropertyGroup() : bool;
 
     /**
      * @param PropertyGroupInterface $propertyGroup
@@ -380,9 +400,14 @@ interface ArticleInterface extends RootModelInterface
     public function setImages(array $images) : ArticleInterface;
 
     /**
-     * @returnConfiguratorSetInterface
+     * @return ConfiguratorSetInterface
      */
     public function getConfiguratorSet() : ConfiguratorSetInterface;
+
+    /**
+     * @return bool
+     */
+    public function hasConfiguratorSet() : bool;
 
     /**
      * @param ConfiguratorSetInterface $configuratorSet
