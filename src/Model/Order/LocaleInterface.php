@@ -10,16 +10,16 @@ interface LocaleInterface
 {
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getId();
+    public function getId() : int;
 
     /**
-     * @param mixed $id
+     * @param int $id
      *
      * @return LocaleInterface
      */
-    public function setId($id);
+    public function setId($id) : LocaleInterface;
 
     /**
      * @return string

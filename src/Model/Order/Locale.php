@@ -12,7 +12,8 @@ class Locale implements LocaleInterface
 {
 
     /**
-     * @var
+     * @var int
+     * @Serializer\Type("integer")
      */
     private $id;
 
@@ -35,19 +36,19 @@ class Locale implements LocaleInterface
     private $territory;
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      *
      * @return LocaleInterface
      */
-    public function setId($id)
+    public function setId($id) : LocaleInterface
     {
         $this->id = $id;
 
