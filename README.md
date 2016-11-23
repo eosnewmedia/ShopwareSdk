@@ -1,6 +1,7 @@
 ENM Shopware SDK
 ================
-[![Build Status](https://api.travis-ci.org/eosnewmedia/ShopwareSdk.svg?branch=master)](https://travis-ci.org/eosnewmedia/ShopwareSdkBundle)
+[![Build Status](https://api.travis-ci.org/eosnewmedia/ShopwareSdk.svg?branch=master)](https://travis-ci.org/eosnewmedia/ShopwareSdk)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/be6857ac-682b-4f62-8ac1-c3e743d36e59/mini.png)](https://insight.sensiolabs.com/projects/be6857ac-682b-4f62-8ac1-c3e743d36e59)
 
 This library provides an extendable abstraction for the Shopware REST-API.
 The provided default implementation is based on `jms/serializer` and `guzzlehttp/guzzle`.
