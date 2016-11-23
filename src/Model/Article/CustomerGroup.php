@@ -130,7 +130,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function isTax(): bool
     {
-        return $this->tax;
+        return (bool)$this->tax;
     }
 
     /**
@@ -150,7 +150,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function isTaxInput(): bool
     {
-        return $this->taxInput;
+        return (bool)$this->taxInput;
     }
 
     /**
@@ -170,7 +170,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function isMode(): bool
     {
-        return $this->mode;
+        return (bool)$this->mode;
     }
 
     /**

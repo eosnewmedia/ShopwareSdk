@@ -86,7 +86,7 @@ class ConfiguratorSet implements ConfiguratorSetInterface
      */
     public function isPublic(): bool
     {
-        return $this->public;
+        return (bool)$this->public;
     }
 
     /**

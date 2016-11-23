@@ -465,7 +465,7 @@ class Article implements ArticleInterface
      */
     public function isActive(): bool
     {
-        return $this->active;
+        return (bool)$this->active;
     }
 
     /**
@@ -505,7 +505,7 @@ class Article implements ArticleInterface
      */
     public function isHighlight(): bool
     {
-        return $this->highlight;
+        return (bool)$this->highlight;
     }
 
     /**
@@ -585,7 +585,7 @@ class Article implements ArticleInterface
      */
     public function isPriceGroupActive(): bool
     {
-        return $this->priceGroupActive;
+        return (bool)$this->priceGroupActive;
     }
 
     /**
@@ -605,7 +605,7 @@ class Article implements ArticleInterface
      */
     public function isLastStock(): bool
     {
-        return $this->lastStock;
+        return (bool)$this->lastStock;
     }
 
     /**
@@ -625,7 +625,7 @@ class Article implements ArticleInterface
      */
     public function isCrossBundleLook(): bool
     {
-        return $this->crossBundleLook;
+        return (bool)$this->crossBundleLook;
     }
 
     /**
@@ -645,7 +645,7 @@ class Article implements ArticleInterface
      */
     public function isNotification(): bool
     {
-        return $this->notification;
+        return (bool)$this->notification;
     }
 
     /**

@@ -304,7 +304,7 @@ class Customer implements CustomerInterface
      */
     public function isActive(): bool
     {
-        return $this->active;
+        return (bool)$this->active;
     }
 
     /**

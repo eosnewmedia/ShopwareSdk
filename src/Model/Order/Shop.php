@@ -324,7 +324,7 @@ class Shop implements ShopInterface
      */
     public function isSecure(): bool
     {
-        return $this->secure;
+        return (bool)$this->secure;
     }
 
     /**
@@ -344,7 +344,7 @@ class Shop implements ShopInterface
      */
     public function isAlwaysSecure(): bool
     {
-        return $this->alwaysSecure;
+        return (bool)$this->alwaysSecure;
     }
 
     /**
@@ -424,7 +424,7 @@ class Shop implements ShopInterface
      */
     public function isDefault(): bool
     {
-        return $this->default;
+        return (bool)$this->default;
     }
 
     /**
@@ -444,7 +444,7 @@ class Shop implements ShopInterface
      */
     public function isActive(): bool
     {
-        return $this->active;
+        return (bool)$this->active;
     }
 
     /**
@@ -464,7 +464,7 @@ class Shop implements ShopInterface
      */
     public function isCustomerScope(): bool
     {
-        return $this->customerScope;
+        return (bool)$this->customerScope;
     }
 
     /**

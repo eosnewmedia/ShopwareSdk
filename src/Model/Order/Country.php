@@ -226,7 +226,7 @@ class Country implements CountryInterface
      */
     public function isShippingFree(): bool
     {
-        return $this->shippingFree;
+        return (bool)$this->shippingFree;
     }
 
     /**
@@ -306,7 +306,7 @@ class Country implements CountryInterface
      */
     public function isActive(): bool
     {
-        return $this->active;
+        return (bool)$this->active;
     }
 
     /**
@@ -346,7 +346,7 @@ class Country implements CountryInterface
      */
     public function isDisplayStateInRegistration(): bool
     {
-        return $this->displayStateInRegistration;
+        return (bool)$this->displayStateInRegistration;
     }
 
     /**
@@ -366,7 +366,7 @@ class Country implements CountryInterface
      */
     public function isForceStateInRegistration(): bool
     {
-        return $this->forceStateInRegistration;
+        return (bool)$this->forceStateInRegistration;
     }
 
     /**

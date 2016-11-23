@@ -313,7 +313,7 @@ class Detail implements DetailInterface
      */
     public function isActive(): bool
     {
-        return $this->active;
+        return (bool)$this->active;
     }
 
     /**
@@ -593,7 +593,7 @@ class Detail implements DetailInterface
      */
     public function isShippingFree(): bool
     {
-        return $this->shippingFree;
+        return (bool)$this->shippingFree;
     }
 
     /**

@@ -330,7 +330,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function isSecure(): bool
     {
-        return $this->secure;
+        return (bool)$this->secure;
     }
 
     /**
@@ -350,7 +350,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function isAlwaysSecure(): bool
     {
-        return $this->alwaysSecure;
+        return (bool)$this->alwaysSecure;
     }
 
     /**
@@ -430,7 +430,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function isDefault(): bool
     {
-        return $this->default;
+        return (bool)$this->default;
     }
 
     /**
@@ -450,7 +450,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function isActive(): bool
     {
-        return $this->active;
+        return (bool)$this->active;
     }
 
     /**
@@ -470,7 +470,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function isCustomerScope(): bool
     {
-        return $this->customerScope;
+        return (bool)$this->customerScope;
     }
 
     /**

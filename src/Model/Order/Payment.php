@@ -262,7 +262,7 @@ class Payment implements PaymentInterface
      */
     public function isHide(): bool
     {
-        return $this->hide;
+        return (bool)$this->hide;
     }
 
     /**
@@ -382,7 +382,7 @@ class Payment implements PaymentInterface
      */
     public function isActive(): bool
     {
-        return $this->active;
+        return (bool)$this->active;
     }
 
     /**
@@ -402,7 +402,7 @@ class Payment implements PaymentInterface
      */
     public function isEsdActive(): bool
     {
-        return $this->esdActive;
+        return (bool)$this->esdActive;
     }
 
     /**
@@ -422,7 +422,7 @@ class Payment implements PaymentInterface
      */
     public function isMobileInactive(): bool
     {
-        return $this->mobileInactive;
+        return (bool)$this->mobileInactive;
     }
 
     /**

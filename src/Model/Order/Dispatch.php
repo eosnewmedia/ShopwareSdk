@@ -284,7 +284,7 @@ class Dispatch implements DispatchInterface
      */
     public function isActive(): bool
     {
-        return $this->active;
+        return (bool)$this->active;
     }
 
     /**

@@ -105,7 +105,7 @@ class PropertyGroup implements PropertyGroupInterface
      */
     public function isComparable(): bool
     {
-        return $this->comparable;
+        return (bool)$this->comparable;
     }
 
     /**
