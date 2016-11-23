@@ -29,8 +29,8 @@ If you want to use the default implementation you also have to run:
     $serializer = \JMS\Serializer\SerializerBuilder::create()->build();
 
     $entryPoint = new \Enm\ShopwareSdk\EntryPoint($client);
-    $entryPoint->addResponseHandler(new ArticleHandler($serializer));
-    $entryPoint->addResponseHandler(new OrderHandler($serializer));
+    $entryPoint->addResponseHandler(new \Enm\ShopwareSdk\Response\ArticleHandler($serializer));
+    $entryPoint->addResponseHandler(new \Enm\ShopwareSdk\Response\OrderHandler($serializer));
 
 OR
     
@@ -76,4 +76,4 @@ The default handlers are based on JMS Serializer.
 If you don't want to use it, you can write your own response handlers which have to implement `\Enm\ShopwareSdk\Response\HandlerInterface`.
 
 A response handler must return all supported types if `getSupportedTypes` is called.
-A type is the class name of the models interface, for example: `\Enm\ShopwareSdk\Model\OrderInterface` for `orders`.
+A type is the class name of the models interface, for example: `\Enm\ShopwareSdk\Model\Order\OrderInterface` for `orders`.
