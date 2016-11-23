@@ -22,4 +22,11 @@ interface ArticleEndpointInterface
      * @return ArticleInterface
      */
     public function find(int $id): ArticleInterface;
+    
+    /**
+     * @param ArticleInterface $article
+     *
+     * @return ArticleEndpointInterface
+     */
+    public function save(ArticleInterface $article): ArticleEndpointInterface;
 }

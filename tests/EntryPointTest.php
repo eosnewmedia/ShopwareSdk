@@ -10,7 +10,9 @@ use Enm\ShopwareSdk\EntryPointInterface;
 use Enm\ShopwareSdk\Http\ClientInterface;
 use Enm\ShopwareSdk\Model\Article\ArticleInterface;
 use Enm\ShopwareSdk\Model\Order\OrderInterface;
-use Enm\ShopwareSdk\Response\HandlerInterface;
+use Enm\ShopwareSdk\Serializer\JsonDeserializerInterface;
+use Enm\ShopwareSdk\Serializer\JsonSerializerInterface;
+use JMS\Serializer\SerializerInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -29,9 +31,16 @@ class EntryPointTest extends TestCase
     {
         $entryPoint = new EntryPoint($this->createMock(ClientInterface::class));
         
-        $entryPoint->addResponseHandler(
+        $entryPoint->addSerializer(
           $this->createConfiguredMock(
-            HandlerInterface::class,
+            JsonSerializerInterface::class,
+            ['getSupportedTypes' => [ArticleInterface::class]]
+          )
+        );
+        
+        $entryPoint->addDeserializer(
+          $this->createConfiguredMock(
+            JsonDeserializerInterface::class,
             ['getSupportedTypes' => [ArticleInterface::class]]
           )
         );
@@ -57,9 +66,16 @@ class EntryPointTest extends TestCase
     {
         $entryPoint = new EntryPoint($this->createMock(ClientInterface::class));
         
-        $entryPoint->addResponseHandler(
+        $entryPoint->addSerializer(
           $this->createConfiguredMock(
-            HandlerInterface::class,
+            JsonSerializerInterface::class,
+            ['getSupportedTypes' => [OrderInterface::class]]
+          )
+        );
+        
+        $entryPoint->addDeserializer(
+          $this->createConfiguredMock(
+            JsonDeserializerInterface::class,
             ['getSupportedTypes' => [OrderInterface::class]]
           )
         );
@@ -75,9 +91,20 @@ class EntryPointTest extends TestCase
     /**
      * @expectedException \InvalidArgumentException
      */
-    public function testOrdersWithoutResponseHandler()
+    public function testOrdersWithoutSerializer()
     {
         $entryPoint = new EntryPoint($this->createMock(ClientInterface::class));
+        $entryPoint->addDefaultDeserializers($this->createMock(SerializerInterface::class));
+        $entryPoint->orders();
+    }
+    
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testOrdersWithoutDeserializer()
+    {
+        $entryPoint = new EntryPoint($this->createMock(ClientInterface::class));
+        $entryPoint->addDefaultSerializers($this->createMock(SerializerInterface::class));
         $entryPoint->orders();
     }
     

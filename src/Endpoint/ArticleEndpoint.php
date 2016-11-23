@@ -5,6 +5,7 @@ namespace Enm\ShopwareSdk\Endpoint;
 
 use Enm\ShopwareSdk\Endpoint\Definition\ArticleEndpointInterface;
 use Enm\ShopwareSdk\Model\Article\ArticleInterface;
+use Enm\ShopwareSdk\Model\Wrapper\ArticleWrapper;
 
 /**
  * @author Philipp Marien <marien@eosnewmedia.de>
@@ -19,15 +20,18 @@ class ArticleEndpoint extends AbstractEndpoint implements ArticleEndpointInterfa
     {
         $response = $this->shopware()->get('/api/articles');
         
-        $articles = $this->responseHandler()->handleCollection($response);
+        $articleWrapper = $this->deserializer()
+                               ->deserializeCollection(
+                                 (string)$response->getBody()
+                               );
         
-        foreach ($articles as $article) {
+        foreach ($articleWrapper->getData() as $article) {
             if (!$article instanceof ArticleInterface) {
                 throw new \LogicException();
             }
         }
         
-        return $articles;
+        return $articleWrapper->getData();
     }
     
     /**
@@ -40,11 +44,36 @@ class ArticleEndpoint extends AbstractEndpoint implements ArticleEndpointInterfa
     {
         $response = $this->shopware()->get('/api/articles/'.(string)$id);
         
-        $article = $this->responseHandler()->handle($response);
+        $articleWrapper = $this->deserializer()
+                               ->deserialize((string)$response->getBody());
+        
+        $article = $articleWrapper->getData();
         if (!$article instanceof ArticleInterface) {
             throw new \LogicException();
         }
         
         return $article;
+    }
+    
+    /**
+     * @param ArticleInterface $article
+     *
+     * @return ArticleEndpointInterface
+     */
+    public function save(ArticleInterface $article): ArticleEndpointInterface
+    {
+        $wrapper = new ArticleWrapper();
+        $wrapper->setData($article);
+        
+        $data = $this->serializer()->serialize($wrapper);
+        
+        if ($article->getId() !== 0) {
+            $this->shopware()
+                 ->put('/api/articles/'.(string)$article->getId(), [], $data);
+        } else {
+            $this->shopware()->post('/api/articles', [], $data);
+        }
+        
+        return $this;
     }
 }

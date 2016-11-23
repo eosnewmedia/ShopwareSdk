@@ -4,7 +4,8 @@ declare(strict_types = 1);
 namespace Enm\ShopwareSdk\Endpoint;
 
 use Enm\ShopwareSdk\Http\ClientInterface;
-use Enm\ShopwareSdk\Response\HandlerInterface;
+use Enm\ShopwareSdk\Serializer\JsonDeserializerInterface;
+use Enm\ShopwareSdk\Serializer\JsonSerializerInterface;
 
 /**
  * @author Philipp Marien <marien@eosnewmedia.de>
@@ -15,19 +16,27 @@ abstract class AbstractEndpoint
      * @var ClientInterface
      */
     private $httpClient;
+    
     /**
-     * @var HandlerInterface
+     * @var JsonSerializerInterface
      */
-    private $responseHandler;
+    private $serializer;
+    
+    /**
+     * @var JsonDeserializerInterface
+     */
+    private $deserializer;
     
     /**
      * @param ClientInterface $httpClient
-     * @param HandlerInterface $responseHandler
+     * @param JsonSerializerInterface $serializer
+     * @param JsonDeserializerInterface $deserializer
      */
-    public function __construct(ClientInterface $httpClient, HandlerInterface $responseHandler)
+    public function __construct(ClientInterface $httpClient, JsonSerializerInterface $serializer, JsonDeserializerInterface $deserializer)
     {
-        $this->httpClient      = $httpClient;
-        $this->responseHandler = $responseHandler;
+        $this->httpClient   = $httpClient;
+        $this->serializer   = $serializer;
+        $this->deserializer = $deserializer;
     }
     
     /**
@@ -39,10 +48,18 @@ abstract class AbstractEndpoint
     }
     
     /**
-     * @return HandlerInterface
+     * @return JsonSerializerInterface
      */
-    protected function responseHandler(): HandlerInterface
+    protected function serializer(): JsonSerializerInterface
     {
-        return $this->responseHandler;
+        return $this->serializer;
+    }
+    
+    /**
+     * @return JsonDeserializerInterface
+     */
+    protected function deserializer(): JsonDeserializerInterface
+    {
+        return $this->deserializer;
     }
 }

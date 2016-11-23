@@ -7,7 +7,10 @@ use Enm\ShopwareSdk\Endpoint\OrderEndpoint;
 use Enm\ShopwareSdk\Http\ClientInterface;
 use Enm\ShopwareSdk\Model\Order\OrderInterface;
 use Enm\ShopwareSdk\Model\RootModelInterface;
-use Enm\ShopwareSdk\Response\HandlerInterface;
+use Enm\ShopwareSdk\Model\Wrapper\OrderCollectionWrapper;
+use Enm\ShopwareSdk\Model\Wrapper\OrderWrapper;
+use Enm\ShopwareSdk\Serializer\JsonDeserializerInterface;
+use Enm\ShopwareSdk\Serializer\JsonSerializerInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -19,30 +22,32 @@ class OrderEndpointTest extends TestCase
     {
         $endpoint = new OrderEndpoint(
           $this->createMock(ClientInterface::class),
+          $this->createMock(JsonSerializerInterface::class),
           $this->createConfiguredMock(
-            HandlerInterface::class,
+            JsonDeserializerInterface::class,
             [
-              'handleCollection' => [
-                $this->createMock(OrderInterface::class),
-              ],
+              'deserializeCollection' => $this->createMock(OrderCollectionWrapper::class),
             ]
           )
         );
         
-        $orders = $endpoint->findAll();
-        
-        self::assertCount(1, $orders);
-        self::assertInstanceOf(OrderInterface::class, $orders[0]);
+        self::assertCount(0, $endpoint->findAll());
     }
     
     public function testFind()
     {
         $endpoint = new OrderEndpoint(
           $this->createMock(ClientInterface::class),
+          $this->createMock(JsonSerializerInterface::class),
           $this->createConfiguredMock(
-            HandlerInterface::class,
+            JsonDeserializerInterface::class,
             [
-              'handle' => $this->createMock(OrderInterface::class),
+              'deserialize' => $this->createConfiguredMock(
+                OrderWrapper::class,
+                [
+                  'getData' => $this->createMock(OrderInterface::class),
+                ]
+              ),
             ]
           )
         );
@@ -59,12 +64,16 @@ class OrderEndpointTest extends TestCase
     {
         $endpoint = new OrderEndpoint(
           $this->createMock(ClientInterface::class),
+          $this->createMock(JsonSerializerInterface::class),
           $this->createConfiguredMock(
-            HandlerInterface::class,
+            JsonDeserializerInterface::class,
             [
-              'handleCollection' => [
-                $this->createMock(RootModelInterface::class),
-              ],
+              'deserializeCollection' => $this->createConfiguredMock(
+                OrderCollectionWrapper::class,
+                [
+                  'getData' => [$this->createMock(RootModelInterface::class)],
+                ]
+              ),
             ]
           )
         );
@@ -79,10 +88,11 @@ class OrderEndpointTest extends TestCase
     {
         $endpoint = new OrderEndpoint(
           $this->createMock(ClientInterface::class),
+          $this->createMock(JsonSerializerInterface::class),
           $this->createConfiguredMock(
-            HandlerInterface::class,
+            JsonDeserializerInterface::class,
             [
-              'handle' => $this->createMock(RootModelInterface::class),
+              'deserializeCollection' => $this->createMock(OrderWrapper::class),
             ]
           )
         );

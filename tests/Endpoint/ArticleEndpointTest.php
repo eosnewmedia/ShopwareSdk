@@ -7,7 +7,10 @@ use Enm\ShopwareSdk\Endpoint\ArticleEndpoint;
 use Enm\ShopwareSdk\Http\ClientInterface;
 use Enm\ShopwareSdk\Model\Article\ArticleInterface;
 use Enm\ShopwareSdk\Model\RootModelInterface;
-use Enm\ShopwareSdk\Response\HandlerInterface;
+use Enm\ShopwareSdk\Model\Wrapper\ArticleCollectionWrapper;
+use Enm\ShopwareSdk\Model\Wrapper\ArticleWrapper;
+use Enm\ShopwareSdk\Serializer\JsonDeserializerInterface;
+use Enm\ShopwareSdk\Serializer\JsonSerializerInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -19,30 +22,32 @@ class ArticleEndpointTest extends TestCase
     {
         $endpoint = new ArticleEndpoint(
           $this->createMock(ClientInterface::class),
+          $this->createMock(JsonSerializerInterface::class),
           $this->createConfiguredMock(
-            HandlerInterface::class,
+            JsonDeserializerInterface::class,
             [
-              'handleCollection' => [
-                $this->createMock(ArticleInterface::class),
-              ],
+              'deserializeCollection' => $this->createMock(ArticleCollectionWrapper::class),
             ]
           )
         );
         
-        $orders = $endpoint->findAll();
-        
-        self::assertCount(1, $orders);
-        self::assertInstanceOf(ArticleInterface::class, $orders[0]);
+        self::assertCount(0, $endpoint->findAll());
     }
     
     public function testFind()
     {
         $endpoint = new ArticleEndpoint(
           $this->createMock(ClientInterface::class),
+          $this->createMock(JsonSerializerInterface::class),
           $this->createConfiguredMock(
-            HandlerInterface::class,
+            JsonDeserializerInterface::class,
             [
-              'handle' => $this->createMock(ArticleInterface::class),
+              'deserialize' => $this->createConfiguredMock(
+                ArticleWrapper::class,
+                [
+                  'getData' => $this->createMock(ArticleInterface::class),
+                ]
+              ),
             ]
           )
         );
@@ -59,12 +64,16 @@ class ArticleEndpointTest extends TestCase
     {
         $endpoint = new ArticleEndpoint(
           $this->createMock(ClientInterface::class),
+          $this->createMock(JsonSerializerInterface::class),
           $this->createConfiguredMock(
-            HandlerInterface::class,
+            JsonDeserializerInterface::class,
             [
-              'handleCollection' => [
-                $this->createMock(RootModelInterface::class),
-              ],
+              'deserializeCollection' => $this->createConfiguredMock(
+                ArticleCollectionWrapper::class,
+                [
+                  'getData' => [$this->createMock(RootModelInterface::class)],
+                ]
+              ),
             ]
           )
         );
@@ -79,10 +88,11 @@ class ArticleEndpointTest extends TestCase
     {
         $endpoint = new ArticleEndpoint(
           $this->createMock(ClientInterface::class),
+          $this->createMock(JsonSerializerInterface::class),
           $this->createConfiguredMock(
-            HandlerInterface::class,
+            JsonDeserializerInterface::class,
             [
-              'handle' => $this->createMock(RootModelInterface::class),
+              'deserialize' => $this->createMock(ArticleWrapper::class),
             ]
           )
         );

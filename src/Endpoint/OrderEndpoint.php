@@ -19,14 +19,18 @@ class OrderEndpoint extends AbstractEndpoint implements OrderEndpointInterface
     {
         $response = $this->shopware()->get('/api/orders');
         
-        $orders = $this->responseHandler()->handleCollection($response);
-        foreach ($orders as $order) {
+        $orderWrapper = $this->deserializer()
+                             ->deserializeCollection(
+                               (string)$response->getBody()
+                             );
+        
+        foreach ($orderWrapper->getData() as $order) {
             if (!$order instanceof OrderInterface) {
                 throw new \LogicException();
             }
         }
         
-        return $orders;
+        return $orderWrapper->getData();
     }
     
     /**
@@ -39,7 +43,10 @@ class OrderEndpoint extends AbstractEndpoint implements OrderEndpointInterface
     {
         $response = $this->shopware()->get('/api/orders/'.(string)$id);
         
-        $order = $this->responseHandler()->handle($response);
+        $orderWrapper = $this->deserializer()
+                             ->deserialize((string)$response->getBody());
+        
+        $order = $orderWrapper->getData();
         if (!$order instanceof OrderInterface) {
             throw new \LogicException();
         }

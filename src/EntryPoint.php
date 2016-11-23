@@ -12,9 +12,10 @@ use Enm\ShopwareSdk\Http\ClientInterface;
 use Enm\ShopwareSdk\Http\GuzzleAdapter;
 use Enm\ShopwareSdk\Model\Article\ArticleInterface;
 use Enm\ShopwareSdk\Model\Order\OrderInterface;
-use Enm\ShopwareSdk\Response\ArticleHandler;
-use Enm\ShopwareSdk\Response\HandlerInterface;
-use Enm\ShopwareSdk\Response\OrderHandler;
+use Enm\ShopwareSdk\Serializer\ArticleHandler;
+use Enm\ShopwareSdk\Serializer\JsonDeserializerInterface;
+use Enm\ShopwareSdk\Serializer\JsonSerializerInterface;
+use Enm\ShopwareSdk\Serializer\OrderHandler;
 use GuzzleHttp\Client;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
@@ -31,9 +32,14 @@ class EntryPoint implements EntryPointInterface
     private $httpClient;
     
     /**
-     * @var HandlerInterface[]
+     * @var JsonSerializerInterface[]
      */
-    private $responseHandlers = [];
+    private $serializers = [];
+    
+    /**
+     * @var JsonDeserializerInterface[]
+     */
+    private $deserializers = [];
     
     /**
      * @var ArticleEndpointInterface
@@ -71,39 +77,69 @@ class EntryPoint implements EntryPointInterface
         $client->withConfig($baseUri, $username, $password);
         
         $entryPoint = new self($client);
-        $entryPoint->addDefaultResponseHandlers(
-          SerializerBuilder::create()->build()
-        );
+        
+        $jmsSerializer = SerializerBuilder::create()->build();
+        
+        $entryPoint->addDefaultSerializers($jmsSerializer);
+        $entryPoint->addDefaultDeserializers($jmsSerializer);
         
         return $entryPoint;
     }
     
     /**
-     * @param SerializerInterface $serializer
+     * @param JsonSerializerInterface $serializer
      *
      * @return EntryPoint
      */
-    public function addDefaultResponseHandlers(SerializerInterface $serializer): EntryPoint
+    public function addSerializer(JsonSerializerInterface $serializer): EntryPoint
     {
-        $this->addResponseHandler(new ArticleHandler($serializer));
-        $this->addResponseHandler(new OrderHandler($serializer));
+        foreach ($serializer->getSupportedTypes() as $type) {
+            $this->serializers[$type] = $serializer;
+        }
         
         return $this;
     }
     
     /**
-     * @param HandlerInterface $handler
+     * @param JsonDeserializerInterface $deserializer
      *
      * @return EntryPoint
      */
-    public function addResponseHandler(HandlerInterface $handler): EntryPoint
+    public function addDeserializer(JsonDeserializerInterface $deserializer): EntryPoint
     {
-        foreach ($handler->getSupportedTypes() as $type) {
-            $this->responseHandlers[$type] = $handler;
+        foreach ($deserializer->getSupportedTypes() as $type) {
+            $this->deserializers[$type] = $deserializer;
         }
         
         return $this;
     }
+    
+    /**
+     * @param SerializerInterface $jmsSerializer
+     *
+     * @return EntryPoint
+     */
+    public function addDefaultSerializers(SerializerInterface $jmsSerializer): EntryPoint
+    {
+        $this->addSerializer(new ArticleHandler($jmsSerializer));
+        $this->addSerializer(new OrderHandler($jmsSerializer));
+        
+        return $this;
+    }
+    
+    /**
+     * @param SerializerInterface $jmsSerializer
+     *
+     * @return EntryPoint
+     */
+    public function addDefaultDeserializers(SerializerInterface $jmsSerializer): EntryPoint
+    {
+        $this->addDeserializer(new ArticleHandler($jmsSerializer));
+        $this->addDeserializer(new OrderHandler($jmsSerializer));
+        
+        return $this;
+    }
+    
     
     /**
      * @return ArticleEndpointInterface
@@ -114,34 +150,12 @@ class EntryPoint implements EntryPointInterface
         if (!$this->articleEndpoint instanceof ArticleEndpointInterface) {
             $this->articleEndpoint = new ArticleEndpoint(
               $this->httpClient(),
-              $this->handlerFor(ArticleInterface::class)
+              $this->serializerFor(ArticleInterface::class),
+              $this->deserializerFor(ArticleInterface::class)
             );
         }
         
         return $this->articleEndpoint;
-    }
-    
-    /**
-     * @return ClientInterface
-     */
-    protected function httpClient(): ClientInterface
-    {
-        return $this->httpClient;
-    }
-    
-    /**
-     * @param string $type
-     *
-     * @return HandlerInterface
-     * @throws \InvalidArgumentException
-     */
-    protected function handlerFor(string $type): HandlerInterface
-    {
-        if (!array_key_exists($type, $this->responseHandlers)) {
-            throw new \InvalidArgumentException('No handler for '.$type);
-        }
-        
-        return $this->responseHandlers[$type];
     }
     
     /**
@@ -153,10 +167,47 @@ class EntryPoint implements EntryPointInterface
         if (!$this->orderEndpoint instanceof OrderEndpointInterface) {
             $this->orderEndpoint = new OrderEndpoint(
               $this->httpClient(),
-              $this->handlerFor(OrderInterface::class)
+              $this->serializerFor(OrderInterface::class),
+              $this->deserializerFor(OrderInterface::class)
             );
         }
         
         return $this->orderEndpoint;
+    }
+    
+    /**
+     * @param string $class
+     *
+     * @return JsonSerializerInterface
+     */
+    protected function serializerFor(string $class): JsonSerializerInterface
+    {
+        if (!array_key_exists($class, $this->serializers)) {
+            throw new \InvalidArgumentException('No serializer for '.$class);
+        }
+        
+        return $this->serializers[$class];
+    }
+    
+    /**
+     * @param string $class
+     *
+     * @return JsonDeserializerInterface
+     */
+    protected function deserializerFor(string $class): JsonDeserializerInterface
+    {
+        if (!array_key_exists($class, $this->deserializers)) {
+            throw new \InvalidArgumentException('No deserializer for '.$class);
+        }
+        
+        return $this->deserializers[$class];
+    }
+    
+    /**
+     * @return ClientInterface
+     */
+    protected function httpClient(): ClientInterface
+    {
+        return $this->httpClient;
     }
 }
