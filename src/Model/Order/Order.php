@@ -265,7 +265,7 @@ class Order implements OrderInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -285,7 +285,7 @@ class Order implements OrderInterface
      */
     public function getNumber(): string
     {
-        return $this->number;
+        return (string)$this->number;
     }
 
     /**
@@ -305,7 +305,7 @@ class Order implements OrderInterface
      */
     public function getCustomerId(): int
     {
-        return $this->customerId;
+        return (int)$this->customerId;
     }
 
     /**
@@ -325,7 +325,7 @@ class Order implements OrderInterface
      */
     public function getPaymentId(): int
     {
-        return $this->paymentId;
+        return (int)$this->paymentId;
     }
 
     /**
@@ -345,7 +345,7 @@ class Order implements OrderInterface
      */
     public function getDispatchId(): int
     {
-        return $this->dispatchId;
+        return (int)$this->dispatchId;
     }
 
     /**
@@ -365,7 +365,7 @@ class Order implements OrderInterface
      */
     public function getPartnerId(): string
     {
-        return $this->partnerId;
+        return (string)$this->partnerId;
     }
 
     /**
@@ -385,7 +385,7 @@ class Order implements OrderInterface
      */
     public function getShopId(): int
     {
-        return $this->shopId;
+        return (int)$this->shopId;
     }
 
     /**
@@ -405,7 +405,7 @@ class Order implements OrderInterface
      */
     public function getInvoiceAmount(): string
     {
-        return $this->invoiceAmount;
+        return (string)$this->invoiceAmount;
     }
 
     /**
@@ -425,7 +425,7 @@ class Order implements OrderInterface
      */
     public function getInvoiceAmountNet(): string
     {
-        return $this->invoiceAmountNet;
+        return (string)$this->invoiceAmountNet;
     }
 
     /**
@@ -445,7 +445,7 @@ class Order implements OrderInterface
      */
     public function getInvoiceShipping(): string
     {
-        return $this->invoiceShipping;
+        return (string)$this->invoiceShipping;
     }
 
     /**
@@ -465,7 +465,7 @@ class Order implements OrderInterface
      */
     public function getInvoiceShippingNet(): string
     {
-        return $this->invoiceShippingNet;
+        return (string)$this->invoiceShippingNet;
     }
 
     /**
@@ -485,7 +485,7 @@ class Order implements OrderInterface
      */
     public function getOrderTime(): string
     {
-        return $this->orderTime;
+        return (string)$this->orderTime;
     }
 
     /**
@@ -505,7 +505,7 @@ class Order implements OrderInterface
      */
     public function getTransactionId(): string
     {
-        return $this->transactionId;
+        return (string)$this->transactionId;
     }
 
     /**
@@ -525,7 +525,7 @@ class Order implements OrderInterface
      */
     public function getComment(): string
     {
-        return $this->comment;
+        return (string)$this->comment;
     }
 
     /**
@@ -545,7 +545,7 @@ class Order implements OrderInterface
      */
     public function getCustomerComment(): string
     {
-        return $this->customerComment;
+        return (string)$this->customerComment;
     }
 
     /**
@@ -565,7 +565,7 @@ class Order implements OrderInterface
      */
     public function getInternalComment(): string
     {
-        return $this->internalComment;
+        return (string)$this->internalComment;
     }
 
     /**
@@ -585,7 +585,7 @@ class Order implements OrderInterface
      */
     public function getNet(): int
     {
-        return $this->net;
+        return (int)$this->net;
     }
 
     /**
@@ -605,7 +605,7 @@ class Order implements OrderInterface
      */
     public function getTaxFree(): int
     {
-        return $this->taxFree;
+        return (int)$this->taxFree;
     }
 
     /**
@@ -625,7 +625,7 @@ class Order implements OrderInterface
      */
     public function getTemporaryId(): string
     {
-        return $this->temporaryId;
+        return (string)$this->temporaryId;
     }
 
     /**
@@ -645,7 +645,7 @@ class Order implements OrderInterface
      */
     public function getReferer(): string
     {
-        return $this->referer;
+        return (string)$this->referer;
     }
 
     /**
@@ -665,7 +665,7 @@ class Order implements OrderInterface
      */
     public function getClearedDate(): string
     {
-        return $this->clearedDate;
+        return (string)$this->clearedDate;
     }
 
     /**
@@ -685,7 +685,7 @@ class Order implements OrderInterface
      */
     public function getTrackingCode(): string
     {
-        return $this->trackingCode;
+        return (string)$this->trackingCode;
     }
 
     /**
@@ -705,7 +705,7 @@ class Order implements OrderInterface
      */
     public function getLanguageIso(): string
     {
-        return $this->languageIso;
+        return (string)$this->languageIso;
     }
 
     /**
@@ -725,7 +725,7 @@ class Order implements OrderInterface
      */
     public function getCurrency(): string
     {
-        return $this->currency;
+        return (string)$this->currency;
     }
 
     /**
@@ -745,7 +745,7 @@ class Order implements OrderInterface
      */
     public function getCurrencyFactor(): int
     {
-        return $this->currencyFactor;
+        return (int)$this->currencyFactor;
     }
 
     /**
@@ -765,7 +765,7 @@ class Order implements OrderInterface
      */
     public function getRemoteAddress(): string
     {
-        return $this->remoteAddress;
+        return (string)$this->remoteAddress;
     }
 
     /**
@@ -785,7 +785,7 @@ class Order implements OrderInterface
      */
     public function getDeviceType(): string
     {
-        return $this->deviceType;
+        return (string)$this->deviceType;
     }
 
     /**
@@ -805,7 +805,7 @@ class Order implements OrderInterface
      */
     public function getDetails(): array
     {
-        return $this->details;
+        return (array)$this->details;
     }
 
     /**
@@ -905,7 +905,7 @@ class Order implements OrderInterface
      */
     public function getPaymentInstances(): array
     {
-        return $this->paymentInstances;
+        return (array)$this->paymentInstances;
     }
 
     /**
@@ -1025,7 +1025,7 @@ class Order implements OrderInterface
      */
     public function getPaymentStatusId(): int
     {
-        return $this->paymentStatusId;
+        return (int)$this->paymentStatusId;
     }
 
     /**
@@ -1045,7 +1045,7 @@ class Order implements OrderInterface
      */
     public function getOrderStatusId(): int
     {
-        return $this->orderStatusId;
+        return (int)$this->orderStatusId;
     }
 
     /**

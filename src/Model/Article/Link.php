@@ -46,7 +46,7 @@ class Link implements LinkInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -66,7 +66,7 @@ class Link implements LinkInterface
      */
     public function getArticleId(): int
     {
-        return $this->articleId;
+        return (int)$this->articleId;
     }
 
     /**
@@ -86,7 +86,7 @@ class Link implements LinkInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -106,7 +106,7 @@ class Link implements LinkInterface
      */
     public function getLink(): string
     {
-        return $this->link;
+        return (string)$this->link;
     }
 
     /**
@@ -126,7 +126,7 @@ class Link implements LinkInterface
      */
     public function getTarget(): string
     {
-        return $this->target;
+        return (string)$this->target;
     }
 
     /**

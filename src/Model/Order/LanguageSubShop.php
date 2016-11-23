@@ -130,7 +130,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -150,7 +150,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function getMainId(): string
     {
-        return $this->mainId;
+        return (string)$this->mainId;
     }
 
     /**
@@ -170,7 +170,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function getCategoryId(): int
     {
-        return $this->categoryId;
+        return (int)$this->categoryId;
     }
 
     /**
@@ -190,7 +190,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -210,7 +210,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function getTitle(): string
     {
-        return $this->title;
+        return (string)$this->title;
     }
 
     /**
@@ -230,7 +230,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**
@@ -250,7 +250,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function getHost(): string
     {
-        return $this->host;
+        return (string)$this->host;
     }
 
     /**
@@ -270,7 +270,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function getBasePath(): string
     {
-        return $this->basePath;
+        return (string)$this->basePath;
     }
 
     /**
@@ -290,7 +290,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function getBaseUrl(): string
     {
-        return $this->baseUrl;
+        return (string)$this->baseUrl;
     }
 
     /**
@@ -310,7 +310,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function getHosts(): string
     {
-        return $this->hosts;
+        return (string)$this->hosts;
     }
 
     /**
@@ -370,7 +370,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function getSecureHost(): string
     {
-        return $this->secureHost;
+        return (string)$this->secureHost;
     }
 
     /**
@@ -390,7 +390,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function getSecureBasePath(): string
     {
-        return $this->secureBasePath;
+        return (string)$this->secureBasePath;
     }
 
     /**
@@ -410,7 +410,7 @@ class LanguageSubShop implements LanguageSubShopInterface
      */
     public function getTemplateId(): int
     {
-        return $this->templateId;
+        return (int)$this->templateId;
     }
 
     /**

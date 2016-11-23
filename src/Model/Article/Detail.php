@@ -173,7 +173,7 @@ class Detail implements DetailInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -193,7 +193,7 @@ class Detail implements DetailInterface
      */
     public function getArticleId(): int
     {
-        return $this->articleId;
+        return (int)$this->articleId;
     }
 
     /**
@@ -213,7 +213,7 @@ class Detail implements DetailInterface
      */
     public function getUnitId(): int
     {
-        return $this->unitId;
+        return (int)$this->unitId;
     }
 
     /**
@@ -233,7 +233,7 @@ class Detail implements DetailInterface
      */
     public function getNumber(): string
     {
-        return $this->number;
+        return (string)$this->number;
     }
 
     /**
@@ -253,7 +253,7 @@ class Detail implements DetailInterface
      */
     public function getSupplierNumber(): string
     {
-        return $this->supplierNumber;
+        return (string)$this->supplierNumber;
     }
 
     /**
@@ -273,7 +273,7 @@ class Detail implements DetailInterface
      */
     public function getKind(): int
     {
-        return $this->kind;
+        return (int)$this->kind;
     }
 
     /**
@@ -293,7 +293,7 @@ class Detail implements DetailInterface
      */
     public function getAdditionalText(): string
     {
-        return $this->additionalText;
+        return (string)$this->additionalText;
     }
 
     /**
@@ -333,7 +333,7 @@ class Detail implements DetailInterface
      */
     public function getInStock(): int
     {
-        return $this->inStock;
+        return (int)$this->inStock;
     }
 
     /**
@@ -353,7 +353,7 @@ class Detail implements DetailInterface
      */
     public function getWeight(): string
     {
-        return $this->weight;
+        return (string)$this->weight;
     }
 
     /**
@@ -373,7 +373,7 @@ class Detail implements DetailInterface
      */
     public function getWidth(): string
     {
-        return $this->width;
+        return (string)$this->width;
     }
 
     /**
@@ -393,7 +393,7 @@ class Detail implements DetailInterface
      */
     public function getLen(): string
     {
-        return $this->len;
+        return (string)$this->len;
     }
 
     /**
@@ -413,7 +413,7 @@ class Detail implements DetailInterface
      */
     public function getHeight(): string
     {
-        return $this->height;
+        return (string)$this->height;
     }
 
     /**
@@ -433,7 +433,7 @@ class Detail implements DetailInterface
      */
     public function getEan(): string
     {
-        return $this->ean;
+        return (string)$this->ean;
     }
 
     /**
@@ -453,7 +453,7 @@ class Detail implements DetailInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**
@@ -473,7 +473,7 @@ class Detail implements DetailInterface
      */
     public function getMinPurchase(): int
     {
-        return $this->minPurchase;
+        return (int)$this->minPurchase;
     }
 
     /**
@@ -493,7 +493,7 @@ class Detail implements DetailInterface
      */
     public function getPurchaseSteps(): int
     {
-        return $this->purchaseSteps;
+        return (int)$this->purchaseSteps;
     }
 
     /**
@@ -513,7 +513,7 @@ class Detail implements DetailInterface
      */
     public function getMaxPurchase(): int
     {
-        return $this->maxPurchase;
+        return (int)$this->maxPurchase;
     }
 
     /**
@@ -533,7 +533,7 @@ class Detail implements DetailInterface
      */
     public function getPurchaseUnit(): string
     {
-        return $this->purchaseUnit;
+        return (string)$this->purchaseUnit;
     }
 
     /**
@@ -553,7 +553,7 @@ class Detail implements DetailInterface
      */
     public function getReferenceUnit(): string
     {
-        return $this->referenceUnit;
+        return (string)$this->referenceUnit;
     }
 
     /**
@@ -573,7 +573,7 @@ class Detail implements DetailInterface
      */
     public function getPackUnit(): string
     {
-        return $this->packUnit;
+        return (string)$this->packUnit;
     }
 
     /**
@@ -613,7 +613,7 @@ class Detail implements DetailInterface
      */
     public function getReleaseDate(): string
     {
-        return $this->releaseDate;
+        return (string)$this->releaseDate;
     }
 
     /**
@@ -633,7 +633,7 @@ class Detail implements DetailInterface
      */
     public function getShippingTime(): string
     {
-        return $this->shippingTime;
+        return (string)$this->shippingTime;
     }
 
     /**
@@ -653,7 +653,7 @@ class Detail implements DetailInterface
      */
     public function getPrices(): array
     {
-        return $this->prices;
+        return (array)$this->prices;
     }
 
     /**
@@ -673,7 +673,7 @@ class Detail implements DetailInterface
      */
     public function getConfiguratorOptions(): array
     {
-        return $this->configuratorOptions;
+        return (array)$this->configuratorOptions;
     }
 
     /**

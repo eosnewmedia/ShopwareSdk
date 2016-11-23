@@ -124,7 +124,7 @@ class Shop implements ShopInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -144,7 +144,7 @@ class Shop implements ShopInterface
      */
     public function getMainId(): string
     {
-        return $this->mainId;
+        return (string)$this->mainId;
     }
 
     /**
@@ -164,7 +164,7 @@ class Shop implements ShopInterface
      */
     public function getCategoryId(): int
     {
-        return $this->categoryId;
+        return (int)$this->categoryId;
     }
 
     /**
@@ -184,7 +184,7 @@ class Shop implements ShopInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -204,7 +204,7 @@ class Shop implements ShopInterface
      */
     public function getTitle(): string
     {
-        return $this->title;
+        return (string)$this->title;
     }
 
     /**
@@ -224,7 +224,7 @@ class Shop implements ShopInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**
@@ -244,7 +244,7 @@ class Shop implements ShopInterface
      */
     public function getHost(): string
     {
-        return $this->host;
+        return (string)$this->host;
     }
 
     /**
@@ -264,7 +264,7 @@ class Shop implements ShopInterface
      */
     public function getBasePath(): string
     {
-        return $this->basePath;
+        return (string)$this->basePath;
     }
 
     /**
@@ -284,7 +284,7 @@ class Shop implements ShopInterface
      */
     public function getBaseUrl(): string
     {
-        return $this->baseUrl;
+        return (string)$this->baseUrl;
     }
 
     /**
@@ -304,7 +304,7 @@ class Shop implements ShopInterface
      */
     public function getHosts(): string
     {
-        return $this->hosts;
+        return (string)$this->hosts;
     }
 
     /**
@@ -364,7 +364,7 @@ class Shop implements ShopInterface
      */
     public function getSecureHost(): string
     {
-        return $this->secureHost;
+        return (string)$this->secureHost;
     }
 
     /**
@@ -384,7 +384,7 @@ class Shop implements ShopInterface
      */
     public function getSecureBasePath(): string
     {
-        return $this->secureBasePath;
+        return (string)$this->secureBasePath;
     }
 
     /**
@@ -404,7 +404,7 @@ class Shop implements ShopInterface
      */
     public function getTemplateId(): int
     {
-        return $this->templateId;
+        return (int)$this->templateId;
     }
 
     /**

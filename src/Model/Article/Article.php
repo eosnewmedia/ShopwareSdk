@@ -245,7 +245,7 @@ class Article implements ArticleInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -265,7 +265,7 @@ class Article implements ArticleInterface
      */
     public function getMainDetailId(): int
     {
-        return $this->mainDetailId;
+        return (int)$this->mainDetailId;
     }
 
     /**
@@ -285,7 +285,7 @@ class Article implements ArticleInterface
      */
     public function getSupplierId(): int
     {
-        return $this->supplierId;
+        return (int)$this->supplierId;
     }
 
     /**
@@ -305,7 +305,7 @@ class Article implements ArticleInterface
      */
     public function getTaxId(): int
     {
-        return $this->taxId;
+        return (int)$this->taxId;
     }
 
     /**
@@ -325,7 +325,7 @@ class Article implements ArticleInterface
      */
     public function getPriceGroupId(): int
     {
-        return $this->priceGroupId;
+        return (int)$this->priceGroupId;
     }
 
     /**
@@ -345,7 +345,7 @@ class Article implements ArticleInterface
      */
     public function getFilterGroupId(): int
     {
-        return $this->filterGroupId;
+        return (int)$this->filterGroupId;
     }
 
     /**
@@ -365,7 +365,7 @@ class Article implements ArticleInterface
      */
     public function getConfiguratorSetId(): int
     {
-        return $this->configuratorSetId;
+        return (int)$this->configuratorSetId;
     }
 
     /**
@@ -385,7 +385,7 @@ class Article implements ArticleInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -405,7 +405,7 @@ class Article implements ArticleInterface
      */
     public function getDescription(): string
     {
-        return $this->description;
+        return (string)$this->description;
     }
 
     /**
@@ -425,7 +425,7 @@ class Article implements ArticleInterface
      */
     public function getDescriptionLong(): string
     {
-        return $this->descriptionLong;
+        return (string)$this->descriptionLong;
     }
 
     /**
@@ -445,7 +445,7 @@ class Article implements ArticleInterface
      */
     public function getAdded(): string
     {
-        return $this->added;
+        return (string)$this->added;
     }
 
     /**
@@ -485,7 +485,7 @@ class Article implements ArticleInterface
      */
     public function getPseudoSales(): int
     {
-        return $this->pseudoSales;
+        return (int)$this->pseudoSales;
     }
 
     /**
@@ -525,7 +525,7 @@ class Article implements ArticleInterface
      */
     public function getKeywords(): string
     {
-        return $this->keywords;
+        return (string)$this->keywords;
     }
 
     /**
@@ -545,7 +545,7 @@ class Article implements ArticleInterface
      */
     public function getMetaTitle(): string
     {
-        return $this->metaTitle;
+        return (string)$this->metaTitle;
     }
 
     /**
@@ -565,7 +565,7 @@ class Article implements ArticleInterface
      */
     public function getChanged(): string
     {
-        return $this->changed;
+        return (string)$this->changed;
     }
 
     /**
@@ -665,7 +665,7 @@ class Article implements ArticleInterface
      */
     public function getTemplate(): string
     {
-        return $this->template;
+        return (string)$this->template;
     }
 
     /**
@@ -685,7 +685,7 @@ class Article implements ArticleInterface
      */
     public function getMode(): int
     {
-        return $this->mode;
+        return (int)$this->mode;
     }
 
     /**
@@ -705,7 +705,7 @@ class Article implements ArticleInterface
      */
     public function getAvailableFrom(): string
     {
-        return $this->availableFrom;
+        return (string)$this->availableFrom;
     }
 
     /**
@@ -725,7 +725,7 @@ class Article implements ArticleInterface
      */
     public function getAvailableTo(): string
     {
-        return $this->availableTo;
+        return (string)$this->availableTo;
     }
 
     /**
@@ -825,7 +825,7 @@ class Article implements ArticleInterface
      */
     public function getCustomerGroups(): array
     {
-        return $this->customerGroups;
+        return (array)$this->customerGroups;
     }
 
     /**
@@ -845,7 +845,7 @@ class Article implements ArticleInterface
      */
     public function getImages(): array
     {
-        return $this->images;
+        return (array)$this->images;
     }
 
     /**
@@ -885,7 +885,7 @@ class Article implements ArticleInterface
      */
     public function getLinks(): array
     {
-        return $this->links;
+        return (array)$this->links;
     }
 
     /**
@@ -905,7 +905,7 @@ class Article implements ArticleInterface
      */
     public function getDownloads(): array
     {
-        return $this->downloads;
+        return (array)$this->downloads;
     }
 
     /**
@@ -925,7 +925,7 @@ class Article implements ArticleInterface
      */
     public function getCategories(): array
     {
-        return $this->categories;
+        return (array)$this->categories;
     }
 
     /**
@@ -945,7 +945,7 @@ class Article implements ArticleInterface
      */
     public function getSimilar(): array
     {
-        return $this->similar;
+        return (array)$this->similar;
     }
 
     /**
@@ -965,7 +965,7 @@ class Article implements ArticleInterface
      */
     public function getRelated(): array
     {
-        return $this->related;
+        return (array)$this->related;
     }
 
     /**
@@ -985,7 +985,7 @@ class Article implements ArticleInterface
      */
     public function getDetails(): array
     {
-        return $this->details;
+        return (array)$this->details;
     }
 
     /**

@@ -45,7 +45,7 @@ class PropertyGroup implements PropertyGroupInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -65,7 +65,7 @@ class PropertyGroup implements PropertyGroupInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -85,7 +85,7 @@ class PropertyGroup implements PropertyGroupInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**
@@ -125,7 +125,7 @@ class PropertyGroup implements PropertyGroupInterface
      */
     public function getSortMode(): int
     {
-        return $this->sortMode;
+        return (int)$this->sortMode;
     }
 
     /**

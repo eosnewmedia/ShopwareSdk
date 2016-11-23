@@ -40,7 +40,7 @@ class ConfiguratorOption implements ConfiguratorOptionInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -60,7 +60,7 @@ class ConfiguratorOption implements ConfiguratorOptionInterface
      */
     public function getGroupId(): int
     {
-        return $this->groupId;
+        return (int)$this->groupId;
     }
 
     /**
@@ -80,7 +80,7 @@ class ConfiguratorOption implements ConfiguratorOptionInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -100,7 +100,7 @@ class ConfiguratorOption implements ConfiguratorOptionInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**

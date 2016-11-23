@@ -70,7 +70,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -90,7 +90,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function getKey(): string
     {
-        return $this->key;
+        return (string)$this->key;
     }
 
     /**
@@ -110,7 +110,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -190,7 +190,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function getDiscount(): int
     {
-        return $this->discount;
+        return (int)$this->discount;
     }
 
     /**
@@ -210,7 +210,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function getMinimumOrder(): int
     {
-        return $this->minimumOrder;
+        return (int)$this->minimumOrder;
     }
 
     /**
@@ -230,7 +230,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function getMinimumOrderSurcharge(): int
     {
-        return $this->minimumOrderSurcharge;
+        return (int)$this->minimumOrderSurcharge;
     }
 
     /**

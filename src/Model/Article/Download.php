@@ -46,7 +46,7 @@ class Download implements DownloadInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -66,7 +66,7 @@ class Download implements DownloadInterface
      */
     public function getArticleId(): int
     {
-        return $this->articleId;
+        return (int)$this->articleId;
     }
 
     /**
@@ -86,7 +86,7 @@ class Download implements DownloadInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -106,7 +106,7 @@ class Download implements DownloadInterface
      */
     public function getFile(): string
     {
-        return $this->file;
+        return (string)$this->file;
     }
 
     /**
@@ -126,7 +126,7 @@ class Download implements DownloadInterface
      */
     public function getSize(): int
     {
-        return $this->size;
+        return (int)$this->size;
     }
 
     /**

@@ -142,7 +142,7 @@ class Payment implements PaymentInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -162,7 +162,7 @@ class Payment implements PaymentInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -182,7 +182,7 @@ class Payment implements PaymentInterface
      */
     public function getDescription(): string
     {
-        return $this->description;
+        return (string)$this->description;
     }
 
     /**
@@ -202,7 +202,7 @@ class Payment implements PaymentInterface
      */
     public function getTemplate(): string
     {
-        return $this->template;
+        return (string)$this->template;
     }
 
     /**
@@ -222,7 +222,7 @@ class Payment implements PaymentInterface
      */
     public function getClass(): string
     {
-        return $this->class;
+        return (string)$this->class;
     }
 
     /**
@@ -242,7 +242,7 @@ class Payment implements PaymentInterface
      */
     public function getTable(): string
     {
-        return $this->table;
+        return (string)$this->table;
     }
 
     /**
@@ -282,7 +282,7 @@ class Payment implements PaymentInterface
      */
     public function getAdditionalDescription(): string
     {
-        return $this->additionalDescription;
+        return (string)$this->additionalDescription;
     }
 
     /**
@@ -302,7 +302,7 @@ class Payment implements PaymentInterface
      */
     public function getDebitPercent(): int
     {
-        return $this->debitPercent;
+        return (int)$this->debitPercent;
     }
 
     /**
@@ -322,7 +322,7 @@ class Payment implements PaymentInterface
      */
     public function getSurcharge(): int
     {
-        return $this->surcharge;
+        return (int)$this->surcharge;
     }
 
     /**
@@ -342,7 +342,7 @@ class Payment implements PaymentInterface
      */
     public function getSurchargeString(): string
     {
-        return $this->surchargeString;
+        return (string)$this->surchargeString;
     }
 
     /**
@@ -362,7 +362,7 @@ class Payment implements PaymentInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**
@@ -442,7 +442,7 @@ class Payment implements PaymentInterface
      */
     public function getEmbedIFrame(): string
     {
-        return $this->embedIFrame;
+        return (string)$this->embedIFrame;
     }
 
     /**
@@ -462,7 +462,7 @@ class Payment implements PaymentInterface
      */
     public function getHideProspect(): int
     {
-        return $this->hideProspect;
+        return (int)$this->hideProspect;
     }
 
     /**
@@ -482,7 +482,7 @@ class Payment implements PaymentInterface
      */
     public function getAction(): string
     {
-        return $this->action;
+        return (string)$this->action;
     }
 
     /**
@@ -502,7 +502,7 @@ class Payment implements PaymentInterface
      */
     public function getPluginId(): string
     {
-        return $this->pluginId;
+        return (string)$this->pluginId;
     }
 
     /**
@@ -522,7 +522,7 @@ class Payment implements PaymentInterface
      */
     public function getSource(): string
     {
-        return $this->source;
+        return (string)$this->source;
     }
 
     /**
@@ -542,7 +542,7 @@ class Payment implements PaymentInterface
      */
     public function getAttribute(): string
     {
-        return $this->attribute;
+        return (string)$this->attribute;
     }
 
     /**

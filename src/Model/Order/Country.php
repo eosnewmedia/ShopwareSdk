@@ -106,7 +106,7 @@ class Country implements CountryInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -126,7 +126,7 @@ class Country implements CountryInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -146,7 +146,7 @@ class Country implements CountryInterface
      */
     public function getIso(): string
     {
-        return $this->iso;
+        return (string)$this->iso;
     }
 
     /**
@@ -166,7 +166,7 @@ class Country implements CountryInterface
      */
     public function getIsoName(): string
     {
-        return $this->isoName;
+        return (string)$this->isoName;
     }
 
     /**
@@ -186,7 +186,7 @@ class Country implements CountryInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**
@@ -206,7 +206,7 @@ class Country implements CountryInterface
      */
     public function getDescription(): string
     {
-        return $this->description;
+        return (string)$this->description;
     }
 
     /**
@@ -246,7 +246,7 @@ class Country implements CountryInterface
      */
     public function getTaxFree(): int
     {
-        return $this->taxFree;
+        return (int)$this->taxFree;
     }
 
     /**
@@ -266,7 +266,7 @@ class Country implements CountryInterface
      */
     public function getTaxFreeUstId(): int
     {
-        return $this->taxFreeUstId;
+        return (int)$this->taxFreeUstId;
     }
 
     /**
@@ -286,7 +286,7 @@ class Country implements CountryInterface
      */
     public function getTaxFreeUstIdChecked(): int
     {
-        return $this->taxFreeUstIdChecked;
+        return (int)$this->taxFreeUstIdChecked;
     }
 
     /**
@@ -326,7 +326,7 @@ class Country implements CountryInterface
      */
     public function getIso3(): string
     {
-        return $this->iso3;
+        return (string)$this->iso3;
     }
 
     /**
@@ -386,7 +386,7 @@ class Country implements CountryInterface
      */
     public function getAreaId(): int
     {
-        return $this->areaId;
+        return (int)$this->areaId;
     }
 
     /**

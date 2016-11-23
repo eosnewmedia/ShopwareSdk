@@ -142,7 +142,7 @@ class Detail implements DetailInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -162,7 +162,7 @@ class Detail implements DetailInterface
      */
     public function getOrderId(): int
     {
-        return $this->orderId;
+        return (int)$this->orderId;
     }
 
     /**
@@ -182,7 +182,7 @@ class Detail implements DetailInterface
      */
     public function getArticleId(): int
     {
-        return $this->articleId;
+        return (int)$this->articleId;
     }
 
     /**
@@ -202,7 +202,7 @@ class Detail implements DetailInterface
      */
     public function getTaxId(): int
     {
-        return $this->taxId;
+        return (int)$this->taxId;
     }
 
     /**
@@ -222,7 +222,7 @@ class Detail implements DetailInterface
      */
     public function getTaxRate(): int
     {
-        return $this->taxRate;
+        return (int)$this->taxRate;
     }
 
     /**
@@ -242,7 +242,7 @@ class Detail implements DetailInterface
      */
     public function getStatusId(): int
     {
-        return $this->statusId;
+        return (int)$this->statusId;
     }
 
     /**
@@ -262,7 +262,7 @@ class Detail implements DetailInterface
      */
     public function getNumber(): string
     {
-        return $this->number;
+        return (string)$this->number;
     }
 
     /**
@@ -282,7 +282,7 @@ class Detail implements DetailInterface
      */
     public function getArticleNumber(): string
     {
-        return $this->articleNumber;
+        return (string)$this->articleNumber;
     }
 
     /**
@@ -302,7 +302,7 @@ class Detail implements DetailInterface
      */
     public function getPrice(): string
     {
-        return $this->price;
+        return (string)$this->price;
     }
 
     /**
@@ -322,7 +322,7 @@ class Detail implements DetailInterface
      */
     public function getQuantity(): int
     {
-        return $this->quantity;
+        return (int)$this->quantity;
     }
 
     /**
@@ -342,7 +342,7 @@ class Detail implements DetailInterface
      */
     public function getArticleName(): string
     {
-        return $this->articleName;
+        return (string)$this->articleName;
     }
 
     /**
@@ -362,7 +362,7 @@ class Detail implements DetailInterface
      */
     public function getShipped(): int
     {
-        return $this->shipped;
+        return (int)$this->shipped;
     }
 
     /**
@@ -382,7 +382,7 @@ class Detail implements DetailInterface
      */
     public function getShippedGroup(): int
     {
-        return $this->shippedGroup;
+        return (int)$this->shippedGroup;
     }
 
     /**
@@ -402,7 +402,7 @@ class Detail implements DetailInterface
      */
     public function getReleaseDate(): string
     {
-        return $this->releaseDate;
+        return (string)$this->releaseDate;
     }
 
     /**
@@ -422,7 +422,7 @@ class Detail implements DetailInterface
      */
     public function getMode(): int
     {
-        return $this->mode;
+        return (int)$this->mode;
     }
 
     /**
@@ -442,7 +442,7 @@ class Detail implements DetailInterface
      */
     public function getEsdArticle(): int
     {
-        return $this->esdArticle;
+        return (int)$this->esdArticle;
     }
 
     /**
@@ -462,7 +462,7 @@ class Detail implements DetailInterface
      */
     public function getConfig(): string
     {
-        return $this->config;
+        return (string)$this->config;
     }
 
     /**
@@ -482,7 +482,7 @@ class Detail implements DetailInterface
      */
     public function getEan(): string
     {
-        return $this->ean;
+        return (string)$this->ean;
     }
 
     /**
@@ -502,7 +502,7 @@ class Detail implements DetailInterface
      */
     public function getUnit(): string
     {
-        return $this->unit;
+        return (string)$this->unit;
     }
 
     /**
@@ -522,7 +522,7 @@ class Detail implements DetailInterface
      */
     public function getPackUnit(): string
     {
-        return $this->packUnit;
+        return (string)$this->packUnit;
     }
 
     /**

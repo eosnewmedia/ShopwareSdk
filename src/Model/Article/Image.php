@@ -94,7 +94,7 @@ class Image implements ImageInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -114,7 +114,7 @@ class Image implements ImageInterface
      */
     public function getArticleId(): int
     {
-        return $this->articleId;
+        return (int)$this->articleId;
     }
 
     /**
@@ -134,7 +134,7 @@ class Image implements ImageInterface
      */
     public function getArticleDetailId(): string
     {
-        return $this->articleDetailId;
+        return (string)$this->articleDetailId;
     }
 
     /**
@@ -154,7 +154,7 @@ class Image implements ImageInterface
      */
     public function getDescription(): string
     {
-        return $this->description;
+        return (string)$this->description;
     }
 
     /**
@@ -174,7 +174,7 @@ class Image implements ImageInterface
      */
     public function getPath(): string
     {
-        return $this->path;
+        return (string)$this->path;
     }
 
     /**
@@ -194,7 +194,7 @@ class Image implements ImageInterface
      */
     public function getMain(): int
     {
-        return $this->main;
+        return (int)$this->main;
     }
 
     /**
@@ -214,7 +214,7 @@ class Image implements ImageInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**
@@ -234,7 +234,7 @@ class Image implements ImageInterface
      */
     public function getWidth(): int
     {
-        return $this->width;
+        return (int)$this->width;
     }
 
     /**
@@ -254,7 +254,7 @@ class Image implements ImageInterface
      */
     public function getHeight(): int
     {
-        return $this->height;
+        return (int)$this->height;
     }
 
     /**
@@ -274,7 +274,7 @@ class Image implements ImageInterface
      */
     public function getRelations(): string
     {
-        return $this->relations;
+        return (string)$this->relations;
     }
 
     /**
@@ -294,7 +294,7 @@ class Image implements ImageInterface
      */
     public function getExtension(): string
     {
-        return $this->extension;
+        return (string)$this->extension;
     }
 
     /**
@@ -314,7 +314,7 @@ class Image implements ImageInterface
      */
     public function getParentId(): string
     {
-        return $this->parentId;
+        return (string)$this->parentId;
     }
 
     /**
@@ -334,7 +334,7 @@ class Image implements ImageInterface
      */
     public function getMediaId(): int
     {
-        return $this->mediaId;
+        return (int)$this->mediaId;
     }
 
     /**

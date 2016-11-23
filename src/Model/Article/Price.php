@@ -82,7 +82,7 @@ class Price implements PriceInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -102,7 +102,7 @@ class Price implements PriceInterface
      */
     public function getArticleId(): int
     {
-        return $this->articleId;
+        return (int)$this->articleId;
     }
 
     /**
@@ -122,7 +122,7 @@ class Price implements PriceInterface
      */
     public function getArticleDetailsId(): int
     {
-        return $this->articleDetailsId;
+        return (int)$this->articleDetailsId;
     }
 
     /**
@@ -142,7 +142,7 @@ class Price implements PriceInterface
      */
     public function getCustomerGroupKey(): string
     {
-        return $this->customerGroupKey;
+        return (string)$this->customerGroupKey;
     }
 
     /**
@@ -162,7 +162,7 @@ class Price implements PriceInterface
      */
     public function getFrom(): int
     {
-        return $this->from;
+        return (int)$this->from;
     }
 
     /**
@@ -182,7 +182,7 @@ class Price implements PriceInterface
      */
     public function getTo(): string
     {
-        return $this->to;
+        return (string)$this->to;
     }
 
     /**
@@ -202,7 +202,7 @@ class Price implements PriceInterface
      */
     public function getPrice(): string
     {
-        return $this->price;
+        return (string)$this->price;
     }
 
     /**
@@ -222,7 +222,7 @@ class Price implements PriceInterface
      */
     public function getPseudoPrice(): int
     {
-        return $this->pseudoPrice;
+        return (int)$this->pseudoPrice;
     }
 
     /**
@@ -242,7 +242,7 @@ class Price implements PriceInterface
      */
     public function getBasePrice(): int
     {
-        return $this->basePrice;
+        return (int)$this->basePrice;
     }
 
     /**
@@ -262,7 +262,7 @@ class Price implements PriceInterface
      */
     public function getPercent(): int
     {
-        return $this->percent;
+        return (int)$this->percent;
     }
 
     /**

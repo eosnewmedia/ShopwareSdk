@@ -140,7 +140,7 @@ class Billing implements BillingInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -160,7 +160,7 @@ class Billing implements BillingInterface
      */
     public function getOrderId(): int
     {
-        return $this->orderId;
+        return (int)$this->orderId;
     }
 
     /**
@@ -180,7 +180,7 @@ class Billing implements BillingInterface
      */
     public function getCustomerId(): int
     {
-        return $this->customerId;
+        return (int)$this->customerId;
     }
 
     /**
@@ -200,7 +200,7 @@ class Billing implements BillingInterface
      */
     public function getCountryId(): int
     {
-        return $this->countryId;
+        return (int)$this->countryId;
     }
 
     /**
@@ -220,7 +220,7 @@ class Billing implements BillingInterface
      */
     public function getStateId(): int
     {
-        return $this->stateId;
+        return (int)$this->stateId;
     }
 
     /**
@@ -240,7 +240,7 @@ class Billing implements BillingInterface
      */
     public function getCompany(): string
     {
-        return $this->company;
+        return (string)$this->company;
     }
 
     /**
@@ -260,7 +260,7 @@ class Billing implements BillingInterface
      */
     public function getDepartment(): string
     {
-        return $this->department;
+        return (string)$this->department;
     }
 
     /**
@@ -280,7 +280,7 @@ class Billing implements BillingInterface
      */
     public function getSalutation(): string
     {
-        return $this->salutation;
+        return (string)$this->salutation;
     }
 
     /**
@@ -300,7 +300,7 @@ class Billing implements BillingInterface
      */
     public function getNumber(): string
     {
-        return $this->number;
+        return (string)$this->number;
     }
 
     /**
@@ -320,7 +320,7 @@ class Billing implements BillingInterface
      */
     public function getFirstName(): string
     {
-        return $this->firstName;
+        return (string)$this->firstName;
     }
 
     /**
@@ -340,7 +340,7 @@ class Billing implements BillingInterface
      */
     public function getLastName(): string
     {
-        return $this->lastName;
+        return (string)$this->lastName;
     }
 
     /**
@@ -360,7 +360,7 @@ class Billing implements BillingInterface
      */
     public function getStreet(): string
     {
-        return $this->street;
+        return (string)$this->street;
     }
 
     /**
@@ -380,7 +380,7 @@ class Billing implements BillingInterface
      */
     public function getZipCode(): string
     {
-        return $this->zipCode;
+        return (string)$this->zipCode;
     }
 
     /**
@@ -400,7 +400,7 @@ class Billing implements BillingInterface
      */
     public function getCity(): string
     {
-        return $this->city;
+        return (string)$this->city;
     }
 
     /**
@@ -420,7 +420,7 @@ class Billing implements BillingInterface
      */
     public function getPhone(): string
     {
-        return $this->phone;
+        return (string)$this->phone;
     }
 
     /**
@@ -440,7 +440,7 @@ class Billing implements BillingInterface
      */
     public function getFax(): string
     {
-        return $this->fax;
+        return (string)$this->fax;
     }
 
     /**
@@ -460,7 +460,7 @@ class Billing implements BillingInterface
      */
     public function getVatId(): string
     {
-        return $this->vatId;
+        return (string)$this->vatId;
     }
 
     /**
@@ -480,7 +480,7 @@ class Billing implements BillingInterface
      */
     public function getAdditionalAddressLine1(): string
     {
-        return $this->additionalAddressLine1;
+        return (string)$this->additionalAddressLine1;
     }
 
     /**
@@ -500,7 +500,7 @@ class Billing implements BillingInterface
      */
     public function getAdditionalAddressLine2(): string
     {
-        return $this->additionalAddressLine2;
+        return (string)$this->additionalAddressLine2;
     }
 
     /**

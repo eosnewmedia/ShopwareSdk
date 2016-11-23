@@ -184,7 +184,7 @@ class Dispatch implements DispatchInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -204,7 +204,7 @@ class Dispatch implements DispatchInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -224,7 +224,7 @@ class Dispatch implements DispatchInterface
      */
     public function getType(): int
     {
-        return $this->type;
+        return (int)$this->type;
     }
 
     /**
@@ -244,7 +244,7 @@ class Dispatch implements DispatchInterface
      */
     public function getDescription(): string
     {
-        return $this->description;
+        return (string)$this->description;
     }
 
     /**
@@ -264,7 +264,7 @@ class Dispatch implements DispatchInterface
      */
     public function getComment(): string
     {
-        return $this->comment;
+        return (string)$this->comment;
     }
 
     /**
@@ -304,7 +304,7 @@ class Dispatch implements DispatchInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**
@@ -324,7 +324,7 @@ class Dispatch implements DispatchInterface
      */
     public function getCalculation(): int
     {
-        return $this->calculation;
+        return (int)$this->calculation;
     }
 
     /**
@@ -344,7 +344,7 @@ class Dispatch implements DispatchInterface
      */
     public function getSurchargeCalculation(): int
     {
-        return $this->surchargeCalculation;
+        return (int)$this->surchargeCalculation;
     }
 
     /**
@@ -364,7 +364,7 @@ class Dispatch implements DispatchInterface
      */
     public function getTaxCalculation(): int
     {
-        return $this->taxCalculation;
+        return (int)$this->taxCalculation;
     }
 
     /**
@@ -384,7 +384,7 @@ class Dispatch implements DispatchInterface
      */
     public function getShippingFree(): string
     {
-        return $this->shippingFree;
+        return (string)$this->shippingFree;
     }
 
     /**
@@ -404,7 +404,7 @@ class Dispatch implements DispatchInterface
      */
     public function getMultiShopId(): int
     {
-        return $this->multiShopId;
+        return (int)$this->multiShopId;
     }
 
     /**
@@ -424,7 +424,7 @@ class Dispatch implements DispatchInterface
      */
     public function getCustomerGroupId(): string
     {
-        return $this->customerGroupId;
+        return (string)$this->customerGroupId;
     }
 
     /**
@@ -444,7 +444,7 @@ class Dispatch implements DispatchInterface
      */
     public function getBindShippingFree(): int
     {
-        return $this->bindShippingFree;
+        return (int)$this->bindShippingFree;
     }
 
     /**
@@ -464,7 +464,7 @@ class Dispatch implements DispatchInterface
      */
     public function getBindTimeFrom(): string
     {
-        return $this->bindTimeFrom;
+        return (string)$this->bindTimeFrom;
     }
 
     /**
@@ -484,7 +484,7 @@ class Dispatch implements DispatchInterface
      */
     public function getBindTimeTo(): string
     {
-        return $this->bindTimeTo;
+        return (string)$this->bindTimeTo;
     }
 
     /**
@@ -504,7 +504,7 @@ class Dispatch implements DispatchInterface
      */
     public function getBindInStock(): string
     {
-        return $this->bindInStock;
+        return (string)$this->bindInStock;
     }
 
     /**
@@ -524,7 +524,7 @@ class Dispatch implements DispatchInterface
      */
     public function getBindLastStock(): int
     {
-        return $this->bindLastStock;
+        return (int)$this->bindLastStock;
     }
 
     /**
@@ -544,7 +544,7 @@ class Dispatch implements DispatchInterface
      */
     public function getBindWeekdayFrom(): string
     {
-        return $this->bindWeekdayFrom;
+        return (string)$this->bindWeekdayFrom;
     }
 
     /**
@@ -564,7 +564,7 @@ class Dispatch implements DispatchInterface
      */
     public function getBindWeekdayTo(): string
     {
-        return $this->bindWeekdayTo;
+        return (string)$this->bindWeekdayTo;
     }
 
     /**
@@ -584,7 +584,7 @@ class Dispatch implements DispatchInterface
      */
     public function getBindWeightFrom(): string
     {
-        return $this->bindWeightFrom;
+        return (string)$this->bindWeightFrom;
     }
 
     /**
@@ -604,7 +604,7 @@ class Dispatch implements DispatchInterface
      */
     public function getBindWeightTo(): string
     {
-        return $this->bindWeightTo;
+        return (string)$this->bindWeightTo;
     }
 
     /**
@@ -624,7 +624,7 @@ class Dispatch implements DispatchInterface
      */
     public function getBindPriceFrom(): string
     {
-        return $this->bindPriceFrom;
+        return (string)$this->bindPriceFrom;
     }
 
     /**
@@ -644,7 +644,7 @@ class Dispatch implements DispatchInterface
      */
     public function getBindPriceTo(): string
     {
-        return $this->bindPriceTo;
+        return (string)$this->bindPriceTo;
     }
 
     /**
@@ -664,7 +664,7 @@ class Dispatch implements DispatchInterface
      */
     public function getBindSql(): string
     {
-        return $this->bindSql;
+        return (string)$this->bindSql;
     }
 
     /**
@@ -684,7 +684,7 @@ class Dispatch implements DispatchInterface
      */
     public function getStatusLink(): string
     {
-        return $this->statusLink;
+        return (string)$this->statusLink;
     }
 
     /**
@@ -704,7 +704,7 @@ class Dispatch implements DispatchInterface
      */
     public function getCalculationSql(): string
     {
-        return $this->calculationSql;
+        return (string)$this->calculationSql;
     }
 
     /**
@@ -724,7 +724,7 @@ class Dispatch implements DispatchInterface
      */
     public function getAttribute(): string
     {
-        return $this->attribute;
+        return (string)$this->attribute;
     }
 
     /**

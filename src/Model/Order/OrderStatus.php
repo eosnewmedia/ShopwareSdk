@@ -52,7 +52,7 @@ class OrderStatus implements OrderStatusInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -72,7 +72,7 @@ class OrderStatus implements OrderStatusInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -92,7 +92,7 @@ class OrderStatus implements OrderStatusInterface
      */
     public function getDescription(): string
     {
-        return $this->description;
+        return (string)$this->description;
     }
 
     /**
@@ -112,7 +112,7 @@ class OrderStatus implements OrderStatusInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**
@@ -132,7 +132,7 @@ class OrderStatus implements OrderStatusInterface
      */
     public function getGroup(): string
     {
-        return $this->group;
+        return (string)$this->group;
     }
 
     /**
@@ -152,7 +152,7 @@ class OrderStatus implements OrderStatusInterface
      */
     public function getSendMail(): int
     {
-        return $this->sendMail;
+        return (int)$this->sendMail;
     }
 
     /**

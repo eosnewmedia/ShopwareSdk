@@ -46,7 +46,7 @@ class ConfiguratorSet implements ConfiguratorSetInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -66,7 +66,7 @@ class ConfiguratorSet implements ConfiguratorSetInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -106,7 +106,7 @@ class ConfiguratorSet implements ConfiguratorSetInterface
      */
     public function getType(): int
     {
-        return $this->type;
+        return (int)$this->type;
     }
 
     /**
@@ -126,7 +126,7 @@ class ConfiguratorSet implements ConfiguratorSetInterface
      */
     public function getGroups(): array
     {
-        return $this->groups;
+        return (array)$this->groups;
     }
 
     /**

@@ -59,7 +59,7 @@ class Locale implements LocaleInterface
      */
     public function getLocale(): string
     {
-        return $this->locale;
+        return (string)$this->locale;
     }
 
     /**
@@ -79,7 +79,7 @@ class Locale implements LocaleInterface
      */
     public function getLanguage(): string
     {
-        return $this->language;
+        return (string)$this->language;
     }
 
     /**
@@ -99,7 +99,7 @@ class Locale implements LocaleInterface
      */
     public function getTerritory(): string
     {
-        return $this->territory;
+        return (string)$this->territory;
     }
 
     /**

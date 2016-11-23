@@ -28,7 +28,7 @@ class Category implements CategoryInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -48,7 +48,7 @@ class Category implements CategoryInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
