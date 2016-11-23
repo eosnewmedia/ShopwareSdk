@@ -11,7 +11,6 @@ use Enm\ShopwareSdk\Http\ClientInterface;
 use Enm\ShopwareSdk\Model\Article\ArticleInterface;
 use Enm\ShopwareSdk\Model\Order\OrderInterface;
 use Enm\ShopwareSdk\Response\HandlerInterface;
-use JMS\Serializer\SerializerInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -85,7 +84,6 @@ class EntryPointTest extends TestCase
     public function testDefaultEntryPoint()
     {
         $entryPoint = EntryPoint::buildDefault(
-          $this->createMock(SerializerInterface::class),
           'http://example.com',
           'test',
           'test56'
