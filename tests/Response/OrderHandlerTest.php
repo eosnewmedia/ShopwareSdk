@@ -5,6 +5,8 @@ namespace Enm\ShopwareSdk\Tests\Response;
 
 use Enm\ShopwareSdk\Model\Order\Order;
 use Enm\ShopwareSdk\Model\Order\OrderInterface;
+use Enm\ShopwareSdk\Model\Wrapper\OrderCollectionWrapper;
+use Enm\ShopwareSdk\Model\Wrapper\OrderWrapper;
 use Enm\ShopwareSdk\Response\OrderHandler;
 use JMS\Serializer\SerializerInterface;
 use PHPUnit\Framework\TestCase;
@@ -15,49 +17,62 @@ use Psr\Http\Message\ResponseInterface;
  */
 class OrderHandlerTest extends TestCase
 {
+
     public function testHandle()
     {
         $handler = new OrderHandler(
-          $this->createConfiguredMock(
-            SerializerInterface::class,
-            [
-              'deserialize' => $this->createMock(Order::class),
-            ]
-          )
+            $this->createConfiguredMock(
+                SerializerInterface::class,
+                [
+                    'deserialize' => $this->createConfiguredMock(
+                        OrderWrapper::class,
+                        [
+                            'getData' => $this->createMock(Order::class),
+                        ]
+                    ),
+                ]
+            )
         );
-        
+
         self::assertInstanceOf(
-          Order::class,
-          $handler->handle($this->createMock(ResponseInterface::class))
+            Order::class,
+            $handler->handle($this->createMock(ResponseInterface::class))
         );
     }
-    
+
     public function testHandleCollection()
     {
         $handler = new OrderHandler(
-          $this->createConfiguredMock(
-            SerializerInterface::class,
-            [
-              'deserialize' => [$this->createMock(Order::class)],
-            ]
-          )
+            $this->createConfiguredMock(
+                SerializerInterface::class,
+                [
+                    'deserialize' => $this->createConfiguredMock(
+                        OrderCollectionWrapper::class,
+                        [
+                            'getData' => [
+                                $this->createMock(Order::class),
+                            ],
+                        ]
+                    ),
+                ]
+            )
         );
-        
+
         self::assertInstanceOf(
-          Order::class,
-          $handler->handleCollection($this->createMock(ResponseInterface::class))[0]
+            Order::class,
+            $handler->handleCollection($this->createMock(ResponseInterface::class))[0]
         );
     }
-    
+
     public function testGetSupportedTypes()
     {
         $handler = new OrderHandler(
-          $this->createMock(SerializerInterface::class)
+            $this->createMock(SerializerInterface::class)
         );
-        
+
         self::assertContains(
-          OrderInterface::class,
-          $handler->getSupportedTypes()
+            OrderInterface::class,
+            $handler->getSupportedTypes()
         );
     }
 }

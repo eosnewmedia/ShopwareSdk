@@ -16,18 +16,27 @@ If you want to use the default implementation you also have to run:
 
 ## Usage
 
+    \Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
+        'JMS\Serializer\Annotation', __DIR__.'/../vendor/jms/serializer/src'
+    );
+
     $client = new \Enm\ShopwareSdk\Http\GuzzleAdapter(new \GuzzleHttp\Client());
     $client->withConfig('http://example.com', 'user', 'apiKey');
     
     $serializer = \JMS\Serializer\SerializerBuilder::create()->build();
-    
+
     $entryPoint = new \Enm\ShopwareSdk\EntryPoint($client);
     $entryPoint->addResponseHandler(new ArticleHandler($serializer));
     $entryPoint->addResponseHandler(new OrderHandler($serializer));
 
 OR
 
+    \Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
+        'JMS\Serializer\Annotation', __DIR__.'/../vendor/jms/serializer/src'
+    );
+    
     $serializer = \JMS\Serializer\SerializerBuilder::create()->build();
+    
     $entryPoint = \Enm\ShopwareSdk\EntryPoint::buildDefault($serializer, 'http://example.com', 'user', 'apiKey');
 
 The endpoints can be called like this:

@@ -4,6 +4,8 @@ declare(strict_types = 1);
 namespace Enm\ShopwareSdk\Response;
 
 use Enm\ShopwareSdk\Model\RootModelInterface;
+use Enm\ShopwareSdk\Model\Wrapper\CollectionWrapperInterface;
+use Enm\ShopwareSdk\Model\Wrapper\WrapperInterface;
 use JMS\Serializer\SerializerInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -12,11 +14,12 @@ use Psr\Http\Message\ResponseInterface;
  */
 abstract class AbstractHandler implements HandlerInterface
 {
+
     /**
      * @var SerializerInterface
      */
     private $serializer;
-    
+
     /**
      * @param SerializerInterface $serializer
      */
@@ -24,20 +27,7 @@ abstract class AbstractHandler implements HandlerInterface
     {
         $this->serializer = $serializer;
     }
-    
-    /**
-     * @return SerializerInterface
-     */
-    protected function serializer(): SerializerInterface
-    {
-        return $this->serializer;
-    }
-    
-    /**
-     * @return string
-     */
-    abstract protected function modelClass(): string;
-    
+
     /**
      * @param ResponseInterface $response
      *
@@ -46,17 +36,30 @@ abstract class AbstractHandler implements HandlerInterface
      */
     public function handle(ResponseInterface $response): RootModelInterface
     {
-        /** @var RootModelInterface $model */
+        /** @var WrapperInterface $model */
         $model = $this->serializer()
                       ->deserialize(
-                        (string)$response->getBody(),
-                        $this->modelClass(),
-                        'json'
+                          (string)$response->getBody(),
+                          $this->wrapperClass(),
+                          'json'
                       );
-        
-        return $model;
+
+        return $model->getData();
     }
-    
+
+    /**
+     * @return SerializerInterface
+     */
+    protected function serializer(): SerializerInterface
+    {
+        return $this->serializer;
+    }
+
+    /**
+     * @return string
+     */
+    abstract protected function wrapperClass(): string;
+
     /**
      * @param ResponseInterface $response
      *
@@ -65,13 +68,19 @@ abstract class AbstractHandler implements HandlerInterface
      */
     public function handleCollection(ResponseInterface $response): array
     {
-        $models = $this->serializer()
+        /** @var CollectionWrapperInterface $model */
+        $model = $this->serializer()
                        ->deserialize(
-                         (string)$response->getBody(),
-                         'array<'.$this->modelClass().'>',
-                         'json'
+                           (string)$response->getBody(),
+                           $this->collectionWrapperClass(),
+                           'json'
                        );
-        
-        return $models;
+
+        return $model->getData();
     }
+
+    /**
+     * @return string
+     */
+    abstract protected function collectionWrapperClass(): string;
 }
