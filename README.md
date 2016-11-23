@@ -1,4 +1,4 @@
-ENM Shopware SDK
+Shopware SDK
 ================
 This library provides an extendable abstraction for the Shopware REST-API.
 The provided default implementation is based on `jms/serializer` and `guzzlehttp/guzzle`.
