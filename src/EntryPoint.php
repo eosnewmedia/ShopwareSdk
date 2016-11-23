@@ -17,33 +17,34 @@ use Enm\ShopwareSdk\Response\HandlerInterface;
 use Enm\ShopwareSdk\Response\OrderHandler;
 use GuzzleHttp\Client;
 use JMS\Serializer\SerializerBuilder;
+use JMS\Serializer\SerializerInterface;
 
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
 class EntryPoint implements EntryPointInterface
 {
-
+    
     /**
      * @var ClientInterface
      */
     private $httpClient;
-
+    
     /**
      * @var HandlerInterface[]
      */
     private $responseHandlers = [];
-
+    
     /**
      * @var ArticleEndpointInterface
      */
     private $articleEndpoint;
-
+    
     /**
      * @var OrderEndpointInterface
      */
     private $orderEndpoint;
-
+    
     /**
      * @param ClientInterface $httpClient
      */
@@ -51,7 +52,7 @@ class EntryPoint implements EntryPointInterface
     {
         $this->httpClient = $httpClient;
     }
-
+    
     /**
      * @param string $baseUri
      * @param string $username
@@ -62,22 +63,34 @@ class EntryPoint implements EntryPointInterface
     public static function buildDefault(string $baseUri, string $username, string $password): EntryPoint
     {
         AnnotationRegistry::registerAutoloadNamespace(
-            'JMS\Serializer\Annotation',
-            __DIR__.'/../vendor/jms/serializer/src'
+          'JMS\Serializer\Annotation',
+          __DIR__.'/../vendor/jms/serializer/src'
         );
-
-        $serializer = SerializerBuilder::create()->build();
-
+        
         $client = new GuzzleAdapter(new Client());
         $client->withConfig($baseUri, $username, $password);
-
+        
         $entryPoint = new self($client);
-        $entryPoint->addResponseHandler(new ArticleHandler($serializer));
-        $entryPoint->addResponseHandler(new OrderHandler($serializer));
-
+        $entryPoint->addDefaultResponseHandlers(
+          SerializerBuilder::create()->build()
+        );
+        
         return $entryPoint;
     }
-
+    
+    /**
+     * @param SerializerInterface $serializer
+     *
+     * @return EntryPoint
+     */
+    public function addDefaultResponseHandlers(SerializerInterface $serializer): EntryPoint
+    {
+        $this->addResponseHandler(new ArticleHandler($serializer));
+        $this->addResponseHandler(new OrderHandler($serializer));
+        
+        return $this;
+    }
+    
     /**
      * @param HandlerInterface $handler
      *
@@ -88,10 +101,10 @@ class EntryPoint implements EntryPointInterface
         foreach ($handler->getSupportedTypes() as $type) {
             $this->responseHandlers[$type] = $handler;
         }
-
+        
         return $this;
     }
-
+    
     /**
      * @return ArticleEndpointInterface
      * @throws \InvalidArgumentException
@@ -100,14 +113,14 @@ class EntryPoint implements EntryPointInterface
     {
         if (!$this->articleEndpoint instanceof ArticleEndpointInterface) {
             $this->articleEndpoint = new ArticleEndpoint(
-                $this->httpClient(),
-                $this->handlerFor(ArticleInterface::class)
+              $this->httpClient(),
+              $this->handlerFor(ArticleInterface::class)
             );
         }
-
+        
         return $this->articleEndpoint;
     }
-
+    
     /**
      * @return ClientInterface
      */
@@ -115,7 +128,7 @@ class EntryPoint implements EntryPointInterface
     {
         return $this->httpClient;
     }
-
+    
     /**
      * @param string $type
      *
@@ -127,10 +140,10 @@ class EntryPoint implements EntryPointInterface
         if (!array_key_exists($type, $this->responseHandlers)) {
             throw new \InvalidArgumentException('No handler for '.$type);
         }
-
+        
         return $this->responseHandlers[$type];
     }
-
+    
     /**
      * @return OrderEndpointInterface
      * @throws \InvalidArgumentException
@@ -139,11 +152,11 @@ class EntryPoint implements EntryPointInterface
     {
         if (!$this->orderEndpoint instanceof OrderEndpointInterface) {
             $this->orderEndpoint = new OrderEndpoint(
-                $this->httpClient(),
-                $this->handlerFor(OrderInterface::class)
+              $this->httpClient(),
+              $this->handlerFor(OrderInterface::class)
             );
         }
-
+        
         return $this->orderEndpoint;
     }
 }
