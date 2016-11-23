@@ -39,5 +39,4 @@ class ArticleWrapper implements WrapperInterface
         return $this;
     }
 
-
 }
