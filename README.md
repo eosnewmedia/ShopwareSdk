@@ -81,7 +81,8 @@ A serializer is responsible for converting a given PHP object into the needed js
 
 A deserializer is responsible for converting the json response into the needed PHP object.
 
-The default handlers (serializer and deserializer) are based on JMS Serializer.
+The default handlers (combination of serializer and deserializer) are based on JMS Serializer and can be added by calling `addDefaultSerializers`
+and `addDefaultDeserializers` from the default `EntryPoint`.
 
 If you don't want to use it, you can write your own which have to implement `\Enm\ShopwareSdk\Serializer\JsonSerializerinterface`
 and/or `\Enm\ShopwareSdk\Serializer\JsonDeserializerinterface`.
