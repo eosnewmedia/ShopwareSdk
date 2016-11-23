@@ -30,14 +30,8 @@ If you want to use the default implementation you also have to run:
     $entryPoint->addResponseHandler(new OrderHandler($serializer));
 
 OR
-
-    \Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
-        'JMS\Serializer\Annotation', __DIR__.'/../vendor/jms/serializer/src'
-    );
     
-    $serializer = \JMS\Serializer\SerializerBuilder::create()->build();
-    
-    $entryPoint = \Enm\ShopwareSdk\EntryPoint::buildDefault($serializer, 'http://example.com', 'user', 'apiKey');
+    $entryPoint = \Enm\ShopwareSdk\EntryPoint::buildDefault('http://example.com', 'user', 'apiKey');
 
 The endpoints can be called like this:
 
