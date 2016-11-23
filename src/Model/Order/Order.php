@@ -841,6 +841,14 @@ class Order implements OrderInterface
     }
 
     /**
+     * @return bool
+     */
+    public function hasPayment(): bool
+    {
+        return $this->payment instanceof PaymentInstance;
+    }
+
+    /**
      * @return PaymentStatusInterface
      */
     public function getPaymentStatus(): PaymentStatusInterface
@@ -858,6 +866,14 @@ class Order implements OrderInterface
         $this->paymentStatus = $paymentStatus;
 
         return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasPaymentStatus(): bool
+    {
+        return $this->paymentStatus instanceof PaymentStatusInterface;
     }
 
     /**
@@ -881,6 +897,14 @@ class Order implements OrderInterface
     }
 
     /**
+     * @return bool
+     */
+    public function hasOrderStatus(): bool
+    {
+        return $this->orderStatus instanceof OrderStatusInterface;
+    }
+
+    /**
      * @return CustomerInterface
      */
     public function getCustomer(): CustomerInterface
@@ -898,6 +922,14 @@ class Order implements OrderInterface
         $this->customer = $customer;
 
         return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasCustomer(): bool
+    {
+        return $this->customer instanceof CustomerInterface;
     }
 
     /**
@@ -941,6 +973,14 @@ class Order implements OrderInterface
     }
 
     /**
+     * @return bool
+     */
+    public function hasBilling(): bool
+    {
+        return $this->billing instanceof BillingInterface;
+    }
+
+    /**
      * @return ShippingInterface
      */
     public function getShipping(): ShippingInterface
@@ -958,6 +998,14 @@ class Order implements OrderInterface
         $this->shipping = $shipping;
 
         return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasShipping(): bool
+    {
+        return $this->shipping instanceof ShippingInterface;
     }
 
     /**
@@ -981,6 +1029,14 @@ class Order implements OrderInterface
     }
 
     /**
+     * @return bool
+     */
+    public function hasShop(): bool
+    {
+        return $this->shop instanceof ShopInterface;
+    }
+
+    /**
      * @return DispatchInterface
      */
     public function getDispatch(): DispatchInterface
@@ -1001,6 +1057,14 @@ class Order implements OrderInterface
     }
 
     /**
+     * @return bool
+     */
+    public function hasDispatch(): bool
+    {
+        return $this->dispatch instanceof DispatchInterface;
+    }
+
+    /**
      * @return LanguageSubShopInterface
      */
     public function getLanguageSubShop(): LanguageSubShopInterface
@@ -1018,6 +1082,14 @@ class Order implements OrderInterface
         $this->languageSubShop = $languageSubShop;
 
         return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasLanguageSubShop(): bool
+    {
+        return $this->languageSubShop instanceof LanguageSubShopInterface;
     }
 
     /**

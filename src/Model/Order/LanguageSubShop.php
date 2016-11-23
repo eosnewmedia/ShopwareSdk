@@ -504,4 +504,12 @@ class LanguageSubShop implements LanguageSubShopInterface
 
         return $this;
     }
+
+    /**
+     * @return bool
+     */
+    public function hasLocale(): bool
+    {
+        return $this->locale instanceof LocaleInterface;
+    }
 }

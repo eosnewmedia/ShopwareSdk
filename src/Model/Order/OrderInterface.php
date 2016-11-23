@@ -355,6 +355,11 @@ interface OrderInterface extends RootModelInterface
     public function setPayment(PaymentInterface $payment) : OrderInterface;
 
     /**
+     * @return bool
+     */
+    public function hasPayment(): bool;
+
+    /**
      * @return PaymentStatusInterface
      */
     public function getPaymentStatus() : PaymentStatusInterface;
@@ -365,6 +370,11 @@ interface OrderInterface extends RootModelInterface
      * @return OrderInterface
      */
     public function setPaymentStatus(PaymentStatusInterface $paymentStatus) : OrderInterface;
+
+    /**
+     * @return bool
+     */
+    public function hasPaymentStatus(): bool;
 
     /**
      * @return OrderStatusInterface
@@ -379,6 +389,11 @@ interface OrderInterface extends RootModelInterface
     public function setOrderStatus(OrderStatusInterface $orderStatus) : OrderInterface;
 
     /**
+     * @return bool
+     */
+    public function hasOrderStatus(): bool;
+
+    /**
      * @return CustomerInterface
      */
     public function getCustomer() : CustomerInterface;
@@ -389,6 +404,11 @@ interface OrderInterface extends RootModelInterface
      * @return OrderInterface
      */
     public function setCustomer(CustomerInterface $customer) : OrderInterface;
+
+    /**
+     * @return bool
+     */
+    public function hasCustomer(): bool;
 
     /**
      * @return PaymentInstanceInterface[]
@@ -415,6 +435,11 @@ interface OrderInterface extends RootModelInterface
     public function setBilling(BillingInterface $billing) : OrderInterface;
 
     /**
+     * @return bool
+     */
+    public function hasBilling(): bool;
+
+    /**
      * @return ShippingInterface
      */
     public function getShipping() : ShippingInterface;
@@ -425,6 +450,11 @@ interface OrderInterface extends RootModelInterface
      * @return OrderInterface
      */
     public function setShipping(ShippingInterface $shipping) : OrderInterface;
+
+    /**
+     * @return bool
+     */
+    public function hasShipping(): bool;
 
     /**
      * @return ShopInterface
@@ -439,6 +469,11 @@ interface OrderInterface extends RootModelInterface
     public function setShop(ShopInterface $shop) : OrderInterface;
 
     /**
+     * @return bool
+     */
+    public function hasShop(): bool;
+
+    /**
      * @return DispatchInterface
      */
     public function getDispatch() : DispatchInterface;
@@ -451,6 +486,11 @@ interface OrderInterface extends RootModelInterface
     public function setDispatch(DispatchInterface $dispatch) : OrderInterface;
 
     /**
+     * @return bool
+     */
+    public function hasDispatch(): bool;
+
+    /**
      * @return LanguageSubShopInterface
      */
     public function getLanguageSubShop() : LanguageSubShopInterface;
@@ -461,6 +501,11 @@ interface OrderInterface extends RootModelInterface
      * @return OrderInterface
      */
     public function setLanguageSubShop(LanguageSubShopInterface $languageSubShop) : OrderInterface;
+
+    /**
+     * @return bool
+     */
+    public function hasLanguageSubShop(): bool;
 
     /**
      * @return int

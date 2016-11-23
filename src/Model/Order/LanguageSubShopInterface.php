@@ -236,4 +236,9 @@ interface LanguageSubShopInterface
      * @return LanguageSubShopInterface
      */
     public function setLocale(LocaleInterface $locale) : LanguageSubShopInterface;
+
+    /**
+     * @return bool
+     */
+    public function hasLocale(): bool;
 }

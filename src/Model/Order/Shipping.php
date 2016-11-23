@@ -430,4 +430,12 @@ class Shipping implements ShippingInterface
 
         return $this;
     }
+
+    /**
+     * @return bool
+     */
+    public function hasCountry(): bool
+    {
+        return $this->country instanceof CountryInterface;
+    }
 }
