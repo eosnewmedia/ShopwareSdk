@@ -10,155 +10,179 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Customer implements CustomerInterface
 {
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("paymentId")
      */
     private $paymentId;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("groupKey")
      */
     private $groupKey;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("shopId")
      */
     private $shopId;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("priceGroupId")
      */
     private $priceGroupId;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("encoderName")
      */
     private $encoderName;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("hashPassword")
      */
     private $hashPassword;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("active")
      */
     private $active;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("email")
      */
     private $email;
-
+    
     /**
      * Date and time formatted in ISO8601 format.
      *
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("firstLogin")
      */
     private $firstLogin;
-
+    
     /**
      * Date and time formatted in ISO8601 format.
      *
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("lastLogin")
      */
     private $lastLogin;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("accountMode")
      */
     private $accountMode;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("confirmationKey")
      */
     private $confirmationKey;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("sessionId")
      */
     private $sessionId;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("newsletter")
      */
     private $newsletter;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("validation")
      */
     private $validation;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("affiliate")
      */
     private $affiliate;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("paymentPreset")
      */
     private $paymentPreset;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("languageId")
      */
     private $languageId;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("referer")
      */
     private $referer;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("internalComment")
      */
     private $internalComment;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("failedLogins")
      */
     private $failedLogins;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("lockedUntil")
      */
     private $lockedUntil;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("debit")
      */
     private $debit;
-
+    
     /**
      * @return int
      */
@@ -166,7 +190,7 @@ class Customer implements CustomerInterface
     {
         return (int)$this->id;
     }
-
+    
     /**
      * @param int $id
      *
@@ -175,10 +199,10 @@ class Customer implements CustomerInterface
     public function setId(int $id): CustomerInterface
     {
         $this->id = $id;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -186,7 +210,7 @@ class Customer implements CustomerInterface
     {
         return (int)$this->paymentId;
     }
-
+    
     /**
      * @param int $paymentId
      *
@@ -195,10 +219,10 @@ class Customer implements CustomerInterface
     public function setPaymentId(int $paymentId): CustomerInterface
     {
         $this->paymentId = $paymentId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -206,7 +230,7 @@ class Customer implements CustomerInterface
     {
         return (string)$this->groupKey;
     }
-
+    
     /**
      * @param string $groupKey
      *
@@ -215,10 +239,10 @@ class Customer implements CustomerInterface
     public function setGroupKey(string $groupKey): CustomerInterface
     {
         $this->groupKey = $groupKey;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -226,7 +250,7 @@ class Customer implements CustomerInterface
     {
         return (int)$this->shopId;
     }
-
+    
     /**
      * @param int $shopId
      *
@@ -235,10 +259,10 @@ class Customer implements CustomerInterface
     public function setShopId(int $shopId): CustomerInterface
     {
         $this->shopId = $shopId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -246,7 +270,7 @@ class Customer implements CustomerInterface
     {
         return (string)$this->priceGroupId;
     }
-
+    
     /**
      * @param string $priceGroupId
      *
@@ -255,10 +279,10 @@ class Customer implements CustomerInterface
     public function setPriceGroupId(string $priceGroupId): CustomerInterface
     {
         $this->priceGroupId = $priceGroupId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -266,7 +290,7 @@ class Customer implements CustomerInterface
     {
         return (string)$this->encoderName;
     }
-
+    
     /**
      * @param string $encoderName
      *
@@ -275,10 +299,10 @@ class Customer implements CustomerInterface
     public function setEncoderName(string $encoderName): CustomerInterface
     {
         $this->encoderName = $encoderName;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -286,7 +310,7 @@ class Customer implements CustomerInterface
     {
         return (string)$this->hashPassword;
     }
-
+    
     /**
      * @param string $hashPassword
      *
@@ -295,10 +319,10 @@ class Customer implements CustomerInterface
     public function setHashPassword(string $hashPassword): CustomerInterface
     {
         $this->hashPassword = $hashPassword;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -306,7 +330,7 @@ class Customer implements CustomerInterface
     {
         return (bool)$this->active;
     }
-
+    
     /**
      * @param boolean $active
      *
@@ -315,10 +339,10 @@ class Customer implements CustomerInterface
     public function setActive(bool $active): CustomerInterface
     {
         $this->active = $active;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -326,7 +350,7 @@ class Customer implements CustomerInterface
     {
         return (string)$this->email;
     }
-
+    
     /**
      * @param string $email
      *
@@ -335,10 +359,10 @@ class Customer implements CustomerInterface
     public function setEmail(string $email): CustomerInterface
     {
         $this->email = $email;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -346,7 +370,7 @@ class Customer implements CustomerInterface
     {
         return (string)$this->firstLogin;
     }
-
+    
     /**
      * @param string $firstLogin
      *
@@ -355,10 +379,10 @@ class Customer implements CustomerInterface
     public function setFirstLogin(string $firstLogin): CustomerInterface
     {
         $this->firstLogin = $firstLogin;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -366,7 +390,7 @@ class Customer implements CustomerInterface
     {
         return (string)$this->lastLogin;
     }
-
+    
     /**
      * @param string $lastLogin
      *
@@ -375,10 +399,10 @@ class Customer implements CustomerInterface
     public function setLastLogin(string $lastLogin): CustomerInterface
     {
         $this->lastLogin = $lastLogin;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -386,7 +410,7 @@ class Customer implements CustomerInterface
     {
         return (int)$this->accountMode;
     }
-
+    
     /**
      * @param int $accountMode
      *
@@ -395,10 +419,10 @@ class Customer implements CustomerInterface
     public function setAccountMode(int $accountMode): CustomerInterface
     {
         $this->accountMode = $accountMode;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -406,7 +430,7 @@ class Customer implements CustomerInterface
     {
         return (string)$this->confirmationKey;
     }
-
+    
     /**
      * @param string $confirmationKey
      *
@@ -415,10 +439,10 @@ class Customer implements CustomerInterface
     public function setConfirmationKey(string $confirmationKey): CustomerInterface
     {
         $this->confirmationKey = $confirmationKey;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -426,7 +450,7 @@ class Customer implements CustomerInterface
     {
         return (string)$this->sessionId;
     }
-
+    
     /**
      * @param string $sessionId
      *
@@ -435,10 +459,10 @@ class Customer implements CustomerInterface
     public function setSessionId(string $sessionId): CustomerInterface
     {
         $this->sessionId = $sessionId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -446,7 +470,7 @@ class Customer implements CustomerInterface
     {
         return (int)$this->newsletter;
     }
-
+    
     /**
      * @param int $newsletter
      *
@@ -455,10 +479,10 @@ class Customer implements CustomerInterface
     public function setNewsletter(int $newsletter): CustomerInterface
     {
         $this->newsletter = $newsletter;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -466,7 +490,7 @@ class Customer implements CustomerInterface
     {
         return (string)$this->validation;
     }
-
+    
     /**
      * @param string $validation
      *
@@ -475,10 +499,10 @@ class Customer implements CustomerInterface
     public function setValidation(string $validation): CustomerInterface
     {
         $this->validation = $validation;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -486,7 +510,7 @@ class Customer implements CustomerInterface
     {
         return (int)$this->affiliate;
     }
-
+    
     /**
      * @param int $affiliate
      *
@@ -495,10 +519,10 @@ class Customer implements CustomerInterface
     public function setAffiliate(int $affiliate): CustomerInterface
     {
         $this->affiliate = $affiliate;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -506,7 +530,7 @@ class Customer implements CustomerInterface
     {
         return (int)$this->paymentPreset;
     }
-
+    
     /**
      * @param int $paymentPreset
      *
@@ -515,10 +539,10 @@ class Customer implements CustomerInterface
     public function setPaymentPreset(int $paymentPreset): CustomerInterface
     {
         $this->paymentPreset = $paymentPreset;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -526,7 +550,7 @@ class Customer implements CustomerInterface
     {
         return (string)$this->languageId;
     }
-
+    
     /**
      * @param string $languageId
      *
@@ -535,10 +559,10 @@ class Customer implements CustomerInterface
     public function setLanguageId(string $languageId): CustomerInterface
     {
         $this->languageId = $languageId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -546,7 +570,7 @@ class Customer implements CustomerInterface
     {
         return (string)$this->referer;
     }
-
+    
     /**
      * @param string $referer
      *
@@ -555,10 +579,10 @@ class Customer implements CustomerInterface
     public function setReferer(string $referer): CustomerInterface
     {
         $this->referer = $referer;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -566,7 +590,7 @@ class Customer implements CustomerInterface
     {
         return (string)$this->internalComment;
     }
-
+    
     /**
      * @param string $internalComment
      *
@@ -575,10 +599,10 @@ class Customer implements CustomerInterface
     public function setInternalComment(string $internalComment): CustomerInterface
     {
         $this->internalComment = $internalComment;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -586,7 +610,7 @@ class Customer implements CustomerInterface
     {
         return (int)$this->failedLogins;
     }
-
+    
     /**
      * @param int $failedLogins
      *
@@ -595,10 +619,10 @@ class Customer implements CustomerInterface
     public function setFailedLogins(int $failedLogins): CustomerInterface
     {
         $this->failedLogins = $failedLogins;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -606,7 +630,7 @@ class Customer implements CustomerInterface
     {
         return (string)$this->lockedUntil;
     }
-
+    
     /**
      * @param string $lockedUntil
      *
@@ -615,10 +639,10 @@ class Customer implements CustomerInterface
     public function setLockedUntil(string $lockedUntil): CustomerInterface
     {
         $this->lockedUntil = $lockedUntil;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -626,7 +650,7 @@ class Customer implements CustomerInterface
     {
         return (string)$this->debit;
     }
-
+    
     /**
      * @param string $debit
      *
@@ -635,7 +659,7 @@ class Customer implements CustomerInterface
     public function setDebit(string $debit): CustomerInterface
     {
         $this->debit = $debit;
-
+        
         return $this;
     }
 }

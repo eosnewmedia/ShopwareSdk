@@ -15,66 +15,77 @@ class Price implements PriceInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("articleId")
      */
     private $articleId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("articleDetailsId")
      */
     private $articleDetailsId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("customerGroupKey")
      */
     private $customerGroupKey;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("from")
      */
     private $from;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("to")
      */
     private $to;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("price")
      */
     private $price;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("pseudoPrice")
      */
     private $pseudoPrice;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("basePrice")
      */
     private $basePrice;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("percent")
      */
     private $percent;
 
     /**
      * @var CustomerGroupInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\CustomerGroup")
+     * @Serializer\SerializedName("customerGroup")
      */
     private $customerGroup;
 

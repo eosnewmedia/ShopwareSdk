@@ -10,175 +10,203 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Dispatch implements DispatchInterface
 {
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("type")
      */
     private $type;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("description")
      */
     private $description;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("comment")
      */
     private $comment;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("active")
      */
     private $active;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("position")
      */
     private $position;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("calculation")
      */
     private $calculation;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("surchargeCalculation")
      */
     private $surchargeCalculation;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("taxCalculation")
      */
     private $taxCalculation;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("shippingFree")
      */
     private $shippingFree;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("multiShopId")
      */
     private $multiShopId;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("customerGroupId")
      */
     private $customerGroupId;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("bindShippingFree")
      */
     private $bindShippingFree;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("bindTimeFrom")
      */
     private $bindTimeFrom;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("bindTimeTo")
      */
     private $bindTimeTo;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("bindInStock")
      */
     private $bindInStock;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("bindLastStock")
      */
     private $bindLastStock;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("bindWeekdayFrom")
      */
     private $bindWeekdayFrom;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("bindWeekdayTo")
      */
     private $bindWeekdayTo;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("bindWeightFrom")
      */
     private $bindWeightFrom;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("bindWeightTo")
      */
     private $bindWeightTo;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("bindPriceFrom")
      */
     private $bindPriceFrom;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("bindPriceTo")
      */
     private $bindPriceTo;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("bindSql")
      */
     private $bindSql;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("statusLink")
      */
     private $statusLink;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("calculationSql")
      */
     private $calculationSql;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("attribute")
      */
     private $attribute;
-
+    
     /**
      * @return int
      */
@@ -186,7 +214,7 @@ class Dispatch implements DispatchInterface
     {
         return (int)$this->id;
     }
-
+    
     /**
      * @param int $id
      *
@@ -195,10 +223,10 @@ class Dispatch implements DispatchInterface
     public function setId(int $id): DispatchInterface
     {
         $this->id = $id;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -206,7 +234,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->name;
     }
-
+    
     /**
      * @param string $name
      *
@@ -215,10 +243,10 @@ class Dispatch implements DispatchInterface
     public function setName(string $name): DispatchInterface
     {
         $this->name = $name;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -226,7 +254,7 @@ class Dispatch implements DispatchInterface
     {
         return (int)$this->type;
     }
-
+    
     /**
      * @param int $type
      *
@@ -235,10 +263,10 @@ class Dispatch implements DispatchInterface
     public function setType(int $type): DispatchInterface
     {
         $this->type = $type;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -246,7 +274,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->description;
     }
-
+    
     /**
      * @param string $description
      *
@@ -255,10 +283,10 @@ class Dispatch implements DispatchInterface
     public function setDescription(string $description): DispatchInterface
     {
         $this->description = $description;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -266,7 +294,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->comment;
     }
-
+    
     /**
      * @param string $comment
      *
@@ -275,10 +303,10 @@ class Dispatch implements DispatchInterface
     public function setComment(string $comment): DispatchInterface
     {
         $this->comment = $comment;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -286,7 +314,7 @@ class Dispatch implements DispatchInterface
     {
         return (bool)$this->active;
     }
-
+    
     /**
      * @param boolean $active
      *
@@ -295,10 +323,10 @@ class Dispatch implements DispatchInterface
     public function setActive(bool $active): DispatchInterface
     {
         $this->active = $active;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -306,7 +334,7 @@ class Dispatch implements DispatchInterface
     {
         return (int)$this->position;
     }
-
+    
     /**
      * @param int $position
      *
@@ -315,10 +343,10 @@ class Dispatch implements DispatchInterface
     public function setPosition(int $position): DispatchInterface
     {
         $this->position = $position;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -326,7 +354,7 @@ class Dispatch implements DispatchInterface
     {
         return (int)$this->calculation;
     }
-
+    
     /**
      * @param int $calculation
      *
@@ -335,10 +363,10 @@ class Dispatch implements DispatchInterface
     public function setCalculation(int $calculation): DispatchInterface
     {
         $this->calculation = $calculation;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -346,7 +374,7 @@ class Dispatch implements DispatchInterface
     {
         return (int)$this->surchargeCalculation;
     }
-
+    
     /**
      * @param int $surchargeCalculation
      *
@@ -355,10 +383,10 @@ class Dispatch implements DispatchInterface
     public function setSurchargeCalculation(int $surchargeCalculation): DispatchInterface
     {
         $this->surchargeCalculation = $surchargeCalculation;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -366,7 +394,7 @@ class Dispatch implements DispatchInterface
     {
         return (int)$this->taxCalculation;
     }
-
+    
     /**
      * @param int $taxCalculation
      *
@@ -375,10 +403,10 @@ class Dispatch implements DispatchInterface
     public function setTaxCalculation(int $taxCalculation): DispatchInterface
     {
         $this->taxCalculation = $taxCalculation;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -386,7 +414,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->shippingFree;
     }
-
+    
     /**
      * @param string $shippingFree
      *
@@ -395,10 +423,10 @@ class Dispatch implements DispatchInterface
     public function setShippingFree(string $shippingFree): DispatchInterface
     {
         $this->shippingFree = $shippingFree;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -406,7 +434,7 @@ class Dispatch implements DispatchInterface
     {
         return (int)$this->multiShopId;
     }
-
+    
     /**
      * @param int $multiShopId
      *
@@ -415,10 +443,10 @@ class Dispatch implements DispatchInterface
     public function setMultiShopId(int $multiShopId): DispatchInterface
     {
         $this->multiShopId = $multiShopId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -426,7 +454,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->customerGroupId;
     }
-
+    
     /**
      * @param string $customerGroupId
      *
@@ -435,10 +463,10 @@ class Dispatch implements DispatchInterface
     public function setCustomerGroupId(string $customerGroupId): DispatchInterface
     {
         $this->customerGroupId = $customerGroupId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -446,7 +474,7 @@ class Dispatch implements DispatchInterface
     {
         return (int)$this->bindShippingFree;
     }
-
+    
     /**
      * @param int $bindShippingFree
      *
@@ -455,10 +483,10 @@ class Dispatch implements DispatchInterface
     public function setBindShippingFree(int $bindShippingFree): DispatchInterface
     {
         $this->bindShippingFree = $bindShippingFree;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -466,7 +494,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->bindTimeFrom;
     }
-
+    
     /**
      * @param string $bindTimeFrom
      *
@@ -475,10 +503,10 @@ class Dispatch implements DispatchInterface
     public function setBindTimeFrom(string $bindTimeFrom): DispatchInterface
     {
         $this->bindTimeFrom = $bindTimeFrom;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -486,7 +514,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->bindTimeTo;
     }
-
+    
     /**
      * @param string $bindTimeTo
      *
@@ -495,10 +523,10 @@ class Dispatch implements DispatchInterface
     public function setBindTimeTo(string $bindTimeTo): DispatchInterface
     {
         $this->bindTimeTo = $bindTimeTo;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -506,7 +534,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->bindInStock;
     }
-
+    
     /**
      * @param string $bindInStock
      *
@@ -515,10 +543,10 @@ class Dispatch implements DispatchInterface
     public function setBindInStock(string $bindInStock): DispatchInterface
     {
         $this->bindInStock = $bindInStock;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -526,7 +554,7 @@ class Dispatch implements DispatchInterface
     {
         return (int)$this->bindLastStock;
     }
-
+    
     /**
      * @param int $bindLastStock
      *
@@ -535,10 +563,10 @@ class Dispatch implements DispatchInterface
     public function setBindLastStock(int $bindLastStock): DispatchInterface
     {
         $this->bindLastStock = $bindLastStock;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -546,7 +574,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->bindWeekdayFrom;
     }
-
+    
     /**
      * @param string $bindWeekdayFrom
      *
@@ -555,10 +583,10 @@ class Dispatch implements DispatchInterface
     public function setBindWeekdayFrom(string $bindWeekdayFrom): DispatchInterface
     {
         $this->bindWeekdayFrom = $bindWeekdayFrom;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -566,7 +594,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->bindWeekdayTo;
     }
-
+    
     /**
      * @param string $bindWeekdayTo
      *
@@ -575,10 +603,10 @@ class Dispatch implements DispatchInterface
     public function setBindWeekdayTo(string $bindWeekdayTo): DispatchInterface
     {
         $this->bindWeekdayTo = $bindWeekdayTo;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -586,7 +614,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->bindWeightFrom;
     }
-
+    
     /**
      * @param string $bindWeightFrom
      *
@@ -595,10 +623,10 @@ class Dispatch implements DispatchInterface
     public function setBindWeightFrom(string $bindWeightFrom): DispatchInterface
     {
         $this->bindWeightFrom = $bindWeightFrom;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -606,7 +634,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->bindWeightTo;
     }
-
+    
     /**
      * @param string $bindWeightTo
      *
@@ -615,10 +643,10 @@ class Dispatch implements DispatchInterface
     public function setBindWeightTo(string $bindWeightTo): DispatchInterface
     {
         $this->bindWeightTo = $bindWeightTo;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -626,7 +654,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->bindPriceFrom;
     }
-
+    
     /**
      * @param string $bindPriceFrom
      *
@@ -635,10 +663,10 @@ class Dispatch implements DispatchInterface
     public function setBindPriceFrom(string $bindPriceFrom): DispatchInterface
     {
         $this->bindPriceFrom = $bindPriceFrom;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -646,7 +674,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->bindPriceTo;
     }
-
+    
     /**
      * @param string $bindPriceTo
      *
@@ -655,10 +683,10 @@ class Dispatch implements DispatchInterface
     public function setBindPriceTo(string $bindPriceTo): DispatchInterface
     {
         $this->bindPriceTo = $bindPriceTo;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -666,7 +694,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->bindSql;
     }
-
+    
     /**
      * @param string $bindSql
      *
@@ -675,10 +703,10 @@ class Dispatch implements DispatchInterface
     public function setBindSql(string $bindSql): DispatchInterface
     {
         $this->bindSql = $bindSql;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -686,7 +714,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->statusLink;
     }
-
+    
     /**
      * @param string $statusLink
      *
@@ -695,10 +723,10 @@ class Dispatch implements DispatchInterface
     public function setStatusLink(string $statusLink): DispatchInterface
     {
         $this->statusLink = $statusLink;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -706,7 +734,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->calculationSql;
     }
-
+    
     /**
      * @param string $calculationSql
      *
@@ -715,10 +743,10 @@ class Dispatch implements DispatchInterface
     public function setCalculationSql(string $calculationSql): DispatchInterface
     {
         $this->calculationSql = $calculationSql;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -726,7 +754,7 @@ class Dispatch implements DispatchInterface
     {
         return (string)$this->attribute;
     }
-
+    
     /**
      * @param string $attribute
      *
@@ -735,7 +763,7 @@ class Dispatch implements DispatchInterface
     public function setAttribute(string $attribute): DispatchInterface
     {
         $this->attribute = $attribute;
-
+        
         return $this;
     }
 }

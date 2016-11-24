@@ -10,85 +10,98 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Image implements ImageInterface
 {
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("articleId")
      */
     private $articleId;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("articleDetailId")
      */
     private $articleDetailId;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("description")
      */
     private $description;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("path")
      */
     private $path;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("main")
      */
     private $main;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("position")
      */
     private $position;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("width")
      */
     private $width;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("height")
      */
     private $height;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("relations")
      */
     private $relations;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("extension")
      */
     private $extension;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("parentId")
      */
     private $parentId;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("mediaId")
      */
     private $mediaId;
-
+    
     /**
      * @return int
      */
@@ -96,7 +109,7 @@ class Image implements ImageInterface
     {
         return (int)$this->id;
     }
-
+    
     /**
      * @param int $id
      *
@@ -105,10 +118,10 @@ class Image implements ImageInterface
     public function setId(int $id): ImageInterface
     {
         $this->id = $id;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -116,7 +129,7 @@ class Image implements ImageInterface
     {
         return (int)$this->articleId;
     }
-
+    
     /**
      * @param int $articleId
      *
@@ -125,10 +138,10 @@ class Image implements ImageInterface
     public function setArticleId(int $articleId): ImageInterface
     {
         $this->articleId = $articleId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -136,7 +149,7 @@ class Image implements ImageInterface
     {
         return (string)$this->articleDetailId;
     }
-
+    
     /**
      * @param string $articleDetailId
      *
@@ -145,10 +158,10 @@ class Image implements ImageInterface
     public function setArticleDetailId(string $articleDetailId): ImageInterface
     {
         $this->articleDetailId = $articleDetailId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -156,7 +169,7 @@ class Image implements ImageInterface
     {
         return (string)$this->description;
     }
-
+    
     /**
      * @param string $description
      *
@@ -165,10 +178,10 @@ class Image implements ImageInterface
     public function setDescription(string $description): ImageInterface
     {
         $this->description = $description;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -176,7 +189,7 @@ class Image implements ImageInterface
     {
         return (string)$this->path;
     }
-
+    
     /**
      * @param string $path
      *
@@ -185,10 +198,10 @@ class Image implements ImageInterface
     public function setPath(string $path): ImageInterface
     {
         $this->path = $path;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -196,7 +209,7 @@ class Image implements ImageInterface
     {
         return (int)$this->main;
     }
-
+    
     /**
      * @param int $main
      *
@@ -205,10 +218,10 @@ class Image implements ImageInterface
     public function setMain(int $main): ImageInterface
     {
         $this->main = $main;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -216,7 +229,7 @@ class Image implements ImageInterface
     {
         return (int)$this->position;
     }
-
+    
     /**
      * @param int $position
      *
@@ -225,10 +238,10 @@ class Image implements ImageInterface
     public function setPosition(int $position): ImageInterface
     {
         $this->position = $position;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -236,7 +249,7 @@ class Image implements ImageInterface
     {
         return (int)$this->width;
     }
-
+    
     /**
      * @param int $width
      *
@@ -245,10 +258,10 @@ class Image implements ImageInterface
     public function setWidth(int $width): ImageInterface
     {
         $this->width = $width;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -256,7 +269,7 @@ class Image implements ImageInterface
     {
         return (int)$this->height;
     }
-
+    
     /**
      * @param int $height
      *
@@ -265,10 +278,10 @@ class Image implements ImageInterface
     public function setHeight(int $height): ImageInterface
     {
         $this->height = $height;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -276,7 +289,7 @@ class Image implements ImageInterface
     {
         return (string)$this->relations;
     }
-
+    
     /**
      * @param string $relations
      *
@@ -285,10 +298,10 @@ class Image implements ImageInterface
     public function setRelations(string $relations): ImageInterface
     {
         $this->relations = $relations;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -296,7 +309,7 @@ class Image implements ImageInterface
     {
         return (string)$this->extension;
     }
-
+    
     /**
      * @param string $extension
      *
@@ -305,10 +318,10 @@ class Image implements ImageInterface
     public function setExtension(string $extension): ImageInterface
     {
         $this->extension = $extension;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -316,7 +329,7 @@ class Image implements ImageInterface
     {
         return (string)$this->parentId;
     }
-
+    
     /**
      * @param string $parentId
      *
@@ -325,10 +338,10 @@ class Image implements ImageInterface
     public function setParentId(string $parentId): ImageInterface
     {
         $this->parentId = $parentId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -336,7 +349,7 @@ class Image implements ImageInterface
     {
         return (int)$this->mediaId;
     }
-
+    
     /**
      * @param int $mediaId
      *
@@ -345,7 +358,7 @@ class Image implements ImageInterface
     public function setMediaId(int $mediaId): ImageInterface
     {
         $this->mediaId = $mediaId;
-
+        
         return $this;
     }
 }

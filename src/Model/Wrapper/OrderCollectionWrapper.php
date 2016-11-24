@@ -11,13 +11,14 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class OrderCollectionWrapper implements CollectionWrapperInterface
 {
-
+    
     /**
      * @var Order[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Order\Order>")
+     * @Serializer\SerializedName("data")
      */
     private $data;
-
+    
     /**
      * @return Order[]
      */
@@ -25,7 +26,7 @@ class OrderCollectionWrapper implements CollectionWrapperInterface
     {
         return $this->data;
     }
-
+    
     /**
      * @param Order[] $data
      *
@@ -34,7 +35,7 @@ class OrderCollectionWrapper implements CollectionWrapperInterface
     public function setData(array $data): CollectionWrapperInterface
     {
         $this->data = $data;
-
+        
         return $this;
     }
 }

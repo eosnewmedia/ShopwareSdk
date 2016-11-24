@@ -10,97 +10,112 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Country implements CountryInterface
 {
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("iso")
      */
     private $iso;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("isoName")
      */
     private $isoName;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("position")
      */
     private $position;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("description")
      */
     private $description;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("shippingFree")
      */
     private $shippingFree;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("taxFree")
      */
     private $taxFree;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("taxFreeUstId")
      */
     private $taxFreeUstId;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("taxFreeUstIdChecked")
      */
     private $taxFreeUstIdChecked;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("active")
      */
     private $active;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("iso3")
      */
     private $iso3;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("displayStateInRegistration")
      */
     private $displayStateInRegistration;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("forceStateInRegistration")
      */
     private $forceStateInRegistration;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("areaId")
      */
     private $areaId;
-
+    
     /**
      * @return int
      */
@@ -108,7 +123,7 @@ class Country implements CountryInterface
     {
         return (int)$this->id;
     }
-
+    
     /**
      * @param int $id
      *
@@ -117,10 +132,10 @@ class Country implements CountryInterface
     public function setId(int $id): CountryInterface
     {
         $this->id = $id;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -128,7 +143,7 @@ class Country implements CountryInterface
     {
         return (string)$this->name;
     }
-
+    
     /**
      * @param string $name
      *
@@ -137,10 +152,10 @@ class Country implements CountryInterface
     public function setName(string $name): CountryInterface
     {
         $this->name = $name;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -148,7 +163,7 @@ class Country implements CountryInterface
     {
         return (string)$this->iso;
     }
-
+    
     /**
      * @param string $iso
      *
@@ -157,10 +172,10 @@ class Country implements CountryInterface
     public function setIso(string $iso): CountryInterface
     {
         $this->iso = $iso;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -168,7 +183,7 @@ class Country implements CountryInterface
     {
         return (string)$this->isoName;
     }
-
+    
     /**
      * @param string $isoName
      *
@@ -177,10 +192,10 @@ class Country implements CountryInterface
     public function setIsoName(string $isoName): CountryInterface
     {
         $this->isoName = $isoName;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -188,7 +203,7 @@ class Country implements CountryInterface
     {
         return (int)$this->position;
     }
-
+    
     /**
      * @param int $position
      *
@@ -197,10 +212,10 @@ class Country implements CountryInterface
     public function setPosition(int $position): CountryInterface
     {
         $this->position = $position;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -208,7 +223,7 @@ class Country implements CountryInterface
     {
         return (string)$this->description;
     }
-
+    
     /**
      * @param string $description
      *
@@ -217,10 +232,10 @@ class Country implements CountryInterface
     public function setDescription(string $description): CountryInterface
     {
         $this->description = $description;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -228,7 +243,7 @@ class Country implements CountryInterface
     {
         return (bool)$this->shippingFree;
     }
-
+    
     /**
      * @param boolean $shippingFree
      *
@@ -237,10 +252,10 @@ class Country implements CountryInterface
     public function setShippingFree(bool $shippingFree): CountryInterface
     {
         $this->shippingFree = $shippingFree;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -248,7 +263,7 @@ class Country implements CountryInterface
     {
         return (int)$this->taxFree;
     }
-
+    
     /**
      * @param int $taxFree
      *
@@ -257,10 +272,10 @@ class Country implements CountryInterface
     public function setTaxFree(int $taxFree): CountryInterface
     {
         $this->taxFree = $taxFree;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -268,7 +283,7 @@ class Country implements CountryInterface
     {
         return (int)$this->taxFreeUstId;
     }
-
+    
     /**
      * @param int $taxFreeUstId
      *
@@ -277,10 +292,10 @@ class Country implements CountryInterface
     public function setTaxFreeUstId(int $taxFreeUstId): CountryInterface
     {
         $this->taxFreeUstId = $taxFreeUstId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -288,7 +303,7 @@ class Country implements CountryInterface
     {
         return (int)$this->taxFreeUstIdChecked;
     }
-
+    
     /**
      * @param int $taxFreeUstIdChecked
      *
@@ -297,10 +312,10 @@ class Country implements CountryInterface
     public function setTaxFreeUstIdChecked(int $taxFreeUstIdChecked): CountryInterface
     {
         $this->taxFreeUstIdChecked = $taxFreeUstIdChecked;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -308,7 +323,7 @@ class Country implements CountryInterface
     {
         return (bool)$this->active;
     }
-
+    
     /**
      * @param boolean $active
      *
@@ -317,10 +332,10 @@ class Country implements CountryInterface
     public function setActive(bool $active): CountryInterface
     {
         $this->active = $active;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -328,7 +343,7 @@ class Country implements CountryInterface
     {
         return (string)$this->iso3;
     }
-
+    
     /**
      * @param string $iso3
      *
@@ -337,10 +352,10 @@ class Country implements CountryInterface
     public function setIso3(string $iso3): CountryInterface
     {
         $this->iso3 = $iso3;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -348,7 +363,7 @@ class Country implements CountryInterface
     {
         return (bool)$this->displayStateInRegistration;
     }
-
+    
     /**
      * @param boolean $displayStateInRegistration
      *
@@ -357,10 +372,10 @@ class Country implements CountryInterface
     public function setDisplayStateInRegistration(bool $displayStateInRegistration): CountryInterface
     {
         $this->displayStateInRegistration = $displayStateInRegistration;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -368,7 +383,7 @@ class Country implements CountryInterface
     {
         return (bool)$this->forceStateInRegistration;
     }
-
+    
     /**
      * @param boolean $forceStateInRegistration
      *
@@ -377,10 +392,10 @@ class Country implements CountryInterface
     public function setForceStateInRegistration(bool $forceStateInRegistration): CountryInterface
     {
         $this->forceStateInRegistration = $forceStateInRegistration;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -388,7 +403,7 @@ class Country implements CountryInterface
     {
         return (int)$this->areaId;
     }
-
+    
     /**
      * @param int $areaId
      *
@@ -397,7 +412,7 @@ class Country implements CountryInterface
     public function setAreaId(int $areaId): CountryInterface
     {
         $this->areaId = $areaId;
-
+        
         return $this;
     }
 }

@@ -10,61 +10,70 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class CustomerGroup implements CustomerGroupInterface
 {
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("key")
      */
     private $key;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("tax")
      */
     private $tax;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("taxInput")
      */
     private $taxInput;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("mode")
      */
     private $mode;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("discount")
      */
     private $discount;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("minimumOrder")
      */
     private $minimumOrder;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("minimumOrderSurcharge")
      */
     private $minimumOrderSurcharge;
-
+    
     /**
      * @return int
      */
@@ -72,7 +81,7 @@ class CustomerGroup implements CustomerGroupInterface
     {
         return (int)$this->id;
     }
-
+    
     /**
      * @param int $id
      *
@@ -81,10 +90,10 @@ class CustomerGroup implements CustomerGroupInterface
     public function setId(int $id): CustomerGroupInterface
     {
         $this->id = $id;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -92,7 +101,7 @@ class CustomerGroup implements CustomerGroupInterface
     {
         return (string)$this->key;
     }
-
+    
     /**
      * @param string $key
      *
@@ -101,10 +110,10 @@ class CustomerGroup implements CustomerGroupInterface
     public function setKey(string $key): CustomerGroupInterface
     {
         $this->key = $key;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -112,7 +121,7 @@ class CustomerGroup implements CustomerGroupInterface
     {
         return (string)$this->name;
     }
-
+    
     /**
      * @param string $name
      *
@@ -121,10 +130,10 @@ class CustomerGroup implements CustomerGroupInterface
     public function setName(string $name): CustomerGroupInterface
     {
         $this->name = $name;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -132,7 +141,7 @@ class CustomerGroup implements CustomerGroupInterface
     {
         return (bool)$this->tax;
     }
-
+    
     /**
      * @param boolean $tax
      *
@@ -141,10 +150,10 @@ class CustomerGroup implements CustomerGroupInterface
     public function setTax(bool $tax): CustomerGroupInterface
     {
         $this->tax = $tax;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -152,7 +161,7 @@ class CustomerGroup implements CustomerGroupInterface
     {
         return (bool)$this->taxInput;
     }
-
+    
     /**
      * @param boolean $taxInput
      *
@@ -161,10 +170,10 @@ class CustomerGroup implements CustomerGroupInterface
     public function setTaxInput(bool $taxInput): CustomerGroupInterface
     {
         $this->taxInput = $taxInput;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -172,7 +181,7 @@ class CustomerGroup implements CustomerGroupInterface
     {
         return (bool)$this->mode;
     }
-
+    
     /**
      * @param boolean $mode
      *
@@ -181,10 +190,10 @@ class CustomerGroup implements CustomerGroupInterface
     public function setMode(bool $mode): CustomerGroupInterface
     {
         $this->mode = $mode;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -192,7 +201,7 @@ class CustomerGroup implements CustomerGroupInterface
     {
         return (int)$this->discount;
     }
-
+    
     /**
      * @param int $discount
      *
@@ -201,10 +210,10 @@ class CustomerGroup implements CustomerGroupInterface
     public function setDiscount(int $discount): CustomerGroupInterface
     {
         $this->discount = $discount;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -212,7 +221,7 @@ class CustomerGroup implements CustomerGroupInterface
     {
         return (int)$this->minimumOrder;
     }
-
+    
     /**
      * @param int $minimumOrder
      *
@@ -221,10 +230,10 @@ class CustomerGroup implements CustomerGroupInterface
     public function setMinimumOrder(int $minimumOrder): CustomerGroupInterface
     {
         $this->minimumOrder = $minimumOrder;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -232,7 +241,7 @@ class CustomerGroup implements CustomerGroupInterface
     {
         return (int)$this->minimumOrderSurcharge;
     }
-
+    
     /**
      * @param int $minimumOrderSurcharge
      *
@@ -241,7 +250,7 @@ class CustomerGroup implements CustomerGroupInterface
     public function setMinimumOrderSurcharge(int $minimumOrderSurcharge): CustomerGroupInterface
     {
         $this->minimumOrderSurcharge = $minimumOrderSurcharge;
-
+        
         return $this;
     }
 }

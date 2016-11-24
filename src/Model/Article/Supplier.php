@@ -10,63 +10,72 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Supplier implements SupplierInterface
 {
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("image")
      */
     private $image;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("link")
      */
     private $link;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("description")
      */
     private $description;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("metaTitle")
      */
     private $metaTitle;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("metaDescription")
      */
     private $metaDescription;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("metaKeywords")
      */
     private $metaKeywords;
-
+    
     /**
      * Date and time formatted in ISO8601 format.
      *
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("changed")
      */
     private $changed;
-
+    
     /**
      * @return int
      */
@@ -74,7 +83,7 @@ class Supplier implements SupplierInterface
     {
         return (int)$this->id;
     }
-
+    
     /**
      * @param int $id
      *
@@ -83,10 +92,10 @@ class Supplier implements SupplierInterface
     public function setId(int $id): SupplierInterface
     {
         $this->id = $id;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -94,7 +103,7 @@ class Supplier implements SupplierInterface
     {
         return (string)$this->name;
     }
-
+    
     /**
      * @param string $name
      *
@@ -103,10 +112,10 @@ class Supplier implements SupplierInterface
     public function setName(string $name): SupplierInterface
     {
         $this->name = $name;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -114,7 +123,7 @@ class Supplier implements SupplierInterface
     {
         return (string)$this->image;
     }
-
+    
     /**
      * @param string $image
      *
@@ -123,10 +132,10 @@ class Supplier implements SupplierInterface
     public function setImage(string $image): SupplierInterface
     {
         $this->image = $image;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -134,7 +143,7 @@ class Supplier implements SupplierInterface
     {
         return (string)$this->link;
     }
-
+    
     /**
      * @param string $link
      *
@@ -143,10 +152,10 @@ class Supplier implements SupplierInterface
     public function setLink(string $link): SupplierInterface
     {
         $this->link = $link;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -154,7 +163,7 @@ class Supplier implements SupplierInterface
     {
         return (string)$this->description;
     }
-
+    
     /**
      * @param string $description
      *
@@ -163,10 +172,10 @@ class Supplier implements SupplierInterface
     public function setDescription(string $description): SupplierInterface
     {
         $this->description = $description;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -174,7 +183,7 @@ class Supplier implements SupplierInterface
     {
         return (string)$this->metaTitle;
     }
-
+    
     /**
      * @param string $metaTitle
      *
@@ -183,10 +192,10 @@ class Supplier implements SupplierInterface
     public function setMetaTitle(string $metaTitle): SupplierInterface
     {
         $this->metaTitle = $metaTitle;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -194,7 +203,7 @@ class Supplier implements SupplierInterface
     {
         return (string)$this->metaDescription;
     }
-
+    
     /**
      * @param string $metaDescription
      *
@@ -203,10 +212,10 @@ class Supplier implements SupplierInterface
     public function setMetaDescription(string $metaDescription): SupplierInterface
     {
         $this->metaDescription = $metaDescription;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -214,7 +223,7 @@ class Supplier implements SupplierInterface
     {
         return (string)$this->metaKeywords;
     }
-
+    
     /**
      * @param string $metaKeywords
      *
@@ -223,10 +232,10 @@ class Supplier implements SupplierInterface
     public function setMetaKeywords(string $metaKeywords): SupplierInterface
     {
         $this->metaKeywords = $metaKeywords;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -234,7 +243,7 @@ class Supplier implements SupplierInterface
     {
         return (string)$this->changed;
     }
-
+    
     /**
      * @param string $changed
      *
@@ -243,7 +252,7 @@ class Supplier implements SupplierInterface
     public function setChanged(string $changed): SupplierInterface
     {
         $this->changed = $changed;
-
+        
         return $this;
     }
 }

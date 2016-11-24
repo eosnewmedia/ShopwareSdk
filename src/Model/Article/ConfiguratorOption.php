@@ -10,31 +10,35 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class ConfiguratorOption implements ConfiguratorOptionInterface
 {
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("groupId")
      */
     private $groupId;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("position")
      */
     private $position;
-
+    
     /**
      * @return int
      */
@@ -42,7 +46,7 @@ class ConfiguratorOption implements ConfiguratorOptionInterface
     {
         return (int)$this->id;
     }
-
+    
     /**
      * @param int $id
      *
@@ -51,10 +55,10 @@ class ConfiguratorOption implements ConfiguratorOptionInterface
     public function setId(int $id): ConfiguratorOptionInterface
     {
         $this->id = $id;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -62,7 +66,7 @@ class ConfiguratorOption implements ConfiguratorOptionInterface
     {
         return (int)$this->groupId;
     }
-
+    
     /**
      * @param int $groupId
      *
@@ -71,10 +75,10 @@ class ConfiguratorOption implements ConfiguratorOptionInterface
     public function setGroupId(int $groupId): ConfiguratorOptionInterface
     {
         $this->groupId = $groupId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -82,7 +86,7 @@ class ConfiguratorOption implements ConfiguratorOptionInterface
     {
         return (string)$this->name;
     }
-
+    
     /**
      * @param string $name
      *
@@ -91,10 +95,10 @@ class ConfiguratorOption implements ConfiguratorOptionInterface
     public function setName(string $name): ConfiguratorOptionInterface
     {
         $this->name = $name;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -102,7 +106,7 @@ class ConfiguratorOption implements ConfiguratorOptionInterface
     {
         return (int)$this->position;
     }
-
+    
     /**
      * @param int $position
      *
@@ -111,7 +115,7 @@ class ConfiguratorOption implements ConfiguratorOptionInterface
     public function setPosition(int $position): ConfiguratorOptionInterface
     {
         $this->position = $position;
-
+        
         return $this;
     }
 }

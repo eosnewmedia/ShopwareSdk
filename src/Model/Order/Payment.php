@@ -10,133 +10,153 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Payment implements PaymentInterface
 {
-
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("description")
      */
     private $description;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("template")
      */
     private $template;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("class")
      */
     private $class;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("table")
      */
     private $table;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("hide")
      */
     private $hide;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("additionalDescription")
      */
     private $additionalDescription;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("debitPercent")
      */
     private $debitPercent;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("surcharge")
      */
     private $surcharge;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("surchargeString")
      */
     private $surchargeString;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("position")
      */
     private $position;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("active")
      */
     private $active;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("esdActive")
      */
     private $esdActive;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("mobileInactive")
      */
     private $mobileInactive;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("embedIFrame")
      */
     private $embedIFrame;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("hideProspect")
      */
     private $hideProspect;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("action")
      */
     private $action;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("pluginId")
      */
     private $pluginId;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("source")
      */
     private $source;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("attribute")
      */
     private $attribute;
-
+    
     /**
      * @return int
      */
@@ -144,7 +164,7 @@ class Payment implements PaymentInterface
     {
         return (int)$this->id;
     }
-
+    
     /**
      * @param int $id
      *
@@ -153,10 +173,10 @@ class Payment implements PaymentInterface
     public function setId(int $id): PaymentInterface
     {
         $this->id = $id;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -164,7 +184,7 @@ class Payment implements PaymentInterface
     {
         return (string)$this->name;
     }
-
+    
     /**
      * @param string $name
      *
@@ -173,10 +193,10 @@ class Payment implements PaymentInterface
     public function setName(string $name): PaymentInterface
     {
         $this->name = $name;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -184,7 +204,7 @@ class Payment implements PaymentInterface
     {
         return (string)$this->description;
     }
-
+    
     /**
      * @param string $description
      *
@@ -193,10 +213,10 @@ class Payment implements PaymentInterface
     public function setDescription(string $description): PaymentInterface
     {
         $this->description = $description;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -204,7 +224,7 @@ class Payment implements PaymentInterface
     {
         return (string)$this->template;
     }
-
+    
     /**
      * @param string $template
      *
@@ -213,10 +233,10 @@ class Payment implements PaymentInterface
     public function setTemplate(string $template): PaymentInterface
     {
         $this->template = $template;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -224,7 +244,7 @@ class Payment implements PaymentInterface
     {
         return (string)$this->class;
     }
-
+    
     /**
      * @param string $class
      *
@@ -233,10 +253,10 @@ class Payment implements PaymentInterface
     public function setClass(string $class): PaymentInterface
     {
         $this->class = $class;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -244,7 +264,7 @@ class Payment implements PaymentInterface
     {
         return (string)$this->table;
     }
-
+    
     /**
      * @param string $table
      *
@@ -253,10 +273,10 @@ class Payment implements PaymentInterface
     public function setTable(string $table): PaymentInterface
     {
         $this->table = $table;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -264,7 +284,7 @@ class Payment implements PaymentInterface
     {
         return (bool)$this->hide;
     }
-
+    
     /**
      * @param boolean $hide
      *
@@ -273,10 +293,10 @@ class Payment implements PaymentInterface
     public function setHide(bool $hide): PaymentInterface
     {
         $this->hide = $hide;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -284,7 +304,7 @@ class Payment implements PaymentInterface
     {
         return (string)$this->additionalDescription;
     }
-
+    
     /**
      * @param string $additionalDescription
      *
@@ -293,10 +313,10 @@ class Payment implements PaymentInterface
     public function setAdditionalDescription(string $additionalDescription): PaymentInterface
     {
         $this->additionalDescription = $additionalDescription;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -304,7 +324,7 @@ class Payment implements PaymentInterface
     {
         return (int)$this->debitPercent;
     }
-
+    
     /**
      * @param int $debitPercent
      *
@@ -313,10 +333,10 @@ class Payment implements PaymentInterface
     public function setDebitPercent(int $debitPercent): PaymentInterface
     {
         $this->debitPercent = $debitPercent;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -324,7 +344,7 @@ class Payment implements PaymentInterface
     {
         return (int)$this->surcharge;
     }
-
+    
     /**
      * @param int $surcharge
      *
@@ -333,10 +353,10 @@ class Payment implements PaymentInterface
     public function setSurcharge(int $surcharge): PaymentInterface
     {
         $this->surcharge = $surcharge;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -344,7 +364,7 @@ class Payment implements PaymentInterface
     {
         return (string)$this->surchargeString;
     }
-
+    
     /**
      * @param string $surchargeString
      *
@@ -353,10 +373,10 @@ class Payment implements PaymentInterface
     public function setSurchargeString(string $surchargeString): PaymentInterface
     {
         $this->surchargeString = $surchargeString;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -364,7 +384,7 @@ class Payment implements PaymentInterface
     {
         return (int)$this->position;
     }
-
+    
     /**
      * @param int $position
      *
@@ -373,10 +393,10 @@ class Payment implements PaymentInterface
     public function setPosition(int $position): PaymentInterface
     {
         $this->position = $position;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -384,7 +404,7 @@ class Payment implements PaymentInterface
     {
         return (bool)$this->active;
     }
-
+    
     /**
      * @param boolean $active
      *
@@ -393,10 +413,10 @@ class Payment implements PaymentInterface
     public function setActive(bool $active): PaymentInterface
     {
         $this->active = $active;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -404,7 +424,7 @@ class Payment implements PaymentInterface
     {
         return (bool)$this->esdActive;
     }
-
+    
     /**
      * @param boolean $esdActive
      *
@@ -413,10 +433,10 @@ class Payment implements PaymentInterface
     public function setEsdActive(bool $esdActive): PaymentInterface
     {
         $this->esdActive = $esdActive;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -424,7 +444,7 @@ class Payment implements PaymentInterface
     {
         return (bool)$this->mobileInactive;
     }
-
+    
     /**
      * @param boolean $mobileInactive
      *
@@ -433,10 +453,10 @@ class Payment implements PaymentInterface
     public function setMobileInactive(bool $mobileInactive): PaymentInterface
     {
         $this->mobileInactive = $mobileInactive;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -444,7 +464,7 @@ class Payment implements PaymentInterface
     {
         return (string)$this->embedIFrame;
     }
-
+    
     /**
      * @param string $embedIFrame
      *
@@ -453,10 +473,10 @@ class Payment implements PaymentInterface
     public function setEmbedIFrame(string $embedIFrame): PaymentInterface
     {
         $this->embedIFrame = $embedIFrame;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -464,7 +484,7 @@ class Payment implements PaymentInterface
     {
         return (int)$this->hideProspect;
     }
-
+    
     /**
      * @param int $hideProspect
      *
@@ -473,10 +493,10 @@ class Payment implements PaymentInterface
     public function setHideProspect(int $hideProspect): PaymentInterface
     {
         $this->hideProspect = $hideProspect;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -484,7 +504,7 @@ class Payment implements PaymentInterface
     {
         return (string)$this->action;
     }
-
+    
     /**
      * @param string $action
      *
@@ -493,10 +513,10 @@ class Payment implements PaymentInterface
     public function setAction(string $action): PaymentInterface
     {
         $this->action = $action;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -504,7 +524,7 @@ class Payment implements PaymentInterface
     {
         return (string)$this->pluginId;
     }
-
+    
     /**
      * @param string $pluginId
      *
@@ -513,10 +533,10 @@ class Payment implements PaymentInterface
     public function setPluginId(string $pluginId): PaymentInterface
     {
         $this->pluginId = $pluginId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -524,7 +544,7 @@ class Payment implements PaymentInterface
     {
         return (string)$this->source;
     }
-
+    
     /**
      * @param string $source
      *
@@ -533,10 +553,10 @@ class Payment implements PaymentInterface
     public function setSource(string $source): PaymentInterface
     {
         $this->source = $source;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -544,7 +564,7 @@ class Payment implements PaymentInterface
     {
         return (string)$this->attribute;
     }
-
+    
     /**
      * @param string $attribute
      *
@@ -553,7 +573,7 @@ class Payment implements PaymentInterface
     public function setAttribute(string $attribute): PaymentInterface
     {
         $this->attribute = $attribute;
-
+        
         return $this;
     }
 }

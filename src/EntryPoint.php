@@ -17,7 +17,6 @@ use Enm\ShopwareSdk\Serializer\JsonDeserializerInterface;
 use Enm\ShopwareSdk\Serializer\JsonSerializerInterface;
 use Enm\ShopwareSdk\Serializer\OrderHandler;
 use GuzzleHttp\Client;
-use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
 
@@ -26,32 +25,32 @@ use JMS\Serializer\SerializerInterface;
  */
 class EntryPoint implements EntryPointInterface
 {
-
+    
     /**
      * @var ClientInterface
      */
     private $httpClient;
-
+    
     /**
      * @var JsonSerializerInterface[]
      */
     private $serializers = [];
-
+    
     /**
      * @var JsonDeserializerInterface[]
      */
     private $deserializers = [];
-
+    
     /**
      * @var ArticleEndpointInterface
      */
     private $articleEndpoint;
-
+    
     /**
      * @var OrderEndpointInterface
      */
     private $orderEndpoint;
-
+    
     /**
      * @param ClientInterface $httpClient
      */
@@ -59,7 +58,7 @@ class EntryPoint implements EntryPointInterface
     {
         $this->httpClient = $httpClient;
     }
-
+    
     /**
      * @param string $baseUri
      * @param string $username
@@ -70,25 +69,23 @@ class EntryPoint implements EntryPointInterface
     public static function buildDefault(string $baseUri, string $username, string $password): EntryPoint
     {
         AnnotationRegistry::registerAutoloadNamespace(
-            'JMS\Serializer\Annotation',
-            __DIR__.'/../vendor/jms/serializer/src'
+          'JMS\Serializer\Annotation',
+          __DIR__.'/../vendor/jms/serializer/src'
         );
-
+        
         $client = new GuzzleAdapter(new Client());
         $client->withConfig($baseUri, $username, $password);
-
+        
         $entryPoint = new self($client);
-
-        $jmsSerializer = SerializerBuilder::create()
-                                          ->setPropertyNamingStrategy(new IdenticalPropertyNamingStrategy())
-                                          ->build();
-
+        
+        $jmsSerializer = SerializerBuilder::create()->build();
+        
         $entryPoint->addDefaultSerializers($jmsSerializer);
         $entryPoint->addDefaultDeserializers($jmsSerializer);
-
+        
         return $entryPoint;
     }
-
+    
     /**
      * @param SerializerInterface $jmsSerializer
      *
@@ -98,10 +95,10 @@ class EntryPoint implements EntryPointInterface
     {
         $this->addSerializer(new ArticleHandler($jmsSerializer));
         $this->addSerializer(new OrderHandler($jmsSerializer));
-
+        
         return $this;
     }
-
+    
     /**
      * @param JsonSerializerInterface $serializer
      *
@@ -112,10 +109,10 @@ class EntryPoint implements EntryPointInterface
         foreach ($serializer->getSupportedTypes() as $type) {
             $this->serializers[$type] = $serializer;
         }
-
+        
         return $this;
     }
-
+    
     /**
      * @param SerializerInterface $jmsSerializer
      *
@@ -125,10 +122,10 @@ class EntryPoint implements EntryPointInterface
     {
         $this->addDeserializer(new ArticleHandler($jmsSerializer));
         $this->addDeserializer(new OrderHandler($jmsSerializer));
-
+        
         return $this;
     }
-
+    
     /**
      * @param JsonDeserializerInterface $deserializer
      *
@@ -139,10 +136,10 @@ class EntryPoint implements EntryPointInterface
         foreach ($deserializer->getSupportedTypes() as $type) {
             $this->deserializers[$type] = $deserializer;
         }
-
+        
         return $this;
     }
-
+    
     /**
      * @return ArticleEndpointInterface
      * @throws \InvalidArgumentException
@@ -151,15 +148,15 @@ class EntryPoint implements EntryPointInterface
     {
         if (!$this->articleEndpoint instanceof ArticleEndpointInterface) {
             $this->articleEndpoint = new ArticleEndpoint(
-                $this->httpClient(),
-                $this->serializerFor(ArticleInterface::class),
-                $this->deserializerFor(ArticleInterface::class)
+              $this->httpClient(),
+              $this->serializerFor(ArticleInterface::class),
+              $this->deserializerFor(ArticleInterface::class)
             );
         }
-
+        
         return $this->articleEndpoint;
     }
-
+    
     /**
      * @return ClientInterface
      */
@@ -167,35 +164,37 @@ class EntryPoint implements EntryPointInterface
     {
         return $this->httpClient;
     }
-
+    
     /**
      * @param string $class
      *
      * @return JsonSerializerInterface
+     * @throws \InvalidArgumentException
      */
     protected function serializerFor(string $class): JsonSerializerInterface
     {
         if (!array_key_exists($class, $this->serializers)) {
             throw new \InvalidArgumentException('No serializer for '.$class);
         }
-
+        
         return $this->serializers[$class];
     }
-
+    
     /**
      * @param string $class
      *
      * @return JsonDeserializerInterface
+     * @throws \InvalidArgumentException
      */
     protected function deserializerFor(string $class): JsonDeserializerInterface
     {
         if (!array_key_exists($class, $this->deserializers)) {
             throw new \InvalidArgumentException('No deserializer for '.$class);
         }
-
+        
         return $this->deserializers[$class];
     }
-
+    
     /**
      * @return OrderEndpointInterface
      * @throws \InvalidArgumentException
@@ -204,12 +203,12 @@ class EntryPoint implements EntryPointInterface
     {
         if (!$this->orderEndpoint instanceof OrderEndpointInterface) {
             $this->orderEndpoint = new OrderEndpoint(
-                $this->httpClient(),
-                $this->serializerFor(OrderInterface::class),
-                $this->deserializerFor(OrderInterface::class)
+              $this->httpClient(),
+              $this->serializerFor(OrderInterface::class),
+              $this->deserializerFor(OrderInterface::class)
             );
         }
-
+        
         return $this->orderEndpoint;
     }
 }

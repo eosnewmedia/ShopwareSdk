@@ -10,115 +10,133 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Shop implements ShopInterface
 {
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("mainId")
      */
     private $mainId;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("categoryId")
      */
     private $categoryId;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("title")
      */
     private $title;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("position")
      */
     private $position;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("host")
      */
     private $host;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("basePath")
      */
     private $basePath;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("baseUrl")
      */
     private $baseUrl;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("hosts")
      */
     private $hosts;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("secure")
      */
     private $secure;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("alwaysSecure")
      */
     private $alwaysSecure;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("secureHost")
      */
     private $secureHost;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("secureBasePath")
      */
     private $secureBasePath;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("templateId")
      */
     private $templateId;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("default")
      */
     private $default;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("active")
      */
     private $active;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("customerScope")
      */
     private $customerScope;
-
+    
     /**
      * @return int
      */
@@ -126,7 +144,7 @@ class Shop implements ShopInterface
     {
         return (int)$this->id;
     }
-
+    
     /**
      * @param int $id
      *
@@ -135,10 +153,10 @@ class Shop implements ShopInterface
     public function setId(int $id): ShopInterface
     {
         $this->id = $id;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -146,7 +164,7 @@ class Shop implements ShopInterface
     {
         return (string)$this->mainId;
     }
-
+    
     /**
      * @param string $mainId
      *
@@ -155,10 +173,10 @@ class Shop implements ShopInterface
     public function setMainId(string $mainId): ShopInterface
     {
         $this->mainId = $mainId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -166,7 +184,7 @@ class Shop implements ShopInterface
     {
         return (int)$this->categoryId;
     }
-
+    
     /**
      * @param int $categoryId
      *
@@ -175,10 +193,10 @@ class Shop implements ShopInterface
     public function setCategoryId(int $categoryId): ShopInterface
     {
         $this->categoryId = $categoryId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -186,7 +204,7 @@ class Shop implements ShopInterface
     {
         return (string)$this->name;
     }
-
+    
     /**
      * @param string $name
      *
@@ -195,10 +213,10 @@ class Shop implements ShopInterface
     public function setName(string $name): ShopInterface
     {
         $this->name = $name;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -206,7 +224,7 @@ class Shop implements ShopInterface
     {
         return (string)$this->title;
     }
-
+    
     /**
      * @param string $title
      *
@@ -215,10 +233,10 @@ class Shop implements ShopInterface
     public function setTitle(string $title): ShopInterface
     {
         $this->title = $title;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -226,7 +244,7 @@ class Shop implements ShopInterface
     {
         return (int)$this->position;
     }
-
+    
     /**
      * @param int $position
      *
@@ -235,10 +253,10 @@ class Shop implements ShopInterface
     public function setPosition(int $position): ShopInterface
     {
         $this->position = $position;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -246,7 +264,7 @@ class Shop implements ShopInterface
     {
         return (string)$this->host;
     }
-
+    
     /**
      * @param string $host
      *
@@ -255,10 +273,10 @@ class Shop implements ShopInterface
     public function setHost(string $host): ShopInterface
     {
         $this->host = $host;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -266,7 +284,7 @@ class Shop implements ShopInterface
     {
         return (string)$this->basePath;
     }
-
+    
     /**
      * @param string $basePath
      *
@@ -275,10 +293,10 @@ class Shop implements ShopInterface
     public function setBasePath(string $basePath): ShopInterface
     {
         $this->basePath = $basePath;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -286,7 +304,7 @@ class Shop implements ShopInterface
     {
         return (string)$this->baseUrl;
     }
-
+    
     /**
      * @param string $baseUrl
      *
@@ -295,10 +313,10 @@ class Shop implements ShopInterface
     public function setBaseUrl(string $baseUrl): ShopInterface
     {
         $this->baseUrl = $baseUrl;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -306,7 +324,7 @@ class Shop implements ShopInterface
     {
         return (string)$this->hosts;
     }
-
+    
     /**
      * @param string $hosts
      *
@@ -315,10 +333,10 @@ class Shop implements ShopInterface
     public function setHosts(string $hosts): ShopInterface
     {
         $this->hosts = $hosts;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -326,7 +344,7 @@ class Shop implements ShopInterface
     {
         return (bool)$this->secure;
     }
-
+    
     /**
      * @param boolean $secure
      *
@@ -335,10 +353,10 @@ class Shop implements ShopInterface
     public function setSecure(bool $secure): ShopInterface
     {
         $this->secure = $secure;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -346,7 +364,7 @@ class Shop implements ShopInterface
     {
         return (bool)$this->alwaysSecure;
     }
-
+    
     /**
      * @param boolean $alwaysSecure
      *
@@ -355,10 +373,10 @@ class Shop implements ShopInterface
     public function setAlwaysSecure(bool $alwaysSecure): ShopInterface
     {
         $this->alwaysSecure = $alwaysSecure;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -366,7 +384,7 @@ class Shop implements ShopInterface
     {
         return (string)$this->secureHost;
     }
-
+    
     /**
      * @param string $secureHost
      *
@@ -375,10 +393,10 @@ class Shop implements ShopInterface
     public function setSecureHost(string $secureHost): ShopInterface
     {
         $this->secureHost = $secureHost;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -386,7 +404,7 @@ class Shop implements ShopInterface
     {
         return (string)$this->secureBasePath;
     }
-
+    
     /**
      * @param string $secureBasePath
      *
@@ -395,10 +413,10 @@ class Shop implements ShopInterface
     public function setSecureBasePath(string $secureBasePath): ShopInterface
     {
         $this->secureBasePath = $secureBasePath;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -406,7 +424,7 @@ class Shop implements ShopInterface
     {
         return (int)$this->templateId;
     }
-
+    
     /**
      * @param int $templateId
      *
@@ -415,10 +433,10 @@ class Shop implements ShopInterface
     public function setTemplateId(int $templateId): ShopInterface
     {
         $this->templateId = $templateId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -426,7 +444,7 @@ class Shop implements ShopInterface
     {
         return (bool)$this->default;
     }
-
+    
     /**
      * @param boolean $default
      *
@@ -435,10 +453,10 @@ class Shop implements ShopInterface
     public function setDefault(bool $default): ShopInterface
     {
         $this->default = $default;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -446,7 +464,7 @@ class Shop implements ShopInterface
     {
         return (bool)$this->active;
     }
-
+    
     /**
      * @param boolean $active
      *
@@ -455,10 +473,10 @@ class Shop implements ShopInterface
     public function setActive(bool $active): ShopInterface
     {
         $this->active = $active;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -466,7 +484,7 @@ class Shop implements ShopInterface
     {
         return (bool)$this->customerScope;
     }
-
+    
     /**
      * @param boolean $customerScope
      *
@@ -475,7 +493,7 @@ class Shop implements ShopInterface
     public function setCustomerScope(bool $customerScope): ShopInterface
     {
         $this->customerScope = $customerScope;
-
+        
         return $this;
     }
 }

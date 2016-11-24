@@ -11,235 +11,272 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Article implements ArticleInterface
 {
-
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("mainDetailId")
      */
     private $mainDetailId;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("supplierId")
      */
     private $supplierId;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("taxId")
      */
     private $taxId;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("priceGroupId")
      */
     private $priceGroupId;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("filterGroupId")
      */
     private $filterGroupId;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("configuratorSetId")
      */
     private $configuratorSetId;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("description")
      */
     private $description;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("descriptionLong")
      */
     private $descriptionLong;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("added")
      */
     private $added;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("active")
      */
     private $active;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("pseudoSales")
      */
     private $pseudoSales;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("highlight")
      */
     private $highlight;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("keywords")
      */
     private $keywords;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("metaTitle")
      */
     private $metaTitle;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("changed")
      */
     private $changed;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("priceGroupActive")
      */
     private $priceGroupActive;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("lastStock")
      */
     private $lastStock;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("crossBundleLook")
      */
     private $crossBundleLook;
-
+    
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("notification")
      */
     private $notification;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("template")
      */
     private $template;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("mode")
      */
     private $mode;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("availableFrom")
      */
     private $availableFrom;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("availableTo")
      */
     private $availableTo;
-
+    
     /**
      * @var DetailInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Detail")
+     * @Serializer\SerializedName("mainDetail")
      */
     private $mainDetail;
-
+    
     /**
      * @var TaxInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Tax")
+     * @Serializer\SerializedName("tax")
      */
     private $tax;
-
+    
     /**
      * @var SupplierInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Supplier")
+     * @Serializer\SerializedName("supplier")
      */
     private $supplier;
-
+    
     /**
      * @var PropertyGroupInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\PropertyGroup")
+     * @Serializer\SerializedName("propertyGroup")
      */
     private $propertyGroup;
-
+    
     /**
      * @var CustomerGroupInterface[]
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\CustomerGroup")
+     * @Serializer\SerializedName("customerGroups")
      */
     private $customerGroups;
-
+    
     /**
      * @var ImageInterface[]
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Image")
+     * @Serializer\SerializedName("images")
      */
     private $images;
-
+    
     /**
      * @var ConfiguratorSetInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\ConfiguratorSet")
+     * @Serializer\SerializedName("configuratorSet")
      */
     private $configuratorSet;
-
+    
     /**
      * @var LinkInterface[]
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Link")
+     * @Serializer\SerializedName("links")
      */
     private $links;
-
+    
     /**
      * @var DownloadInterface[]
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Download")
+     * @Serializer\SerializedName("downloads")
      */
     private $downloads;
-
+    
     /**
      * @var CategoryInterface[]
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Category")
+     * @Serializer\SerializedName("categories")
      */
     private $categories;
-
+    
     /**
      * @var SimilarInterface[]
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Similar")
+     * @Serializer\SerializedName("similar")
      */
     private $similar;
-
+    
     /**
      * @var RelatedInterface[]
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Related")
+     * @Serializer\SerializedName("related")
      */
     private $related;
-
+    
     /**
      * @var DetailInterface[]
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Detail")
+     * @Serializer\SerializedName("details")
      */
     private $details;
-
+    
     /**
      * @return int
      */
@@ -247,7 +284,7 @@ class Article implements ArticleInterface
     {
         return (int)$this->id;
     }
-
+    
     /**
      * @param int $id
      *
@@ -256,10 +293,10 @@ class Article implements ArticleInterface
     public function setId(int $id): ArticleInterface
     {
         $this->id = $id;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -267,7 +304,7 @@ class Article implements ArticleInterface
     {
         return (int)$this->mainDetailId;
     }
-
+    
     /**
      * @param int $mainDetailId
      *
@@ -276,10 +313,10 @@ class Article implements ArticleInterface
     public function setMainDetailId(int $mainDetailId): ArticleInterface
     {
         $this->mainDetailId = $mainDetailId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -287,7 +324,7 @@ class Article implements ArticleInterface
     {
         return (int)$this->supplierId;
     }
-
+    
     /**
      * @param int $supplierId
      *
@@ -296,10 +333,10 @@ class Article implements ArticleInterface
     public function setSupplierId(int $supplierId): ArticleInterface
     {
         $this->supplierId = $supplierId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -307,7 +344,7 @@ class Article implements ArticleInterface
     {
         return (int)$this->taxId;
     }
-
+    
     /**
      * @param int $taxId
      *
@@ -316,10 +353,10 @@ class Article implements ArticleInterface
     public function setTaxId(int $taxId): ArticleInterface
     {
         $this->taxId = $taxId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -327,7 +364,7 @@ class Article implements ArticleInterface
     {
         return (int)$this->priceGroupId;
     }
-
+    
     /**
      * @param int $priceGroupId
      *
@@ -336,10 +373,10 @@ class Article implements ArticleInterface
     public function setPriceGroupId(int $priceGroupId): ArticleInterface
     {
         $this->priceGroupId = $priceGroupId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -347,7 +384,7 @@ class Article implements ArticleInterface
     {
         return (int)$this->filterGroupId;
     }
-
+    
     /**
      * @param int $filterGroupId
      *
@@ -356,10 +393,10 @@ class Article implements ArticleInterface
     public function setFilterGroupId(int $filterGroupId): ArticleInterface
     {
         $this->filterGroupId = $filterGroupId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -367,7 +404,7 @@ class Article implements ArticleInterface
     {
         return (int)$this->configuratorSetId;
     }
-
+    
     /**
      * @param int $configuratorSetId
      *
@@ -376,10 +413,10 @@ class Article implements ArticleInterface
     public function setConfiguratorSetId(int $configuratorSetId): ArticleInterface
     {
         $this->configuratorSetId = $configuratorSetId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -387,7 +424,7 @@ class Article implements ArticleInterface
     {
         return (string)$this->name;
     }
-
+    
     /**
      * @param string $name
      *
@@ -396,10 +433,10 @@ class Article implements ArticleInterface
     public function setName(string $name): ArticleInterface
     {
         $this->name = $name;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -407,7 +444,7 @@ class Article implements ArticleInterface
     {
         return (string)$this->description;
     }
-
+    
     /**
      * @param string $description
      *
@@ -416,10 +453,10 @@ class Article implements ArticleInterface
     public function setDescription(string $description): ArticleInterface
     {
         $this->description = $description;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -427,7 +464,7 @@ class Article implements ArticleInterface
     {
         return (string)$this->descriptionLong;
     }
-
+    
     /**
      * @param string $descriptionLong
      *
@@ -436,10 +473,10 @@ class Article implements ArticleInterface
     public function setDescriptionLong(string $descriptionLong): ArticleInterface
     {
         $this->descriptionLong = $descriptionLong;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -447,7 +484,7 @@ class Article implements ArticleInterface
     {
         return (string)$this->added;
     }
-
+    
     /**
      * @param string $added
      *
@@ -456,10 +493,10 @@ class Article implements ArticleInterface
     public function setAdded(string $added): ArticleInterface
     {
         $this->added = $added;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -467,7 +504,7 @@ class Article implements ArticleInterface
     {
         return (bool)$this->active;
     }
-
+    
     /**
      * @param boolean $active
      *
@@ -476,10 +513,10 @@ class Article implements ArticleInterface
     public function setActive(bool $active): ArticleInterface
     {
         $this->active = $active;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -487,7 +524,7 @@ class Article implements ArticleInterface
     {
         return (int)$this->pseudoSales;
     }
-
+    
     /**
      * @param int $pseudoSales
      *
@@ -496,10 +533,10 @@ class Article implements ArticleInterface
     public function setPseudoSales(int $pseudoSales): ArticleInterface
     {
         $this->pseudoSales = $pseudoSales;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -507,7 +544,7 @@ class Article implements ArticleInterface
     {
         return (bool)$this->highlight;
     }
-
+    
     /**
      * @param boolean $highlight
      *
@@ -516,10 +553,10 @@ class Article implements ArticleInterface
     public function setHighlight(bool $highlight): ArticleInterface
     {
         $this->highlight = $highlight;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -527,7 +564,7 @@ class Article implements ArticleInterface
     {
         return (string)$this->keywords;
     }
-
+    
     /**
      * @param string $keywords
      *
@@ -536,10 +573,10 @@ class Article implements ArticleInterface
     public function setKeywords(string $keywords): ArticleInterface
     {
         $this->keywords = $keywords;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -547,7 +584,7 @@ class Article implements ArticleInterface
     {
         return (string)$this->metaTitle;
     }
-
+    
     /**
      * @param string $metaTitle
      *
@@ -556,10 +593,10 @@ class Article implements ArticleInterface
     public function setMetaTitle(string $metaTitle): ArticleInterface
     {
         $this->metaTitle = $metaTitle;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -567,7 +604,7 @@ class Article implements ArticleInterface
     {
         return (string)$this->changed;
     }
-
+    
     /**
      * @param string $changed
      *
@@ -576,10 +613,10 @@ class Article implements ArticleInterface
     public function setChanged(string $changed): ArticleInterface
     {
         $this->changed = $changed;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -587,7 +624,7 @@ class Article implements ArticleInterface
     {
         return (bool)$this->priceGroupActive;
     }
-
+    
     /**
      * @param boolean $priceGroupActive
      *
@@ -596,10 +633,10 @@ class Article implements ArticleInterface
     public function setPriceGroupActive(bool $priceGroupActive): ArticleInterface
     {
         $this->priceGroupActive = $priceGroupActive;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -607,7 +644,7 @@ class Article implements ArticleInterface
     {
         return (bool)$this->lastStock;
     }
-
+    
     /**
      * @param boolean $lastStock
      *
@@ -616,10 +653,10 @@ class Article implements ArticleInterface
     public function setLastStock(bool $lastStock): ArticleInterface
     {
         $this->lastStock = $lastStock;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -627,7 +664,7 @@ class Article implements ArticleInterface
     {
         return (bool)$this->crossBundleLook;
     }
-
+    
     /**
      * @param boolean $crossBundleLook
      *
@@ -636,10 +673,10 @@ class Article implements ArticleInterface
     public function setCrossBundleLook(bool $crossBundleLook): ArticleInterface
     {
         $this->crossBundleLook = $crossBundleLook;
-
+        
         return $this;
     }
-
+    
     /**
      * @return boolean
      */
@@ -647,7 +684,7 @@ class Article implements ArticleInterface
     {
         return (bool)$this->notification;
     }
-
+    
     /**
      * @param boolean $notification
      *
@@ -656,10 +693,10 @@ class Article implements ArticleInterface
     public function setNotification(bool $notification): ArticleInterface
     {
         $this->notification = $notification;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -667,7 +704,7 @@ class Article implements ArticleInterface
     {
         return (string)$this->template;
     }
-
+    
     /**
      * @param string $template
      *
@@ -676,10 +713,10 @@ class Article implements ArticleInterface
     public function setTemplate(string $template): ArticleInterface
     {
         $this->template = $template;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -687,7 +724,7 @@ class Article implements ArticleInterface
     {
         return (int)$this->mode;
     }
-
+    
     /**
      * @param int $mode
      *
@@ -696,10 +733,10 @@ class Article implements ArticleInterface
     public function setMode(int $mode): ArticleInterface
     {
         $this->mode = $mode;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -707,7 +744,7 @@ class Article implements ArticleInterface
     {
         return (string)$this->availableFrom;
     }
-
+    
     /**
      * @param string $availableFrom
      *
@@ -716,10 +753,10 @@ class Article implements ArticleInterface
     public function setAvailableFrom(string $availableFrom): ArticleInterface
     {
         $this->availableFrom = $availableFrom;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -727,7 +764,7 @@ class Article implements ArticleInterface
     {
         return (string)$this->availableTo;
     }
-
+    
     /**
      * @param string $availableTo
      *
@@ -736,10 +773,10 @@ class Article implements ArticleInterface
     public function setAvailableTo(string $availableTo): ArticleInterface
     {
         $this->availableTo = $availableTo;
-
+        
         return $this;
     }
-
+    
     /**
      * @return DetailInterface
      */
@@ -747,7 +784,7 @@ class Article implements ArticleInterface
     {
         return $this->mainDetail;
     }
-
+    
     /**
      * @return bool
      */
@@ -755,7 +792,7 @@ class Article implements ArticleInterface
     {
         return $this->mainDetail !== null;
     }
-
+    
     /**
      * @param DetailInterface $mainDetail
      *
@@ -764,10 +801,10 @@ class Article implements ArticleInterface
     public function setMainDetail(DetailInterface $mainDetail): ArticleInterface
     {
         $this->mainDetail = $mainDetail;
-
+        
         return $this;
     }
-
+    
     /**
      * @return TaxInterface
      */
@@ -775,7 +812,7 @@ class Article implements ArticleInterface
     {
         return $this->tax;
     }
-
+    
     /**
      * @return bool
      */
@@ -783,7 +820,7 @@ class Article implements ArticleInterface
     {
         return $this->tax !== null;
     }
-
+    
     /**
      * @param TaxInterface $tax
      *
@@ -792,10 +829,10 @@ class Article implements ArticleInterface
     public function setTax(TaxInterface $tax): ArticleInterface
     {
         $this->tax = $tax;
-
+        
         return $this;
     }
-
+    
     /**
      * @return SupplierInterface
      */
@@ -803,7 +840,7 @@ class Article implements ArticleInterface
     {
         return $this->supplier;
     }
-
+    
     /**
      * @return bool
      */
@@ -811,7 +848,7 @@ class Article implements ArticleInterface
     {
         return $this->supplier !== null;
     }
-
+    
     /**
      * @param SupplierInterface $supplier
      *
@@ -820,10 +857,10 @@ class Article implements ArticleInterface
     public function setSupplier(SupplierInterface $supplier): ArticleInterface
     {
         $this->supplier = $supplier;
-
+        
         return $this;
     }
-
+    
     /**
      * @return PropertyGroupInterface
      */
@@ -831,7 +868,7 @@ class Article implements ArticleInterface
     {
         return $this->propertyGroup;
     }
-
+    
     /**
      * @return bool
      */
@@ -839,7 +876,7 @@ class Article implements ArticleInterface
     {
         return $this->propertyGroup !== null;
     }
-
+    
     /**
      * @param PropertyGroupInterface $propertyGroup
      *
@@ -848,10 +885,10 @@ class Article implements ArticleInterface
     public function setPropertyGroup(PropertyGroupInterface $propertyGroup): ArticleInterface
     {
         $this->propertyGroup = $propertyGroup;
-
+        
         return $this;
     }
-
+    
     /**
      * @return CustomerGroupInterface[]
      */
@@ -859,7 +896,7 @@ class Article implements ArticleInterface
     {
         return (array)$this->customerGroups;
     }
-
+    
     /**
      * @param CustomerGroupInterface[] $customerGroups
      *
@@ -868,10 +905,10 @@ class Article implements ArticleInterface
     public function setCustomerGroups(array $customerGroups): ArticleInterface
     {
         $this->customerGroups = $customerGroups;
-
+        
         return $this;
     }
-
+    
     /**
      * @return ImageInterface[]
      */
@@ -879,7 +916,7 @@ class Article implements ArticleInterface
     {
         return (array)$this->images;
     }
-
+    
     /**
      * @param ImageInterface[] $images
      *
@@ -888,10 +925,10 @@ class Article implements ArticleInterface
     public function setImages(array $images): ArticleInterface
     {
         $this->images = $images;
-
+        
         return $this;
     }
-
+    
     /**
      * @return ConfiguratorSetInterface
      */
@@ -899,7 +936,7 @@ class Article implements ArticleInterface
     {
         return $this->configuratorSet;
     }
-
+    
     /**
      * @return bool
      */
@@ -907,7 +944,7 @@ class Article implements ArticleInterface
     {
         return $this->configuratorSet !== null;
     }
-
+    
     /**
      * @param ConfiguratorSetInterface $configuratorSet
      *
@@ -916,10 +953,10 @@ class Article implements ArticleInterface
     public function setConfiguratorSet(ConfiguratorSetInterface $configuratorSet): ArticleInterface
     {
         $this->configuratorSet = $configuratorSet;
-
+        
         return $this;
     }
-
+    
     /**
      * @return LinkInterface[]
      */
@@ -927,7 +964,7 @@ class Article implements ArticleInterface
     {
         return (array)$this->links;
     }
-
+    
     /**
      * @param LinkInterface[] $links
      *
@@ -936,10 +973,10 @@ class Article implements ArticleInterface
     public function setLinks(array $links): ArticleInterface
     {
         $this->links = $links;
-
+        
         return $this;
     }
-
+    
     /**
      * @return DownloadInterface[]
      */
@@ -947,7 +984,7 @@ class Article implements ArticleInterface
     {
         return (array)$this->downloads;
     }
-
+    
     /**
      * @param DownloadInterface[] $downloads
      *
@@ -956,10 +993,10 @@ class Article implements ArticleInterface
     public function setDownloads(array $downloads): ArticleInterface
     {
         $this->downloads = $downloads;
-
+        
         return $this;
     }
-
+    
     /**
      * @return CategoryInterface[]
      */
@@ -967,7 +1004,7 @@ class Article implements ArticleInterface
     {
         return (array)$this->categories;
     }
-
+    
     /**
      * @param CategoryInterface[] $categories
      *
@@ -976,10 +1013,10 @@ class Article implements ArticleInterface
     public function setCategories(array $categories): ArticleInterface
     {
         $this->categories = $categories;
-
+        
         return $this;
     }
-
+    
     /**
      * @return SimilarInterface[]
      */
@@ -987,7 +1024,7 @@ class Article implements ArticleInterface
     {
         return (array)$this->similar;
     }
-
+    
     /**
      * @param SimilarInterface[] $similar
      *
@@ -996,10 +1033,10 @@ class Article implements ArticleInterface
     public function setSimilar(array $similar): ArticleInterface
     {
         $this->similar = $similar;
-
+        
         return $this;
     }
-
+    
     /**
      * @return RelatedInterface[]
      */
@@ -1007,7 +1044,7 @@ class Article implements ArticleInterface
     {
         return (array)$this->related;
     }
-
+    
     /**
      * @param RelatedInterface[] $related
      *
@@ -1016,10 +1053,10 @@ class Article implements ArticleInterface
     public function setRelated(array $related): ArticleInterface
     {
         $this->related = $related;
-
+        
         return $this;
     }
-
+    
     /**
      * @return DetailInterface[]
      */
@@ -1027,7 +1064,7 @@ class Article implements ArticleInterface
     {
         return (array)$this->details;
     }
-
+    
     /**
      * @param DetailInterface[] $details
      *
@@ -1036,7 +1073,7 @@ class Article implements ArticleInterface
     public function setDetails(array $details): ArticleInterface
     {
         $this->details = $details;
-
+        
         return $this;
     }
 }

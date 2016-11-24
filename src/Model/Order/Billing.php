@@ -10,131 +10,149 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Billing implements BillingInterface
 {
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("orderId")
      */
     private $orderId;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("customerId")
      */
     private $customerId;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("countryId")
      */
     private $countryId;
-
+    
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("stateId")
      */
     private $stateId;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("company")
      */
     private $company;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("department")
      */
     private $department;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("salutation")
      */
     private $salutation;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("number")
      */
     private $number;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("firstName")
      */
     private $firstName;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("lastName")
      */
     private $lastName;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("street")
      */
     private $street;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("zipCode")
      */
     private $zipCode;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("city")
      */
     private $city;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("phone")
      */
     private $phone;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("fax")
      */
     private $fax;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("vatId")
      */
     private $vatId;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("additionalAddressLine1")
      */
     private $additionalAddressLine1;
-
+    
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("additionalAddressLine2")
      */
     private $additionalAddressLine2;
-
+    
     /**
      * @var CountryInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Country")
+     * @Serializer\SerializedName("country")
      */
     private $country;
-
-    /**
-     * Attribute is not needed
-     */
-
+    
+    // "Attribute" property is not needed
+    
     /**
      * @return int
      */
@@ -142,7 +160,7 @@ class Billing implements BillingInterface
     {
         return (int)$this->id;
     }
-
+    
     /**
      * @param int $id
      *
@@ -151,10 +169,10 @@ class Billing implements BillingInterface
     public function setId(int $id): BillingInterface
     {
         $this->id = $id;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -162,7 +180,7 @@ class Billing implements BillingInterface
     {
         return (int)$this->orderId;
     }
-
+    
     /**
      * @param int $orderId
      *
@@ -171,10 +189,10 @@ class Billing implements BillingInterface
     public function setOrderId(int $orderId): BillingInterface
     {
         $this->orderId = $orderId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -182,7 +200,7 @@ class Billing implements BillingInterface
     {
         return (int)$this->customerId;
     }
-
+    
     /**
      * @param int $customerId
      *
@@ -191,10 +209,10 @@ class Billing implements BillingInterface
     public function setCustomerId(int $customerId): BillingInterface
     {
         $this->customerId = $customerId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -202,7 +220,7 @@ class Billing implements BillingInterface
     {
         return (int)$this->countryId;
     }
-
+    
     /**
      * @param int $countryId
      *
@@ -211,10 +229,10 @@ class Billing implements BillingInterface
     public function setCountryId(int $countryId): BillingInterface
     {
         $this->countryId = $countryId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return int
      */
@@ -222,7 +240,7 @@ class Billing implements BillingInterface
     {
         return (int)$this->stateId;
     }
-
+    
     /**
      * @param int $stateId
      *
@@ -231,10 +249,10 @@ class Billing implements BillingInterface
     public function setStateId(int $stateId): BillingInterface
     {
         $this->stateId = $stateId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -242,7 +260,7 @@ class Billing implements BillingInterface
     {
         return (string)$this->company;
     }
-
+    
     /**
      * @param string $company
      *
@@ -251,10 +269,10 @@ class Billing implements BillingInterface
     public function setCompany(string $company): BillingInterface
     {
         $this->company = $company;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -262,7 +280,7 @@ class Billing implements BillingInterface
     {
         return (string)$this->department;
     }
-
+    
     /**
      * @param string $department
      *
@@ -271,10 +289,10 @@ class Billing implements BillingInterface
     public function setDepartment(string $department): BillingInterface
     {
         $this->department = $department;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -282,7 +300,7 @@ class Billing implements BillingInterface
     {
         return (string)$this->salutation;
     }
-
+    
     /**
      * @param string $salutation
      *
@@ -291,10 +309,10 @@ class Billing implements BillingInterface
     public function setSalutation(string $salutation): BillingInterface
     {
         $this->salutation = $salutation;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -302,7 +320,7 @@ class Billing implements BillingInterface
     {
         return (string)$this->number;
     }
-
+    
     /**
      * @param string $number
      *
@@ -311,10 +329,10 @@ class Billing implements BillingInterface
     public function setNumber(string $number): BillingInterface
     {
         $this->number = $number;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -322,7 +340,7 @@ class Billing implements BillingInterface
     {
         return (string)$this->firstName;
     }
-
+    
     /**
      * @param string $firstName
      *
@@ -331,10 +349,10 @@ class Billing implements BillingInterface
     public function setFirstName(string $firstName): BillingInterface
     {
         $this->firstName = $firstName;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -342,7 +360,7 @@ class Billing implements BillingInterface
     {
         return (string)$this->lastName;
     }
-
+    
     /**
      * @param string $lastName
      *
@@ -351,10 +369,10 @@ class Billing implements BillingInterface
     public function setLastName(string $lastName): BillingInterface
     {
         $this->lastName = $lastName;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -362,7 +380,7 @@ class Billing implements BillingInterface
     {
         return (string)$this->street;
     }
-
+    
     /**
      * @param string $street
      *
@@ -371,10 +389,10 @@ class Billing implements BillingInterface
     public function setStreet(string $street): BillingInterface
     {
         $this->street = $street;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -382,7 +400,7 @@ class Billing implements BillingInterface
     {
         return (string)$this->zipCode;
     }
-
+    
     /**
      * @param string $zipCode
      *
@@ -391,10 +409,10 @@ class Billing implements BillingInterface
     public function setZipCode(string $zipCode): BillingInterface
     {
         $this->zipCode = $zipCode;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -402,7 +420,7 @@ class Billing implements BillingInterface
     {
         return (string)$this->city;
     }
-
+    
     /**
      * @param string $city
      *
@@ -411,10 +429,10 @@ class Billing implements BillingInterface
     public function setCity(string $city): BillingInterface
     {
         $this->city = $city;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -422,7 +440,7 @@ class Billing implements BillingInterface
     {
         return (string)$this->phone;
     }
-
+    
     /**
      * @param string $phone
      *
@@ -431,10 +449,10 @@ class Billing implements BillingInterface
     public function setPhone(string $phone): BillingInterface
     {
         $this->phone = $phone;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -442,7 +460,7 @@ class Billing implements BillingInterface
     {
         return (string)$this->fax;
     }
-
+    
     /**
      * @param string $fax
      *
@@ -451,10 +469,10 @@ class Billing implements BillingInterface
     public function setFax(string $fax): BillingInterface
     {
         $this->fax = $fax;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -462,7 +480,7 @@ class Billing implements BillingInterface
     {
         return (string)$this->vatId;
     }
-
+    
     /**
      * @param string $vatId
      *
@@ -471,10 +489,10 @@ class Billing implements BillingInterface
     public function setVatId(string $vatId): BillingInterface
     {
         $this->vatId = $vatId;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -482,7 +500,7 @@ class Billing implements BillingInterface
     {
         return (string)$this->additionalAddressLine1;
     }
-
+    
     /**
      * @param string $additionalAddressLine1
      *
@@ -491,10 +509,10 @@ class Billing implements BillingInterface
     public function setAdditionalAddressLine1(string $additionalAddressLine1): BillingInterface
     {
         $this->additionalAddressLine1 = $additionalAddressLine1;
-
+        
         return $this;
     }
-
+    
     /**
      * @return string
      */
@@ -502,7 +520,7 @@ class Billing implements BillingInterface
     {
         return (string)$this->additionalAddressLine2;
     }
-
+    
     /**
      * @param string $additionalAddressLine2
      *
@@ -511,10 +529,10 @@ class Billing implements BillingInterface
     public function setAdditionalAddressLine2(string $additionalAddressLine2): BillingInterface
     {
         $this->additionalAddressLine2 = $additionalAddressLine2;
-
+        
         return $this;
     }
-
+    
     /**
      * @return CountryInterface
      */
@@ -522,7 +540,7 @@ class Billing implements BillingInterface
     {
         return $this->country;
     }
-
+    
     /**
      * @param CountryInterface $country
      *
@@ -531,10 +549,10 @@ class Billing implements BillingInterface
     public function setCountry(CountryInterface $country): BillingInterface
     {
         $this->country = $country;
-
+        
         return $this;
     }
-
+    
     /**
      * @return bool
      */
