@@ -219,14 +219,14 @@ class Article implements ArticleInterface
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\CustomerGroup>")
      * @Serializer\SerializedName("customerGroups")
      */
-    private $customerGroups;
+    private $customerGroups = [];
     
     /**
      * @var ImageInterface[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Image>")
      * @Serializer\SerializedName("images")
      */
-    private $images;
+    private $images = [];
     
     /**
      * @var ConfiguratorSetInterface
@@ -240,49 +240,49 @@ class Article implements ArticleInterface
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Link>")
      * @Serializer\SerializedName("links")
      */
-    private $links;
+    private $links = [];
     
     /**
      * @var DownloadInterface[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Download>")
      * @Serializer\SerializedName("downloads")
      */
-    private $downloads;
+    private $downloads = [];
     
     /**
      * @var CategoryInterface[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Category>")
      * @Serializer\SerializedName("categories")
      */
-    private $categories;
+    private $categories = [];
     
     /**
      * @var SimilarInterface[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Similar>")
      * @Serializer\SerializedName("similar")
      */
-    private $similar;
+    private $similar = [];
     
     /**
      * @var RelatedInterface[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Related>")
      * @Serializer\SerializedName("related")
      */
-    private $related;
+    private $related = [];
     
     /**
      * @var DetailInterface[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Detail>")
      * @Serializer\SerializedName("details")
      */
-    private $details;
+    private $details = [];
 
     /**
      * @var PropertyValueInterface[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\PropertyValue>")
      * @Serializer\SerializedName("propertyValues")
      */
-    private $propertyValues;
+    private $propertyValues = [];
 
     /**
      * @return int

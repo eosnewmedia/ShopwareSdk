@@ -44,7 +44,7 @@ class ConfiguratorSet implements ConfiguratorSetInterface
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Group>")
      * @Serializer\SerializedName("groups")
      */
-    private $groups;
+    private $groups = [];
     
     /**
      * @return int

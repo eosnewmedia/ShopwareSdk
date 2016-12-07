@@ -185,14 +185,14 @@ class Detail implements DetailInterface
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Price>")
      * @Serializer\SerializedName("prices")
      */
-    private $prices;
+    private $prices = [];
     
     /**
      * @var ConfiguratorOptionInterface[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\ConfiguratorOption>")
      * @Serializer\SerializedName("configuratorOptions")
      */
-    private $configuratorOptions;
+    private $configuratorOptions = [];
     
     /**
      * @return int
