@@ -41,7 +41,7 @@ class PropertyValue implements PropertyValueInterface
 
     /**
      * @var PropertyValueOptionInterface
-     * @Serializer\Type("\Enm\ShopwareSdk\Model\Article\PropertyValueOption")
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\PropertyValueOption")
      * @Serializer\SerializedName("option")
      */
     private $option;

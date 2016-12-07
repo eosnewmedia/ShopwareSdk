@@ -29,4 +29,11 @@ interface ArticleEndpointInterface
      * @return ArticleEndpointInterface
      */
     public function save(ArticleInterface $article): ArticleEndpointInterface;
+
+    /**
+     * @param ArticleInterface $article
+     *
+     * @return ArticleEndpointInterface
+     */
+    public function delete(ArticleInterface $article): ArticleEndpointInterface;
 }
