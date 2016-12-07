@@ -16,7 +16,7 @@ abstract class AbstractHandler implements JsonSerializerInterface, JsonDeseriali
      * @var SerializerInterface
      */
     private $jmsSerializer;
-    
+
     /**
      * @param SerializerInterface $serializer
      */
@@ -24,7 +24,7 @@ abstract class AbstractHandler implements JsonSerializerInterface, JsonDeseriali
     {
         $this->jmsSerializer = $serializer;
     }
-    
+
     /**
      * @return SerializerInterface
      */
@@ -32,7 +32,7 @@ abstract class AbstractHandler implements JsonSerializerInterface, JsonDeseriali
     {
         return $this->jmsSerializer;
     }
-    
+
     /**
      * @param string $json
      *
@@ -42,14 +42,14 @@ abstract class AbstractHandler implements JsonSerializerInterface, JsonDeseriali
     {
         /** @var WrapperInterface $wrapper */
         $wrapper = $this->jms()->deserialize(
-          $json,
-          $this->wrapperClass(),
-          'json'
+            $json,
+            $this->wrapperClass(),
+            'json'
         );
-        
+
         return $wrapper;
     }
-    
+
     /**
      * @param string $json
      *
@@ -59,39 +59,29 @@ abstract class AbstractHandler implements JsonSerializerInterface, JsonDeseriali
     {
         /** @var CollectionWrapperInterface $collectionWrapper */
         $collectionWrapper = $this->jms()->deserialize(
-          $json,
-          $this->collectionWrapperClass(),
-          'json'
+            $json,
+            $this->collectionWrapperClass(),
+            'json'
         );
-        
+
         return $collectionWrapper;
     }
-    
+
     /**
-     * @param WrapperInterface $data
+     * @param mixed $data
      *
-     * @return string
+     * @return array
      */
-    public function serialize(WrapperInterface $data): string
+    public function serialize($data): array
     {
-        return $this->jms()->serialize($data, 'json');
+        return json_decode($this->jms()->serialize($data, 'json'), true);
     }
-    
-    /**
-     * @param CollectionWrapperInterface $data
-     *
-     * @return string
-     */
-    public function serializeCollection(CollectionWrapperInterface $data): string
-    {
-        return $this->jms()->serialize($data, 'json');
-    }
-    
+
     /**
      * @return string
      */
     abstract protected function wrapperClass(): string;
-    
+
     /**
      * @return string
      */

@@ -216,14 +216,14 @@ class Article implements ArticleInterface
     
     /**
      * @var CustomerGroupInterface[]
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\CustomerGroup")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\CustomerGroup>")
      * @Serializer\SerializedName("customerGroups")
      */
     private $customerGroups;
     
     /**
      * @var ImageInterface[]
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Image")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Image>")
      * @Serializer\SerializedName("images")
      */
     private $images;
@@ -237,42 +237,42 @@ class Article implements ArticleInterface
     
     /**
      * @var LinkInterface[]
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Link")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Link>")
      * @Serializer\SerializedName("links")
      */
     private $links;
     
     /**
      * @var DownloadInterface[]
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Download")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Download>")
      * @Serializer\SerializedName("downloads")
      */
     private $downloads;
     
     /**
      * @var CategoryInterface[]
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Category")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Category>")
      * @Serializer\SerializedName("categories")
      */
     private $categories;
     
     /**
      * @var SimilarInterface[]
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Similar")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Similar>")
      * @Serializer\SerializedName("similar")
      */
     private $similar;
     
     /**
      * @var RelatedInterface[]
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Related")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Related>")
      * @Serializer\SerializedName("related")
      */
     private $related;
     
     /**
      * @var DetailInterface[]
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Detail")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Detail>")
      * @Serializer\SerializedName("details")
      */
     private $details;

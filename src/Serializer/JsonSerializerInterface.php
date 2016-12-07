@@ -11,17 +11,11 @@ use Enm\ShopwareSdk\Model\Wrapper\WrapperInterface;
  */
 interface JsonSerializerInterface extends TypeHandlerInterface
 {
+
     /**
-     * @param WrapperInterface $data
+     * @param mixed $data
      *
-     * @return string
+     * @return array
      */
-    public function serialize(WrapperInterface $data): string;
-    
-    /**
-     * @param CollectionWrapperInterface $data
-     *
-     * @return string
-     */
-    public function serializeCollection(CollectionWrapperInterface $data): string;
+    public function serialize($data): array;
 }
