@@ -189,7 +189,7 @@ class Detail implements DetailInterface
     
     /**
      * @var ConfiguratorOptionInterface[]
-     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Configurator>")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\ConfiguratorOption>")
      * @Serializer\SerializedName("configuratorOptions")
      */
     private $configuratorOptions;
