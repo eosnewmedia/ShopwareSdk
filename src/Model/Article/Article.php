@@ -276,7 +276,14 @@ class Article implements ArticleInterface
      * @Serializer\SerializedName("details")
      */
     private $details;
-    
+
+    /**
+     * @var PropertyValueInterface[]
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\PropertyValue>")
+     * @Serializer\SerializedName("propertyValues")
+     */
+    private $propertyValues;
+
     /**
      * @return int
      */
@@ -1074,6 +1081,26 @@ class Article implements ArticleInterface
     {
         $this->details = $details;
         
+        return $this;
+    }
+
+    /**
+     * @return PropertyValueInterface[]
+     */
+    public function getPropertyValues(): array
+    {
+        return $this->propertyValues;
+    }
+
+    /**
+     * @param PropertyValueInterface[] $propertyValues
+     *
+     * @return ArticleInterface
+     */
+    public function setPropertyValues(array $propertyValues): ArticleInterface
+    {
+        $this->propertyValues = $propertyValues;
+
         return $this;
     }
 }
