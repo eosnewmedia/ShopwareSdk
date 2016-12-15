@@ -193,6 +193,13 @@ class Detail implements DetailInterface
      * @Serializer\SerializedName("configuratorOptions")
      */
     private $configuratorOptions = [];
+
+    /**
+     * @var AttributeInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Attribute")
+     * @Serializer\SerializedName("attribute")
+     */
+    private $attribute;
     
     /**
      * @return int
@@ -713,4 +720,21 @@ class Detail implements DetailInterface
         
         return $this;
     }
+
+    /**
+     * @return AttributeInterface
+     */
+    public function getAttribute(): AttributeInterface {
+        return $this->attribute;
+    }
+
+    /**
+     * @param AttributeInterface $attribute
+     * @return DetailInterface
+     */
+    public function setAttribute(AttributeInterface $attribute): DetailInterface {
+        $this->attribute = $attribute;
+        return $this;
+    }
+
 }
