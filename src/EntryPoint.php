@@ -19,8 +19,10 @@ use Enm\ShopwareSdk\Model\Category\CategoryInterface;
 use Enm\ShopwareSdk\Model\Media\MediaInterface;
 use Enm\ShopwareSdk\Model\Order\OrderInterface;
 use Enm\ShopwareSdk\Serializer\ArticleHandler;
+use Enm\ShopwareSdk\Serializer\CategoryHandler;
 use Enm\ShopwareSdk\Serializer\JsonDeserializerInterface;
 use Enm\ShopwareSdk\Serializer\JsonSerializerInterface;
+use Enm\ShopwareSdk\Serializer\MediaHandler;
 use Enm\ShopwareSdk\Serializer\OrderHandler;
 use GuzzleHttp\Client;
 use JMS\Serializer\SerializerBuilder;
@@ -111,7 +113,9 @@ class EntryPoint implements EntryPointInterface
     {
         $this->addSerializer(new ArticleHandler($jmsSerializer));
         $this->addSerializer(new OrderHandler($jmsSerializer));
-        
+        $this->addSerializer(new CategoryHandler($jmsSerializer));
+        $this->addSerializer(new MediaHandler($jmsSerializer));
+
         return $this;
     }
     
@@ -138,7 +142,9 @@ class EntryPoint implements EntryPointInterface
     {
         $this->addDeserializer(new ArticleHandler($jmsSerializer));
         $this->addDeserializer(new OrderHandler($jmsSerializer));
-        
+        $this->addDeserializer(new CategoryHandler($jmsSerializer));
+        $this->addDeserializer(new MediaHandler($jmsSerializer));
+
         return $this;
     }
     
