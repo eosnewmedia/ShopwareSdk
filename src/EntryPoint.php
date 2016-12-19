@@ -5,12 +5,15 @@ namespace Enm\ShopwareSdk;
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Enm\ShopwareSdk\Endpoint\ArticleEndpoint;
+use Enm\ShopwareSdk\Endpoint\CategoryEndpoint;
 use Enm\ShopwareSdk\Endpoint\Definition\ArticleEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\Definition\CategoryEndpointInterface;
 use Enm\ShopwareSdk\Endpoint\Definition\OrderEndpointInterface;
 use Enm\ShopwareSdk\Endpoint\OrderEndpoint;
 use Enm\ShopwareSdk\Http\ClientInterface;
 use Enm\ShopwareSdk\Http\GuzzleAdapter;
 use Enm\ShopwareSdk\Model\Article\ArticleInterface;
+use Enm\ShopwareSdk\Model\Category\CategoryInterface;
 use Enm\ShopwareSdk\Model\Order\OrderInterface;
 use Enm\ShopwareSdk\Serializer\ArticleHandler;
 use Enm\ShopwareSdk\Serializer\JsonDeserializerInterface;
@@ -50,6 +53,11 @@ class EntryPoint implements EntryPointInterface
      * @var OrderEndpointInterface
      */
     private $orderEndpoint;
+
+    /**
+     * @var CategoryEndpointInterface
+     */
+    private $categoryEndpoint;
     
     /**
      * @param ClientInterface $httpClient
@@ -210,5 +218,21 @@ class EntryPoint implements EntryPointInterface
         }
         
         return $this->orderEndpoint;
+    }
+
+    /**
+     * @return CategoryEndpointInterface
+     * @throws \InvalidArgumentException
+     */
+    public function categories(): CategoryEndpointInterface {
+        if (!$this->categoryEndpoint instanceof CategoryEndpointInterface) {
+            $this->categoryEndpoint = new CategoryEndpoint(
+                $this->httpClient(),
+                $this->serializerFor(CategoryInterface::class),
+                $this->deserializerFor(CategoryInterface::class)
+            );
+        }
+
+        return $this->categoryEndpoint;
     }
 }
