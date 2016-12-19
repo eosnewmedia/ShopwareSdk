@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Model\Category;
 
+use JMS\Serializer\Annotation as Serializer;
+
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
@@ -10,11 +12,15 @@ class Category implements CategoryInterface {
 
     /**
      * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
 

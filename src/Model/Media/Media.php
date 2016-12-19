@@ -3,72 +3,100 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Model\Media;
 
+use JMS\Serializer\Annotation as Serializer;
+
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
 class Media implements MediaInterface {
     /**
      * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("articleId")
      */
     private $articleId;
 
     /**
      * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("articleDetailId")
      */
     private $articleDetailId;
 
     /**
      * @var string
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("description")
      */
     private $description;
 
     /**
      * @var string
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("path")
      */
     private $path;
 
     /**
      * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("main")
      */
     private $main;
 
     /**
      * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("position")
      */
     private $position;
 
     /**
      * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("width")
      */
     private $width;
 
     /**
      * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("height")
      */
     private $height;
 
     /**
      * @var string
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("relations")
      */
     private $relations;
 
     /**
      * @var string
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("extension")
      */
     private $extension;
 
     /**
      * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("parentId")
      */
     private $parentId;
 
     /**
      * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("mediaId")
      */
     private $mediaId;
 
