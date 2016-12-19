@@ -5,7 +5,6 @@ namespace Enm\ShopwareSdk\Endpoint;
 
 use Enm\ShopwareSdk\Endpoint\Definition\ArticleEndpointInterface;
 use Enm\ShopwareSdk\Model\Article\ArticleInterface;
-use Enm\ShopwareSdk\Model\Wrapper\ArticleWrapper;
 
 /**
  * @author Philipp Marien <marien@eosnewmedia.de>
@@ -84,5 +83,26 @@ class ArticleEndpoint extends AbstractEndpoint implements ArticleEndpointInterfa
         $this->shopware()->delete('/api/articles/'.(string)$article->getId());
 
         return $this;
+    }
+
+    /**
+     * @param string $articleNumber
+     *
+     * @return ArticleInterface
+     * @throws \LogicException
+     */
+    public function findByArticleNumber(string $articleNumber): ArticleInterface {
+
+        $response = $this->shopware()->get('/api/articles/' . $articleNumber, ['useNumberAsId' => 'true']);
+
+        $articleWrapper = $this->deserializer()
+            ->deserialize((string)$response->getBody());
+
+        $article = $articleWrapper->getData();
+        if (!$article instanceof ArticleInterface) {
+            throw new \LogicException();
+        }
+
+        return $article;
     }
 }

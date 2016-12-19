@@ -36,4 +36,11 @@ interface ArticleEndpointInterface
      * @return ArticleEndpointInterface
      */
     public function delete(ArticleInterface $article): ArticleEndpointInterface;
+
+    /**
+     * @param string $articleNumber
+     *
+     * @return ArticleInterface
+     */
+    public function findByArticleNumber(string $articleNumber): ArticleInterface;
 }
