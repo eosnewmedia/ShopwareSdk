@@ -8,12 +8,15 @@ use Enm\ShopwareSdk\Endpoint\ArticleEndpoint;
 use Enm\ShopwareSdk\Endpoint\CategoryEndpoint;
 use Enm\ShopwareSdk\Endpoint\Definition\ArticleEndpointInterface;
 use Enm\ShopwareSdk\Endpoint\Definition\CategoryEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\Definition\MediaEndpointInterface;
 use Enm\ShopwareSdk\Endpoint\Definition\OrderEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\MediaEndpoint;
 use Enm\ShopwareSdk\Endpoint\OrderEndpoint;
 use Enm\ShopwareSdk\Http\ClientInterface;
 use Enm\ShopwareSdk\Http\GuzzleAdapter;
 use Enm\ShopwareSdk\Model\Article\ArticleInterface;
 use Enm\ShopwareSdk\Model\Category\CategoryInterface;
+use Enm\ShopwareSdk\Model\Media\MediaInterface;
 use Enm\ShopwareSdk\Model\Order\OrderInterface;
 use Enm\ShopwareSdk\Serializer\ArticleHandler;
 use Enm\ShopwareSdk\Serializer\JsonDeserializerInterface;
@@ -58,6 +61,11 @@ class EntryPoint implements EntryPointInterface
      * @var CategoryEndpointInterface
      */
     private $categoryEndpoint;
+
+    /**
+     * @var MediaEndpointInterface
+     */
+    private $mediaEndpoint;
     
     /**
      * @param ClientInterface $httpClient
@@ -234,5 +242,20 @@ class EntryPoint implements EntryPointInterface
         }
 
         return $this->categoryEndpoint;
+    }
+
+    /**
+     * @return MediaEndpointInterface
+     * @throws \InvalidArgumentException
+     */
+    public function media(): MediaEndpointInterface {
+        if (!$this->mediaEndpoint instanceof MediaEndpointInterface) {
+            $this->mediaEndpoint = new MediaEndpoint(
+                $this->httpClient(),
+                $this->serializerFor(MediaInterface::class),
+                $this->deserializerFor(MediaInterface::class)
+            );
+        }
+        return $this->mediaEndpoint;
     }
 }

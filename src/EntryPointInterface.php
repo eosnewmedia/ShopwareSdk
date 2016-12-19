@@ -5,6 +5,7 @@ namespace Enm\ShopwareSdk;
 
 use Enm\ShopwareSdk\Endpoint\Definition\ArticleEndpointInterface;
 use Enm\ShopwareSdk\Endpoint\Definition\CategoryEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\Definition\MediaEndpointInterface;
 use Enm\ShopwareSdk\Endpoint\Definition\OrderEndpointInterface;
 
 /**
@@ -26,4 +27,9 @@ interface EntryPointInterface
      * @return CategoryEndpointInterface
      */
     public function categories(): CategoryEndpointInterface;
+
+    /**
+     * @return MediaEndpointInterface
+     */
+    public function media(): MediaEndpointInterface;
 }
