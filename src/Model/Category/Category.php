@@ -33,9 +33,9 @@ class Category implements CategoryInterface {
 
     /**
      * @param int $id
-     * @return $this
+     * @return CategoryInterface
      */
-    public function setId(int $id) {
+    public function setId(int $id): CategoryInterface {
         $this->id = $id;
         return $this;
     }
