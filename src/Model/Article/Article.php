@@ -252,7 +252,7 @@ class Article implements ArticleInterface
     
     /**
      * @var CategoryInterface[]
-     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Category>")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Category\Category>")
      * @Serializer\SerializedName("categories")
      */
     private $categories = [];
