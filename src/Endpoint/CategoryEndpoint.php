@@ -63,7 +63,9 @@ class CategoryEndpoint extends AbstractEndpoint implements CategoryEndpointInter
             $this->shopware()
                 ->put('/api/categories/' . (string)$category->getId(), [], $data);
         } else {
-            $this->shopware()->post('/api/categories', [], $data);
+            $response = $this->shopware()->post('/api/categories', [], $data);
+            $data = json_decode((string)$response->getBody(), true);
+            $category->setId((int)$data['data']['id']);
         }
 
         return $this;

@@ -63,7 +63,9 @@ class MediaEndpoint extends AbstractEndpoint implements MediaEndpointInterface {
             $this->shopware()
                 ->put('/api/media/' . (string)$media->getId(), [], $data);
         } else {
-            $this->shopware()->post('/api/media', [], $data);
+            $response = $this->shopware()->post('/api/media', [], $data);
+            $data = json_decode((string)$response->getBody(), true);
+            $media->setId((int)$data['data']['id']);
         }
 
         return $this;

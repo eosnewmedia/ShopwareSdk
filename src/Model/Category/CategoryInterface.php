@@ -11,6 +11,17 @@ use Enm\ShopwareSdk\Model\RootModelInterface;
 interface CategoryInterface extends RootModelInterface {
 
     /**
+     * @return int
+     */
+    public function getId(): int;
+
+    /**
+     * @param int $id
+     * @return CategoryInterface
+     */
+    public function setId(int $id): CategoryInterface;
+
+    /**
      * @return string
      */
     public function getName(): string;

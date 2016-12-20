@@ -67,7 +67,9 @@ class ArticleEndpoint extends AbstractEndpoint implements ArticleEndpointInterfa
             $this->shopware()
                  ->put('/api/articles/'.(string)$article->getId(), [], $data);
         } else {
-            $this->shopware()->post('/api/articles', [], $data);
+            $response = $this->shopware()->post('/api/articles', [], $data);
+            $data = json_decode((string)$response->getBody(), true);
+            $article->setId((int)$data['data']['id']);
         }
 
         return $this;
