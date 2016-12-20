@@ -31,4 +31,16 @@ interface CategoryInterface extends RootModelInterface {
      * @return CategoryInterface
      */
     public function setName(string $name): CategoryInterface;
+
+    /**
+     * @return int
+     */
+    public function getParentId(): int;
+
+    /**
+     * @param int $parentId
+     * @return CategoryInterface
+     */
+    public function setParentId(int $parentId): CategoryInterface;
+
 }

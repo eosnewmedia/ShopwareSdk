@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace Enm\ShopwareSdk\Model\Article;
 
 use JMS\Serializer\Annotation as Serializer;
+use Enm\ShopwareSdk\Model\Category\CategoryInterface;
 
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>

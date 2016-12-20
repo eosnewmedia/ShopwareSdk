@@ -25,6 +25,13 @@ class Category implements CategoryInterface {
     private $name;
 
     /**
+     * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("parentId")
+     */
+    private $parentId;
+
+    /**
      * @return int
      */
     public function getId(): int {
@@ -53,6 +60,22 @@ class Category implements CategoryInterface {
      */
     public function setName(string $name): CategoryInterface {
         $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getParentId(): int {
+        return $this->parentId;
+    }
+
+    /**
+     * @param int $parentId
+     * @return CategoryInterface
+     */
+    public function setParentId(int $parentId): CategoryInterface {
+        $this->parentId = $parentId;
         return $this;
     }
 }

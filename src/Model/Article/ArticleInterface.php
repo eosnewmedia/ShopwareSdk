@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace Enm\ShopwareSdk\Model\Article;
 
 use Enm\ShopwareSdk\Model\RootModelInterface;
+use Enm\ShopwareSdk\Model\Category\CategoryInterface;
 
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
