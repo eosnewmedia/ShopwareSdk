@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Model\Article;
 
+use Enm\ShopwareSdk\Model\Manufacturer\ManufacturerInterface;
 use Enm\ShopwareSdk\Model\RootModelInterface;
 use Enm\ShopwareSdk\Model\Category\CategoryInterface;
 
@@ -343,9 +344,9 @@ interface ArticleInterface extends RootModelInterface
     public function setTax(TaxInterface $tax): ArticleInterface;
 
     /**
-     * @return SupplierInterface
+     * @return ManufacturerInterface
      */
-    public function getSupplier(): SupplierInterface;
+    public function getSupplier(): ManufacturerInterface;
 
     /**
      * @return bool
@@ -353,11 +354,11 @@ interface ArticleInterface extends RootModelInterface
     public function hasSupplier(): bool;
 
     /**
-     * @param SupplierInterface $supplier
+     * @param ManufacturerInterface $supplier
      *
      * @return ArticleInterface
      */
-    public function setSupplier(SupplierInterface $supplier): ArticleInterface;
+    public function setSupplier(ManufacturerInterface $supplier): ArticleInterface;
 
     /**
      * @return PropertyGroupInterface
