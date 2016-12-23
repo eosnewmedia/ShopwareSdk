@@ -19,6 +19,13 @@ class Media implements MediaInterface
 	private $id;
 
 	/**
+	 * @var int
+	 * @Serializer\Type("integer")
+	 * @Serializer\SerializedName("albumId")
+	 */
+	private $albumId;
+
+	/**
 	 * @var string
 	 * @Serializer\Type("string")
 	 * @Serializer\SerializedName("name")
@@ -81,8 +88,6 @@ class Media implements MediaInterface
 	 */
 	private $created;
 
-
-
 	/**
 	 * @return int
 	 */
@@ -90,8 +95,6 @@ class Media implements MediaInterface
 	{
 		return (int)$this->id;
 	}
-
-
 
 	/**
 	 * @param int $id
@@ -108,14 +111,34 @@ class Media implements MediaInterface
 
 
 	/**
+	 * @return int
+	 */
+	public function getAlbumId(): int
+	{
+		return (int)$this->albumId;
+	}
+
+
+
+	/**
+	 * @param int $albumId
+	 *
+	 * @return MediaInterface
+	 */
+	public function setAlbumId(int $albumId): MediaInterface
+	{
+		$this->albumId = $albumId;
+
+		return $this;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getName(): string
 	{
 		return (string)$this->name;
 	}
-
-
 
 	/**
 	 * @param string $name
@@ -129,8 +152,6 @@ class Media implements MediaInterface
 		return $this;
 	}
 
-
-
 	/**
 	 * @return string
 	 */
@@ -138,8 +159,6 @@ class Media implements MediaInterface
 	{
 		return (string)$this->description;
 	}
-
-
 
 	/**
 	 * @param string $description
@@ -153,8 +172,6 @@ class Media implements MediaInterface
 		return $this;
 	}
 
-
-
 	/**
 	 * @return string
 	 */
@@ -162,8 +179,6 @@ class Media implements MediaInterface
 	{
 		return (string)$this->path;
 	}
-
-
 
 	/**
 	 * @param string $path
@@ -177,8 +192,6 @@ class Media implements MediaInterface
 		return $this;
 	}
 
-
-
 	/**
 	 * @return string
 	 */
@@ -186,8 +199,6 @@ class Media implements MediaInterface
 	{
 		return (string)$this->type;
 	}
-
-
 
 	/**
 	 * @param string $type
@@ -201,8 +212,6 @@ class Media implements MediaInterface
 		return $this;
 	}
 
-
-
 	/**
 	 * @return string
 	 */
@@ -210,8 +219,6 @@ class Media implements MediaInterface
 	{
 		return (string)$this->extension;
 	}
-
-
 
 	/**
 	 * @param string $extension
@@ -225,8 +232,6 @@ class Media implements MediaInterface
 		return $this;
 	}
 
-
-
 	/**
 	 * @return int
 	 */
@@ -234,8 +239,6 @@ class Media implements MediaInterface
 	{
 		return (int)$this->width;
 	}
-
-
 
 	/**
 	 * @param int $width
@@ -249,8 +252,6 @@ class Media implements MediaInterface
 		return $this;
 	}
 
-
-
 	/**
 	 * @return int
 	 */
@@ -258,8 +259,6 @@ class Media implements MediaInterface
 	{
 		return (int)$this->height;
 	}
-
-
 
 	/**
 	 * @param int $height
@@ -273,8 +272,6 @@ class Media implements MediaInterface
 		return $this;
 	}
 
-
-
 	/**
 	 * @return int
 	 */
@@ -282,8 +279,6 @@ class Media implements MediaInterface
 	{
 		return (int)$this->userId;
 	}
-
-
 
 	/**
 	 * @param int $userId
@@ -297,8 +292,6 @@ class Media implements MediaInterface
 		return $this;
 	}
 
-
-
 	/**
 	 * @return string
 	 */
@@ -306,8 +299,6 @@ class Media implements MediaInterface
 	{
 		return (string)$this->created;
 	}
-
-
 
 	/**
 	 * @param string $created
@@ -321,4 +312,3 @@ class Media implements MediaInterface
 		return $this;
 	}
 }
-

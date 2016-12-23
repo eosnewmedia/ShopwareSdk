@@ -10,11 +10,23 @@ interface MediaInterface extends RootModelInterface
 {
 
 	/**
+	 * @return int
+	 */
+	public function getAlbumId(): int;
+
+
+
+	/**
+	 * @param int $albumId
+	 *
+	 * @return MediaInterface
+	 */
+	public function setAlbumId(int $albumId): MediaInterface;
+
+	/**
 	 * @return string
 	 */
 	public function getName(): string;
-
-
 
 	/**
 	 * @param string $name
@@ -23,14 +35,10 @@ interface MediaInterface extends RootModelInterface
 	 */
 	public function setName(string $name): MediaInterface;
 
-
-
 	/**
 	 * @return string
 	 */
 	public function getDescription(): string;
-
-
 
 	/**
 	 * @param string $description
@@ -39,14 +47,10 @@ interface MediaInterface extends RootModelInterface
 	 */
 	public function setDescription(string $description): MediaInterface;
 
-
-
 	/**
 	 * @return string
 	 */
 	public function getPath(): string;
-
-
 
 	/**
 	 * @param string $path
@@ -55,14 +59,10 @@ interface MediaInterface extends RootModelInterface
 	 */
 	public function setPath(string $path): MediaInterface;
 
-
-
 	/**
 	 * @return string
 	 */
 	public function getType(): string;
-
-
 
 	/**
 	 * @param string $type
@@ -71,14 +71,10 @@ interface MediaInterface extends RootModelInterface
 	 */
 	public function setType(string $type): MediaInterface;
 
-
-
 	/**
 	 * @return string
 	 */
 	public function getExtension(): string;
-
-
 
 	/**
 	 * @param string $extension
@@ -87,14 +83,10 @@ interface MediaInterface extends RootModelInterface
 	 */
 	public function setExtension(string $extension): MediaInterface;
 
-
-
 	/**
 	 * @return int
 	 */
 	public function getWidth(): int;
-
-
 
 	/**
 	 * @param int $width
@@ -103,14 +95,10 @@ interface MediaInterface extends RootModelInterface
 	 */
 	public function setWidth(int $width): MediaInterface;
 
-
-
 	/**
 	 * @return int
 	 */
 	public function getHeight(): int;
-
-
 
 	/**
 	 * @param int $height
@@ -119,14 +107,10 @@ interface MediaInterface extends RootModelInterface
 	 */
 	public function setHeight(int $height): MediaInterface;
 
-
-
 	/**
 	 * @return int
 	 */
 	public function getUserId(): int;
-
-
 
 	/**
 	 * @param int $userId
@@ -135,14 +119,10 @@ interface MediaInterface extends RootModelInterface
 	 */
 	public function setUserId(int $userId): MediaInterface;
 
-
-
 	/**
 	 * @return string
 	 */
 	public function getCreated(): string;
-
-
 
 	/**
 	 * @param string $created
