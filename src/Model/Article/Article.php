@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace Enm\ShopwareSdk\Model\Article;
 
 use Enm\ShopwareSdk\Model\Manufacturer\ManufacturerInterface;
+use Enm\ShopwareSdk\Model\Media\MediaInterface;
 use JMS\Serializer\Annotation as Serializer;
 use Enm\ShopwareSdk\Model\Category\CategoryInterface;
 
@@ -224,8 +225,8 @@ class Article implements ArticleInterface
     private $customerGroups = [];
 
     /**
-     * @var ImageInterface[]
-     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Image>")
+     * @var MediaInterface[]
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Media\Media>")
      * @Serializer\SerializedName("images")
      */
     private $images = [];
@@ -855,14 +856,14 @@ class Article implements ArticleInterface
     }
 
     /**
-     * @return ImageInterface[]
+     * @return MediaInterface[]
      */
     public function getImages(): array {
         return (array)$this->images;
     }
 
     /**
-     * @param ImageInterface[] $images
+     * @param MediaInterface[] $images
      *
      * @return ArticleInterface
      */
