@@ -54,9 +54,9 @@ class CategoryEndpoint extends AbstractEndpoint implements CategoryEndpointInter
     /**
      * @param CategoryInterface $category
      *
-     * @return CategoryEndpointInterface
+     * @return CategoryInterface
      */
-    public function save(CategoryInterface $category): CategoryEndpointInterface {
+    public function save(CategoryInterface $category): CategoryInterface {
         $data = $this->serializer()->serialize($category);
 
         if ($category->getId() !== 0) {
@@ -68,6 +68,6 @@ class CategoryEndpoint extends AbstractEndpoint implements CategoryEndpointInter
             $category->setId((int)$data['data']['id']);
         }
 
-        return $this;
+        return $category;
     }
 }

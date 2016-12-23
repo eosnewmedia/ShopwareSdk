@@ -25,7 +25,7 @@ interface ManufacturerEndpointInterface {
     /**
      * @param ManufacturerInterface $manufacturer
      *
-     * @return ManufacturerEndpointInterface
+     * @return ManufacturerInterface
      */
-    public function save(ManufacturerInterface $manufacturer): ManufacturerEndpointInterface;
+    public function save(ManufacturerInterface $manufacturer): ManufacturerInterface;
 }

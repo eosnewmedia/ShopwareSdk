@@ -54,9 +54,9 @@ class MediaEndpoint extends AbstractEndpoint implements MediaEndpointInterface {
     /**
      * @param MediaInterface $media
      *
-     * @return MediaEndpointInterface
+     * @return MediaInterface
      */
-    public function save(MediaInterface $media): MediaEndpointInterface {
+    public function save(MediaInterface $media): MediaInterface {
         $data = $this->serializer()->serialize($media);
 
         if ($media->getId() !== 0) {
@@ -68,6 +68,6 @@ class MediaEndpoint extends AbstractEndpoint implements MediaEndpointInterface {
             $media->setId((int)$data['data']['id']);
         }
 
-        return $this;
+        return $media;
     }
 }

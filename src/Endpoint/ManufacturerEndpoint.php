@@ -54,9 +54,9 @@ class ManufacturerEndpoint extends AbstractEndpoint implements ManufacturerEndpo
     /**
      * @param ManufacturerInterface $manufacturer
      *
-     * @return ManufacturerEndpointInterface
+     * @return ManufacturerInterface
      */
-    public function save(ManufacturerInterface $manufacturer): ManufacturerEndpointInterface {
+    public function save(ManufacturerInterface $manufacturer): ManufacturerInterface {
         $data = $this->serializer()->serialize($manufacturer);
 
         if ($manufacturer->getId() !== 0) {
@@ -68,6 +68,6 @@ class ManufacturerEndpoint extends AbstractEndpoint implements ManufacturerEndpo
             $manufacturer->setId((int)$data['data']['id']);
         }
 
-        return $this;
+        return $manufacturer;
     }
 }

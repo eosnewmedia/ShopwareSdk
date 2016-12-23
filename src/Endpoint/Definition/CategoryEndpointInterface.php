@@ -25,7 +25,7 @@ interface CategoryEndpointInterface {
     /**
      * @param CategoryInterface $category
      *
-     * @return CategoryEndpointInterface
+     * @return CategoryInterface
      */
-    public function save(CategoryInterface $category): CategoryEndpointInterface;
+    public function save(CategoryInterface $category): CategoryInterface;
 }

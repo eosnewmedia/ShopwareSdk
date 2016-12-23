@@ -26,9 +26,9 @@ interface ArticleEndpointInterface
     /**
      * @param ArticleInterface $article
      *
-     * @return ArticleEndpointInterface
+     * @return ArticleInterface
      */
-    public function save(ArticleInterface $article): ArticleEndpointInterface;
+    public function save(ArticleInterface $article): ArticleInterface;
 
     /**
      * @param ArticleInterface $article

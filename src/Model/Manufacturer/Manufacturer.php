@@ -70,7 +70,7 @@ class Manufacturer implements ManufacturerInterface {
      * @return int
      */
     public function getId(): int {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -86,7 +86,7 @@ class Manufacturer implements ManufacturerInterface {
      * @return string
      */
     public function getName(): string {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -102,7 +102,7 @@ class Manufacturer implements ManufacturerInterface {
      * @return string
      */
     public function getImage(): string {
-        return $this->image;
+        return (string)$this->image;
     }
 
     /**
@@ -118,7 +118,7 @@ class Manufacturer implements ManufacturerInterface {
      * @return string
      */
     public function getLink(): string {
-        return $this->link;
+        return (string)$this->link;
     }
 
     /**
@@ -134,7 +134,7 @@ class Manufacturer implements ManufacturerInterface {
      * @return string
      */
     public function getDescription(): string {
-        return $this->description;
+        return (string)$this->description;
     }
 
     /**
@@ -150,7 +150,7 @@ class Manufacturer implements ManufacturerInterface {
      * @return string
      */
     public function getMetaTitle(): string {
-        return $this->metaTitle;
+        return (string)$this->metaTitle;
     }
 
     /**
@@ -166,7 +166,7 @@ class Manufacturer implements ManufacturerInterface {
      * @return string
      */
     public function getMetaDescription(): string {
-        return $this->metaDescription;
+        return (string)$this->metaDescription;
     }
 
     /**
@@ -182,7 +182,7 @@ class Manufacturer implements ManufacturerInterface {
      * @return string
      */
     public function getMetaKeywords(): string {
-        return $this->metaKeywords;
+        return (string)$this->metaKeywords;
     }
 
     /**

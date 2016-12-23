@@ -57,9 +57,9 @@ class ArticleEndpoint extends AbstractEndpoint implements ArticleEndpointInterfa
     /**
      * @param ArticleInterface $article
      *
-     * @return ArticleEndpointInterface
+     * @return ArticleInterface
      */
-    public function save(ArticleInterface $article): ArticleEndpointInterface
+    public function save(ArticleInterface $article): ArticleInterface
     {
         $data = $this->serializer()->serialize($article);
 
@@ -72,7 +72,7 @@ class ArticleEndpoint extends AbstractEndpoint implements ArticleEndpointInterfa
             $article->setId((int)$data['data']['id']);
         }
 
-        return $this;
+        return $article;
     }
 
     /**

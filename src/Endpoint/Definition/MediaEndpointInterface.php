@@ -25,7 +25,7 @@ interface MediaEndpointInterface {
     /**
      * @param MediaInterface $media
      *
-     * @return MediaEndpointInterface
+     * @return MediaInterface
      */
-    public function save(MediaInterface $media): MediaEndpointInterface;
+    public function save(MediaInterface $media): MediaInterface;
 }
