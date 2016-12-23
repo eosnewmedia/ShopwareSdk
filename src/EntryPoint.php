@@ -8,14 +8,17 @@ use Enm\ShopwareSdk\Endpoint\ArticleEndpoint;
 use Enm\ShopwareSdk\Endpoint\CategoryEndpoint;
 use Enm\ShopwareSdk\Endpoint\Definition\ArticleEndpointInterface;
 use Enm\ShopwareSdk\Endpoint\Definition\CategoryEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\Definition\ManufacturerEndpointInterface;
 use Enm\ShopwareSdk\Endpoint\Definition\MediaEndpointInterface;
 use Enm\ShopwareSdk\Endpoint\Definition\OrderEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\ManufacturerEndpoint;
 use Enm\ShopwareSdk\Endpoint\MediaEndpoint;
 use Enm\ShopwareSdk\Endpoint\OrderEndpoint;
 use Enm\ShopwareSdk\Http\ClientInterface;
 use Enm\ShopwareSdk\Http\GuzzleAdapter;
 use Enm\ShopwareSdk\Model\Article\ArticleInterface;
 use Enm\ShopwareSdk\Model\Category\CategoryInterface;
+use Enm\ShopwareSdk\Model\Manufacturer\ManufacturerInterface;
 use Enm\ShopwareSdk\Model\Media\MediaInterface;
 use Enm\ShopwareSdk\Model\Order\OrderInterface;
 use Enm\ShopwareSdk\Serializer\ArticleHandler;
@@ -68,7 +71,12 @@ class EntryPoint implements EntryPointInterface
      * @var MediaEndpointInterface
      */
     private $mediaEndpoint;
-    
+
+    /**
+     * @var ManufacturerEndpointInterface
+     */
+    private $manufacturerEndpoint;
+
     /**
      * @param ClientInterface $httpClient
      */
@@ -263,5 +271,21 @@ class EntryPoint implements EntryPointInterface
             );
         }
         return $this->mediaEndpoint;
+    }
+
+    /**
+     * @return ManufacturerEndpointInterface
+     * @throws \InvalidArgumentException
+     */
+    public function manufacturer(): ManufacturerEndpointInterface {
+        if (!$this->manufacturerEndpoint instanceof ManufacturerEndpointInterface) {
+            $this->manufacturerEndpoint = new ManufacturerEndpoint(
+                $this->httpClient(),
+                $this->serializerFor(ManufacturerInterface::class),
+                $this->deserializerFor(ManufacturerInterface::class)
+            );
+        }
+
+        return $this->manufacturerEndpoint;
     }
 }

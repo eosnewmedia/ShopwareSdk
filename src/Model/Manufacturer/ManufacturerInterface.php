@@ -3,10 +3,12 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Model\Manufacturer;
 
+use Enm\ShopwareSdk\Model\RootModelInterface;
+
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
-interface ManufacturerInterface {
+interface ManufacturerInterface extends RootModelInterface {
     /**
      * @return int
      */

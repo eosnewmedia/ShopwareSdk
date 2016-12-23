@@ -114,6 +114,7 @@ class GuzzleAdapter implements ClientInterface
      *
      * @return ResponseInterface
      * @throws \Exception
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     private function request(string $method, string $path, array $query = [], array $body = []): ResponseInterface
     {
