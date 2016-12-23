@@ -10,19 +10,19 @@ use Enm\ShopwareSdk\Model\Article\ArticleInterface;
  */
 interface ArticleEndpointInterface
 {
-    
+
     /**
      * @return ArticleInterface[]
      */
     public function findAll(): array;
-    
+
     /**
      * @param int $id
      *
      * @return ArticleInterface
      */
     public function find(int $id): ArticleInterface;
-    
+
     /**
      * @param ArticleInterface $article
      *
@@ -43,4 +43,12 @@ interface ArticleEndpointInterface
      * @return ArticleInterface
      */
     public function findByArticleNumber(string $articleNumber): ArticleInterface;
+
+    /**
+     * @param int $articleId
+     * @param array $data
+     *
+     * @return ArticleInterface
+     */
+    public function updatePartials(int $articleId, array $data): ArticleInterface;
 }
