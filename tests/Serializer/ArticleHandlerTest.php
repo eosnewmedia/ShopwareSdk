@@ -16,62 +16,62 @@ use PHPUnit\Framework\TestCase;
  */
 class ArticleHandlerTest extends TestCase
 {
-    
+
     public function testHandle()
     {
         $handler = new ArticleHandler(
-          $this->createConfiguredMock(
-            SerializerInterface::class,
-            [
-              'deserialize' => $this->createConfiguredMock(
-                ArticleWrapper::class,
+            $this->createConfiguredMock(
+                SerializerInterface::class,
                 [
-                  'getData' => $this->createMock(Article::class),
+                    'deserialize' => $this->createConfiguredMock(
+                        ArticleWrapper::class,
+                        [
+                            'getData' => $this->createMock(Article::class),
+                        ]
+                    ),
                 ]
-              ),
-            ]
-          )
+            )
         );
-        
+
         self::assertInstanceOf(
-          ArticleWrapper::class,
-          $handler->deserialize('JSON DUMMY')
+            ArticleWrapper::class,
+            $handler->deserialize('JSON DUMMY')
         );
     }
-    
+
     public function testHandleCollection()
     {
         $handler = new ArticleHandler(
-          $this->createConfiguredMock(
-            SerializerInterface::class,
-            [
-              'deserialize' => $this->createConfiguredMock(
-                ArticleCollectionWrapper::class,
+            $this->createConfiguredMock(
+                SerializerInterface::class,
                 [
-                  'getData' => [
-                    $this->createMock(Article::class),
-                  ],
+                    'deserialize' => $this->createConfiguredMock(
+                        ArticleCollectionWrapper::class,
+                        [
+                            'getData' => [
+                                $this->createMock(Article::class),
+                            ],
+                        ]
+                    ),
                 ]
-              ),
-            ]
-          )
+            )
         );
-        
+
         self::assertInstanceOf(
-          ArticleCollectionWrapper::class,
-          $handler->deserializeCollection('JSON DUMMY')
+            ArticleCollectionWrapper::class,
+            $handler->deserializeCollection('JSON DUMMY')
         );
     }
-    
+
     public function testGetSupportedTypes()
     {
         $handler = new ArticleHandler(
-          $this->createMock(SerializerInterface::class)
+            $this->createMock(SerializerInterface::class)
         );
-        
+
         self::assertContains(
-          ArticleInterface::class,
-          $handler->getSupportedTypes()
+            ArticleInterface::class,
+            $handler->getSupportedTypes()
         );
     }
 }

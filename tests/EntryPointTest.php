@@ -23,36 +23,36 @@ class EntryPointTest extends TestCase
     public function testEntryPoint()
     {
         $entryPoint = new EntryPoint($this->createMock(ClientInterface::class));
-        
+
         self::assertInstanceOf(EntryPointInterface::class, $entryPoint);
     }
-    
+
     public function testArticles()
     {
         $entryPoint = new EntryPoint($this->createMock(ClientInterface::class));
-        
+
         $entryPoint->addSerializer(
-          $this->createConfiguredMock(
-            JsonSerializerInterface::class,
-            ['getSupportedTypes' => [ArticleInterface::class]]
-          )
+            $this->createConfiguredMock(
+                JsonSerializerInterface::class,
+                ['getSupportedTypes' => [ArticleInterface::class]]
+            )
         );
-        
+
         $entryPoint->addDeserializer(
-          $this->createConfiguredMock(
-            JsonDeserializerInterface::class,
-            ['getSupportedTypes' => [ArticleInterface::class]]
-          )
+            $this->createConfiguredMock(
+                JsonDeserializerInterface::class,
+                ['getSupportedTypes' => [ArticleInterface::class]]
+            )
         );
-        
+
         self::assertInstanceOf(
-          ArticleEndpointInterface::class,
-          $entryPoint->articles()
+            ArticleEndpointInterface::class,
+            $entryPoint->articles()
         );
-        
+
         self::assertSame($entryPoint->articles(), $entryPoint->articles());
     }
-    
+
     /**
      * @expectedException \InvalidArgumentException
      */
@@ -61,33 +61,33 @@ class EntryPointTest extends TestCase
         $entryPoint = new EntryPoint($this->createMock(ClientInterface::class));
         $entryPoint->articles();
     }
-    
+
     public function testOrders()
     {
         $entryPoint = new EntryPoint($this->createMock(ClientInterface::class));
-        
+
         $entryPoint->addSerializer(
-          $this->createConfiguredMock(
-            JsonSerializerInterface::class,
-            ['getSupportedTypes' => [OrderInterface::class]]
-          )
+            $this->createConfiguredMock(
+                JsonSerializerInterface::class,
+                ['getSupportedTypes' => [OrderInterface::class]]
+            )
         );
-        
+
         $entryPoint->addDeserializer(
-          $this->createConfiguredMock(
-            JsonDeserializerInterface::class,
-            ['getSupportedTypes' => [OrderInterface::class]]
-          )
+            $this->createConfiguredMock(
+                JsonDeserializerInterface::class,
+                ['getSupportedTypes' => [OrderInterface::class]]
+            )
         );
-        
+
         self::assertInstanceOf(
-          OrderEndpointInterface::class,
-          $entryPoint->orders()
+            OrderEndpointInterface::class,
+            $entryPoint->orders()
         );
-        
+
         self::assertSame($entryPoint->orders(), $entryPoint->orders());
     }
-    
+
     /**
      * @expectedException \InvalidArgumentException
      */
@@ -97,7 +97,7 @@ class EntryPointTest extends TestCase
         $entryPoint->addDefaultDeserializers($this->createMock(SerializerInterface::class));
         $entryPoint->orders();
     }
-    
+
     /**
      * @expectedException \InvalidArgumentException
      */
@@ -107,23 +107,23 @@ class EntryPointTest extends TestCase
         $entryPoint->addDefaultSerializers($this->createMock(SerializerInterface::class));
         $entryPoint->orders();
     }
-    
+
     public function testDefaultEntryPoint()
     {
         $entryPoint = EntryPoint::buildDefault(
-          'http://example.com',
-          'test',
-          'test56'
+            'http://example.com',
+            'test',
+            'test56'
         );
-        
+
         self::assertInstanceOf(EntryPointInterface::class, $entryPoint);
         self::assertInstanceOf(
-          ArticleEndpointInterface::class,
-          $entryPoint->articles()
+            ArticleEndpointInterface::class,
+            $entryPoint->articles()
         );
         self::assertInstanceOf(
-          OrderEndpointInterface::class,
-          $entryPoint->orders()
+            OrderEndpointInterface::class,
+            $entryPoint->orders()
         );
     }
 }

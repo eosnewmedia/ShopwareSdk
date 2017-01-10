@@ -16,62 +16,62 @@ use PHPUnit\Framework\TestCase;
  */
 class OrderHandlerTest extends TestCase
 {
-    
+
     public function testHandle()
     {
         $handler = new OrderHandler(
-          $this->createConfiguredMock(
-            SerializerInterface::class,
-            [
-              'deserialize' => $this->createConfiguredMock(
-                OrderWrapper::class,
+            $this->createConfiguredMock(
+                SerializerInterface::class,
                 [
-                  'getData' => $this->createMock(Order::class),
+                    'deserialize' => $this->createConfiguredMock(
+                        OrderWrapper::class,
+                        [
+                            'getData' => $this->createMock(Order::class),
+                        ]
+                    ),
                 ]
-              ),
-            ]
-          )
+            )
         );
-        
+
         self::assertInstanceOf(
-          OrderWrapper::class,
-          $handler->deserialize('JSON')
+            OrderWrapper::class,
+            $handler->deserialize('JSON')
         );
     }
-    
+
     public function testHandleCollection()
     {
         $handler = new OrderHandler(
-          $this->createConfiguredMock(
-            SerializerInterface::class,
-            [
-              'deserialize' => $this->createConfiguredMock(
-                OrderCollectionWrapper::class,
+            $this->createConfiguredMock(
+                SerializerInterface::class,
                 [
-                  'getData' => [
-                    $this->createMock(Order::class),
-                  ],
+                    'deserialize' => $this->createConfiguredMock(
+                        OrderCollectionWrapper::class,
+                        [
+                            'getData' => [
+                                $this->createMock(Order::class),
+                            ],
+                        ]
+                    ),
                 ]
-              ),
-            ]
-          )
+            )
         );
-        
+
         self::assertInstanceOf(
-          OrderCollectionWrapper::class,
-          $handler->deserializeCollection('JSON')
+            OrderCollectionWrapper::class,
+            $handler->deserializeCollection('JSON')
         );
     }
-    
+
     public function testGetSupportedTypes()
     {
         $handler = new OrderHandler(
-          $this->createMock(SerializerInterface::class)
+            $this->createMock(SerializerInterface::class)
         );
-        
+
         self::assertContains(
-          OrderInterface::class,
-          $handler->getSupportedTypes()
+            OrderInterface::class,
+            $handler->getSupportedTypes()
         );
     }
 }
