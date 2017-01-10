@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
+ * @author Nicklas Reincke <reincke@eosnewmedia.de>
  */
 class Media implements MediaInterface
 {
@@ -24,6 +25,13 @@ class Media implements MediaInterface
 	 * @Serializer\SerializedName("albumId")
 	 */
 	private $albumId;
+
+    /**
+     * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("album")
+     */
+    private $album;
 
 	/**
 	 * @var string
@@ -131,6 +139,26 @@ class Media implements MediaInterface
 
 		return $this;
 	}
+
+    /**
+     * @return int
+     */
+    public function getAlbum(): int
+    {
+        return $this->album;
+    }
+
+    /**
+     * @param int $album
+     *
+     * @return MediaInterface
+     */
+    public function setAlbum(int $album): MediaInterface
+    {
+        $this->album = $album;
+
+        return $this;
+    }
 
 	/**
 	 * @return string

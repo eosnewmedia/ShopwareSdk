@@ -5,6 +5,7 @@ use Enm\ShopwareSdk\Model\RootModelInterface;
 
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
+ * @author Nicklas Reincke <reincke@eosnewmedia.de>
  */
 interface MediaInterface extends RootModelInterface
 {
@@ -24,6 +25,28 @@ interface MediaInterface extends RootModelInterface
 	public function setAlbumId(int $albumId): MediaInterface;
 
 	/**
+     * The media endpoint requires a property named "album" which holds
+     * the id of an album. The model itself has a property named "albumId"
+     * which does exactly that but is not used for the creation and
+     * modification of a media object over the API.
+     *
+     * @return int
+     */
+    public function getAlbum(): int;
+
+    /**
+     * The media endpoint requires a property named "album" which holds
+     * the id of an album. The model itself has a property named "albumId"
+     * which does exactly that but is not used for the creation and
+     * modification of a media object over the API.
+     *
+     * @param int $album
+     *
+     * @return MediaInterface
+     */
+    public function setAlbum(int $album): MediaInterface;
+
+    /**
 	 * @return string
 	 */
 	public function getName(): string;
