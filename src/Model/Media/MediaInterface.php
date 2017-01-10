@@ -11,6 +11,13 @@ interface MediaInterface extends RootModelInterface
 {
 
     /**
+     * @param int $id
+     *
+     * @return MediaInterface
+     */
+    public function setId(int $id): MediaInterface;
+
+    /**
      * @return int
      */
     public function getAlbumId(): int;
