@@ -52,16 +52,16 @@ interface MediaInterface extends RootModelInterface
     public function setAlbum(int $album): MediaInterface;
 
     /**
-     * @return int
+     * @return string
      */
-    public function getFile(): int;
+    public function getFile(): string;
 
     /**
-     * @param int $file
+     * @param string $file
      *
      * @return MediaInterface
      */
-    public function setFile(int $file): MediaInterface;
+    public function setFile(string $file): MediaInterface;
 
     /**
      * @return string
