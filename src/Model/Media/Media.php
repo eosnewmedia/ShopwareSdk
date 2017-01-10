@@ -34,6 +34,13 @@ class Media implements MediaInterface
     private $album;
 
     /**
+     * @var int
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("file")
+     */
+    private $file;
+
+    /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("name")
@@ -152,6 +159,26 @@ class Media implements MediaInterface
     public function setAlbum(int $album): MediaInterface
     {
         $this->album = $album;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getFile(): int
+    {
+        return $this->file;
+    }
+
+    /**
+     * @param int $file
+     *
+     * @return MediaInterface
+     */
+    public function setFile(int $file): MediaInterface
+    {
+        $this->file = $file;
 
         return $this;
     }
