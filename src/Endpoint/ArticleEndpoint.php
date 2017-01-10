@@ -21,12 +21,12 @@ class ArticleEndpoint extends AbstractEndpoint implements ArticleEndpointInterfa
         $response = $this->shopware()->get('/api/articles');
 
         $articleWrapper = $this->deserializer()
-            ->deserializeCollection(
-                (string)$response->getBody()
-            );
+                               ->deserializeCollection(
+                                   (string)$response->getBody()
+                               );
 
         foreach ($articleWrapper->getData() as $article) {
-            if (!$article instanceof ArticleInterface) {
+            if ( ! $article instanceof ArticleInterface) {
                 throw new \LogicException();
             }
         }
@@ -45,10 +45,10 @@ class ArticleEndpoint extends AbstractEndpoint implements ArticleEndpointInterfa
 
         if ($article->getId() !== 0) {
             $this->shopware()
-                ->put('/api/articles/' . (string)$article->getId(), [], $data);
+                 ->put('/api/articles/'.(string)$article->getId(), [], $data);
         } else {
             $response = $this->shopware()->post('/api/articles', [], $data);
-            $data = json_decode((string)$response->getBody(), true);
+            $data     = json_decode((string)$response->getBody(), true);
             $article->setId((int)$data['data']['id']);
         }
 
@@ -73,15 +73,16 @@ class ArticleEndpoint extends AbstractEndpoint implements ArticleEndpointInterfa
      * @return ArticleInterface
      * @throws \LogicException
      */
-    public function findByArticleNumber(string $articleNumber): ArticleInterface {
+    public function findByArticleNumber(string $articleNumber): ArticleInterface
+    {
 
-        $response = $this->shopware()->get('/api/articles/' . $articleNumber, ['useNumberAsId' => 'true']);
+        $response = $this->shopware()->get('/api/articles/'.$articleNumber, ['useNumberAsId' => 'true']);
 
         $articleWrapper = $this->deserializer()
-            ->deserialize((string)$response->getBody());
+                               ->deserialize((string)$response->getBody());
 
         $article = $articleWrapper->getData();
-        if (!$article instanceof ArticleInterface) {
+        if ( ! $article instanceof ArticleInterface) {
             throw new \LogicException();
         }
 
@@ -95,8 +96,9 @@ class ArticleEndpoint extends AbstractEndpoint implements ArticleEndpointInterfa
      * @return ArticleInterface
      * @throws \Exception
      */
-    public function updatePartials(int $articleId, array $data): ArticleInterface {
-        $this->shopware()->put('/api/articles/' . $articleId, [], $data);
+    public function updatePartials(int $articleId, array $data): ArticleInterface
+    {
+        $this->shopware()->put('/api/articles/'.$articleId, [], $data);
 
         return $this->find($articleId);
     }
@@ -107,14 +109,15 @@ class ArticleEndpoint extends AbstractEndpoint implements ArticleEndpointInterfa
      * @return ArticleInterface
      * @throws \LogicException
      */
-    public function find(int $id): ArticleInterface {
-        $response = $this->shopware()->get('/api/articles/' . (string)$id);
+    public function find(int $id): ArticleInterface
+    {
+        $response = $this->shopware()->get('/api/articles/'.(string)$id);
 
         $articleWrapper = $this->deserializer()
-            ->deserialize((string)$response->getBody());
+                               ->deserialize((string)$response->getBody());
 
         $article = $articleWrapper->getData();
-        if (!$article instanceof ArticleInterface) {
+        if ( ! $article instanceof ArticleInterface) {
             throw new \LogicException();
         }
 

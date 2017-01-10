@@ -18,7 +18,7 @@ interface EntryPointInterface
      * @return ArticleEndpointInterface
      */
     public function articles(): ArticleEndpointInterface;
-    
+
     /**
      * @return OrderEndpointInterface
      */

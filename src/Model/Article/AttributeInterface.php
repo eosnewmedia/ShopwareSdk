@@ -1,11 +1,11 @@
 <?php
 namespace Enm\ShopwareSdk\Model\Article;
 
-
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
-interface AttributeInterface {
+interface AttributeInterface
+{
     /**
      * @return string
      */
@@ -13,6 +13,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr1
+     *
      * @return AttributeInterface
      */
     public function setAttr1(string $attr1): AttributeInterface;
@@ -24,6 +25,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr2
+     *
      * @return AttributeInterface
      */
     public function setAttr2(string $attr2): AttributeInterface;
@@ -35,6 +37,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr3
+     *
      * @return AttributeInterface
      */
     public function setAttr3(string $attr3): AttributeInterface;
@@ -46,6 +49,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr4
+     *
      * @return AttributeInterface
      */
     public function setAttr4(string $attr4): AttributeInterface;
@@ -57,6 +61,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr5
+     *
      * @return AttributeInterface
      */
     public function setAttr5(string $attr5): AttributeInterface;
@@ -68,6 +73,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr6
+     *
      * @return AttributeInterface
      */
     public function setAttr6(string $attr6): AttributeInterface;
@@ -79,6 +85,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr7
+     *
      * @return AttributeInterface
      */
     public function setAttr7(string $attr7): AttributeInterface;
@@ -90,6 +97,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr8
+     *
      * @return AttributeInterface
      */
     public function setAttr8(string $attr8): AttributeInterface;
@@ -101,6 +109,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr9
+     *
      * @return AttributeInterface
      */
     public function setAttr9(string $attr9): AttributeInterface;
@@ -112,6 +121,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr10
+     *
      * @return AttributeInterface
      */
     public function setAttr10(string $attr10): AttributeInterface;
@@ -123,6 +133,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr11
+     *
      * @return AttributeInterface
      */
     public function setAttr11(string $attr11): AttributeInterface;
@@ -134,6 +145,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr12
+     *
      * @return AttributeInterface
      */
     public function setAttr12(string $attr12): AttributeInterface;
@@ -145,6 +157,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr13
+     *
      * @return AttributeInterface
      */
     public function setAttr13(string $attr13): AttributeInterface;
@@ -156,6 +169,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr14
+     *
      * @return AttributeInterface
      */
     public function setAttr14(string $attr14): AttributeInterface;
@@ -167,6 +181,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr15
+     *
      * @return AttributeInterface
      */
     public function setAttr15(string $attr15): AttributeInterface;
@@ -178,6 +193,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr16
+     *
      * @return AttributeInterface
      */
     public function setAttr16(string $attr16): AttributeInterface;
@@ -189,6 +205,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr17
+     *
      * @return AttributeInterface
      */
     public function setAttr17(string $attr17): AttributeInterface;
@@ -200,6 +217,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr18
+     *
      * @return AttributeInterface
      */
     public function setAttr18(string $attr18): AttributeInterface;
@@ -211,6 +229,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr19
+     *
      * @return AttributeInterface
      */
     public function setAttr19(string $attr19): AttributeInterface;
@@ -222,6 +241,7 @@ interface AttributeInterface {
 
     /**
      * @param string $attr20
+     *
      * @return AttributeInterface
      */
     public function setAttr20(string $attr20): AttributeInterface;
@@ -233,6 +253,7 @@ interface AttributeInterface {
 
     /**
      * @param int $articleId
+     *
      * @return AttributeInterface
      */
     public function setArticleId(int $articleId): AttributeInterface;
@@ -244,6 +265,7 @@ interface AttributeInterface {
 
     /**
      * @param int $articleDetailId
+     *
      * @return AttributeInterface
      */
     public function setArticleDetailId(int $articleDetailId): AttributeInterface;

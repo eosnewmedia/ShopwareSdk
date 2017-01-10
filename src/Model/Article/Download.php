@@ -10,42 +10,42 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Download implements DownloadInterface
 {
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("id")
      */
     private $id;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("articleId")
      */
     private $articleId;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("name")
      */
     private $name;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("file")
      */
     private $file;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("size")
      */
     private $size;
-    
+
     /**
      * @return int
      */
@@ -53,7 +53,7 @@ class Download implements DownloadInterface
     {
         return (int)$this->id;
     }
-    
+
     /**
      * @param int $id
      *
@@ -62,10 +62,10 @@ class Download implements DownloadInterface
     public function setId(int $id): DownloadInterface
     {
         $this->id = $id;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -73,7 +73,7 @@ class Download implements DownloadInterface
     {
         return (int)$this->articleId;
     }
-    
+
     /**
      * @param int $articleId
      *
@@ -82,10 +82,10 @@ class Download implements DownloadInterface
     public function setArticleId(int $articleId): DownloadInterface
     {
         $this->articleId = $articleId;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -93,7 +93,7 @@ class Download implements DownloadInterface
     {
         return (string)$this->name;
     }
-    
+
     /**
      * @param string $name
      *
@@ -102,10 +102,10 @@ class Download implements DownloadInterface
     public function setName(string $name): DownloadInterface
     {
         $this->name = $name;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -113,7 +113,7 @@ class Download implements DownloadInterface
     {
         return (string)$this->file;
     }
-    
+
     /**
      * @param string $file
      *
@@ -122,10 +122,10 @@ class Download implements DownloadInterface
     public function setFile(string $file): DownloadInterface
     {
         $this->file = $file;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -133,7 +133,7 @@ class Download implements DownloadInterface
     {
         return (int)$this->size;
     }
-    
+
     /**
      * @param int $size
      *
@@ -142,7 +142,7 @@ class Download implements DownloadInterface
     public function setSize(int $size): DownloadInterface
     {
         $this->size = $size;
-        
+
         return $this;
     }
 }

@@ -10,140 +10,140 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class LanguageSubShop implements LanguageSubShopInterface
 {
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("id")
      */
     private $id;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("mainId")
      */
     private $mainId;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("categoryId")
      */
     private $categoryId;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("name")
      */
     private $name;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("title")
      */
     private $title;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("position")
      */
     private $position;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("host")
      */
     private $host;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("basePath")
      */
     private $basePath;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("baseUrl")
      */
     private $baseUrl;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("hosts")
      */
     private $hosts;
-    
+
     /**
      * @var bool
      * @Serializer\Type("boolean")
      * @Serializer\SerializedName("secure")
      */
     private $secure;
-    
+
     /**
      * @var bool
      * @Serializer\Type("boolean")
      * @Serializer\SerializedName("alwaysSecure")
      */
     private $alwaysSecure;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("secureHost")
      */
     private $secureHost;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("secureBasePath")
      */
     private $secureBasePath;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("templateId")
      */
     private $templateId;
-    
+
     /**
      * @var bool
      * @Serializer\Type("boolean")
      * @Serializer\SerializedName("default")
      */
     private $default;
-    
+
     /**
      * @var bool
      * @Serializer\Type("boolean")
      * @Serializer\SerializedName("active")
      */
     private $active;
-    
+
     /**
      * @var bool
      * @Serializer\Type("boolean")
      * @Serializer\SerializedName("customerScope")
      */
     private $customerScope;
-    
+
     /**
      * @var LocaleInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Locale")
      * @Serializer\SerializedName("locale")
      */
     private $locale;
-    
+
     /**
      * @return int
      */
@@ -151,7 +151,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (int)$this->id;
     }
-    
+
     /**
      * @param int $id
      *
@@ -160,10 +160,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setId(int $id): LanguageSubShopInterface
     {
         $this->id = $id;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -171,7 +171,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (string)$this->mainId;
     }
-    
+
     /**
      * @param string $mainId
      *
@@ -180,10 +180,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setMainId(string $mainId): LanguageSubShopInterface
     {
         $this->mainId = $mainId;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -191,7 +191,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (int)$this->categoryId;
     }
-    
+
     /**
      * @param int $categoryId
      *
@@ -200,10 +200,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setCategoryId(int $categoryId): LanguageSubShopInterface
     {
         $this->categoryId = $categoryId;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -211,7 +211,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (string)$this->name;
     }
-    
+
     /**
      * @param string $name
      *
@@ -220,10 +220,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setName(string $name): LanguageSubShopInterface
     {
         $this->name = $name;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -231,7 +231,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (string)$this->title;
     }
-    
+
     /**
      * @param string $title
      *
@@ -240,10 +240,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setTitle(string $title): LanguageSubShopInterface
     {
         $this->title = $title;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -251,7 +251,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (int)$this->position;
     }
-    
+
     /**
      * @param int $position
      *
@@ -260,10 +260,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setPosition(int $position): LanguageSubShopInterface
     {
         $this->position = $position;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -271,7 +271,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (string)$this->host;
     }
-    
+
     /**
      * @param string $host
      *
@@ -280,10 +280,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setHost(string $host): LanguageSubShopInterface
     {
         $this->host = $host;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -291,7 +291,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (string)$this->basePath;
     }
-    
+
     /**
      * @param string $basePath
      *
@@ -300,10 +300,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setBasePath(string $basePath): LanguageSubShopInterface
     {
         $this->basePath = $basePath;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -311,7 +311,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (string)$this->baseUrl;
     }
-    
+
     /**
      * @param string $baseUrl
      *
@@ -320,10 +320,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setBaseUrl(string $baseUrl): LanguageSubShopInterface
     {
         $this->baseUrl = $baseUrl;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -331,7 +331,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (string)$this->hosts;
     }
-    
+
     /**
      * @param string $hosts
      *
@@ -340,10 +340,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setHosts(string $hosts): LanguageSubShopInterface
     {
         $this->hosts = $hosts;
-        
+
         return $this;
     }
-    
+
     /**
      * @return boolean
      */
@@ -351,7 +351,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (bool)$this->secure;
     }
-    
+
     /**
      * @param boolean $secure
      *
@@ -360,10 +360,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setSecure(bool $secure): LanguageSubShopInterface
     {
         $this->secure = $secure;
-        
+
         return $this;
     }
-    
+
     /**
      * @return boolean
      */
@@ -371,7 +371,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (bool)$this->alwaysSecure;
     }
-    
+
     /**
      * @param boolean $alwaysSecure
      *
@@ -380,10 +380,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setAlwaysSecure(bool $alwaysSecure): LanguageSubShopInterface
     {
         $this->alwaysSecure = $alwaysSecure;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -391,7 +391,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (string)$this->secureHost;
     }
-    
+
     /**
      * @param string $secureHost
      *
@@ -400,10 +400,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setSecureHost(string $secureHost): LanguageSubShopInterface
     {
         $this->secureHost = $secureHost;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -411,7 +411,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (string)$this->secureBasePath;
     }
-    
+
     /**
      * @param string $secureBasePath
      *
@@ -420,10 +420,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setSecureBasePath(string $secureBasePath): LanguageSubShopInterface
     {
         $this->secureBasePath = $secureBasePath;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -431,7 +431,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (int)$this->templateId;
     }
-    
+
     /**
      * @param int $templateId
      *
@@ -440,10 +440,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setTemplateId(int $templateId): LanguageSubShopInterface
     {
         $this->templateId = $templateId;
-        
+
         return $this;
     }
-    
+
     /**
      * @return boolean
      */
@@ -451,7 +451,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (bool)$this->default;
     }
-    
+
     /**
      * @param boolean $default
      *
@@ -460,10 +460,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setDefault(bool $default): LanguageSubShopInterface
     {
         $this->default = $default;
-        
+
         return $this;
     }
-    
+
     /**
      * @return boolean
      */
@@ -471,7 +471,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (bool)$this->active;
     }
-    
+
     /**
      * @param boolean $active
      *
@@ -480,10 +480,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setActive(bool $active): LanguageSubShopInterface
     {
         $this->active = $active;
-        
+
         return $this;
     }
-    
+
     /**
      * @return boolean
      */
@@ -491,7 +491,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return (bool)$this->customerScope;
     }
-    
+
     /**
      * @param boolean $customerScope
      *
@@ -500,10 +500,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setCustomerScope(bool $customerScope): LanguageSubShopInterface
     {
         $this->customerScope = $customerScope;
-        
+
         return $this;
     }
-    
+
     /**
      * @return LocaleInterface
      */
@@ -511,7 +511,7 @@ class LanguageSubShop implements LanguageSubShopInterface
     {
         return $this->locale;
     }
-    
+
     /**
      * @param LocaleInterface $locale
      *
@@ -520,10 +520,10 @@ class LanguageSubShop implements LanguageSubShopInterface
     public function setLocale(LocaleInterface $locale): LanguageSubShopInterface
     {
         $this->locale = $locale;
-        
+
         return $this;
     }
-    
+
     /**
      * @return bool
      */

@@ -10,42 +10,42 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class PropertyGroup implements PropertyGroupInterface
 {
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("id")
      */
     private $id;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("name")
      */
     private $name;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("position")
      */
     private $position;
-    
+
     /**
      * @var bool
      * @Serializer\Type("boolean")
      * @Serializer\SerializedName("comparable")
      */
     private $comparable;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("sortMode")
      */
     private $sortMode;
-    
+
     /**
      * @return int
      */
@@ -53,7 +53,7 @@ class PropertyGroup implements PropertyGroupInterface
     {
         return (int)$this->id;
     }
-    
+
     /**
      * @param int $id
      *
@@ -62,10 +62,10 @@ class PropertyGroup implements PropertyGroupInterface
     public function setId(int $id): PropertyGroupInterface
     {
         $this->id = $id;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -73,7 +73,7 @@ class PropertyGroup implements PropertyGroupInterface
     {
         return (string)$this->name;
     }
-    
+
     /**
      * @param string $name
      *
@@ -82,10 +82,10 @@ class PropertyGroup implements PropertyGroupInterface
     public function setName(string $name): PropertyGroupInterface
     {
         $this->name = $name;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -93,7 +93,7 @@ class PropertyGroup implements PropertyGroupInterface
     {
         return (int)$this->position;
     }
-    
+
     /**
      * @param int $position
      *
@@ -102,10 +102,10 @@ class PropertyGroup implements PropertyGroupInterface
     public function setPosition(int $position): PropertyGroupInterface
     {
         $this->position = $position;
-        
+
         return $this;
     }
-    
+
     /**
      * @return boolean
      */
@@ -113,7 +113,7 @@ class PropertyGroup implements PropertyGroupInterface
     {
         return (bool)$this->comparable;
     }
-    
+
     /**
      * @param boolean $comparable
      *
@@ -122,10 +122,10 @@ class PropertyGroup implements PropertyGroupInterface
     public function setComparable(bool $comparable): PropertyGroupInterface
     {
         $this->comparable = $comparable;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -133,7 +133,7 @@ class PropertyGroup implements PropertyGroupInterface
     {
         return (int)$this->sortMode;
     }
-    
+
     /**
      * @param int $sortMode
      *
@@ -142,7 +142,7 @@ class PropertyGroup implements PropertyGroupInterface
     public function setSortMode(int $sortMode): PropertyGroupInterface
     {
         $this->sortMode = $sortMode;
-        
+
         return $this;
     }
 }

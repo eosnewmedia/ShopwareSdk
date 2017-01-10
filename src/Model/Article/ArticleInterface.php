@@ -390,12 +390,12 @@ interface ArticleInterface extends RootModelInterface
     public function setCustomerGroups(array $customerGroups): ArticleInterface;
 
     /**
-	 * @return ImageInterface[]
+     * @return ImageInterface[]
      */
     public function getImages(): array;
 
     /**
-	 * @param ImageInterface[] $images
+     * @param ImageInterface[] $images
      *
      * @return ArticleInterface
      */

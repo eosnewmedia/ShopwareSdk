@@ -8,7 +8,8 @@ use Enm\ShopwareSdk\Model\RootModelInterface;
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
-interface CategoryInterface extends RootModelInterface {
+interface CategoryInterface extends RootModelInterface
+{
 
     /**
      * @return int
@@ -17,6 +18,7 @@ interface CategoryInterface extends RootModelInterface {
 
     /**
      * @param int $id
+     *
      * @return CategoryInterface
      */
     public function setId(int $id): CategoryInterface;
@@ -28,6 +30,7 @@ interface CategoryInterface extends RootModelInterface {
 
     /**
      * @param string $name
+     *
      * @return CategoryInterface
      */
     public function setName(string $name): CategoryInterface;
@@ -39,6 +42,7 @@ interface CategoryInterface extends RootModelInterface {
 
     /**
      * @param int $parentId
+     *
      * @return CategoryInterface
      */
     public function setParentId(int $parentId): CategoryInterface;

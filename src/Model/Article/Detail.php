@@ -11,182 +11,182 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Detail implements DetailInterface
 {
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("id")
      */
     private $id;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("articleId")
      */
     private $articleId;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("unitId")
      */
     private $unitId;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("number")
      */
     private $number;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("supplierNumber")
      */
     private $supplierNumber;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("kind")
      */
     private $kind;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("additionalText")
      */
     private $additionalText;
-    
+
     /**
      * @var bool
      * @Serializer\Type("boolean")
      * @Serializer\SerializedName("active")
      */
     private $active;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("inStock")
      */
     private $inStock;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("weight")
      */
     private $weight;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("width")
      */
     private $width;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("len")
      */
     private $len;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("height")
      */
     private $height;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("ean")
      */
     private $ean;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("position")
      */
     private $position;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("minPurchase")
      */
     private $minPurchase;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("purchaseSteps")
      */
     private $purchaseSteps;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("maxPurchase")
      */
     private $maxPurchase;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("purchaseUnit")
      */
     private $purchaseUnit;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("referenceUnit")
      */
     private $referenceUnit;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("packUnit")
      */
     private $packUnit;
-    
+
     /**
      * @var bool
      * @Serializer\Type("boolean")
      * @Serializer\SerializedName("shippingFree")
      */
     private $shippingFree;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("releaseDate")
      */
     private $releaseDate;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("shippingTime")
      */
     private $shippingTime;
-    
+
     /**
      * @var PriceInterface[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Price>")
      * @Serializer\SerializedName("prices")
      */
     private $prices = [];
-    
+
     /**
      * @var ConfiguratorOptionInterface[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\ConfiguratorOption>")
@@ -200,7 +200,7 @@ class Detail implements DetailInterface
      * @Serializer\SerializedName("attribute")
      */
     private $attribute;
-    
+
     /**
      * @return int
      */
@@ -208,7 +208,7 @@ class Detail implements DetailInterface
     {
         return (int)$this->id;
     }
-    
+
     /**
      * @param int $id
      *
@@ -217,10 +217,10 @@ class Detail implements DetailInterface
     public function setId(int $id): DetailInterface
     {
         $this->id = $id;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -228,7 +228,7 @@ class Detail implements DetailInterface
     {
         return (int)$this->articleId;
     }
-    
+
     /**
      * @param int $articleId
      *
@@ -237,10 +237,10 @@ class Detail implements DetailInterface
     public function setArticleId(int $articleId): DetailInterface
     {
         $this->articleId = $articleId;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -248,7 +248,7 @@ class Detail implements DetailInterface
     {
         return (int)$this->unitId;
     }
-    
+
     /**
      * @param int $unitId
      *
@@ -257,10 +257,10 @@ class Detail implements DetailInterface
     public function setUnitId(int $unitId): DetailInterface
     {
         $this->unitId = $unitId;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -268,7 +268,7 @@ class Detail implements DetailInterface
     {
         return (string)$this->number;
     }
-    
+
     /**
      * @param string $number
      *
@@ -277,10 +277,10 @@ class Detail implements DetailInterface
     public function setNumber(string $number): DetailInterface
     {
         $this->number = $number;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -288,7 +288,7 @@ class Detail implements DetailInterface
     {
         return (string)$this->supplierNumber;
     }
-    
+
     /**
      * @param string $supplierNumber
      *
@@ -297,10 +297,10 @@ class Detail implements DetailInterface
     public function setSupplierNumber(string $supplierNumber): DetailInterface
     {
         $this->supplierNumber = $supplierNumber;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -308,7 +308,7 @@ class Detail implements DetailInterface
     {
         return (int)$this->kind;
     }
-    
+
     /**
      * @param int $kind
      *
@@ -317,10 +317,10 @@ class Detail implements DetailInterface
     public function setKind(int $kind): DetailInterface
     {
         $this->kind = $kind;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -328,7 +328,7 @@ class Detail implements DetailInterface
     {
         return (string)$this->additionalText;
     }
-    
+
     /**
      * @param string $additionalText
      *
@@ -337,10 +337,10 @@ class Detail implements DetailInterface
     public function setAdditionalText(string $additionalText): DetailInterface
     {
         $this->additionalText = $additionalText;
-        
+
         return $this;
     }
-    
+
     /**
      * @return boolean
      */
@@ -348,7 +348,7 @@ class Detail implements DetailInterface
     {
         return (bool)$this->active;
     }
-    
+
     /**
      * @param boolean $active
      *
@@ -357,10 +357,10 @@ class Detail implements DetailInterface
     public function setActive(bool $active): DetailInterface
     {
         $this->active = $active;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -368,7 +368,7 @@ class Detail implements DetailInterface
     {
         return (int)$this->inStock;
     }
-    
+
     /**
      * @param int $inStock
      *
@@ -377,10 +377,10 @@ class Detail implements DetailInterface
     public function setInStock(int $inStock): DetailInterface
     {
         $this->inStock = $inStock;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -388,7 +388,7 @@ class Detail implements DetailInterface
     {
         return (string)$this->weight;
     }
-    
+
     /**
      * @param string $weight
      *
@@ -397,10 +397,10 @@ class Detail implements DetailInterface
     public function setWeight(string $weight): DetailInterface
     {
         $this->weight = $weight;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -408,7 +408,7 @@ class Detail implements DetailInterface
     {
         return (string)$this->width;
     }
-    
+
     /**
      * @param string $width
      *
@@ -417,10 +417,10 @@ class Detail implements DetailInterface
     public function setWidth(string $width): DetailInterface
     {
         $this->width = $width;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -428,7 +428,7 @@ class Detail implements DetailInterface
     {
         return (string)$this->len;
     }
-    
+
     /**
      * @param string $len
      *
@@ -437,10 +437,10 @@ class Detail implements DetailInterface
     public function setLen(string $len): DetailInterface
     {
         $this->len = $len;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -448,7 +448,7 @@ class Detail implements DetailInterface
     {
         return (string)$this->height;
     }
-    
+
     /**
      * @param string $height
      *
@@ -457,10 +457,10 @@ class Detail implements DetailInterface
     public function setHeight(string $height): DetailInterface
     {
         $this->height = $height;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -468,7 +468,7 @@ class Detail implements DetailInterface
     {
         return (string)$this->ean;
     }
-    
+
     /**
      * @param string $ean
      *
@@ -477,10 +477,10 @@ class Detail implements DetailInterface
     public function setEan(string $ean): DetailInterface
     {
         $this->ean = $ean;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -488,7 +488,7 @@ class Detail implements DetailInterface
     {
         return (int)$this->position;
     }
-    
+
     /**
      * @param int $position
      *
@@ -497,10 +497,10 @@ class Detail implements DetailInterface
     public function setPosition(int $position): DetailInterface
     {
         $this->position = $position;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -508,7 +508,7 @@ class Detail implements DetailInterface
     {
         return (int)$this->minPurchase;
     }
-    
+
     /**
      * @param int $minPurchase
      *
@@ -517,10 +517,10 @@ class Detail implements DetailInterface
     public function setMinPurchase(int $minPurchase): DetailInterface
     {
         $this->minPurchase = $minPurchase;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -528,7 +528,7 @@ class Detail implements DetailInterface
     {
         return (int)$this->purchaseSteps;
     }
-    
+
     /**
      * @param int $purchaseSteps
      *
@@ -537,10 +537,10 @@ class Detail implements DetailInterface
     public function setPurchaseSteps(int $purchaseSteps): DetailInterface
     {
         $this->purchaseSteps = $purchaseSteps;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -548,7 +548,7 @@ class Detail implements DetailInterface
     {
         return (int)$this->maxPurchase;
     }
-    
+
     /**
      * @param int $maxPurchase
      *
@@ -557,10 +557,10 @@ class Detail implements DetailInterface
     public function setMaxPurchase(int $maxPurchase): DetailInterface
     {
         $this->maxPurchase = $maxPurchase;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -568,7 +568,7 @@ class Detail implements DetailInterface
     {
         return (string)$this->purchaseUnit;
     }
-    
+
     /**
      * @param string $purchaseUnit
      *
@@ -577,10 +577,10 @@ class Detail implements DetailInterface
     public function setPurchaseUnit(string $purchaseUnit): DetailInterface
     {
         $this->purchaseUnit = $purchaseUnit;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -588,7 +588,7 @@ class Detail implements DetailInterface
     {
         return (string)$this->referenceUnit;
     }
-    
+
     /**
      * @param string $referenceUnit
      *
@@ -597,10 +597,10 @@ class Detail implements DetailInterface
     public function setReferenceUnit(string $referenceUnit): DetailInterface
     {
         $this->referenceUnit = $referenceUnit;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -608,7 +608,7 @@ class Detail implements DetailInterface
     {
         return (string)$this->packUnit;
     }
-    
+
     /**
      * @param string $packUnit
      *
@@ -617,10 +617,10 @@ class Detail implements DetailInterface
     public function setPackUnit(string $packUnit): DetailInterface
     {
         $this->packUnit = $packUnit;
-        
+
         return $this;
     }
-    
+
     /**
      * @return boolean
      */
@@ -628,7 +628,7 @@ class Detail implements DetailInterface
     {
         return (bool)$this->shippingFree;
     }
-    
+
     /**
      * @param boolean $shippingFree
      *
@@ -637,10 +637,10 @@ class Detail implements DetailInterface
     public function setShippingFree(bool $shippingFree): DetailInterface
     {
         $this->shippingFree = $shippingFree;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -648,7 +648,7 @@ class Detail implements DetailInterface
     {
         return (string)$this->releaseDate;
     }
-    
+
     /**
      * @param string $releaseDate
      *
@@ -657,10 +657,10 @@ class Detail implements DetailInterface
     public function setReleaseDate(string $releaseDate): DetailInterface
     {
         $this->releaseDate = $releaseDate;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -668,7 +668,7 @@ class Detail implements DetailInterface
     {
         return (string)$this->shippingTime;
     }
-    
+
     /**
      * @param string $shippingTime
      *
@@ -677,10 +677,10 @@ class Detail implements DetailInterface
     public function setShippingTime(string $shippingTime): DetailInterface
     {
         $this->shippingTime = $shippingTime;
-        
+
         return $this;
     }
-    
+
     /**
      * @return PriceInterface[]
      */
@@ -688,7 +688,7 @@ class Detail implements DetailInterface
     {
         return (array)$this->prices;
     }
-    
+
     /**
      * @param PriceInterface[] $prices
      *
@@ -697,10 +697,10 @@ class Detail implements DetailInterface
     public function setPrices(array $prices): DetailInterface
     {
         $this->prices = $prices;
-        
+
         return $this;
     }
-    
+
     /**
      * @return ConfiguratorOptionInterface[]
      */
@@ -708,7 +708,7 @@ class Detail implements DetailInterface
     {
         return (array)$this->configuratorOptions;
     }
-    
+
     /**
      * @param ConfiguratorOptionInterface[] $configuratorOptions
      *
@@ -717,23 +717,27 @@ class Detail implements DetailInterface
     public function setConfiguratorOptions(array $configuratorOptions): DetailInterface
     {
         $this->configuratorOptions = $configuratorOptions;
-        
+
         return $this;
     }
 
     /**
      * @return AttributeInterface
      */
-    public function getAttribute(): AttributeInterface {
+    public function getAttribute(): AttributeInterface
+    {
         return $this->attribute;
     }
 
     /**
      * @param AttributeInterface $attribute
+     *
      * @return DetailInterface
      */
-    public function setAttribute(AttributeInterface $attribute): DetailInterface {
+    public function setAttribute(AttributeInterface $attribute): DetailInterface
+    {
         $this->attribute = $attribute;
+
         return $this;
     }
 

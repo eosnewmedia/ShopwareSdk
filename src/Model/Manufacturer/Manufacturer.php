@@ -5,11 +5,11 @@ namespace Enm\ShopwareSdk\Model\Manufacturer;
 
 use JMS\Serializer\Annotation as Serializer;
 
-
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
-class Manufacturer implements ManufacturerInterface {
+class Manufacturer implements ManufacturerInterface
+{
     /**
      * @var int
      * @Serializer\Type("integer")
@@ -69,128 +69,160 @@ class Manufacturer implements ManufacturerInterface {
     /**
      * @return int
      */
-    public function getId(): int {
+    public function getId(): int
+    {
         return (int)$this->id;
     }
 
     /**
      * @param int $id
+     *
      * @return ManufacturerInterface
      */
-    public function setId(int $id): ManufacturerInterface {
+    public function setId(int $id): ManufacturerInterface
+    {
         $this->id = $id;
+
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return (string)$this->name;
     }
 
     /**
      * @param string $name
+     *
      * @return ManufacturerInterface
      */
-    public function setName(string $name): ManufacturerInterface {
+    public function setName(string $name): ManufacturerInterface
+    {
         $this->name = $name;
+
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getImage(): string {
+    public function getImage(): string
+    {
         return (string)$this->image;
     }
 
     /**
      * @param string $image
+     *
      * @return ManufacturerInterface
      */
-    public function setImage(string $image): ManufacturerInterface {
+    public function setImage(string $image): ManufacturerInterface
+    {
         $this->image = $image;
+
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getLink(): string {
+    public function getLink(): string
+    {
         return (string)$this->link;
     }
 
     /**
      * @param string $link
+     *
      * @return ManufacturerInterface
      */
-    public function setLink(string $link): ManufacturerInterface {
+    public function setLink(string $link): ManufacturerInterface
+    {
         $this->link = $link;
+
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getDescription(): string {
+    public function getDescription(): string
+    {
         return (string)$this->description;
     }
 
     /**
      * @param string $description
+     *
      * @return ManufacturerInterface
      */
-    public function setDescription(string $description): ManufacturerInterface {
+    public function setDescription(string $description): ManufacturerInterface
+    {
         $this->description = $description;
+
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getMetaTitle(): string {
+    public function getMetaTitle(): string
+    {
         return (string)$this->metaTitle;
     }
 
     /**
      * @param string $metaTitle
+     *
      * @return ManufacturerInterface
      */
-    public function setMetaTitle(string $metaTitle): ManufacturerInterface {
+    public function setMetaTitle(string $metaTitle): ManufacturerInterface
+    {
         $this->metaTitle = $metaTitle;
+
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getMetaDescription(): string {
+    public function getMetaDescription(): string
+    {
         return (string)$this->metaDescription;
     }
 
     /**
      * @param string $metaDescription
+     *
      * @return ManufacturerInterface
      */
-    public function setMetaDescription(string $metaDescription): ManufacturerInterface {
+    public function setMetaDescription(string $metaDescription): ManufacturerInterface
+    {
         $this->metaDescription = $metaDescription;
+
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getMetaKeywords(): string {
+    public function getMetaKeywords(): string
+    {
         return (string)$this->metaKeywords;
     }
 
     /**
      * @param string $metaKeywords
+     *
      * @return ManufacturerInterface
      */
-    public function setMetaKeywords(string $metaKeywords): ManufacturerInterface {
+    public function setMetaKeywords(string $metaKeywords): ManufacturerInterface
+    {
         $this->metaKeywords = $metaKeywords;
+
         return $this;
     }
 }

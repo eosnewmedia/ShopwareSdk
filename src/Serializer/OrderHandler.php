@@ -19,7 +19,7 @@ class OrderHandler extends AbstractHandler
     {
         return OrderWrapper::class;
     }
-    
+
     /**
      * @return string
      */
@@ -27,7 +27,7 @@ class OrderHandler extends AbstractHandler
     {
         return OrderCollectionWrapper::class;
     }
-    
+
     /**
      * @return array
      */

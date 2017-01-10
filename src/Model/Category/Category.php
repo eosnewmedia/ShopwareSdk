@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as Serializer;
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
-class Category implements CategoryInterface {
+class Category implements CategoryInterface
+{
 
     /**
      * @var int
@@ -34,48 +35,60 @@ class Category implements CategoryInterface {
     /**
      * @return int
      */
-    public function getId(): int {
+    public function getId(): int
+    {
         return (int)$this->id;
     }
 
     /**
      * @param int $id
+     *
      * @return CategoryInterface
      */
-    public function setId(int $id): CategoryInterface {
+    public function setId(int $id): CategoryInterface
+    {
         $this->id = $id;
+
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return (string)$this->name;
     }
 
     /**
      * @param string $name
+     *
      * @return CategoryInterface
      */
-    public function setName(string $name): CategoryInterface {
+    public function setName(string $name): CategoryInterface
+    {
         $this->name = $name;
+
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getParentId(): int {
+    public function getParentId(): int
+    {
         return (int)$this->parentId;
     }
 
     /**
      * @param int $parentId
+     *
      * @return CategoryInterface
      */
-    public function setParentId(int $parentId): CategoryInterface {
+    public function setParentId(int $parentId): CategoryInterface
+    {
         $this->parentId = $parentId;
+
         return $this;
     }
 }

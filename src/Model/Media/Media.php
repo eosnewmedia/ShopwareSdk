@@ -12,19 +12,19 @@ use JMS\Serializer\Annotation as Serializer;
 class Media implements MediaInterface
 {
 
-	/**
-	 * @var int
-	 * @Serializer\Type("integer")
-	 * @Serializer\SerializedName("id")
-	 */
-	private $id;
+    /**
+     * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
+     */
+    private $id;
 
-	/**
-	 * @var int
-	 * @Serializer\Type("integer")
-	 * @Serializer\SerializedName("albumId")
-	 */
-	private $albumId;
+    /**
+     * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("albumId")
+     */
+    private $albumId;
 
     /**
      * @var int
@@ -33,112 +33,108 @@ class Media implements MediaInterface
      */
     private $album;
 
-	/**
-	 * @var string
-	 * @Serializer\Type("string")
-	 * @Serializer\SerializedName("name")
-	 */
-	private $name;
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
+     */
+    private $name;
 
-	/**
-	 * @var string
-	 * @Serializer\Type("string")
-	 * @Serializer\SerializedName("description")
-	 */
-	private $description;
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("description")
+     */
+    private $description;
 
-	/**
-	 * @var string
-	 * @Serializer\Type("string")
-	 * @Serializer\SerializedName("path")
-	 */
-	private $path;
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("path")
+     */
+    private $path;
 
-	/**
-	 * @var string
-	 * @Serializer\Type("string")
-	 * @Serializer\SerializedName("type")
-	 */
-	private $type;
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("type")
+     */
+    private $type;
 
-	/**
-	 * @var string
-	 * @Serializer\Type("string")
-	 * @Serializer\SerializedName("extension")
-	 */
-	private $extension;
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("extension")
+     */
+    private $extension;
 
-	/**
-	 * @var int
-	 * @Serializer\Type("integer")
-	 * @Serializer\SerializedName("width")
-	 */
-	private $width;
+    /**
+     * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("width")
+     */
+    private $width;
 
-	/**
-	 * @var int
-	 * @Serializer\Type("integer")
-	 * @Serializer\SerializedName("height")
-	 */
-	private $height;
+    /**
+     * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("height")
+     */
+    private $height;
 
-	/**
-	 * @var int
-	 * @Serializer\Type("integer")
-	 * @Serializer\SerializedName("userId")
-	 */
-	private $userId;
+    /**
+     * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("userId")
+     */
+    private $userId;
 
-	/**
-	 * @var string
-	 * @Serializer\Type("string")
-	 * @Serializer\SerializedName("created")
-	 */
-	private $created;
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("created")
+     */
+    private $created;
 
-	/**
-	 * @return int
-	 */
-	public function getId(): int
-	{
-		return (int)$this->id;
-	}
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return (int)$this->id;
+    }
 
-	/**
-	 * @param int $id
-	 *
-	 * @return MediaInterface
-	 */
-	public function setId(int $id): MediaInterface
-	{
-		$this->id = $id;
+    /**
+     * @param int $id
+     *
+     * @return MediaInterface
+     */
+    public function setId(int $id): MediaInterface
+    {
+        $this->id = $id;
 
-		return $this;
-	}
+        return $this;
+    }
 
+    /**
+     * @return int
+     */
+    public function getAlbumId(): int
+    {
+        return (int)$this->albumId;
+    }
 
+    /**
+     * @param int $albumId
+     *
+     * @return MediaInterface
+     */
+    public function setAlbumId(int $albumId): MediaInterface
+    {
+        $this->albumId = $albumId;
 
-	/**
-	 * @return int
-	 */
-	public function getAlbumId(): int
-	{
-		return (int)$this->albumId;
-	}
-
-
-
-	/**
-	 * @param int $albumId
-	 *
-	 * @return MediaInterface
-	 */
-	public function setAlbumId(int $albumId): MediaInterface
-	{
-		$this->albumId = $albumId;
-
-		return $this;
-	}
+        return $this;
+    }
 
     /**
      * @return int
@@ -160,183 +156,183 @@ class Media implements MediaInterface
         return $this;
     }
 
-	/**
-	 * @return string
-	 */
-	public function getName(): string
-	{
-		return (string)$this->name;
-	}
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return (string)$this->name;
+    }
 
-	/**
-	 * @param string $name
-	 *
-	 * @return MediaInterface
-	 */
-	public function setName(string $name): MediaInterface
-	{
-		$this->name = $name;
+    /**
+     * @param string $name
+     *
+     * @return MediaInterface
+     */
+    public function setName(string $name): MediaInterface
+    {
+        $this->name = $name;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getDescription(): string
-	{
-		return (string)$this->description;
-	}
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return (string)$this->description;
+    }
 
-	/**
-	 * @param string $description
-	 *
-	 * @return MediaInterface
-	 */
-	public function setDescription(string $description): MediaInterface
-	{
-		$this->description = $description;
+    /**
+     * @param string $description
+     *
+     * @return MediaInterface
+     */
+    public function setDescription(string $description): MediaInterface
+    {
+        $this->description = $description;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getPath(): string
-	{
-		return (string)$this->path;
-	}
+    /**
+     * @return string
+     */
+    public function getPath(): string
+    {
+        return (string)$this->path;
+    }
 
-	/**
-	 * @param string $path
-	 *
-	 * @return MediaInterface
-	 */
-	public function setPath(string $path): MediaInterface
-	{
-		$this->path = $path;
+    /**
+     * @param string $path
+     *
+     * @return MediaInterface
+     */
+    public function setPath(string $path): MediaInterface
+    {
+        $this->path = $path;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getType(): string
-	{
-		return (string)$this->type;
-	}
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return (string)$this->type;
+    }
 
-	/**
-	 * @param string $type
-	 *
-	 * @return MediaInterface
-	 */
-	public function setType(string $type): MediaInterface
-	{
-		$this->type = $type;
+    /**
+     * @param string $type
+     *
+     * @return MediaInterface
+     */
+    public function setType(string $type): MediaInterface
+    {
+        $this->type = $type;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getExtension(): string
-	{
-		return (string)$this->extension;
-	}
+    /**
+     * @return string
+     */
+    public function getExtension(): string
+    {
+        return (string)$this->extension;
+    }
 
-	/**
-	 * @param string $extension
-	 *
-	 * @return MediaInterface
-	 */
-	public function setExtension(string $extension): MediaInterface
-	{
-		$this->extension = $extension;
+    /**
+     * @param string $extension
+     *
+     * @return MediaInterface
+     */
+    public function setExtension(string $extension): MediaInterface
+    {
+        $this->extension = $extension;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return int
-	 */
-	public function getWidth(): int
-	{
-		return (int)$this->width;
-	}
+    /**
+     * @return int
+     */
+    public function getWidth(): int
+    {
+        return (int)$this->width;
+    }
 
-	/**
-	 * @param int $width
-	 *
-	 * @return MediaInterface
-	 */
-	public function setWidth(int $width): MediaInterface
-	{
-		$this->width = $width;
+    /**
+     * @param int $width
+     *
+     * @return MediaInterface
+     */
+    public function setWidth(int $width): MediaInterface
+    {
+        $this->width = $width;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return int
-	 */
-	public function getHeight(): int
-	{
-		return (int)$this->height;
-	}
+    /**
+     * @return int
+     */
+    public function getHeight(): int
+    {
+        return (int)$this->height;
+    }
 
-	/**
-	 * @param int $height
-	 *
-	 * @return MediaInterface
-	 */
-	public function setHeight(int $height): MediaInterface
-	{
-		$this->height = $height;
+    /**
+     * @param int $height
+     *
+     * @return MediaInterface
+     */
+    public function setHeight(int $height): MediaInterface
+    {
+        $this->height = $height;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return int
-	 */
-	public function getUserId(): int
-	{
-		return (int)$this->userId;
-	}
+    /**
+     * @return int
+     */
+    public function getUserId(): int
+    {
+        return (int)$this->userId;
+    }
 
-	/**
-	 * @param int $userId
-	 *
-	 * @return MediaInterface
-	 */
-	public function setUserId(int $userId): MediaInterface
-	{
-		$this->userId = $userId;
+    /**
+     * @param int $userId
+     *
+     * @return MediaInterface
+     */
+    public function setUserId(int $userId): MediaInterface
+    {
+        $this->userId = $userId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getCreated(): string
-	{
-		return (string)$this->created;
-	}
+    /**
+     * @return string
+     */
+    public function getCreated(): string
+    {
+        return (string)$this->created;
+    }
 
-	/**
-	 * @param string $created
-	 *
-	 * @return MediaInterface
-	 */
-	public function setCreated(string $created): MediaInterface
-	{
-		$this->created = $created;
+    /**
+     * @param string $created
+     *
+     * @return MediaInterface
+     */
+    public function setCreated(string $created): MediaInterface
+    {
+        $this->created = $created;
 
-		return $this;
-	}
+        return $this;
+    }
 }

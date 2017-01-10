@@ -10,49 +10,49 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class OrderStatus implements OrderStatusInterface
 {
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("id")
      */
     private $id;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("name")
      */
     private $name;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("description")
      */
     private $description;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("position")
      */
     private $position;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("group")
      */
     private $group;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("sendMail")
      */
     private $sendMail;
-    
+
     /**
      * @return int
      */
@@ -60,7 +60,7 @@ class OrderStatus implements OrderStatusInterface
     {
         return (int)$this->id;
     }
-    
+
     /**
      * @param int $id
      *
@@ -69,10 +69,10 @@ class OrderStatus implements OrderStatusInterface
     public function setId(int $id): OrderStatusInterface
     {
         $this->id = $id;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -80,7 +80,7 @@ class OrderStatus implements OrderStatusInterface
     {
         return (string)$this->name;
     }
-    
+
     /**
      * @param string $name
      *
@@ -89,10 +89,10 @@ class OrderStatus implements OrderStatusInterface
     public function setName(string $name): OrderStatusInterface
     {
         $this->name = $name;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -100,7 +100,7 @@ class OrderStatus implements OrderStatusInterface
     {
         return (string)$this->description;
     }
-    
+
     /**
      * @param string $description
      *
@@ -109,10 +109,10 @@ class OrderStatus implements OrderStatusInterface
     public function setDescription(string $description): OrderStatusInterface
     {
         $this->description = $description;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -120,7 +120,7 @@ class OrderStatus implements OrderStatusInterface
     {
         return (int)$this->position;
     }
-    
+
     /**
      * @param int $position
      *
@@ -129,10 +129,10 @@ class OrderStatus implements OrderStatusInterface
     public function setPosition(int $position): OrderStatusInterface
     {
         $this->position = $position;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -140,7 +140,7 @@ class OrderStatus implements OrderStatusInterface
     {
         return (string)$this->group;
     }
-    
+
     /**
      * @param string $group
      *
@@ -149,10 +149,10 @@ class OrderStatus implements OrderStatusInterface
     public function setGroup(string $group): OrderStatusInterface
     {
         $this->group = $group;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -160,7 +160,7 @@ class OrderStatus implements OrderStatusInterface
     {
         return (int)$this->sendMail;
     }
-    
+
     /**
      * @param int $sendMail
      *
@@ -169,7 +169,7 @@ class OrderStatus implements OrderStatusInterface
     public function setSendMail(int $sendMail): OrderStatusInterface
     {
         $this->sendMail = $sendMail;
-        
+
         return $this;
     }
 }

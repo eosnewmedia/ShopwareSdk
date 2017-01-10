@@ -8,7 +8,8 @@ use Enm\ShopwareSdk\Model\Media\MediaInterface;
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
-interface MediaEndpointInterface {
+interface MediaEndpointInterface
+{
 
     /**
      * @return  MediaInterface[]

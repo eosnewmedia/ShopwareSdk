@@ -10,98 +10,98 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class PaymentInstance implements PaymentInstanceInterface
 {
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("id")
      */
     private $id;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("firstName")
      */
     private $firstName;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("lastName")
      */
     private $lastName;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("address")
      */
     private $address;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("zipCode")
      */
     private $zipCode;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("city")
      */
     private $city;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("bankName")
      */
     private $bankName;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("bankCode")
      */
     private $bankCode;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("accountNumber")
      */
     private $accountNumber;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("accountHolder")
      */
     private $accountHolder;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("bic")
      */
     private $bic;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("iban")
      */
     private $iban;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("amount")
      */
     private $amount;
-    
+
     /**
      * Date and time formatted in ISO8601 format.
      *
@@ -110,7 +110,7 @@ class PaymentInstance implements PaymentInstanceInterface
      * @Serializer\SerializedName("createdAt")
      */
     private $createdAt;
-    
+
     /**
      * @return int
      */
@@ -118,7 +118,7 @@ class PaymentInstance implements PaymentInstanceInterface
     {
         return (int)$this->id;
     }
-    
+
     /**
      * @param int $id
      *
@@ -127,10 +127,10 @@ class PaymentInstance implements PaymentInstanceInterface
     public function setId(int $id): PaymentInstanceInterface
     {
         $this->id = $id;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -138,7 +138,7 @@ class PaymentInstance implements PaymentInstanceInterface
     {
         return (string)$this->firstName;
     }
-    
+
     /**
      * @param string $firstName
      *
@@ -147,10 +147,10 @@ class PaymentInstance implements PaymentInstanceInterface
     public function setFirstName(string $firstName): PaymentInstanceInterface
     {
         $this->firstName = $firstName;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -158,7 +158,7 @@ class PaymentInstance implements PaymentInstanceInterface
     {
         return (string)$this->lastName;
     }
-    
+
     /**
      * @param string $lastName
      *
@@ -167,10 +167,10 @@ class PaymentInstance implements PaymentInstanceInterface
     public function setLastName(string $lastName): PaymentInstanceInterface
     {
         $this->lastName = $lastName;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -178,7 +178,7 @@ class PaymentInstance implements PaymentInstanceInterface
     {
         return (string)$this->address;
     }
-    
+
     /**
      * @param string $address
      *
@@ -187,10 +187,10 @@ class PaymentInstance implements PaymentInstanceInterface
     public function setAddress(string $address): PaymentInstanceInterface
     {
         $this->address = $address;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -198,7 +198,7 @@ class PaymentInstance implements PaymentInstanceInterface
     {
         return (string)$this->zipCode;
     }
-    
+
     /**
      * @param string $zipCode
      *
@@ -207,10 +207,10 @@ class PaymentInstance implements PaymentInstanceInterface
     public function setZipCode(string $zipCode): PaymentInstanceInterface
     {
         $this->zipCode = $zipCode;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -218,7 +218,7 @@ class PaymentInstance implements PaymentInstanceInterface
     {
         return (string)$this->city;
     }
-    
+
     /**
      * @param string $city
      *
@@ -227,10 +227,10 @@ class PaymentInstance implements PaymentInstanceInterface
     public function setCity(string $city): PaymentInstanceInterface
     {
         $this->city = $city;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -238,7 +238,7 @@ class PaymentInstance implements PaymentInstanceInterface
     {
         return (string)$this->bankName;
     }
-    
+
     /**
      * @param string $bankName
      *
@@ -247,10 +247,10 @@ class PaymentInstance implements PaymentInstanceInterface
     public function setBankName(string $bankName): PaymentInstanceInterface
     {
         $this->bankName = $bankName;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -258,7 +258,7 @@ class PaymentInstance implements PaymentInstanceInterface
     {
         return (string)$this->bankCode;
     }
-    
+
     /**
      * @param string $bankCode
      *
@@ -267,10 +267,10 @@ class PaymentInstance implements PaymentInstanceInterface
     public function setBankCode(string $bankCode): PaymentInstanceInterface
     {
         $this->bankCode = $bankCode;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -278,7 +278,7 @@ class PaymentInstance implements PaymentInstanceInterface
     {
         return (string)$this->accountNumber;
     }
-    
+
     /**
      * @param string $accountNumber
      *
@@ -287,10 +287,10 @@ class PaymentInstance implements PaymentInstanceInterface
     public function setAccountNumber(string $accountNumber): PaymentInstanceInterface
     {
         $this->accountNumber = $accountNumber;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -298,7 +298,7 @@ class PaymentInstance implements PaymentInstanceInterface
     {
         return (string)$this->accountHolder;
     }
-    
+
     /**
      * @param string $accountHolder
      *
@@ -307,10 +307,10 @@ class PaymentInstance implements PaymentInstanceInterface
     public function setAccountHolder(string $accountHolder): PaymentInstanceInterface
     {
         $this->accountHolder = $accountHolder;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -318,7 +318,7 @@ class PaymentInstance implements PaymentInstanceInterface
     {
         return (string)$this->bic;
     }
-    
+
     /**
      * @param string $bic
      *
@@ -327,10 +327,10 @@ class PaymentInstance implements PaymentInstanceInterface
     public function setBic(string $bic): PaymentInstanceInterface
     {
         $this->bic = $bic;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -338,7 +338,7 @@ class PaymentInstance implements PaymentInstanceInterface
     {
         return (string)$this->iban;
     }
-    
+
     /**
      * @param string $iban
      *
@@ -347,10 +347,10 @@ class PaymentInstance implements PaymentInstanceInterface
     public function setIban(string $iban): PaymentInstanceInterface
     {
         $this->iban = $iban;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -358,7 +358,7 @@ class PaymentInstance implements PaymentInstanceInterface
     {
         return (string)$this->amount;
     }
-    
+
     /**
      * @param string $amount
      *
@@ -367,10 +367,10 @@ class PaymentInstance implements PaymentInstanceInterface
     public function setAmount(string $amount): PaymentInstanceInterface
     {
         $this->amount = $amount;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -378,7 +378,7 @@ class PaymentInstance implements PaymentInstanceInterface
     {
         return (string)$this->createdAt;
     }
-    
+
     /**
      * @param string $createdAt
      *
@@ -387,7 +387,7 @@ class PaymentInstance implements PaymentInstanceInterface
     public function setCreatedAt(string $createdAt): PaymentInstanceInterface
     {
         $this->createdAt = $createdAt;
-        
+
         return $this;
     }
 }

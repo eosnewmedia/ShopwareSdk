@@ -9,7 +9,8 @@ use JMS\Serializer\Annotation as Serializer;
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
-class CategoryCollectionWrapper implements CollectionWrapperInterface {
+class CategoryCollectionWrapper implements CollectionWrapperInterface
+{
 
     /**
      * @var Category[]
@@ -21,7 +22,8 @@ class CategoryCollectionWrapper implements CollectionWrapperInterface {
     /**
      * @return Category[]
      */
-    public function getData(): array {
+    public function getData(): array
+    {
         return $this->data;
     }
 
@@ -30,7 +32,8 @@ class CategoryCollectionWrapper implements CollectionWrapperInterface {
      *
      * @return CollectionWrapperInterface
      */
-    public function setData(array $data): CollectionWrapperInterface {
+    public function setData(array $data): CollectionWrapperInterface
+    {
         $this->data = $data;
 
         return $this;

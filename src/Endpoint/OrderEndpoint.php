@@ -18,21 +18,21 @@ class OrderEndpoint extends AbstractEndpoint implements OrderEndpointInterface
     public function findAll(): array
     {
         $response = $this->shopware()->get('/api/orders');
-        
+
         $orderWrapper = $this->deserializer()
                              ->deserializeCollection(
-                               (string)$response->getBody()
+                                 (string)$response->getBody()
                              );
-        
+
         foreach ($orderWrapper->getData() as $order) {
-            if (!$order instanceof OrderInterface) {
+            if ( ! $order instanceof OrderInterface) {
                 throw new \LogicException();
             }
         }
-        
+
         return $orderWrapper->getData();
     }
-    
+
     /**
      * @param int $id
      *
@@ -42,15 +42,15 @@ class OrderEndpoint extends AbstractEndpoint implements OrderEndpointInterface
     public function find(int $id): OrderInterface
     {
         $response = $this->shopware()->get('/api/orders/'.(string)$id);
-        
+
         $orderWrapper = $this->deserializer()
                              ->deserialize((string)$response->getBody());
-        
+
         $order = $orderWrapper->getData();
-        if (!$order instanceof OrderInterface) {
+        if ( ! $order instanceof OrderInterface) {
             throw new \LogicException();
         }
-        
+
         return $order;
     }
 }

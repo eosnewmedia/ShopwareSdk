@@ -8,7 +8,8 @@ use Enm\ShopwareSdk\Model\Manufacturer\ManufacturerInterface;
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
-interface ManufacturerEndpointInterface {
+interface ManufacturerEndpointInterface
+{
 
     /**
      * @return ManufacturerInterface[]

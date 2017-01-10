@@ -10,42 +10,42 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Link implements LinkInterface
 {
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("id")
      */
     private $id;
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("articleId")
      */
     private $articleId;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("name")
      */
     private $name;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("link")
      */
     private $link;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("target")
      */
     private $target;
-    
+
     /**
      * @return int
      */
@@ -53,7 +53,7 @@ class Link implements LinkInterface
     {
         return (int)$this->id;
     }
-    
+
     /**
      * @param int $id
      *
@@ -62,10 +62,10 @@ class Link implements LinkInterface
     public function setId(int $id): LinkInterface
     {
         $this->id = $id;
-        
+
         return $this;
     }
-    
+
     /**
      * @return int
      */
@@ -73,7 +73,7 @@ class Link implements LinkInterface
     {
         return (int)$this->articleId;
     }
-    
+
     /**
      * @param int $articleId
      *
@@ -82,10 +82,10 @@ class Link implements LinkInterface
     public function setArticleId(int $articleId): LinkInterface
     {
         $this->articleId = $articleId;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -93,7 +93,7 @@ class Link implements LinkInterface
     {
         return (string)$this->name;
     }
-    
+
     /**
      * @param string $name
      *
@@ -102,10 +102,10 @@ class Link implements LinkInterface
     public function setName(string $name): LinkInterface
     {
         $this->name = $name;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -113,7 +113,7 @@ class Link implements LinkInterface
     {
         return (string)$this->link;
     }
-    
+
     /**
      * @param string $link
      *
@@ -122,10 +122,10 @@ class Link implements LinkInterface
     public function setLink(string $link): LinkInterface
     {
         $this->link = $link;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -133,7 +133,7 @@ class Link implements LinkInterface
     {
         return (string)$this->target;
     }
-    
+
     /**
      * @param string $target
      *
@@ -142,7 +142,7 @@ class Link implements LinkInterface
     public function setTarget(string $target): LinkInterface
     {
         $this->target = $target;
-        
+
         return $this;
     }
 }

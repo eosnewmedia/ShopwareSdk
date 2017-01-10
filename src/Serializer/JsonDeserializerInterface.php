@@ -17,7 +17,7 @@ interface JsonDeserializerInterface extends TypeHandlerInterface
      * @return WrapperInterface
      */
     public function deserialize(string $json): WrapperInterface;
-    
+
     /**
      * @param string $json
      *

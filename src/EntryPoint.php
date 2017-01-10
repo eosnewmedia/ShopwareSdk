@@ -37,27 +37,27 @@ use JMS\Serializer\SerializerInterface;
  */
 class EntryPoint implements EntryPointInterface
 {
-    
+
     /**
      * @var ClientInterface
      */
     private $httpClient;
-    
+
     /**
      * @var JsonSerializerInterface[]
      */
     private $serializers = [];
-    
+
     /**
      * @var JsonDeserializerInterface[]
      */
     private $deserializers = [];
-    
+
     /**
      * @var ArticleEndpointInterface
      */
     private $articleEndpoint;
-    
+
     /**
      * @var OrderEndpointInterface
      */
@@ -85,7 +85,7 @@ class EntryPoint implements EntryPointInterface
     {
         $this->httpClient = $httpClient;
     }
-    
+
     /**
      * @param string $baseUri
      * @param string $username
@@ -96,23 +96,23 @@ class EntryPoint implements EntryPointInterface
     public static function buildDefault(string $baseUri, string $username, string $password): EntryPoint
     {
         AnnotationRegistry::registerAutoloadNamespace(
-          'JMS\Serializer\Annotation',
-          __DIR__.'/../vendor/jms/serializer/src'
+            'JMS\Serializer\Annotation',
+            __DIR__.'/../vendor/jms/serializer/src'
         );
-        
+
         $client = new GuzzleAdapter(new Client());
         $client->withConfig($baseUri, $username, $password);
-        
+
         $entryPoint = new self($client);
-        
+
         $jmsSerializer = SerializerBuilder::create()->build();
-        
+
         $entryPoint->addDefaultSerializers($jmsSerializer);
         $entryPoint->addDefaultDeserializers($jmsSerializer);
-        
+
         return $entryPoint;
     }
-    
+
     /**
      * @param SerializerInterface $jmsSerializer
      *
@@ -128,7 +128,7 @@ class EntryPoint implements EntryPointInterface
 
         return $this;
     }
-    
+
     /**
      * @param JsonSerializerInterface $serializer
      *
@@ -139,10 +139,10 @@ class EntryPoint implements EntryPointInterface
         foreach ($serializer->getSupportedTypes() as $type) {
             $this->serializers[$type] = $serializer;
         }
-        
+
         return $this;
     }
-    
+
     /**
      * @param SerializerInterface $jmsSerializer
      *
@@ -158,7 +158,7 @@ class EntryPoint implements EntryPointInterface
 
         return $this;
     }
-    
+
     /**
      * @param JsonDeserializerInterface $deserializer
      *
@@ -169,27 +169,27 @@ class EntryPoint implements EntryPointInterface
         foreach ($deserializer->getSupportedTypes() as $type) {
             $this->deserializers[$type] = $deserializer;
         }
-        
+
         return $this;
     }
-    
+
     /**
      * @return ArticleEndpointInterface
      * @throws \InvalidArgumentException
      */
     public function articles(): ArticleEndpointInterface
     {
-        if (!$this->articleEndpoint instanceof ArticleEndpointInterface) {
+        if ( ! $this->articleEndpoint instanceof ArticleEndpointInterface) {
             $this->articleEndpoint = new ArticleEndpoint(
-              $this->httpClient(),
-              $this->serializerFor(ArticleInterface::class),
-              $this->deserializerFor(ArticleInterface::class)
+                $this->httpClient(),
+                $this->serializerFor(ArticleInterface::class),
+                $this->deserializerFor(ArticleInterface::class)
             );
         }
-        
+
         return $this->articleEndpoint;
     }
-    
+
     /**
      * @return ClientInterface
      */
@@ -197,7 +197,7 @@ class EntryPoint implements EntryPointInterface
     {
         return $this->httpClient;
     }
-    
+
     /**
      * @param string $class
      *
@@ -206,13 +206,13 @@ class EntryPoint implements EntryPointInterface
      */
     protected function serializerFor(string $class): JsonSerializerInterface
     {
-        if (!array_key_exists($class, $this->serializers)) {
+        if ( ! array_key_exists($class, $this->serializers)) {
             throw new \InvalidArgumentException('No serializer for '.$class);
         }
-        
+
         return $this->serializers[$class];
     }
-    
+
     /**
      * @param string $class
      *
@@ -221,27 +221,27 @@ class EntryPoint implements EntryPointInterface
      */
     protected function deserializerFor(string $class): JsonDeserializerInterface
     {
-        if (!array_key_exists($class, $this->deserializers)) {
+        if ( ! array_key_exists($class, $this->deserializers)) {
             throw new \InvalidArgumentException('No deserializer for '.$class);
         }
-        
+
         return $this->deserializers[$class];
     }
-    
+
     /**
      * @return OrderEndpointInterface
      * @throws \InvalidArgumentException
      */
     public function orders(): OrderEndpointInterface
     {
-        if (!$this->orderEndpoint instanceof OrderEndpointInterface) {
+        if ( ! $this->orderEndpoint instanceof OrderEndpointInterface) {
             $this->orderEndpoint = new OrderEndpoint(
-              $this->httpClient(),
-              $this->serializerFor(OrderInterface::class),
-              $this->deserializerFor(OrderInterface::class)
+                $this->httpClient(),
+                $this->serializerFor(OrderInterface::class),
+                $this->deserializerFor(OrderInterface::class)
             );
         }
-        
+
         return $this->orderEndpoint;
     }
 
@@ -249,8 +249,9 @@ class EntryPoint implements EntryPointInterface
      * @return CategoryEndpointInterface
      * @throws \InvalidArgumentException
      */
-    public function categories(): CategoryEndpointInterface {
-        if (!$this->categoryEndpoint instanceof CategoryEndpointInterface) {
+    public function categories(): CategoryEndpointInterface
+    {
+        if ( ! $this->categoryEndpoint instanceof CategoryEndpointInterface) {
             $this->categoryEndpoint = new CategoryEndpoint(
                 $this->httpClient(),
                 $this->serializerFor(CategoryInterface::class),
@@ -265,14 +266,16 @@ class EntryPoint implements EntryPointInterface
      * @return MediaEndpointInterface
      * @throws \InvalidArgumentException
      */
-    public function media(): MediaEndpointInterface {
-        if (!$this->mediaEndpoint instanceof MediaEndpointInterface) {
+    public function media(): MediaEndpointInterface
+    {
+        if ( ! $this->mediaEndpoint instanceof MediaEndpointInterface) {
             $this->mediaEndpoint = new MediaEndpoint(
                 $this->httpClient(),
                 $this->serializerFor(MediaInterface::class),
                 $this->deserializerFor(MediaInterface::class)
             );
         }
+
         return $this->mediaEndpoint;
     }
 
@@ -280,8 +283,9 @@ class EntryPoint implements EntryPointInterface
      * @return ManufacturerEndpointInterface
      * @throws \InvalidArgumentException
      */
-    public function manufacturer(): ManufacturerEndpointInterface {
-        if (!$this->manufacturerEndpoint instanceof ManufacturerEndpointInterface) {
+    public function manufacturer(): ManufacturerEndpointInterface
+    {
+        if ( ! $this->manufacturerEndpoint instanceof ManufacturerEndpointInterface) {
             $this->manufacturerEndpoint = new ManufacturerEndpoint(
                 $this->httpClient(),
                 $this->serializerFor(ManufacturerInterface::class),

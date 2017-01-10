@@ -8,7 +8,8 @@ use Enm\ShopwareSdk\Model\RootModelInterface;
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
-interface ManufacturerInterface extends RootModelInterface {
+interface ManufacturerInterface extends RootModelInterface
+{
     /**
      * @return int
      */
@@ -16,6 +17,7 @@ interface ManufacturerInterface extends RootModelInterface {
 
     /**
      * @param int $id
+     *
      * @return ManufacturerInterface
      */
     public function setId(int $id): ManufacturerInterface;
@@ -27,6 +29,7 @@ interface ManufacturerInterface extends RootModelInterface {
 
     /**
      * @param string $name
+     *
      * @return ManufacturerInterface
      */
     public function setName(string $name): ManufacturerInterface;
@@ -38,6 +41,7 @@ interface ManufacturerInterface extends RootModelInterface {
 
     /**
      * @param string $image
+     *
      * @return ManufacturerInterface
      */
     public function setImage(string $image): ManufacturerInterface;
@@ -49,6 +53,7 @@ interface ManufacturerInterface extends RootModelInterface {
 
     /**
      * @param string $link
+     *
      * @return ManufacturerInterface
      */
     public function setLink(string $link): ManufacturerInterface;
@@ -60,6 +65,7 @@ interface ManufacturerInterface extends RootModelInterface {
 
     /**
      * @param string $description
+     *
      * @return ManufacturerInterface
      */
     public function setDescription(string $description): ManufacturerInterface;
@@ -71,6 +77,7 @@ interface ManufacturerInterface extends RootModelInterface {
 
     /**
      * @param string $metaTitle
+     *
      * @return ManufacturerInterface
      */
     public function setMetaTitle(string $metaTitle): ManufacturerInterface;
@@ -82,6 +89,7 @@ interface ManufacturerInterface extends RootModelInterface {
 
     /**
      * @param string $metaDescription
+     *
      * @return ManufacturerInterface
      */
     public function setMetaDescription(string $metaDescription): ManufacturerInterface;
@@ -93,6 +101,7 @@ interface ManufacturerInterface extends RootModelInterface {
 
     /**
      * @param string $metaKeywords
+     *
      * @return ManufacturerInterface
      */
     public function setMetaKeywords(string $metaKeywords): ManufacturerInterface;

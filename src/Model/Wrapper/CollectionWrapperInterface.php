@@ -16,7 +16,6 @@ interface CollectionWrapperInterface
      */
     public function getData(): array;
 
-
     /**
      * @param RootModelInterface[] $models
      *

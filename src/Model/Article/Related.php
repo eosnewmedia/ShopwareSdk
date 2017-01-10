@@ -10,21 +10,21 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Related implements RelatedInterface
 {
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("id")
      */
     private $id;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("name")
      */
     private $name;
-    
+
     /**
      * @return int
      */
@@ -32,7 +32,7 @@ class Related implements RelatedInterface
     {
         return (int)$this->id;
     }
-    
+
     /**
      * @param int $id
      *
@@ -41,10 +41,10 @@ class Related implements RelatedInterface
     public function setId(int $id): RelatedInterface
     {
         $this->id = $id;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -52,7 +52,7 @@ class Related implements RelatedInterface
     {
         return (string)$this->name;
     }
-    
+
     /**
      * @param string $name
      *
@@ -61,7 +61,7 @@ class Related implements RelatedInterface
     public function setName(string $name): RelatedInterface
     {
         $this->name = $name;
-        
+
         return $this;
     }
 }

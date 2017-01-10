@@ -10,35 +10,35 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Locale implements LocaleInterface
 {
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("id")
      */
     private $id;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("locale")
      */
     private $locale;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("language")
      */
     private $language;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("territory")
      */
     private $territory;
-    
+
     /**
      * @return int
      */
@@ -46,7 +46,7 @@ class Locale implements LocaleInterface
     {
         return $this->id;
     }
-    
+
     /**
      * @param int $id
      *
@@ -55,10 +55,10 @@ class Locale implements LocaleInterface
     public function setId($id) : LocaleInterface
     {
         $this->id = $id;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -66,7 +66,7 @@ class Locale implements LocaleInterface
     {
         return (string)$this->locale;
     }
-    
+
     /**
      * @param string $locale
      *
@@ -75,10 +75,10 @@ class Locale implements LocaleInterface
     public function setLocale(string $locale): LocaleInterface
     {
         $this->locale = $locale;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -86,7 +86,7 @@ class Locale implements LocaleInterface
     {
         return (string)$this->language;
     }
-    
+
     /**
      * @param string $language
      *
@@ -95,10 +95,10 @@ class Locale implements LocaleInterface
     public function setLanguage(string $language): LocaleInterface
     {
         $this->language = $language;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -106,7 +106,7 @@ class Locale implements LocaleInterface
     {
         return (string)$this->territory;
     }
-    
+
     /**
      * @param string $territory
      *
@@ -115,7 +115,7 @@ class Locale implements LocaleInterface
     public function setTerritory(string $territory): LocaleInterface
     {
         $this->territory = $territory;
-        
+
         return $this;
     }
 }

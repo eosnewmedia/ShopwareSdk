@@ -12,14 +12,14 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class ArticleWrapper implements WrapperInterface
 {
-    
+
     /**
      * @var Article
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Article")
      * @Serializer\SerializedName("data")
      */
     private $data;
-    
+
     /**
      * @return RootModelInterface
      */
@@ -27,7 +27,7 @@ class ArticleWrapper implements WrapperInterface
     {
         return $this->data;
     }
-    
+
     /**
      * @param RootModelInterface $model
      *
@@ -36,8 +36,8 @@ class ArticleWrapper implements WrapperInterface
     public function setData(RootModelInterface $model): WrapperInterface
     {
         $this->data = $model;
-        
+
         return $this;
     }
-    
+
 }

@@ -8,7 +8,8 @@ use Enm\ShopwareSdk\Model\Category\CategoryInterface;
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
-interface CategoryEndpointInterface {
+interface CategoryEndpointInterface
+{
 
     /**
      * @return CategoryInterface[]

@@ -11,28 +11,28 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Tax implements TaxInterface
 {
-    
+
     /**
      * @var int
      * @Serializer\Type("integer")
      * @Serializer\SerializedName("id")
      */
     private $id;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("tax")
      */
     private $tax;
-    
+
     /**
      * @var string
      * @Serializer\Type("string")
      * @Serializer\SerializedName("name")
      */
     private $name;
-    
+
     /**
      * @return int
      */
@@ -40,7 +40,7 @@ class Tax implements TaxInterface
     {
         return (int)$this->id;
     }
-    
+
     /**
      * @param int $id
      *
@@ -49,10 +49,10 @@ class Tax implements TaxInterface
     public function setId(int $id): TaxInterface
     {
         $this->id = $id;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -60,7 +60,7 @@ class Tax implements TaxInterface
     {
         return (string)$this->tax;
     }
-    
+
     /**
      * @param string $tax
      *
@@ -69,10 +69,10 @@ class Tax implements TaxInterface
     public function setTax(string $tax): TaxInterface
     {
         $this->tax = $tax;
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -80,7 +80,7 @@ class Tax implements TaxInterface
     {
         return (string)$this->name;
     }
-    
+
     /**
      * @param string $name
      *
@@ -89,7 +89,7 @@ class Tax implements TaxInterface
     public function setName(string $name): TaxInterface
     {
         $this->name = $name;
-        
+
         return $this;
     }
 }

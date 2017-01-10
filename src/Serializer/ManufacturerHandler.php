@@ -10,25 +10,29 @@ use Enm\ShopwareSdk\Model\Wrapper\ManufacturerWrapper;
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
-class ManufacturerHandler extends AbstractHandler {
+class ManufacturerHandler extends AbstractHandler
+{
     /**
      * @return string
      */
-    protected function wrapperClass(): string {
+    protected function wrapperClass(): string
+    {
         return ManufacturerWrapper::class;
     }
 
     /**
      * @return string
      */
-    protected function collectionWrapperClass(): string {
+    protected function collectionWrapperClass(): string
+    {
         return ManufacturerCollectionWrapper::class;
     }
 
     /**
      * @return array
      */
-    public function getSupportedTypes(): array {
+    public function getSupportedTypes(): array
+    {
         return [ManufacturerInterface::class];
     }
 }

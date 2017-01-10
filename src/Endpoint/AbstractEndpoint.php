@@ -16,29 +16,32 @@ abstract class AbstractEndpoint
      * @var ClientInterface
      */
     private $httpClient;
-    
+
     /**
      * @var JsonSerializerInterface
      */
     private $serializer;
-    
+
     /**
      * @var JsonDeserializerInterface
      */
     private $deserializer;
-    
+
     /**
      * @param ClientInterface $httpClient
      * @param JsonSerializerInterface $serializer
      * @param JsonDeserializerInterface $deserializer
      */
-    public function __construct(ClientInterface $httpClient, JsonSerializerInterface $serializer, JsonDeserializerInterface $deserializer)
-    {
+    public function __construct(
+        ClientInterface $httpClient,
+        JsonSerializerInterface $serializer,
+        JsonDeserializerInterface $deserializer
+    ) {
         $this->httpClient   = $httpClient;
         $this->serializer   = $serializer;
         $this->deserializer = $deserializer;
     }
-    
+
     /**
      * @return ClientInterface
      */
@@ -46,7 +49,7 @@ abstract class AbstractEndpoint
     {
         return $this->httpClient;
     }
-    
+
     /**
      * @return JsonSerializerInterface
      */
@@ -54,7 +57,7 @@ abstract class AbstractEndpoint
     {
         return $this->serializer;
     }
-    
+
     /**
      * @return JsonDeserializerInterface
      */

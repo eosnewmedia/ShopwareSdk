@@ -10,7 +10,8 @@ use JMS\Serializer\Annotation as Serializer;
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
-class CategoryWrapper implements WrapperInterface {
+class CategoryWrapper implements WrapperInterface
+{
 
     /**
      * @var Category
@@ -22,7 +23,8 @@ class CategoryWrapper implements WrapperInterface {
     /**
      * @return RootModelInterface
      */
-    public function getData(): RootModelInterface {
+    public function getData(): RootModelInterface
+    {
         return $this->data;
     }
 
@@ -31,7 +33,8 @@ class CategoryWrapper implements WrapperInterface {
      *
      * @return WrapperInterface
      */
-    public function setData(RootModelInterface $model): WrapperInterface {
+    public function setData(RootModelInterface $model): WrapperInterface
+    {
         $this->data = $model;
 
         return $this;

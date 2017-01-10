@@ -19,7 +19,7 @@ class ArticleHandler extends AbstractHandler implements JsonSerializerInterface,
     {
         return ArticleWrapper::class;
     }
-    
+
     /**
      * @return string
      */
@@ -27,7 +27,7 @@ class ArticleHandler extends AbstractHandler implements JsonSerializerInterface,
     {
         return ArticleCollectionWrapper::class;
     }
-    
+
     /**
      * @return array
      */

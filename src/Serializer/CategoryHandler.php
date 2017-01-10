@@ -10,25 +10,29 @@ use Enm\ShopwareSdk\Model\Wrapper\CategoryWrapper;
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
-class CategoryHandler extends AbstractHandler {
+class CategoryHandler extends AbstractHandler
+{
     /**
      * @return string
      */
-    protected function wrapperClass(): string {
+    protected function wrapperClass(): string
+    {
         return CategoryWrapper::class;
     }
 
     /**
      * @return string
      */
-    protected function collectionWrapperClass(): string {
+    protected function collectionWrapperClass(): string
+    {
         return CategoryCollectionWrapper::class;
     }
 
     /**
      * @return array
      */
-    public function getSupportedTypes(): array {
+    public function getSupportedTypes(): array
+    {
         return [CategoryInterface::class];
     }
 }
