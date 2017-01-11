@@ -29,4 +29,11 @@ interface MediaEndpointInterface
      * @return MediaInterface
      */
     public function save(MediaInterface $media): MediaInterface;
+
+    /**
+     * @param int $id
+     *
+     * @return MediaEndpointInterface
+     */
+    public function delete(int $id): MediaEndpointInterface;
 }

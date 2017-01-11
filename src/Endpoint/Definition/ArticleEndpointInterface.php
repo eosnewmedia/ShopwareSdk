@@ -31,11 +31,11 @@ interface ArticleEndpointInterface
     public function save(ArticleInterface $article): ArticleInterface;
 
     /**
-     * @param ArticleInterface $article
+     * @param int $id
      *
      * @return ArticleEndpointInterface
      */
-    public function delete(ArticleInterface $article): ArticleEndpointInterface;
+    public function delete(int $id): ArticleEndpointInterface;
 
     /**
      * @param string $articleNumber

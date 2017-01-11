@@ -74,4 +74,16 @@ class MediaEndpoint extends AbstractEndpoint implements MediaEndpointInterface
 
         return $media;
     }
+
+    /**
+     * @param int $id
+     *
+     * @return MediaEndpointInterface
+     */
+    public function delete(int $id): MediaEndpointInterface
+    {
+        $this->shopware()->delete('/api/media/'.(string)$id);
+
+        return $this;
+    }
 }

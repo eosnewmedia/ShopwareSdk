@@ -56,13 +56,13 @@ class ArticleEndpoint extends AbstractEndpoint implements ArticleEndpointInterfa
     }
 
     /**
-     * @param ArticleInterface $article
+     * @param int $id
      *
      * @return ArticleEndpointInterface
      */
-    public function delete(ArticleInterface $article): ArticleEndpointInterface
+    public function delete(int $id): ArticleEndpointInterface
     {
-        $this->shopware()->delete('/api/articles/'.(string)$article->getId());
+        $this->shopware()->delete('/api/articles/'.(string)$id);
 
         return $this;
     }
