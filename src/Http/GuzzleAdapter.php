@@ -15,22 +15,22 @@ class GuzzleAdapter implements ClientInterface
      * @var string
      */
     private $baseUri = '';
-
+    
     /**
      * @var string
      */
     private $username = '';
-
+    
     /**
      * @var string
      */
     private $password = '';
-
+    
     /**
      * @var Guzzle
      */
     private $guzzleClient;
-
+    
     /**
      * @param Guzzle $guzzleClient
      */
@@ -38,7 +38,7 @@ class GuzzleAdapter implements ClientInterface
     {
         $this->guzzleClient = $guzzleClient;
     }
-
+    
     /**
      * @param string $baseUri
      * @param string $username
@@ -51,22 +51,23 @@ class GuzzleAdapter implements ClientInterface
         $this->baseUri  = $baseUri;
         $this->username = $username;
         $this->password = $password;
-
+        
         return $this;
     }
-
+    
     /**
      * @param string $path
      * @param array $query
      *
      * @return ResponseInterface
      * @throws \Exception
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get(string $path, array $query = []): ResponseInterface
     {
         return $this->request('GET', $path, $query);
     }
-
+    
     /**
      * @param string $path
      * @param array $query
@@ -74,12 +75,13 @@ class GuzzleAdapter implements ClientInterface
      *
      * @return ResponseInterface
      * @throws \Exception
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function post(string $path, array $query = [], array $body = []): ResponseInterface
     {
         return $this->request('POST', $path, $query, $body);
     }
-
+    
     /**
      * @param string $path
      * @param array $query
@@ -87,24 +89,26 @@ class GuzzleAdapter implements ClientInterface
      *
      * @return ResponseInterface
      * @throws \Exception
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function put(string $path, array $query = [], array $body = []): ResponseInterface
     {
         return $this->request('PUT', $path, $query, $body);
     }
-
+    
     /**
      * @param string $path
      * @param array $query
      *
      * @return ResponseInterface
      * @throws \Exception
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function delete(string $path, array $query = []): ResponseInterface
     {
         return $this->request('DELETE', $path, $query);
     }
-
+    
     /**
      * @param string $method
      * @param string $path
@@ -117,23 +121,30 @@ class GuzzleAdapter implements ClientInterface
      */
     private function request(string $method, string $path, array $query = [], array $body = []): ResponseInterface
     {
+        $request = [
+          'base_uri'    => $this->baseUri,
+          'auth'        => [$this->username, $this->password, 'digest'],
+          'http_errors' => false,
+        ];
+        
+        if (count($query) > 0) {
+            $request['query'] = $query;
+        }
+        if (count($body) > 0) {
+            $request['json'] = $body;
+        }
+        
         $response = $this->guzzleClient->request(
-            $method,
-            $path,
-            [
-                'base_uri'    => $this->baseUri,
-                'auth'        => [$this->username, $this->password, 'digest'],
-                'json'        => $body,
-                'query'       => $query,
-                'http_errors' => false,
-            ]
+          $method,
+          $path,
+          $request
         );
-
+        
         $this->handleResponse($response);
-
+        
         return $response;
     }
-
+    
     /**
      * @param ResponseInterface $response
      *
@@ -145,7 +156,7 @@ class GuzzleAdapter implements ClientInterface
         if ($response->getStatusCode() >= 400) {
             throw new \InvalidArgumentException((string)$response->getBody());
         }
-
+        
         return $this;
     }
 }
