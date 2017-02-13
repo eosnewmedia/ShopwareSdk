@@ -148,6 +148,7 @@ class GuzzleAdapter implements ClientInterface
 
         $response = null;
 
+        // Threefold request attempt to bypass possible non-reproducible errors.
         for ($i = 0; $i < 3; $i++) {
 
             $response = $this->guzzleClient->request(
