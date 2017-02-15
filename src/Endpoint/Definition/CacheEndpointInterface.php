@@ -35,6 +35,6 @@ interface CacheEndpointInterface
      *
      * @return CacheEndpointInterface
      */
-    public function delete(string $type = self::DELETE_ALL): CacheEndpointInterface;
+    public function delete(string $type = CacheEndpointInterface::DELETE_ALL): CacheEndpointInterface;
 
 }
