@@ -5,8 +5,10 @@ namespace Enm\ShopwareSdk;
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Enm\ShopwareSdk\Endpoint\ArticleEndpoint;
+use Enm\ShopwareSdk\Endpoint\CacheEndpoint;
 use Enm\ShopwareSdk\Endpoint\CategoryEndpoint;
 use Enm\ShopwareSdk\Endpoint\Definition\ArticleEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\Definition\CacheEndpointInterface;
 use Enm\ShopwareSdk\Endpoint\Definition\CategoryEndpointInterface;
 use Enm\ShopwareSdk\Endpoint\Definition\ManufacturerEndpointInterface;
 use Enm\ShopwareSdk\Endpoint\Definition\MediaEndpointInterface;
@@ -27,6 +29,7 @@ use Enm\ShopwareSdk\Serializer\JsonDeserializerInterface;
 use Enm\ShopwareSdk\Serializer\JsonSerializerInterface;
 use Enm\ShopwareSdk\Serializer\ManufacturerHandler;
 use Enm\ShopwareSdk\Serializer\MediaHandler;
+use Enm\ShopwareSdk\Serializer\NullJsonSerializer;
 use Enm\ShopwareSdk\Serializer\OrderHandler;
 use GuzzleHttp\Client;
 use JMS\Serializer\SerializerBuilder;
@@ -77,6 +80,11 @@ class EntryPoint implements EntryPointInterface
      * @var ManufacturerEndpointInterface
      */
     private $manufacturerEndpoint;
+
+    /**
+     * @var CacheEndpointInterface
+     */
+    private $cacheEndpoint;
 
     /**
      * @param ClientInterface $httpClient
@@ -295,4 +303,22 @@ class EntryPoint implements EntryPointInterface
 
         return $this->manufacturerEndpoint;
     }
+
+    /**
+     * @return CacheEndpointInterface
+     * @throws \InvalidArgumentException
+     */
+    public function cache(): CacheEndpointInterface
+    {
+        if ( ! $this->cacheEndpoint instanceof CacheEndpointInterface) {
+            $this->cacheEndpoint = new CacheEndpoint(
+                $this->httpClient(),
+                new NullJsonSerializer(),
+                new NullJsonSerializer()
+            );
+        }
+
+        return $this->cacheEndpoint;
+    }
+
 }

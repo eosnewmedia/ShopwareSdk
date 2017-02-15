@@ -10,7 +10,7 @@ use Enm\ShopwareSdk\Model\Wrapper\ArticleWrapper;
 /**
  * @author Philipp Marien <marien@eosnewmedia.de>
  */
-class ArticleHandler extends AbstractHandler implements JsonSerializerInterface, JsonDeserializerInterface
+class ArticleHandler extends AbstractHandler
 {
     /**
      * @return string
