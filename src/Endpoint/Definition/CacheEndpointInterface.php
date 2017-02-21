@@ -12,7 +12,7 @@ interface CacheEndpointInterface
     /**
      * Deletes all caches.
      */
-    const DELETE_ALL = '';
+    const DELETE_ALL = 'all';
 
     /**
      * Deletes the HTTP cache.
