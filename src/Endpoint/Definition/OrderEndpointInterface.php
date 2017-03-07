@@ -10,12 +10,13 @@ use Enm\ShopwareSdk\Model\Order\OrderInterface;
  */
 interface OrderEndpointInterface
 {
-
     /**
+     * @param array $queryParams
+     *
      * @return OrderInterface[]
      */
-    public function findAll(): array;
-
+    public function findAll(array $queryParams = []): array;
+    
     /**
      * @param int $id
      *
