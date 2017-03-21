@@ -14,108 +14,126 @@ class Shop implements ShopInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("mainId")
      */
     private $mainId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("categoryId")
      */
     private $categoryId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("title")
      */
     private $title;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("position")
      */
     private $position;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("host")
      */
     private $host;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("basePath")
      */
     private $basePath;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("baseUrl")
      */
     private $baseUrl;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("hosts")
      */
     private $hosts;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("secure")
      */
     private $secure;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("alwaysSecure")
      */
     private $alwaysSecure;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("secureHost")
      */
     private $secureHost;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("secureBasePath")
      */
     private $secureBasePath;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("templateId")
      */
     private $templateId;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("default")
      */
     private $default;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("active")
      */
     private $active;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("customerScope")
      */
     private $customerScope;
 
@@ -124,7 +142,7 @@ class Shop implements ShopInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -144,7 +162,7 @@ class Shop implements ShopInterface
      */
     public function getMainId(): string
     {
-        return $this->mainId;
+        return (string)$this->mainId;
     }
 
     /**
@@ -164,7 +182,7 @@ class Shop implements ShopInterface
      */
     public function getCategoryId(): int
     {
-        return $this->categoryId;
+        return (int)$this->categoryId;
     }
 
     /**
@@ -184,7 +202,7 @@ class Shop implements ShopInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -204,7 +222,7 @@ class Shop implements ShopInterface
      */
     public function getTitle(): string
     {
-        return $this->title;
+        return (string)$this->title;
     }
 
     /**
@@ -224,7 +242,7 @@ class Shop implements ShopInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**
@@ -244,7 +262,7 @@ class Shop implements ShopInterface
      */
     public function getHost(): string
     {
-        return $this->host;
+        return (string)$this->host;
     }
 
     /**
@@ -264,7 +282,7 @@ class Shop implements ShopInterface
      */
     public function getBasePath(): string
     {
-        return $this->basePath;
+        return (string)$this->basePath;
     }
 
     /**
@@ -284,7 +302,7 @@ class Shop implements ShopInterface
      */
     public function getBaseUrl(): string
     {
-        return $this->baseUrl;
+        return (string)$this->baseUrl;
     }
 
     /**
@@ -304,7 +322,7 @@ class Shop implements ShopInterface
      */
     public function getHosts(): string
     {
-        return $this->hosts;
+        return (string)$this->hosts;
     }
 
     /**
@@ -324,7 +342,7 @@ class Shop implements ShopInterface
      */
     public function isSecure(): bool
     {
-        return $this->secure;
+        return (bool)$this->secure;
     }
 
     /**
@@ -344,7 +362,7 @@ class Shop implements ShopInterface
      */
     public function isAlwaysSecure(): bool
     {
-        return $this->alwaysSecure;
+        return (bool)$this->alwaysSecure;
     }
 
     /**
@@ -364,7 +382,7 @@ class Shop implements ShopInterface
      */
     public function getSecureHost(): string
     {
-        return $this->secureHost;
+        return (string)$this->secureHost;
     }
 
     /**
@@ -384,7 +402,7 @@ class Shop implements ShopInterface
      */
     public function getSecureBasePath(): string
     {
-        return $this->secureBasePath;
+        return (string)$this->secureBasePath;
     }
 
     /**
@@ -404,7 +422,7 @@ class Shop implements ShopInterface
      */
     public function getTemplateId(): int
     {
-        return $this->templateId;
+        return (int)$this->templateId;
     }
 
     /**
@@ -424,7 +442,7 @@ class Shop implements ShopInterface
      */
     public function isDefault(): bool
     {
-        return $this->default;
+        return (bool)$this->default;
     }
 
     /**
@@ -444,7 +462,7 @@ class Shop implements ShopInterface
      */
     public function isActive(): bool
     {
-        return $this->active;
+        return (bool)$this->active;
     }
 
     /**
@@ -464,7 +482,7 @@ class Shop implements ShopInterface
      */
     public function isCustomerScope(): bool
     {
-        return $this->customerScope;
+        return (bool)$this->customerScope;
     }
 
     /**

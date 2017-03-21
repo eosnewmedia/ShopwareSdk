@@ -16,6 +16,7 @@ class ArticleWrapper implements WrapperInterface
     /**
      * @var Article
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Article")
+     * @Serializer\SerializedName("data")
      */
     private $data;
 
@@ -38,6 +39,5 @@ class ArticleWrapper implements WrapperInterface
 
         return $this;
     }
-
 
 }

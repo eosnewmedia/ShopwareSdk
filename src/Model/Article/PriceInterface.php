@@ -1,10 +1,11 @@
-<?<?php
- declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Model\Article;
 
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
+ * @author Nicklas Reincke <reincke@eosnewmedia.de>
  */
 interface PriceInterface
 {
@@ -133,6 +134,11 @@ interface PriceInterface
      * @return CustomerGroupInterface
      */
     public function getCustomerGroup() : CustomerGroupInterface;
+
+    /**
+     * @return bool
+     */
+    public function hasCustomerGroup() : bool;
 
     /**
      * @param CustomerGroupInterface $customerGroup

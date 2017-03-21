@@ -14,12 +14,14 @@ class Similar implements SimilarInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
 
@@ -28,7 +30,7 @@ class Similar implements SimilarInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -48,7 +50,7 @@ class Similar implements SimilarInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**

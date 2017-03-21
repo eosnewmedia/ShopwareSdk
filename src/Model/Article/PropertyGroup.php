@@ -14,29 +14,35 @@ class PropertyGroup implements PropertyGroupInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("position")
      */
     private $position;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("comparable")
      */
     private $comparable;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("sortMode")
      */
     private $sortMode;
 
@@ -45,7 +51,7 @@ class PropertyGroup implements PropertyGroupInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -65,7 +71,7 @@ class PropertyGroup implements PropertyGroupInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -85,7 +91,7 @@ class PropertyGroup implements PropertyGroupInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**
@@ -105,7 +111,7 @@ class PropertyGroup implements PropertyGroupInterface
      */
     public function isComparable(): bool
     {
-        return $this->comparable;
+        return (bool)$this->comparable;
     }
 
     /**
@@ -125,7 +131,7 @@ class PropertyGroup implements PropertyGroupInterface
      */
     public function getSortMode(): int
     {
-        return $this->sortMode;
+        return (int)$this->sortMode;
     }
 
     /**

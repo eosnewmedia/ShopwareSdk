@@ -5,18 +5,35 @@ namespace Enm\ShopwareSdk;
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Enm\ShopwareSdk\Endpoint\ArticleEndpoint;
+use Enm\ShopwareSdk\Endpoint\CacheEndpoint;
+use Enm\ShopwareSdk\Endpoint\CategoryEndpoint;
 use Enm\ShopwareSdk\Endpoint\Definition\ArticleEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\Definition\CacheEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\Definition\CategoryEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\Definition\ManufacturerEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\Definition\MediaEndpointInterface;
 use Enm\ShopwareSdk\Endpoint\Definition\OrderEndpointInterface;
+use Enm\ShopwareSdk\Endpoint\ManufacturerEndpoint;
+use Enm\ShopwareSdk\Endpoint\MediaEndpoint;
 use Enm\ShopwareSdk\Endpoint\OrderEndpoint;
 use Enm\ShopwareSdk\Http\ClientInterface;
 use Enm\ShopwareSdk\Http\GuzzleAdapter;
 use Enm\ShopwareSdk\Model\Article\ArticleInterface;
+use Enm\ShopwareSdk\Model\Category\CategoryInterface;
+use Enm\ShopwareSdk\Model\Manufacturer\ManufacturerInterface;
+use Enm\ShopwareSdk\Model\Media\MediaInterface;
 use Enm\ShopwareSdk\Model\Order\OrderInterface;
-use Enm\ShopwareSdk\Response\ArticleHandler;
-use Enm\ShopwareSdk\Response\HandlerInterface;
-use Enm\ShopwareSdk\Response\OrderHandler;
+use Enm\ShopwareSdk\Serializer\ArticleHandler;
+use Enm\ShopwareSdk\Serializer\CategoryHandler;
+use Enm\ShopwareSdk\Serializer\JsonDeserializerInterface;
+use Enm\ShopwareSdk\Serializer\JsonSerializerInterface;
+use Enm\ShopwareSdk\Serializer\ManufacturerHandler;
+use Enm\ShopwareSdk\Serializer\MediaHandler;
+use Enm\ShopwareSdk\Serializer\NullJsonSerializer;
+use Enm\ShopwareSdk\Serializer\OrderHandler;
 use GuzzleHttp\Client;
 use JMS\Serializer\SerializerBuilder;
+use JMS\Serializer\SerializerInterface;
 
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
@@ -30,9 +47,14 @@ class EntryPoint implements EntryPointInterface
     private $httpClient;
 
     /**
-     * @var HandlerInterface[]
+     * @var JsonSerializerInterface[]
      */
-    private $responseHandlers = [];
+    private $serializers = [];
+
+    /**
+     * @var JsonDeserializerInterface[]
+     */
+    private $deserializers = [];
 
     /**
      * @var ArticleEndpointInterface
@@ -43,6 +65,26 @@ class EntryPoint implements EntryPointInterface
      * @var OrderEndpointInterface
      */
     private $orderEndpoint;
+
+    /**
+     * @var CategoryEndpointInterface
+     */
+    private $categoryEndpoint;
+
+    /**
+     * @var MediaEndpointInterface
+     */
+    private $mediaEndpoint;
+
+    /**
+     * @var ManufacturerEndpointInterface
+     */
+    private $manufacturerEndpoint;
+
+    /**
+     * @var CacheEndpointInterface
+     */
+    private $cacheEndpoint;
 
     /**
      * @param ClientInterface $httpClient
@@ -66,27 +108,74 @@ class EntryPoint implements EntryPointInterface
             __DIR__.'/../vendor/jms/serializer/src'
         );
 
-        $serializer = SerializerBuilder::create()->build();
-
         $client = new GuzzleAdapter(new Client());
         $client->withConfig($baseUri, $username, $password);
 
         $entryPoint = new self($client);
-        $entryPoint->addResponseHandler(new ArticleHandler($serializer));
-        $entryPoint->addResponseHandler(new OrderHandler($serializer));
+
+        $jmsSerializer = SerializerBuilder::create()->build();
+
+        $entryPoint->addDefaultSerializers($jmsSerializer);
+        $entryPoint->addDefaultDeserializers($jmsSerializer);
 
         return $entryPoint;
     }
 
     /**
-     * @param HandlerInterface $handler
+     * @param SerializerInterface $jmsSerializer
      *
      * @return EntryPoint
      */
-    public function addResponseHandler(HandlerInterface $handler): EntryPoint
+    public function addDefaultSerializers(SerializerInterface $jmsSerializer): EntryPoint
     {
-        foreach ($handler->getSupportedTypes() as $type) {
-            $this->responseHandlers[$type] = $handler;
+        $this->addSerializer(new ArticleHandler($jmsSerializer));
+        $this->addSerializer(new OrderHandler($jmsSerializer));
+        $this->addSerializer(new CategoryHandler($jmsSerializer));
+        $this->addSerializer(new MediaHandler($jmsSerializer));
+        $this->addSerializer(new ManufacturerHandler($jmsSerializer));
+
+        return $this;
+    }
+
+    /**
+     * @param JsonSerializerInterface $serializer
+     *
+     * @return EntryPoint
+     */
+    public function addSerializer(JsonSerializerInterface $serializer): EntryPoint
+    {
+        foreach ($serializer->getSupportedTypes() as $type) {
+            $this->serializers[$type] = $serializer;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param SerializerInterface $jmsSerializer
+     *
+     * @return EntryPoint
+     */
+    public function addDefaultDeserializers(SerializerInterface $jmsSerializer): EntryPoint
+    {
+        $this->addDeserializer(new ArticleHandler($jmsSerializer));
+        $this->addDeserializer(new OrderHandler($jmsSerializer));
+        $this->addDeserializer(new CategoryHandler($jmsSerializer));
+        $this->addDeserializer(new MediaHandler($jmsSerializer));
+        $this->addDeserializer(new ManufacturerHandler($jmsSerializer));
+
+        return $this;
+    }
+
+    /**
+     * @param JsonDeserializerInterface $deserializer
+     *
+     * @return EntryPoint
+     */
+    public function addDeserializer(JsonDeserializerInterface $deserializer): EntryPoint
+    {
+        foreach ($deserializer->getSupportedTypes() as $type) {
+            $this->deserializers[$type] = $deserializer;
         }
 
         return $this;
@@ -98,10 +187,11 @@ class EntryPoint implements EntryPointInterface
      */
     public function articles(): ArticleEndpointInterface
     {
-        if (!$this->articleEndpoint instanceof ArticleEndpointInterface) {
+        if ( ! $this->articleEndpoint instanceof ArticleEndpointInterface) {
             $this->articleEndpoint = new ArticleEndpoint(
                 $this->httpClient(),
-                $this->handlerFor(ArticleInterface::class)
+                $this->serializerFor(ArticleInterface::class),
+                $this->deserializerFor(ArticleInterface::class)
             );
         }
 
@@ -117,18 +207,33 @@ class EntryPoint implements EntryPointInterface
     }
 
     /**
-     * @param string $type
+     * @param string $class
      *
-     * @return HandlerInterface
+     * @return JsonSerializerInterface
      * @throws \InvalidArgumentException
      */
-    protected function handlerFor(string $type): HandlerInterface
+    protected function serializerFor(string $class): JsonSerializerInterface
     {
-        if (!array_key_exists($type, $this->responseHandlers)) {
-            throw new \InvalidArgumentException('No handler for '.$type);
+        if ( ! array_key_exists($class, $this->serializers)) {
+            throw new \InvalidArgumentException('No serializer for '.$class);
         }
 
-        return $this->responseHandlers[$type];
+        return $this->serializers[$class];
+    }
+
+    /**
+     * @param string $class
+     *
+     * @return JsonDeserializerInterface
+     * @throws \InvalidArgumentException
+     */
+    protected function deserializerFor(string $class): JsonDeserializerInterface
+    {
+        if ( ! array_key_exists($class, $this->deserializers)) {
+            throw new \InvalidArgumentException('No deserializer for '.$class);
+        }
+
+        return $this->deserializers[$class];
     }
 
     /**
@@ -137,13 +242,83 @@ class EntryPoint implements EntryPointInterface
      */
     public function orders(): OrderEndpointInterface
     {
-        if (!$this->orderEndpoint instanceof OrderEndpointInterface) {
+        if ( ! $this->orderEndpoint instanceof OrderEndpointInterface) {
             $this->orderEndpoint = new OrderEndpoint(
                 $this->httpClient(),
-                $this->handlerFor(OrderInterface::class)
+                $this->serializerFor(OrderInterface::class),
+                $this->deserializerFor(OrderInterface::class)
             );
         }
 
         return $this->orderEndpoint;
     }
+
+    /**
+     * @return CategoryEndpointInterface
+     * @throws \InvalidArgumentException
+     */
+    public function categories(): CategoryEndpointInterface
+    {
+        if ( ! $this->categoryEndpoint instanceof CategoryEndpointInterface) {
+            $this->categoryEndpoint = new CategoryEndpoint(
+                $this->httpClient(),
+                $this->serializerFor(CategoryInterface::class),
+                $this->deserializerFor(CategoryInterface::class)
+            );
+        }
+
+        return $this->categoryEndpoint;
+    }
+
+    /**
+     * @return MediaEndpointInterface
+     * @throws \InvalidArgumentException
+     */
+    public function media(): MediaEndpointInterface
+    {
+        if ( ! $this->mediaEndpoint instanceof MediaEndpointInterface) {
+            $this->mediaEndpoint = new MediaEndpoint(
+                $this->httpClient(),
+                $this->serializerFor(MediaInterface::class),
+                $this->deserializerFor(MediaInterface::class)
+            );
+        }
+
+        return $this->mediaEndpoint;
+    }
+
+    /**
+     * @return ManufacturerEndpointInterface
+     * @throws \InvalidArgumentException
+     */
+    public function manufacturer(): ManufacturerEndpointInterface
+    {
+        if ( ! $this->manufacturerEndpoint instanceof ManufacturerEndpointInterface) {
+            $this->manufacturerEndpoint = new ManufacturerEndpoint(
+                $this->httpClient(),
+                $this->serializerFor(ManufacturerInterface::class),
+                $this->deserializerFor(ManufacturerInterface::class)
+            );
+        }
+
+        return $this->manufacturerEndpoint;
+    }
+
+    /**
+     * @return CacheEndpointInterface
+     * @throws \InvalidArgumentException
+     */
+    public function cache(): CacheEndpointInterface
+    {
+        if ( ! $this->cacheEndpoint instanceof CacheEndpointInterface) {
+            $this->cacheEndpoint = new CacheEndpoint(
+                $this->httpClient(),
+                new NullJsonSerializer(),
+                new NullJsonSerializer()
+            );
+        }
+
+        return $this->cacheEndpoint;
+    }
+
 }

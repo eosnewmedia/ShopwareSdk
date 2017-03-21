@@ -12,42 +12,47 @@ class Locale implements LocaleInterface
 {
 
     /**
-     * @var
+     * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("locale")
      */
     private $locale;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("language")
      */
     private $language;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("territory")
      */
     private $territory;
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      *
      * @return LocaleInterface
      */
-    public function setId($id)
+    public function setId($id) : LocaleInterface
     {
         $this->id = $id;
 
@@ -59,7 +64,7 @@ class Locale implements LocaleInterface
      */
     public function getLocale(): string
     {
-        return $this->locale;
+        return (string)$this->locale;
     }
 
     /**
@@ -79,7 +84,7 @@ class Locale implements LocaleInterface
      */
     public function getLanguage(): string
     {
-        return $this->language;
+        return (string)$this->language;
     }
 
     /**
@@ -99,7 +104,7 @@ class Locale implements LocaleInterface
      */
     public function getTerritory(): string
     {
-        return $this->territory;
+        return (string)$this->territory;
     }
 
     /**

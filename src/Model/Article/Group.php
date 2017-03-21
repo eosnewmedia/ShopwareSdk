@@ -14,24 +14,28 @@ class Group implements GroupInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("description")
      */
     private $description;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("position")
      */
     private $position;
 
@@ -40,7 +44,7 @@ class Group implements GroupInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -60,7 +64,7 @@ class Group implements GroupInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -80,7 +84,7 @@ class Group implements GroupInterface
      */
     public function getDescription(): string
     {
-        return $this->description;
+        return (string)$this->description;
     }
 
     /**
@@ -100,7 +104,7 @@ class Group implements GroupInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**

@@ -3,7 +3,9 @@ declare(strict_types = 1);
 
 namespace Enm\ShopwareSdk\Model\Article;
 
+use Enm\ShopwareSdk\Model\Manufacturer\ManufacturerInterface;
 use JMS\Serializer\Annotation as Serializer;
+use Enm\ShopwareSdk\Model\Category\CategoryInterface;
 
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
@@ -11,241 +13,285 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Article implements ArticleInterface
 {
-
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("mainDetailId")
      */
     private $mainDetailId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("supplierId")
      */
     private $supplierId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("taxId")
      */
     private $taxId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("priceGroupId")
      */
     private $priceGroupId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("filterGroupId")
      */
     private $filterGroupId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("configuratorSetId")
      */
     private $configuratorSetId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("description")
      */
     private $description;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("descriptionLong")
      */
     private $descriptionLong;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("added")
      */
     private $added;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("active")
      */
     private $active;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("pseudoSales")
      */
     private $pseudoSales;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("highlight")
      */
     private $highlight;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("keywords")
      */
     private $keywords;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("metaTitle")
      */
     private $metaTitle;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("changed")
      */
     private $changed;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("priceGroupActive")
      */
     private $priceGroupActive;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("lastStock")
      */
     private $lastStock;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("crossBundleLook")
      */
     private $crossBundleLook;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("notification")
      */
     private $notification;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("template")
      */
     private $template;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("mode")
      */
     private $mode;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("availableFrom")
      */
     private $availableFrom;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("availableTo")
      */
     private $availableTo;
 
     /**
      * @var DetailInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Detail")
+     * @Serializer\SerializedName("mainDetail")
      */
     private $mainDetail;
 
     /**
      * @var TaxInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Tax")
+     * @Serializer\SerializedName("tax")
      */
     private $tax;
 
     /**
      * @var SupplierInterface
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Supplier")
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Manufacturer\Manufacturer")
+     * @Serializer\SerializedName("supplier")
      */
     private $supplier;
 
     /**
      * @var PropertyGroupInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\PropertyGroup")
+     * @Serializer\SerializedName("propertyGroup")
      */
     private $propertyGroup;
 
     /**
      * @var CustomerGroupInterface[]
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\CustomerGroup")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\CustomerGroup>")
+     * @Serializer\SerializedName("customerGroups")
      */
-    private $customerGroups;
+    private $customerGroups = [];
 
     /**
      * @var ImageInterface[]
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Image")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Image>")
+     * @Serializer\SerializedName("images")
      */
-    private $images;
+    private $images = [];
 
     /**
      * @var ConfiguratorSetInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\ConfiguratorSet")
+     * @Serializer\SerializedName("configuratorSet")
      */
     private $configuratorSet;
 
     /**
      * @var LinkInterface[]
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Link")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Link>")
+     * @Serializer\SerializedName("links")
      */
-    private $links;
+    private $links = [];
 
     /**
      * @var DownloadInterface[]
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Download")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Download>")
+     * @Serializer\SerializedName("downloads")
      */
-    private $downloads;
+    private $downloads = [];
 
     /**
      * @var CategoryInterface[]
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Category")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Category\Category>")
+     * @Serializer\SerializedName("categories")
      */
-    private $categories;
+    private $categories = [];
 
     /**
      * @var SimilarInterface[]
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Similar")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Similar>")
+     * @Serializer\SerializedName("similar")
      */
-    private $similar;
+    private $similar = [];
 
     /**
      * @var RelatedInterface[]
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Related")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Related>")
+     * @Serializer\SerializedName("related")
      */
-    private $related;
+    private $related = [];
 
     /**
      * @var DetailInterface[]
-     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Detail")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Detail>")
+     * @Serializer\SerializedName("details")
      */
-    private $details;
+    private $details = [];
+
+    /**
+     * @var PropertyValueInterface[]
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\PropertyValue>")
+     * @Serializer\SerializedName("propertyValues")
+     */
+    private $propertyValues = [];
 
     /**
      * @return int
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -265,7 +311,7 @@ class Article implements ArticleInterface
      */
     public function getMainDetailId(): int
     {
-        return $this->mainDetailId;
+        return (int)$this->mainDetailId;
     }
 
     /**
@@ -285,7 +331,7 @@ class Article implements ArticleInterface
      */
     public function getSupplierId(): int
     {
-        return $this->supplierId;
+        return (int)$this->supplierId;
     }
 
     /**
@@ -305,7 +351,7 @@ class Article implements ArticleInterface
      */
     public function getTaxId(): int
     {
-        return $this->taxId;
+        return (int)$this->taxId;
     }
 
     /**
@@ -325,7 +371,7 @@ class Article implements ArticleInterface
      */
     public function getPriceGroupId(): int
     {
-        return $this->priceGroupId;
+        return (int)$this->priceGroupId;
     }
 
     /**
@@ -345,7 +391,7 @@ class Article implements ArticleInterface
      */
     public function getFilterGroupId(): int
     {
-        return $this->filterGroupId;
+        return (int)$this->filterGroupId;
     }
 
     /**
@@ -365,7 +411,7 @@ class Article implements ArticleInterface
      */
     public function getConfiguratorSetId(): int
     {
-        return $this->configuratorSetId;
+        return (int)$this->configuratorSetId;
     }
 
     /**
@@ -385,7 +431,7 @@ class Article implements ArticleInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -405,7 +451,7 @@ class Article implements ArticleInterface
      */
     public function getDescription(): string
     {
-        return $this->description;
+        return (string)$this->description;
     }
 
     /**
@@ -425,7 +471,7 @@ class Article implements ArticleInterface
      */
     public function getDescriptionLong(): string
     {
-        return $this->descriptionLong;
+        return (string)$this->descriptionLong;
     }
 
     /**
@@ -445,7 +491,7 @@ class Article implements ArticleInterface
      */
     public function getAdded(): string
     {
-        return $this->added;
+        return (string)$this->added;
     }
 
     /**
@@ -465,7 +511,7 @@ class Article implements ArticleInterface
      */
     public function isActive(): bool
     {
-        return $this->active;
+        return (bool)$this->active;
     }
 
     /**
@@ -485,7 +531,7 @@ class Article implements ArticleInterface
      */
     public function getPseudoSales(): int
     {
-        return $this->pseudoSales;
+        return (int)$this->pseudoSales;
     }
 
     /**
@@ -505,7 +551,7 @@ class Article implements ArticleInterface
      */
     public function isHighlight(): bool
     {
-        return $this->highlight;
+        return (bool)$this->highlight;
     }
 
     /**
@@ -525,7 +571,7 @@ class Article implements ArticleInterface
      */
     public function getKeywords(): string
     {
-        return $this->keywords;
+        return (string)$this->keywords;
     }
 
     /**
@@ -545,7 +591,7 @@ class Article implements ArticleInterface
      */
     public function getMetaTitle(): string
     {
-        return $this->metaTitle;
+        return (string)$this->metaTitle;
     }
 
     /**
@@ -565,7 +611,7 @@ class Article implements ArticleInterface
      */
     public function getChanged(): string
     {
-        return $this->changed;
+        return (string)$this->changed;
     }
 
     /**
@@ -585,7 +631,7 @@ class Article implements ArticleInterface
      */
     public function isPriceGroupActive(): bool
     {
-        return $this->priceGroupActive;
+        return (bool)$this->priceGroupActive;
     }
 
     /**
@@ -605,7 +651,7 @@ class Article implements ArticleInterface
      */
     public function isLastStock(): bool
     {
-        return $this->lastStock;
+        return (bool)$this->lastStock;
     }
 
     /**
@@ -625,7 +671,7 @@ class Article implements ArticleInterface
      */
     public function isCrossBundleLook(): bool
     {
-        return $this->crossBundleLook;
+        return (bool)$this->crossBundleLook;
     }
 
     /**
@@ -645,7 +691,7 @@ class Article implements ArticleInterface
      */
     public function isNotification(): bool
     {
-        return $this->notification;
+        return (bool)$this->notification;
     }
 
     /**
@@ -665,7 +711,7 @@ class Article implements ArticleInterface
      */
     public function getTemplate(): string
     {
-        return $this->template;
+        return (string)$this->template;
     }
 
     /**
@@ -685,7 +731,7 @@ class Article implements ArticleInterface
      */
     public function getMode(): int
     {
-        return $this->mode;
+        return (int)$this->mode;
     }
 
     /**
@@ -705,7 +751,7 @@ class Article implements ArticleInterface
      */
     public function getAvailableFrom(): string
     {
-        return $this->availableFrom;
+        return (string)$this->availableFrom;
     }
 
     /**
@@ -725,7 +771,7 @@ class Article implements ArticleInterface
      */
     public function getAvailableTo(): string
     {
-        return $this->availableTo;
+        return (string)$this->availableTo;
     }
 
     /**
@@ -749,6 +795,14 @@ class Article implements ArticleInterface
     }
 
     /**
+     * @return bool
+     */
+    public function hasMainDetail(): bool
+    {
+        return $this->mainDetail !== null;
+    }
+
+    /**
      * @param DetailInterface $mainDetail
      *
      * @return ArticleInterface
@@ -769,6 +823,14 @@ class Article implements ArticleInterface
     }
 
     /**
+     * @return bool
+     */
+    public function hasTax(): bool
+    {
+        return $this->tax !== null;
+    }
+
+    /**
      * @param TaxInterface $tax
      *
      * @return ArticleInterface
@@ -781,19 +843,27 @@ class Article implements ArticleInterface
     }
 
     /**
-     * @return SupplierInterface
+     * @return ManufacturerInterface
      */
-    public function getSupplier(): SupplierInterface
+    public function getSupplier(): ManufacturerInterface
     {
         return $this->supplier;
     }
 
     /**
-     * @param SupplierInterface $supplier
+     * @return bool
+     */
+    public function hasSupplier(): bool
+    {
+        return $this->supplier !== null;
+    }
+
+    /**
+     * @param ManufacturerInterface $supplier
      *
      * @return ArticleInterface
      */
-    public function setSupplier(SupplierInterface $supplier): ArticleInterface
+    public function setSupplier(ManufacturerInterface $supplier): ArticleInterface
     {
         $this->supplier = $supplier;
 
@@ -806,6 +876,14 @@ class Article implements ArticleInterface
     public function getPropertyGroup(): PropertyGroupInterface
     {
         return $this->propertyGroup;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasPropertyGroup(): bool
+    {
+        return $this->propertyGroup !== null;
     }
 
     /**
@@ -825,7 +903,7 @@ class Article implements ArticleInterface
      */
     public function getCustomerGroups(): array
     {
-        return $this->customerGroups;
+        return (array)$this->customerGroups;
     }
 
     /**
@@ -845,7 +923,7 @@ class Article implements ArticleInterface
      */
     public function getImages(): array
     {
-        return $this->images;
+        return (array)$this->images;
     }
 
     /**
@@ -869,6 +947,14 @@ class Article implements ArticleInterface
     }
 
     /**
+     * @return bool
+     */
+    public function hasConfiguratorSet(): bool
+    {
+        return $this->configuratorSet !== null;
+    }
+
+    /**
      * @param ConfiguratorSetInterface $configuratorSet
      *
      * @return ArticleInterface
@@ -885,7 +971,7 @@ class Article implements ArticleInterface
      */
     public function getLinks(): array
     {
-        return $this->links;
+        return (array)$this->links;
     }
 
     /**
@@ -905,7 +991,7 @@ class Article implements ArticleInterface
      */
     public function getDownloads(): array
     {
-        return $this->downloads;
+        return (array)$this->downloads;
     }
 
     /**
@@ -925,7 +1011,7 @@ class Article implements ArticleInterface
      */
     public function getCategories(): array
     {
-        return $this->categories;
+        return (array)$this->categories;
     }
 
     /**
@@ -945,7 +1031,7 @@ class Article implements ArticleInterface
      */
     public function getSimilar(): array
     {
-        return $this->similar;
+        return (array)$this->similar;
     }
 
     /**
@@ -965,7 +1051,7 @@ class Article implements ArticleInterface
      */
     public function getRelated(): array
     {
-        return $this->related;
+        return (array)$this->related;
     }
 
     /**
@@ -985,7 +1071,7 @@ class Article implements ArticleInterface
      */
     public function getDetails(): array
     {
-        return $this->details;
+        return (array)$this->details;
     }
 
     /**
@@ -996,6 +1082,26 @@ class Article implements ArticleInterface
     public function setDetails(array $details): ArticleInterface
     {
         $this->details = $details;
+
+        return $this;
+    }
+
+    /**
+     * @return PropertyValueInterface[]
+     */
+    public function getPropertyValues(): array
+    {
+        return $this->propertyValues;
+    }
+
+    /**
+     * @param PropertyValueInterface[] $propertyValues
+     *
+     * @return ArticleInterface
+     */
+    public function setPropertyValues(array $propertyValues): ArticleInterface
+    {
+        $this->propertyValues = $propertyValues;
 
         return $this;
     }

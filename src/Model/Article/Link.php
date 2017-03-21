@@ -14,30 +14,35 @@ class Link implements LinkInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("articleId")
      */
     private $articleId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("link")
      */
     private $link;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("target")
      */
     private $target;
 
@@ -46,7 +51,7 @@ class Link implements LinkInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -66,7 +71,7 @@ class Link implements LinkInterface
      */
     public function getArticleId(): int
     {
-        return $this->articleId;
+        return (int)$this->articleId;
     }
 
     /**
@@ -86,7 +91,7 @@ class Link implements LinkInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -106,7 +111,7 @@ class Link implements LinkInterface
      */
     public function getLink(): string
     {
-        return $this->link;
+        return (string)$this->link;
     }
 
     /**
@@ -126,7 +131,7 @@ class Link implements LinkInterface
      */
     public function getTarget(): string
     {
-        return $this->target;
+        return (string)$this->target;
     }
 
     /**

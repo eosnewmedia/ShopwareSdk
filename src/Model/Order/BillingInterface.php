@@ -248,4 +248,9 @@ interface BillingInterface
      * @return BillingInterface
      */
     public function setCountry(CountryInterface $country) : BillingInterface;
+
+    /**
+     * @return bool
+     */
+    public function hasCountry() : bool;
 }

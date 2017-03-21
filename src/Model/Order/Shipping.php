@@ -14,96 +14,112 @@ class Shipping implements ShippingInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("orderId")
      */
     private $orderId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("countryId")
      */
     private $countryId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("stateId")
      */
     private $stateId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("customerId")
      */
     private $customerId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("company")
      */
     private $company;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("department")
      */
     private $department;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("salutation")
      */
     private $salutation;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("firstName")
      */
     private $firstName;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("lastName")
      */
     private $lastName;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("street")
      */
     private $street;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("zipCode")
      */
     private $zipCode;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("city")
      */
     private $city;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("additionalAddressLine1")
      */
     private $additionalAddressLine1;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("additionalAddressLine2")
      */
     private $additionalAddressLine2;
 
     /**
      * @var CountryInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Country")
+     * @Serializer\SerializedName("country")
      */
     private $country;
 
@@ -116,7 +132,7 @@ class Shipping implements ShippingInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -136,7 +152,7 @@ class Shipping implements ShippingInterface
      */
     public function getOrderId(): int
     {
-        return $this->orderId;
+        return (int)$this->orderId;
     }
 
     /**
@@ -156,7 +172,7 @@ class Shipping implements ShippingInterface
      */
     public function getCountryId(): int
     {
-        return $this->countryId;
+        return (int)$this->countryId;
     }
 
     /**
@@ -176,7 +192,7 @@ class Shipping implements ShippingInterface
      */
     public function getStateId(): int
     {
-        return $this->stateId;
+        return (int)$this->stateId;
     }
 
     /**
@@ -196,7 +212,7 @@ class Shipping implements ShippingInterface
      */
     public function getCustomerId(): int
     {
-        return $this->customerId;
+        return (int)$this->customerId;
     }
 
     /**
@@ -216,7 +232,7 @@ class Shipping implements ShippingInterface
      */
     public function getCompany(): string
     {
-        return $this->company;
+        return (string)$this->company;
     }
 
     /**
@@ -236,7 +252,7 @@ class Shipping implements ShippingInterface
      */
     public function getDepartment(): string
     {
-        return $this->department;
+        return (string)$this->department;
     }
 
     /**
@@ -256,7 +272,7 @@ class Shipping implements ShippingInterface
      */
     public function getSalutation(): string
     {
-        return $this->salutation;
+        return (string)$this->salutation;
     }
 
     /**
@@ -276,7 +292,7 @@ class Shipping implements ShippingInterface
      */
     public function getFirstName(): string
     {
-        return $this->firstName;
+        return (string)$this->firstName;
     }
 
     /**
@@ -296,7 +312,7 @@ class Shipping implements ShippingInterface
      */
     public function getLastName(): string
     {
-        return $this->lastName;
+        return (string)$this->lastName;
     }
 
     /**
@@ -316,7 +332,7 @@ class Shipping implements ShippingInterface
      */
     public function getStreet(): string
     {
-        return $this->street;
+        return (string)$this->street;
     }
 
     /**
@@ -336,7 +352,7 @@ class Shipping implements ShippingInterface
      */
     public function getZipCode(): string
     {
-        return $this->zipCode;
+        return (string)$this->zipCode;
     }
 
     /**
@@ -356,7 +372,7 @@ class Shipping implements ShippingInterface
      */
     public function getCity(): string
     {
-        return $this->city;
+        return (string)$this->city;
     }
 
     /**
@@ -376,7 +392,7 @@ class Shipping implements ShippingInterface
      */
     public function getAdditionalAddressLine1(): string
     {
-        return $this->additionalAddressLine1;
+        return (string)$this->additionalAddressLine1;
     }
 
     /**
@@ -396,7 +412,7 @@ class Shipping implements ShippingInterface
      */
     public function getAdditionalAddressLine2(): string
     {
-        return $this->additionalAddressLine2;
+        return (string)$this->additionalAddressLine2;
     }
 
     /**
@@ -429,5 +445,13 @@ class Shipping implements ShippingInterface
         $this->country = $country;
 
         return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasCountry(): bool
+    {
+        return $this->country instanceof CountryInterface;
     }
 }

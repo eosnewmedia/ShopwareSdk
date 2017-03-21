@@ -200,4 +200,9 @@ interface ShippingInterface
      * @return ShippingInterface
      */
     public function setCountry(CountryInterface $country) : ShippingInterface;
+
+    /**
+     * @return bool
+     */
+    public function hasCountry(): bool;
 }

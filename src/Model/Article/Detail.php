@@ -15,165 +15,198 @@ class Detail implements DetailInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("articleId")
      */
     private $articleId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("unitId")
      */
     private $unitId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("number")
      */
     private $number;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("supplierNumber")
      */
     private $supplierNumber;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("kind")
      */
     private $kind;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("additionalText")
      */
     private $additionalText;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("active")
      */
     private $active;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("inStock")
      */
     private $inStock;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("weight")
      */
     private $weight;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("width")
      */
     private $width;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("len")
      */
     private $len;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("height")
      */
     private $height;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("ean")
      */
     private $ean;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("position")
      */
     private $position;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("minPurchase")
      */
     private $minPurchase;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("purchaseSteps")
      */
     private $purchaseSteps;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("maxPurchase")
      */
     private $maxPurchase;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("purchaseUnit")
      */
     private $purchaseUnit;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("referenceUnit")
      */
     private $referenceUnit;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("packUnit")
      */
     private $packUnit;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("shippingFree")
      */
     private $shippingFree;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("releaseDate")
      */
     private $releaseDate;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("shippingTime")
      */
     private $shippingTime;
 
     /**
      * @var PriceInterface[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Price>")
+     * @Serializer\SerializedName("prices")
      */
-    private $prices;
+    private $prices = [];
 
     /**
      * @var ConfiguratorOptionInterface[]
-     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Configurator>")
+     * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\ConfiguratorOption>")
+     * @Serializer\SerializedName("configuratorOptions")
      */
-    private $configuratorOptions;
+    private $configuratorOptions = [];
+
+    /**
+     * @var AttributeInterface
+     * @Serializer\Type("Enm\ShopwareSdk\Model\Article\Attribute")
+     * @Serializer\SerializedName("attribute")
+     */
+    private $attribute;
 
     /**
      * @return int
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -193,7 +226,7 @@ class Detail implements DetailInterface
      */
     public function getArticleId(): int
     {
-        return $this->articleId;
+        return (int)$this->articleId;
     }
 
     /**
@@ -213,7 +246,7 @@ class Detail implements DetailInterface
      */
     public function getUnitId(): int
     {
-        return $this->unitId;
+        return (int)$this->unitId;
     }
 
     /**
@@ -233,7 +266,7 @@ class Detail implements DetailInterface
      */
     public function getNumber(): string
     {
-        return $this->number;
+        return (string)$this->number;
     }
 
     /**
@@ -253,7 +286,7 @@ class Detail implements DetailInterface
      */
     public function getSupplierNumber(): string
     {
-        return $this->supplierNumber;
+        return (string)$this->supplierNumber;
     }
 
     /**
@@ -273,7 +306,7 @@ class Detail implements DetailInterface
      */
     public function getKind(): int
     {
-        return $this->kind;
+        return (int)$this->kind;
     }
 
     /**
@@ -293,7 +326,7 @@ class Detail implements DetailInterface
      */
     public function getAdditionalText(): string
     {
-        return $this->additionalText;
+        return (string)$this->additionalText;
     }
 
     /**
@@ -313,7 +346,7 @@ class Detail implements DetailInterface
      */
     public function isActive(): bool
     {
-        return $this->active;
+        return (bool)$this->active;
     }
 
     /**
@@ -333,7 +366,7 @@ class Detail implements DetailInterface
      */
     public function getInStock(): int
     {
-        return $this->inStock;
+        return (int)$this->inStock;
     }
 
     /**
@@ -353,7 +386,7 @@ class Detail implements DetailInterface
      */
     public function getWeight(): string
     {
-        return $this->weight;
+        return (string)$this->weight;
     }
 
     /**
@@ -373,7 +406,7 @@ class Detail implements DetailInterface
      */
     public function getWidth(): string
     {
-        return $this->width;
+        return (string)$this->width;
     }
 
     /**
@@ -393,7 +426,7 @@ class Detail implements DetailInterface
      */
     public function getLen(): string
     {
-        return $this->len;
+        return (string)$this->len;
     }
 
     /**
@@ -413,7 +446,7 @@ class Detail implements DetailInterface
      */
     public function getHeight(): string
     {
-        return $this->height;
+        return (string)$this->height;
     }
 
     /**
@@ -433,7 +466,7 @@ class Detail implements DetailInterface
      */
     public function getEan(): string
     {
-        return $this->ean;
+        return (string)$this->ean;
     }
 
     /**
@@ -453,7 +486,7 @@ class Detail implements DetailInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**
@@ -473,7 +506,7 @@ class Detail implements DetailInterface
      */
     public function getMinPurchase(): int
     {
-        return $this->minPurchase;
+        return (int)$this->minPurchase;
     }
 
     /**
@@ -493,7 +526,7 @@ class Detail implements DetailInterface
      */
     public function getPurchaseSteps(): int
     {
-        return $this->purchaseSteps;
+        return (int)$this->purchaseSteps;
     }
 
     /**
@@ -513,7 +546,7 @@ class Detail implements DetailInterface
      */
     public function getMaxPurchase(): int
     {
-        return $this->maxPurchase;
+        return (int)$this->maxPurchase;
     }
 
     /**
@@ -533,7 +566,7 @@ class Detail implements DetailInterface
      */
     public function getPurchaseUnit(): string
     {
-        return $this->purchaseUnit;
+        return (string)$this->purchaseUnit;
     }
 
     /**
@@ -553,7 +586,7 @@ class Detail implements DetailInterface
      */
     public function getReferenceUnit(): string
     {
-        return $this->referenceUnit;
+        return (string)$this->referenceUnit;
     }
 
     /**
@@ -573,7 +606,7 @@ class Detail implements DetailInterface
      */
     public function getPackUnit(): string
     {
-        return $this->packUnit;
+        return (string)$this->packUnit;
     }
 
     /**
@@ -593,7 +626,7 @@ class Detail implements DetailInterface
      */
     public function isShippingFree(): bool
     {
-        return $this->shippingFree;
+        return (bool)$this->shippingFree;
     }
 
     /**
@@ -613,7 +646,7 @@ class Detail implements DetailInterface
      */
     public function getReleaseDate(): string
     {
-        return $this->releaseDate;
+        return (string)$this->releaseDate;
     }
 
     /**
@@ -633,7 +666,7 @@ class Detail implements DetailInterface
      */
     public function getShippingTime(): string
     {
-        return $this->shippingTime;
+        return (string)$this->shippingTime;
     }
 
     /**
@@ -653,7 +686,7 @@ class Detail implements DetailInterface
      */
     public function getPrices(): array
     {
-        return $this->prices;
+        return (array)$this->prices;
     }
 
     /**
@@ -673,7 +706,7 @@ class Detail implements DetailInterface
      */
     public function getConfiguratorOptions(): array
     {
-        return $this->configuratorOptions;
+        return (array)$this->configuratorOptions;
     }
 
     /**
@@ -687,4 +720,25 @@ class Detail implements DetailInterface
 
         return $this;
     }
+
+    /**
+     * @return AttributeInterface
+     */
+    public function getAttribute(): AttributeInterface
+    {
+        return $this->attribute;
+    }
+
+    /**
+     * @param AttributeInterface $attribute
+     *
+     * @return DetailInterface
+     */
+    public function setAttribute(AttributeInterface $attribute): DetailInterface
+    {
+        $this->attribute = $attribute;
+
+        return $this;
+    }
+
 }

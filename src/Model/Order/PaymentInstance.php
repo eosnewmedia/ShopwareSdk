@@ -14,78 +14,91 @@ class PaymentInstance implements PaymentInstanceInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("firstName")
      */
     private $firstName;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("lastName")
      */
     private $lastName;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("address")
      */
     private $address;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("zipCode")
      */
     private $zipCode;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("city")
      */
     private $city;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("bankName")
      */
     private $bankName;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("bankCode")
      */
     private $bankCode;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("accountNumber")
      */
     private $accountNumber;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("accountHolder")
      */
     private $accountHolder;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("bic")
      */
     private $bic;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("iban")
      */
     private $iban;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("amount")
      */
     private $amount;
 
@@ -94,6 +107,7 @@ class PaymentInstance implements PaymentInstanceInterface
      *
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("createdAt")
      */
     private $createdAt;
 
@@ -102,7 +116,7 @@ class PaymentInstance implements PaymentInstanceInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -122,7 +136,7 @@ class PaymentInstance implements PaymentInstanceInterface
      */
     public function getFirstName(): string
     {
-        return $this->firstName;
+        return (string)$this->firstName;
     }
 
     /**
@@ -142,7 +156,7 @@ class PaymentInstance implements PaymentInstanceInterface
      */
     public function getLastName(): string
     {
-        return $this->lastName;
+        return (string)$this->lastName;
     }
 
     /**
@@ -162,7 +176,7 @@ class PaymentInstance implements PaymentInstanceInterface
      */
     public function getAddress(): string
     {
-        return $this->address;
+        return (string)$this->address;
     }
 
     /**
@@ -182,7 +196,7 @@ class PaymentInstance implements PaymentInstanceInterface
      */
     public function getZipCode(): string
     {
-        return $this->zipCode;
+        return (string)$this->zipCode;
     }
 
     /**
@@ -202,7 +216,7 @@ class PaymentInstance implements PaymentInstanceInterface
      */
     public function getCity(): string
     {
-        return $this->city;
+        return (string)$this->city;
     }
 
     /**
@@ -222,7 +236,7 @@ class PaymentInstance implements PaymentInstanceInterface
      */
     public function getBankName(): string
     {
-        return $this->bankName;
+        return (string)$this->bankName;
     }
 
     /**
@@ -242,7 +256,7 @@ class PaymentInstance implements PaymentInstanceInterface
      */
     public function getBankCode(): string
     {
-        return $this->bankCode;
+        return (string)$this->bankCode;
     }
 
     /**
@@ -262,7 +276,7 @@ class PaymentInstance implements PaymentInstanceInterface
      */
     public function getAccountNumber(): string
     {
-        return $this->accountNumber;
+        return (string)$this->accountNumber;
     }
 
     /**
@@ -282,7 +296,7 @@ class PaymentInstance implements PaymentInstanceInterface
      */
     public function getAccountHolder(): string
     {
-        return $this->accountHolder;
+        return (string)$this->accountHolder;
     }
 
     /**
@@ -302,7 +316,7 @@ class PaymentInstance implements PaymentInstanceInterface
      */
     public function getBic(): string
     {
-        return $this->bic;
+        return (string)$this->bic;
     }
 
     /**
@@ -322,7 +336,7 @@ class PaymentInstance implements PaymentInstanceInterface
      */
     public function getIban(): string
     {
-        return $this->iban;
+        return (string)$this->iban;
     }
 
     /**
@@ -342,7 +356,7 @@ class PaymentInstance implements PaymentInstanceInterface
      */
     public function getAmount(): string
     {
-        return $this->amount;
+        return (string)$this->amount;
     }
 
     /**
@@ -362,7 +376,7 @@ class PaymentInstance implements PaymentInstanceInterface
      */
     public function getCreatedAt(): string
     {
-        return $this->createdAt;
+        return (string)$this->createdAt;
     }
 
     /**

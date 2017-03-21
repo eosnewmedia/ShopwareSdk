@@ -7,6 +7,7 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
+ * @author Nicklas Reincke <reincke@eosnewmedia.de>
  */
 class Price implements PriceInterface
 {
@@ -14,66 +15,77 @@ class Price implements PriceInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("articleId")
      */
     private $articleId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("articleDetailsId")
      */
     private $articleDetailsId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("customerGroupKey")
      */
     private $customerGroupKey;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("from")
      */
     private $from;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("to")
      */
     private $to;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("price")
      */
     private $price;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("pseudoPrice")
      */
     private $pseudoPrice;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("basePrice")
      */
     private $basePrice;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("percent")
      */
     private $percent;
 
     /**
      * @var CustomerGroupInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Article\CustomerGroup")
+     * @Serializer\SerializedName("customerGroup")
      */
     private $customerGroup;
 
@@ -82,7 +94,7 @@ class Price implements PriceInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -102,7 +114,7 @@ class Price implements PriceInterface
      */
     public function getArticleId(): int
     {
-        return $this->articleId;
+        return (int)$this->articleId;
     }
 
     /**
@@ -122,7 +134,7 @@ class Price implements PriceInterface
      */
     public function getArticleDetailsId(): int
     {
-        return $this->articleDetailsId;
+        return (int)$this->articleDetailsId;
     }
 
     /**
@@ -142,7 +154,7 @@ class Price implements PriceInterface
      */
     public function getCustomerGroupKey(): string
     {
-        return $this->customerGroupKey;
+        return (string)$this->customerGroupKey;
     }
 
     /**
@@ -162,7 +174,7 @@ class Price implements PriceInterface
      */
     public function getFrom(): int
     {
-        return $this->from;
+        return (int)$this->from;
     }
 
     /**
@@ -182,7 +194,7 @@ class Price implements PriceInterface
      */
     public function getTo(): string
     {
-        return $this->to;
+        return (string)$this->to;
     }
 
     /**
@@ -202,7 +214,7 @@ class Price implements PriceInterface
      */
     public function getPrice(): string
     {
-        return $this->price;
+        return (string)$this->price;
     }
 
     /**
@@ -222,7 +234,7 @@ class Price implements PriceInterface
      */
     public function getPseudoPrice(): int
     {
-        return $this->pseudoPrice;
+        return (int)$this->pseudoPrice;
     }
 
     /**
@@ -242,7 +254,7 @@ class Price implements PriceInterface
      */
     public function getBasePrice(): int
     {
-        return $this->basePrice;
+        return (int)$this->basePrice;
     }
 
     /**
@@ -262,7 +274,7 @@ class Price implements PriceInterface
      */
     public function getPercent(): int
     {
-        return $this->percent;
+        return (int)$this->percent;
     }
 
     /**
@@ -283,6 +295,14 @@ class Price implements PriceInterface
     public function getCustomerGroup(): CustomerGroupInterface
     {
         return $this->customerGroup;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasCustomerGroup(): bool
+    {
+        return $this->customerGroup !== null;
     }
 
     /**

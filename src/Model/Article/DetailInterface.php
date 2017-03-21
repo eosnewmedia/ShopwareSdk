@@ -321,4 +321,16 @@ interface DetailInterface
      * @return DetailInterface
      */
     public function setConfiguratorOptions(array $configuratorOptions) : DetailInterface;
+
+    /**
+     * @return AttributeInterface
+     */
+    public function getAttribute(): AttributeInterface;
+
+    /**
+     * @param AttributeInterface $attribute
+     *
+     * @return DetailInterface
+     */
+    public function setAttribute(AttributeInterface $attribute): DetailInterface;
 }

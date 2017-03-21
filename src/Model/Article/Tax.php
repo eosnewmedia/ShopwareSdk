@@ -15,18 +15,21 @@ class Tax implements TaxInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("tax")
      */
     private $tax;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
 
@@ -35,7 +38,7 @@ class Tax implements TaxInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -55,7 +58,7 @@ class Tax implements TaxInterface
      */
     public function getTax(): string
     {
-        return $this->tax;
+        return (string)$this->tax;
     }
 
     /**
@@ -75,7 +78,7 @@ class Tax implements TaxInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**

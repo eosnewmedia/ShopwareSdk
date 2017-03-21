@@ -14,66 +14,77 @@ class Order implements OrderInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("number")
      */
     private $number;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("customerId")
      */
     private $customerId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("paymentId")
      */
     private $paymentId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("dispatchId")
      */
     private $dispatchId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("partnerId")
      */
     private $partnerId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("shopId")
      */
     private $shopId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("invoiceAmount")
      */
     private $invoiceAmount;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("invoiceAmountNet")
      */
     private $invoiceAmountNet;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("invoiceShipping")
      */
     private $invoiceShipping;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("invoiceShippingNet")
      */
     private $invoiceShippingNet;
 
@@ -82,54 +93,63 @@ class Order implements OrderInterface
      *
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("orderTime")
      */
     private $orderTime;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("transactionId")
      */
     private $transactionId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("comment")
      */
     private $comment;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("customerComment")
      */
     private $customerComment;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("internalComment")
      */
     private $internalComment;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("net")
      */
     private $net;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("taxFree")
      */
     private $taxFree;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("temporaryId")
      */
     private $temporaryId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("referer")
      */
     private $referer;
 
@@ -138,126 +158,146 @@ class Order implements OrderInterface
      *
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("clearedDate")
      */
     private $clearedDate;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("trackingCode")
      */
     private $trackingCode;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("languageIso")
      */
     private $languageIso;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("currency")
      */
     private $currency;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("currencyFactor")
      */
     private $currencyFactor;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("remoteAddress")
      */
     private $remoteAddress;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("deviceType")
      */
     private $deviceType;
 
     /**
      * @var DetailInterface[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Order\Detail>")
+     * @Serializer\SerializedName("details")
      */
     private $details;
 
     /**
      * @var PaymentInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Payment")
+     * @Serializer\SerializedName("payment")
      */
     private $payment;
 
     /**
      * @var PaymentStatusInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Order\PaymentStatus")
+     * @Serializer\SerializedName("paymentStatus")
      */
     private $paymentStatus;
 
     /**
      * @var OrderStatusInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Order\OrderStatus")
+     * @Serializer\SerializedName("orderStatus")
      */
     private $orderStatus;
 
     /**
      * @var CustomerInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Customer")
+     * @Serializer\SerializedName("customer")
      */
     private $customer;
 
     /**
      * @var PaymentInstanceInterface[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Order\PaymentInstance>")
+     * @Serializer\SerializedName("paymentInstances")
      */
     private $paymentInstances;
 
     /**
      * @var BillingInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Billing")
+     * @Serializer\SerializedName("billing")
      */
     private $billing;
 
     /**
      * @var ShippingInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Shipping")
+     * @Serializer\SerializedName("shipping")
      */
     private $shipping;
 
     /**
      * @var ShopInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Shop")
+     * @Serializer\SerializedName("shop")
      */
     private $shop;
 
     /**
      * @var DispatchInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Dispatch")
+     * @Serializer\SerializedName("dispatch")
      */
     private $dispatch;
 
     /**
      * @var LanguageSubShopInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Order\LanguageSubShop")
+     * @Serializer\SerializedName("languageSubShop")
      */
     private $languageSubShop;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("paymentStatusId")
      */
     private $paymentStatusId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("orderStatusId")
      */
     private $orderStatusId;
 
     /**
-     * Attribute is not needed
-     * Documents is not needed
+     * "Attribute" property is not needed
+     * "Documents" property is not needed
      */
 
     /**
@@ -265,7 +305,7 @@ class Order implements OrderInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -285,7 +325,7 @@ class Order implements OrderInterface
      */
     public function getNumber(): string
     {
-        return $this->number;
+        return (string)$this->number;
     }
 
     /**
@@ -305,7 +345,7 @@ class Order implements OrderInterface
      */
     public function getCustomerId(): int
     {
-        return $this->customerId;
+        return (int)$this->customerId;
     }
 
     /**
@@ -325,7 +365,7 @@ class Order implements OrderInterface
      */
     public function getPaymentId(): int
     {
-        return $this->paymentId;
+        return (int)$this->paymentId;
     }
 
     /**
@@ -345,7 +385,7 @@ class Order implements OrderInterface
      */
     public function getDispatchId(): int
     {
-        return $this->dispatchId;
+        return (int)$this->dispatchId;
     }
 
     /**
@@ -365,7 +405,7 @@ class Order implements OrderInterface
      */
     public function getPartnerId(): string
     {
-        return $this->partnerId;
+        return (string)$this->partnerId;
     }
 
     /**
@@ -385,7 +425,7 @@ class Order implements OrderInterface
      */
     public function getShopId(): int
     {
-        return $this->shopId;
+        return (int)$this->shopId;
     }
 
     /**
@@ -405,7 +445,7 @@ class Order implements OrderInterface
      */
     public function getInvoiceAmount(): string
     {
-        return $this->invoiceAmount;
+        return (string)$this->invoiceAmount;
     }
 
     /**
@@ -425,7 +465,7 @@ class Order implements OrderInterface
      */
     public function getInvoiceAmountNet(): string
     {
-        return $this->invoiceAmountNet;
+        return (string)$this->invoiceAmountNet;
     }
 
     /**
@@ -445,7 +485,7 @@ class Order implements OrderInterface
      */
     public function getInvoiceShipping(): string
     {
-        return $this->invoiceShipping;
+        return (string)$this->invoiceShipping;
     }
 
     /**
@@ -465,7 +505,7 @@ class Order implements OrderInterface
      */
     public function getInvoiceShippingNet(): string
     {
-        return $this->invoiceShippingNet;
+        return (string)$this->invoiceShippingNet;
     }
 
     /**
@@ -485,7 +525,7 @@ class Order implements OrderInterface
      */
     public function getOrderTime(): string
     {
-        return $this->orderTime;
+        return (string)$this->orderTime;
     }
 
     /**
@@ -505,7 +545,7 @@ class Order implements OrderInterface
      */
     public function getTransactionId(): string
     {
-        return $this->transactionId;
+        return (string)$this->transactionId;
     }
 
     /**
@@ -525,7 +565,7 @@ class Order implements OrderInterface
      */
     public function getComment(): string
     {
-        return $this->comment;
+        return (string)$this->comment;
     }
 
     /**
@@ -545,7 +585,7 @@ class Order implements OrderInterface
      */
     public function getCustomerComment(): string
     {
-        return $this->customerComment;
+        return (string)$this->customerComment;
     }
 
     /**
@@ -565,7 +605,7 @@ class Order implements OrderInterface
      */
     public function getInternalComment(): string
     {
-        return $this->internalComment;
+        return (string)$this->internalComment;
     }
 
     /**
@@ -585,7 +625,7 @@ class Order implements OrderInterface
      */
     public function getNet(): int
     {
-        return $this->net;
+        return (int)$this->net;
     }
 
     /**
@@ -605,7 +645,7 @@ class Order implements OrderInterface
      */
     public function getTaxFree(): int
     {
-        return $this->taxFree;
+        return (int)$this->taxFree;
     }
 
     /**
@@ -625,7 +665,7 @@ class Order implements OrderInterface
      */
     public function getTemporaryId(): string
     {
-        return $this->temporaryId;
+        return (string)$this->temporaryId;
     }
 
     /**
@@ -645,7 +685,7 @@ class Order implements OrderInterface
      */
     public function getReferer(): string
     {
-        return $this->referer;
+        return (string)$this->referer;
     }
 
     /**
@@ -665,7 +705,7 @@ class Order implements OrderInterface
      */
     public function getClearedDate(): string
     {
-        return $this->clearedDate;
+        return (string)$this->clearedDate;
     }
 
     /**
@@ -685,7 +725,7 @@ class Order implements OrderInterface
      */
     public function getTrackingCode(): string
     {
-        return $this->trackingCode;
+        return (string)$this->trackingCode;
     }
 
     /**
@@ -705,7 +745,7 @@ class Order implements OrderInterface
      */
     public function getLanguageIso(): string
     {
-        return $this->languageIso;
+        return (string)$this->languageIso;
     }
 
     /**
@@ -725,7 +765,7 @@ class Order implements OrderInterface
      */
     public function getCurrency(): string
     {
-        return $this->currency;
+        return (string)$this->currency;
     }
 
     /**
@@ -745,7 +785,7 @@ class Order implements OrderInterface
      */
     public function getCurrencyFactor(): int
     {
-        return $this->currencyFactor;
+        return (int)$this->currencyFactor;
     }
 
     /**
@@ -765,7 +805,7 @@ class Order implements OrderInterface
      */
     public function getRemoteAddress(): string
     {
-        return $this->remoteAddress;
+        return (string)$this->remoteAddress;
     }
 
     /**
@@ -785,7 +825,7 @@ class Order implements OrderInterface
      */
     public function getDeviceType(): string
     {
-        return $this->deviceType;
+        return (string)$this->deviceType;
     }
 
     /**
@@ -805,7 +845,7 @@ class Order implements OrderInterface
      */
     public function getDetails(): array
     {
-        return $this->details;
+        return (array)$this->details;
     }
 
     /**
@@ -841,6 +881,14 @@ class Order implements OrderInterface
     }
 
     /**
+     * @return bool
+     */
+    public function hasPayment(): bool
+    {
+        return $this->payment instanceof PaymentInstance;
+    }
+
+    /**
      * @return PaymentStatusInterface
      */
     public function getPaymentStatus(): PaymentStatusInterface
@@ -858,6 +906,14 @@ class Order implements OrderInterface
         $this->paymentStatus = $paymentStatus;
 
         return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasPaymentStatus(): bool
+    {
+        return $this->paymentStatus instanceof PaymentStatusInterface;
     }
 
     /**
@@ -881,6 +937,14 @@ class Order implements OrderInterface
     }
 
     /**
+     * @return bool
+     */
+    public function hasOrderStatus(): bool
+    {
+        return $this->orderStatus instanceof OrderStatusInterface;
+    }
+
+    /**
      * @return CustomerInterface
      */
     public function getCustomer(): CustomerInterface
@@ -901,11 +965,19 @@ class Order implements OrderInterface
     }
 
     /**
+     * @return bool
+     */
+    public function hasCustomer(): bool
+    {
+        return $this->customer instanceof CustomerInterface;
+    }
+
+    /**
      * @return PaymentInstanceInterface[]
      */
     public function getPaymentInstances(): array
     {
-        return $this->paymentInstances;
+        return (array)$this->paymentInstances;
     }
 
     /**
@@ -941,6 +1013,14 @@ class Order implements OrderInterface
     }
 
     /**
+     * @return bool
+     */
+    public function hasBilling(): bool
+    {
+        return $this->billing instanceof BillingInterface;
+    }
+
+    /**
      * @return ShippingInterface
      */
     public function getShipping(): ShippingInterface
@@ -958,6 +1038,14 @@ class Order implements OrderInterface
         $this->shipping = $shipping;
 
         return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasShipping(): bool
+    {
+        return $this->shipping instanceof ShippingInterface;
     }
 
     /**
@@ -981,6 +1069,14 @@ class Order implements OrderInterface
     }
 
     /**
+     * @return bool
+     */
+    public function hasShop(): bool
+    {
+        return $this->shop instanceof ShopInterface;
+    }
+
+    /**
      * @return DispatchInterface
      */
     public function getDispatch(): DispatchInterface
@@ -998,6 +1094,14 @@ class Order implements OrderInterface
         $this->dispatch = $dispatch;
 
         return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasDispatch(): bool
+    {
+        return $this->dispatch instanceof DispatchInterface;
     }
 
     /**
@@ -1021,11 +1125,19 @@ class Order implements OrderInterface
     }
 
     /**
+     * @return bool
+     */
+    public function hasLanguageSubShop(): bool
+    {
+        return $this->languageSubShop instanceof LanguageSubShopInterface;
+    }
+
+    /**
      * @return int
      */
     public function getPaymentStatusId(): int
     {
-        return $this->paymentStatusId;
+        return (int)$this->paymentStatusId;
     }
 
     /**
@@ -1045,7 +1157,7 @@ class Order implements OrderInterface
      */
     public function getOrderStatusId(): int
     {
-        return $this->orderStatusId;
+        return (int)$this->orderStatusId;
     }
 
     /**

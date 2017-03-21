@@ -10,130 +10,150 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Payment implements PaymentInterface
 {
-
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("description")
      */
     private $description;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("template")
      */
     private $template;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("class")
      */
     private $class;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("table")
      */
     private $table;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("hide")
      */
     private $hide;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("additionalDescription")
      */
     private $additionalDescription;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("debitPercent")
      */
     private $debitPercent;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("surcharge")
      */
     private $surcharge;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("surchargeString")
      */
     private $surchargeString;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("position")
      */
     private $position;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("active")
      */
     private $active;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("esdActive")
      */
     private $esdActive;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("mobileInactive")
      */
     private $mobileInactive;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("embedIFrame")
      */
     private $embedIFrame;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("hideProspect")
      */
     private $hideProspect;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("action")
      */
     private $action;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("pluginId")
      */
     private $pluginId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("source")
      */
     private $source;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("attribute")
      */
     private $attribute;
 
@@ -142,7 +162,7 @@ class Payment implements PaymentInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -162,7 +182,7 @@ class Payment implements PaymentInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -182,7 +202,7 @@ class Payment implements PaymentInterface
      */
     public function getDescription(): string
     {
-        return $this->description;
+        return (string)$this->description;
     }
 
     /**
@@ -202,7 +222,7 @@ class Payment implements PaymentInterface
      */
     public function getTemplate(): string
     {
-        return $this->template;
+        return (string)$this->template;
     }
 
     /**
@@ -222,7 +242,7 @@ class Payment implements PaymentInterface
      */
     public function getClass(): string
     {
-        return $this->class;
+        return (string)$this->class;
     }
 
     /**
@@ -242,7 +262,7 @@ class Payment implements PaymentInterface
      */
     public function getTable(): string
     {
-        return $this->table;
+        return (string)$this->table;
     }
 
     /**
@@ -262,7 +282,7 @@ class Payment implements PaymentInterface
      */
     public function isHide(): bool
     {
-        return $this->hide;
+        return (bool)$this->hide;
     }
 
     /**
@@ -282,7 +302,7 @@ class Payment implements PaymentInterface
      */
     public function getAdditionalDescription(): string
     {
-        return $this->additionalDescription;
+        return (string)$this->additionalDescription;
     }
 
     /**
@@ -302,7 +322,7 @@ class Payment implements PaymentInterface
      */
     public function getDebitPercent(): int
     {
-        return $this->debitPercent;
+        return (int)$this->debitPercent;
     }
 
     /**
@@ -322,7 +342,7 @@ class Payment implements PaymentInterface
      */
     public function getSurcharge(): int
     {
-        return $this->surcharge;
+        return (int)$this->surcharge;
     }
 
     /**
@@ -342,7 +362,7 @@ class Payment implements PaymentInterface
      */
     public function getSurchargeString(): string
     {
-        return $this->surchargeString;
+        return (string)$this->surchargeString;
     }
 
     /**
@@ -362,7 +382,7 @@ class Payment implements PaymentInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**
@@ -382,7 +402,7 @@ class Payment implements PaymentInterface
      */
     public function isActive(): bool
     {
-        return $this->active;
+        return (bool)$this->active;
     }
 
     /**
@@ -402,7 +422,7 @@ class Payment implements PaymentInterface
      */
     public function isEsdActive(): bool
     {
-        return $this->esdActive;
+        return (bool)$this->esdActive;
     }
 
     /**
@@ -422,7 +442,7 @@ class Payment implements PaymentInterface
      */
     public function isMobileInactive(): bool
     {
-        return $this->mobileInactive;
+        return (bool)$this->mobileInactive;
     }
 
     /**
@@ -442,7 +462,7 @@ class Payment implements PaymentInterface
      */
     public function getEmbedIFrame(): string
     {
-        return $this->embedIFrame;
+        return (string)$this->embedIFrame;
     }
 
     /**
@@ -462,7 +482,7 @@ class Payment implements PaymentInterface
      */
     public function getHideProspect(): int
     {
-        return $this->hideProspect;
+        return (int)$this->hideProspect;
     }
 
     /**
@@ -482,7 +502,7 @@ class Payment implements PaymentInterface
      */
     public function getAction(): string
     {
-        return $this->action;
+        return (string)$this->action;
     }
 
     /**
@@ -502,7 +522,7 @@ class Payment implements PaymentInterface
      */
     public function getPluginId(): string
     {
-        return $this->pluginId;
+        return (string)$this->pluginId;
     }
 
     /**
@@ -522,7 +542,7 @@ class Payment implements PaymentInterface
      */
     public function getSource(): string
     {
-        return $this->source;
+        return (string)$this->source;
     }
 
     /**
@@ -542,7 +562,7 @@ class Payment implements PaymentInterface
      */
     public function getAttribute(): string
     {
-        return $this->attribute;
+        return (string)$this->attribute;
     }
 
     /**

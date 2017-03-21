@@ -14,39 +14,44 @@ class ConfiguratorSet implements ConfiguratorSetInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("public")
      */
     private $public;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("type")
      */
     private $type;
 
     /**
      * @var GroupInterface[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Group>")
+     * @Serializer\SerializedName("groups")
      */
-    private $groups;
+    private $groups = [];
 
     /**
      * @return int
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -66,7 +71,7 @@ class ConfiguratorSet implements ConfiguratorSetInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -86,7 +91,7 @@ class ConfiguratorSet implements ConfiguratorSetInterface
      */
     public function isPublic(): bool
     {
-        return $this->public;
+        return (bool)$this->public;
     }
 
     /**
@@ -106,7 +111,7 @@ class ConfiguratorSet implements ConfiguratorSetInterface
      */
     public function getType(): int
     {
-        return $this->type;
+        return (int)$this->type;
     }
 
     /**
@@ -126,7 +131,7 @@ class ConfiguratorSet implements ConfiguratorSetInterface
      */
     public function getGroups(): array
     {
-        return $this->groups;
+        return (array)$this->groups;
     }
 
     /**

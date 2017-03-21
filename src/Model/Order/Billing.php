@@ -14,133 +14,151 @@ class Billing implements BillingInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("orderId")
      */
     private $orderId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("customerId")
      */
     private $customerId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("countryId")
      */
     private $countryId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("stateId")
      */
     private $stateId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("company")
      */
     private $company;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("department")
      */
     private $department;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("salutation")
      */
     private $salutation;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("number")
      */
     private $number;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("firstName")
      */
     private $firstName;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("lastName")
      */
     private $lastName;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("street")
      */
     private $street;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("zipCode")
      */
     private $zipCode;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("city")
      */
     private $city;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("phone")
      */
     private $phone;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("fax")
      */
     private $fax;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("vatId")
      */
     private $vatId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("additionalAddressLine1")
      */
     private $additionalAddressLine1;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("additionalAddressLine2")
      */
     private $additionalAddressLine2;
 
     /**
      * @var CountryInterface
      * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Country")
+     * @Serializer\SerializedName("country")
      */
     private $country;
 
-    /**
-     * Attribute is not needed
-     */
+    // "Attribute" property is not needed
 
     /**
      * @return int
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -160,7 +178,7 @@ class Billing implements BillingInterface
      */
     public function getOrderId(): int
     {
-        return $this->orderId;
+        return (int)$this->orderId;
     }
 
     /**
@@ -180,7 +198,7 @@ class Billing implements BillingInterface
      */
     public function getCustomerId(): int
     {
-        return $this->customerId;
+        return (int)$this->customerId;
     }
 
     /**
@@ -200,7 +218,7 @@ class Billing implements BillingInterface
      */
     public function getCountryId(): int
     {
-        return $this->countryId;
+        return (int)$this->countryId;
     }
 
     /**
@@ -220,7 +238,7 @@ class Billing implements BillingInterface
      */
     public function getStateId(): int
     {
-        return $this->stateId;
+        return (int)$this->stateId;
     }
 
     /**
@@ -240,7 +258,7 @@ class Billing implements BillingInterface
      */
     public function getCompany(): string
     {
-        return $this->company;
+        return (string)$this->company;
     }
 
     /**
@@ -260,7 +278,7 @@ class Billing implements BillingInterface
      */
     public function getDepartment(): string
     {
-        return $this->department;
+        return (string)$this->department;
     }
 
     /**
@@ -280,7 +298,7 @@ class Billing implements BillingInterface
      */
     public function getSalutation(): string
     {
-        return $this->salutation;
+        return (string)$this->salutation;
     }
 
     /**
@@ -300,7 +318,7 @@ class Billing implements BillingInterface
      */
     public function getNumber(): string
     {
-        return $this->number;
+        return (string)$this->number;
     }
 
     /**
@@ -320,7 +338,7 @@ class Billing implements BillingInterface
      */
     public function getFirstName(): string
     {
-        return $this->firstName;
+        return (string)$this->firstName;
     }
 
     /**
@@ -340,7 +358,7 @@ class Billing implements BillingInterface
      */
     public function getLastName(): string
     {
-        return $this->lastName;
+        return (string)$this->lastName;
     }
 
     /**
@@ -360,7 +378,7 @@ class Billing implements BillingInterface
      */
     public function getStreet(): string
     {
-        return $this->street;
+        return (string)$this->street;
     }
 
     /**
@@ -380,7 +398,7 @@ class Billing implements BillingInterface
      */
     public function getZipCode(): string
     {
-        return $this->zipCode;
+        return (string)$this->zipCode;
     }
 
     /**
@@ -400,7 +418,7 @@ class Billing implements BillingInterface
      */
     public function getCity(): string
     {
-        return $this->city;
+        return (string)$this->city;
     }
 
     /**
@@ -420,7 +438,7 @@ class Billing implements BillingInterface
      */
     public function getPhone(): string
     {
-        return $this->phone;
+        return (string)$this->phone;
     }
 
     /**
@@ -440,7 +458,7 @@ class Billing implements BillingInterface
      */
     public function getFax(): string
     {
-        return $this->fax;
+        return (string)$this->fax;
     }
 
     /**
@@ -460,7 +478,7 @@ class Billing implements BillingInterface
      */
     public function getVatId(): string
     {
-        return $this->vatId;
+        return (string)$this->vatId;
     }
 
     /**
@@ -480,7 +498,7 @@ class Billing implements BillingInterface
      */
     public function getAdditionalAddressLine1(): string
     {
-        return $this->additionalAddressLine1;
+        return (string)$this->additionalAddressLine1;
     }
 
     /**
@@ -500,7 +518,7 @@ class Billing implements BillingInterface
      */
     public function getAdditionalAddressLine2(): string
     {
-        return $this->additionalAddressLine2;
+        return (string)$this->additionalAddressLine2;
     }
 
     /**
@@ -533,5 +551,13 @@ class Billing implements BillingInterface
         $this->country = $country;
 
         return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasCountry(): bool
+    {
+        return $this->country instanceof CountryInterface;
     }
 }

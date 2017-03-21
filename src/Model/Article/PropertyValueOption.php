@@ -8,18 +8,20 @@ use JMS\Serializer\Annotation as Serializer;
 /**
  * @author Dirk Heyka <heyka@eosnewmedia.de>
  */
-class Category implements CategoryInterface
+class PropertyValueOption implements PropertyValueOptionInterface
 {
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
 
@@ -34,9 +36,9 @@ class Category implements CategoryInterface
     /**
      * @param int $id
      *
-     * @return CategoryInterface
+     * @return PropertyValueOptionInterface
      */
-    public function setId(int $id): CategoryInterface
+    public function setId(int $id): PropertyValueOptionInterface
     {
         $this->id = $id;
 
@@ -54,9 +56,9 @@ class Category implements CategoryInterface
     /**
      * @param string $name
      *
-     * @return CategoryInterface
+     * @return PropertyValueOptionInterface
      */
-    public function setName(string $name): CategoryInterface
+    public function setName(string $name): PropertyValueOptionInterface
     {
         $this->name = $name;
 

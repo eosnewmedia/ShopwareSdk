@@ -15,6 +15,7 @@ class ArticleCollectionWrapper implements CollectionWrapperInterface
     /**
      * @var Article[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Article\Article>")
+     * @Serializer\SerializedName("data")
      */
     private $data;
 

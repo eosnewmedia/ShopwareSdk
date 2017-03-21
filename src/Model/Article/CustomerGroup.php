@@ -14,54 +14,63 @@ class CustomerGroup implements CustomerGroupInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("key")
      */
     private $key;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("tax")
      */
     private $tax;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("taxInput")
      */
     private $taxInput;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("mode")
      */
     private $mode;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("discount")
      */
     private $discount;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("minimumOrder")
      */
     private $minimumOrder;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("minimumOrderSurcharge")
      */
     private $minimumOrderSurcharge;
 
@@ -70,7 +79,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -90,7 +99,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function getKey(): string
     {
-        return $this->key;
+        return (string)$this->key;
     }
 
     /**
@@ -110,7 +119,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -130,7 +139,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function isTax(): bool
     {
-        return $this->tax;
+        return (bool)$this->tax;
     }
 
     /**
@@ -150,7 +159,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function isTaxInput(): bool
     {
-        return $this->taxInput;
+        return (bool)$this->taxInput;
     }
 
     /**
@@ -170,7 +179,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function isMode(): bool
     {
-        return $this->mode;
+        return (bool)$this->mode;
     }
 
     /**
@@ -190,7 +199,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function getDiscount(): int
     {
-        return $this->discount;
+        return (int)$this->discount;
     }
 
     /**
@@ -210,7 +219,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function getMinimumOrder(): int
     {
-        return $this->minimumOrder;
+        return (int)$this->minimumOrder;
     }
 
     /**
@@ -230,7 +239,7 @@ class CustomerGroup implements CustomerGroupInterface
      */
     public function getMinimumOrderSurcharge(): int
     {
-        return $this->minimumOrderSurcharge;
+        return (int)$this->minimumOrderSurcharge;
     }
 
     /**

@@ -14,54 +14,63 @@ class Customer implements CustomerInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("paymentId")
      */
     private $paymentId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("groupKey")
      */
     private $groupKey;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("shopId")
      */
     private $shopId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("priceGroupId")
      */
     private $priceGroupId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("encoderName")
      */
     private $encoderName;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("hashPassword")
      */
     private $hashPassword;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("active")
      */
     private $active;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("email")
      */
     private $email;
 
@@ -70,6 +79,7 @@ class Customer implements CustomerInterface
      *
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("firstLogin")
      */
     private $firstLogin;
 
@@ -78,84 +88,98 @@ class Customer implements CustomerInterface
      *
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("lastLogin")
      */
     private $lastLogin;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("accountMode")
      */
     private $accountMode;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("confirmationKey")
      */
     private $confirmationKey;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("sessionId")
      */
     private $sessionId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("newsletter")
      */
     private $newsletter;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("validation")
      */
     private $validation;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("affiliate")
      */
     private $affiliate;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("paymentPreset")
      */
     private $paymentPreset;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("languageId")
      */
     private $languageId;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("referer")
      */
     private $referer;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("internalComment")
      */
     private $internalComment;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("failedLogins")
      */
     private $failedLogins;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("lockedUntil")
      */
     private $lockedUntil;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("debit")
      */
     private $debit;
 
@@ -164,7 +188,7 @@ class Customer implements CustomerInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -184,7 +208,7 @@ class Customer implements CustomerInterface
      */
     public function getPaymentId(): int
     {
-        return $this->paymentId;
+        return (int)$this->paymentId;
     }
 
     /**
@@ -204,7 +228,7 @@ class Customer implements CustomerInterface
      */
     public function getGroupKey(): string
     {
-        return $this->groupKey;
+        return (string)$this->groupKey;
     }
 
     /**
@@ -224,7 +248,7 @@ class Customer implements CustomerInterface
      */
     public function getShopId(): int
     {
-        return $this->shopId;
+        return (int)$this->shopId;
     }
 
     /**
@@ -244,7 +268,7 @@ class Customer implements CustomerInterface
      */
     public function getPriceGroupId(): string
     {
-        return $this->priceGroupId;
+        return (string)$this->priceGroupId;
     }
 
     /**
@@ -264,7 +288,7 @@ class Customer implements CustomerInterface
      */
     public function getEncoderName(): string
     {
-        return $this->encoderName;
+        return (string)$this->encoderName;
     }
 
     /**
@@ -284,7 +308,7 @@ class Customer implements CustomerInterface
      */
     public function getHashPassword(): string
     {
-        return $this->hashPassword;
+        return (string)$this->hashPassword;
     }
 
     /**
@@ -304,7 +328,7 @@ class Customer implements CustomerInterface
      */
     public function isActive(): bool
     {
-        return $this->active;
+        return (bool)$this->active;
     }
 
     /**
@@ -324,7 +348,7 @@ class Customer implements CustomerInterface
      */
     public function getEmail(): string
     {
-        return $this->email;
+        return (string)$this->email;
     }
 
     /**
@@ -344,7 +368,7 @@ class Customer implements CustomerInterface
      */
     public function getFirstLogin(): string
     {
-        return $this->firstLogin;
+        return (string)$this->firstLogin;
     }
 
     /**
@@ -364,7 +388,7 @@ class Customer implements CustomerInterface
      */
     public function getLastLogin(): string
     {
-        return $this->lastLogin;
+        return (string)$this->lastLogin;
     }
 
     /**
@@ -384,7 +408,7 @@ class Customer implements CustomerInterface
      */
     public function getAccountMode(): int
     {
-        return $this->accountMode;
+        return (int)$this->accountMode;
     }
 
     /**
@@ -404,7 +428,7 @@ class Customer implements CustomerInterface
      */
     public function getConfirmationKey(): string
     {
-        return $this->confirmationKey;
+        return (string)$this->confirmationKey;
     }
 
     /**
@@ -424,7 +448,7 @@ class Customer implements CustomerInterface
      */
     public function getSessionId(): string
     {
-        return $this->sessionId;
+        return (string)$this->sessionId;
     }
 
     /**
@@ -444,7 +468,7 @@ class Customer implements CustomerInterface
      */
     public function getNewsletter(): int
     {
-        return $this->newsletter;
+        return (int)$this->newsletter;
     }
 
     /**
@@ -464,7 +488,7 @@ class Customer implements CustomerInterface
      */
     public function getValidation(): string
     {
-        return $this->validation;
+        return (string)$this->validation;
     }
 
     /**
@@ -484,7 +508,7 @@ class Customer implements CustomerInterface
      */
     public function getAffiliate(): int
     {
-        return $this->affiliate;
+        return (int)$this->affiliate;
     }
 
     /**
@@ -504,7 +528,7 @@ class Customer implements CustomerInterface
      */
     public function getPaymentPreset(): int
     {
-        return $this->paymentPreset;
+        return (int)$this->paymentPreset;
     }
 
     /**
@@ -524,7 +548,7 @@ class Customer implements CustomerInterface
      */
     public function getLanguageId(): string
     {
-        return $this->languageId;
+        return (string)$this->languageId;
     }
 
     /**
@@ -544,7 +568,7 @@ class Customer implements CustomerInterface
      */
     public function getReferer(): string
     {
-        return $this->referer;
+        return (string)$this->referer;
     }
 
     /**
@@ -564,7 +588,7 @@ class Customer implements CustomerInterface
      */
     public function getInternalComment(): string
     {
-        return $this->internalComment;
+        return (string)$this->internalComment;
     }
 
     /**
@@ -584,7 +608,7 @@ class Customer implements CustomerInterface
      */
     public function getFailedLogins(): int
     {
-        return $this->failedLogins;
+        return (int)$this->failedLogins;
     }
 
     /**
@@ -604,7 +628,7 @@ class Customer implements CustomerInterface
      */
     public function getLockedUntil(): string
     {
-        return $this->lockedUntil;
+        return (string)$this->lockedUntil;
     }
 
     /**
@@ -624,7 +648,7 @@ class Customer implements CustomerInterface
      */
     public function getDebit(): string
     {
-        return $this->debit;
+        return (string)$this->debit;
     }
 
     /**

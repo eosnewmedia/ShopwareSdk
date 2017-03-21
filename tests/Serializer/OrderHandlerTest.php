@@ -1,16 +1,15 @@
 <?php
 declare(strict_types = 1);
 
-namespace Enm\ShopwareSdk\Tests\Response;
+namespace Enm\ShopwareSdk\Tests\Serializer;
 
 use Enm\ShopwareSdk\Model\Order\Order;
 use Enm\ShopwareSdk\Model\Order\OrderInterface;
 use Enm\ShopwareSdk\Model\Wrapper\OrderCollectionWrapper;
 use Enm\ShopwareSdk\Model\Wrapper\OrderWrapper;
-use Enm\ShopwareSdk\Response\OrderHandler;
+use Enm\ShopwareSdk\Serializer\OrderHandler;
 use JMS\Serializer\SerializerInterface;
 use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\ResponseInterface;
 
 /**
  * @author Philipp Marien <marien@eosnewmedia.de>
@@ -35,8 +34,8 @@ class OrderHandlerTest extends TestCase
         );
 
         self::assertInstanceOf(
-            Order::class,
-            $handler->handle($this->createMock(ResponseInterface::class))
+            OrderWrapper::class,
+            $handler->deserialize('JSON')
         );
     }
 
@@ -59,8 +58,8 @@ class OrderHandlerTest extends TestCase
         );
 
         self::assertInstanceOf(
-            Order::class,
-            $handler->handleCollection($this->createMock(ResponseInterface::class))[0]
+            OrderCollectionWrapper::class,
+            $handler->deserializeCollection('JSON')
         );
     }
 

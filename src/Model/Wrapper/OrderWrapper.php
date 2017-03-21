@@ -16,6 +16,7 @@ class OrderWrapper implements WrapperInterface
     /**
      * @var Order
      * @Serializer\Type("Enm\ShopwareSdk\Model\Order\Order")
+     * @Serializer\SerializedName("data")
      */
     private $data;
 

@@ -12,21 +12,27 @@ use Enm\ShopwareSdk\Model\Order\OrderInterface;
 class OrderEndpoint extends AbstractEndpoint implements OrderEndpointInterface
 {
     /**
+     * @param array $queryParams
+     *
      * @return OrderInterface[]
      * @throws \LogicException
      */
-    public function findAll(): array
+    public function findAll(array $queryParams = []): array
     {
-        $response = $this->shopware()->get('/api/orders');
+        $response = $this->shopware()->get('/api/orders', $queryParams);
         
-        $orders = $this->responseHandler()->handleCollection($response);
-        foreach ($orders as $order) {
+        $orderWrapper = $this->deserializer()
+                             ->deserializeCollection(
+                               (string)$response->getBody()
+                             );
+        
+        foreach ($orderWrapper->getData() as $order) {
             if (!$order instanceof OrderInterface) {
                 throw new \LogicException();
             }
         }
         
-        return $orders;
+        return $orderWrapper->getData();
     }
     
     /**
@@ -37,9 +43,12 @@ class OrderEndpoint extends AbstractEndpoint implements OrderEndpointInterface
      */
     public function find(int $id): OrderInterface
     {
-        $response = $this->shopware()->get('/api/orders');
+        $response = $this->shopware()->get('/api/orders/' . (string)$id);
         
-        $order = $this->responseHandler()->handle($response);
+        $orderWrapper = $this->deserializer()
+                             ->deserialize((string)$response->getBody());
+        
+        $order = $orderWrapper->getData();
         if (!$order instanceof OrderInterface) {
             throw new \LogicException();
         }

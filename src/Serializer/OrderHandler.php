@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Enm\ShopwareSdk\Response;
+namespace Enm\ShopwareSdk\Serializer;
 
 use Enm\ShopwareSdk\Model\Order\OrderInterface;
 use Enm\ShopwareSdk\Model\Wrapper\OrderCollectionWrapper;
@@ -12,15 +12,6 @@ use Enm\ShopwareSdk\Model\Wrapper\OrderWrapper;
  */
 class OrderHandler extends AbstractHandler
 {
-
-    /**
-     * @return array
-     */
-    public function getSupportedTypes(): array
-    {
-        return [OrderInterface::class];
-    }
-
     /**
      * @return string
      */
@@ -35,5 +26,13 @@ class OrderHandler extends AbstractHandler
     protected function collectionWrapperClass(): string
     {
         return OrderCollectionWrapper::class;
+    }
+
+    /**
+     * @return array
+     */
+    public function getSupportedTypes(): array
+    {
+        return [OrderInterface::class];
     }
 }

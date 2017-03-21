@@ -14,36 +14,42 @@ class OrderStatus implements OrderStatusInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("description")
      */
     private $description;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("position")
      */
     private $position;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("group")
      */
     private $group;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("sendMail")
      */
     private $sendMail;
 
@@ -52,7 +58,7 @@ class OrderStatus implements OrderStatusInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -72,7 +78,7 @@ class OrderStatus implements OrderStatusInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -92,7 +98,7 @@ class OrderStatus implements OrderStatusInterface
      */
     public function getDescription(): string
     {
-        return $this->description;
+        return (string)$this->description;
     }
 
     /**
@@ -112,7 +118,7 @@ class OrderStatus implements OrderStatusInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**
@@ -132,7 +138,7 @@ class OrderStatus implements OrderStatusInterface
      */
     public function getGroup(): string
     {
-        return $this->group;
+        return (string)$this->group;
     }
 
     /**
@@ -152,7 +158,7 @@ class OrderStatus implements OrderStatusInterface
      */
     public function getSendMail(): int
     {
-        return $this->sendMail;
+        return (int)$this->sendMail;
     }
 
     /**

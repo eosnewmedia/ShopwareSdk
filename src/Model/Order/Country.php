@@ -14,90 +14,105 @@ class Country implements CountryInterface
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("name")
      */
     private $name;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("iso")
      */
     private $iso;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("isoName")
      */
     private $isoName;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("position")
      */
     private $position;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("description")
      */
     private $description;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("shippingFree")
      */
     private $shippingFree;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("taxFree")
      */
     private $taxFree;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("taxFreeUstId")
      */
     private $taxFreeUstId;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("taxFreeUstIdChecked")
      */
     private $taxFreeUstIdChecked;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("active")
      */
     private $active;
 
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("iso3")
      */
     private $iso3;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("displayStateInRegistration")
      */
     private $displayStateInRegistration;
 
     /**
      * @var bool
      * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("forceStateInRegistration")
      */
     private $forceStateInRegistration;
 
     /**
      * @var int
      * @Serializer\Type("integer")
+     * @Serializer\SerializedName("areaId")
      */
     private $areaId;
 
@@ -106,7 +121,7 @@ class Country implements CountryInterface
      */
     public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
     /**
@@ -126,7 +141,7 @@ class Country implements CountryInterface
      */
     public function getName(): string
     {
-        return $this->name;
+        return (string)$this->name;
     }
 
     /**
@@ -146,7 +161,7 @@ class Country implements CountryInterface
      */
     public function getIso(): string
     {
-        return $this->iso;
+        return (string)$this->iso;
     }
 
     /**
@@ -166,7 +181,7 @@ class Country implements CountryInterface
      */
     public function getIsoName(): string
     {
-        return $this->isoName;
+        return (string)$this->isoName;
     }
 
     /**
@@ -186,7 +201,7 @@ class Country implements CountryInterface
      */
     public function getPosition(): int
     {
-        return $this->position;
+        return (int)$this->position;
     }
 
     /**
@@ -206,7 +221,7 @@ class Country implements CountryInterface
      */
     public function getDescription(): string
     {
-        return $this->description;
+        return (string)$this->description;
     }
 
     /**
@@ -226,7 +241,7 @@ class Country implements CountryInterface
      */
     public function isShippingFree(): bool
     {
-        return $this->shippingFree;
+        return (bool)$this->shippingFree;
     }
 
     /**
@@ -246,7 +261,7 @@ class Country implements CountryInterface
      */
     public function getTaxFree(): int
     {
-        return $this->taxFree;
+        return (int)$this->taxFree;
     }
 
     /**
@@ -266,7 +281,7 @@ class Country implements CountryInterface
      */
     public function getTaxFreeUstId(): int
     {
-        return $this->taxFreeUstId;
+        return (int)$this->taxFreeUstId;
     }
 
     /**
@@ -286,7 +301,7 @@ class Country implements CountryInterface
      */
     public function getTaxFreeUstIdChecked(): int
     {
-        return $this->taxFreeUstIdChecked;
+        return (int)$this->taxFreeUstIdChecked;
     }
 
     /**
@@ -306,7 +321,7 @@ class Country implements CountryInterface
      */
     public function isActive(): bool
     {
-        return $this->active;
+        return (bool)$this->active;
     }
 
     /**
@@ -326,7 +341,7 @@ class Country implements CountryInterface
      */
     public function getIso3(): string
     {
-        return $this->iso3;
+        return (string)$this->iso3;
     }
 
     /**
@@ -346,7 +361,7 @@ class Country implements CountryInterface
      */
     public function isDisplayStateInRegistration(): bool
     {
-        return $this->displayStateInRegistration;
+        return (bool)$this->displayStateInRegistration;
     }
 
     /**
@@ -366,7 +381,7 @@ class Country implements CountryInterface
      */
     public function isForceStateInRegistration(): bool
     {
-        return $this->forceStateInRegistration;
+        return (bool)$this->forceStateInRegistration;
     }
 
     /**
@@ -386,7 +401,7 @@ class Country implements CountryInterface
      */
     public function getAreaId(): int
     {
-        return $this->areaId;
+        return (int)$this->areaId;
     }
 
     /**

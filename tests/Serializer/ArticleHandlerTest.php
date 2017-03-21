@@ -1,16 +1,15 @@
 <?php
 declare(strict_types = 1);
 
-namespace Enm\ShopwareSdk\Tests\Response;
+namespace Enm\ShopwareSdk\Tests\Serializer;
 
 use Enm\ShopwareSdk\Model\Article\Article;
 use Enm\ShopwareSdk\Model\Article\ArticleInterface;
 use Enm\ShopwareSdk\Model\Wrapper\ArticleCollectionWrapper;
 use Enm\ShopwareSdk\Model\Wrapper\ArticleWrapper;
-use Enm\ShopwareSdk\Response\ArticleHandler;
+use Enm\ShopwareSdk\Serializer\ArticleHandler;
 use JMS\Serializer\SerializerInterface;
 use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\ResponseInterface;
 
 /**
  * @author Philipp Marien <marien@eosnewmedia.de>
@@ -35,8 +34,8 @@ class ArticleHandlerTest extends TestCase
         );
 
         self::assertInstanceOf(
-            Article::class,
-            $handler->handle($this->createMock(ResponseInterface::class))
+            ArticleWrapper::class,
+            $handler->deserialize('JSON DUMMY')
         );
     }
 
@@ -59,8 +58,8 @@ class ArticleHandlerTest extends TestCase
         );
 
         self::assertInstanceOf(
-            Article::class,
-            $handler->handleCollection($this->createMock(ResponseInterface::class))[0]
+            ArticleCollectionWrapper::class,
+            $handler->deserializeCollection('JSON DUMMY')
         );
     }
 

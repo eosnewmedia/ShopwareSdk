@@ -18,7 +18,7 @@ interface ClientInterface
      * @return ClientInterface
      */
     public function withConfig(string $baseUri, string $username, string $password): ClientInterface;
-    
+
     /**
      * @param string $path
      * @param array $query
@@ -26,7 +26,7 @@ interface ClientInterface
      * @return ResponseInterface
      */
     public function get(string $path, array $query = []): ResponseInterface;
-    
+
     /**
      * @param string $path
      * @param array $query
@@ -35,7 +35,7 @@ interface ClientInterface
      * @return ResponseInterface
      */
     public function post(string $path, array $query = [], array $body = []): ResponseInterface;
-    
+
     /**
      * @param string $path
      * @param array $query
@@ -44,7 +44,7 @@ interface ClientInterface
      * @return ResponseInterface
      */
     public function put(string $path, array $query = [], array $body = []): ResponseInterface;
-    
+
     /**
      * @param string $path
      * @param array $query

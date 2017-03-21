@@ -15,6 +15,7 @@ class OrderCollectionWrapper implements CollectionWrapperInterface
     /**
      * @var Order[]
      * @Serializer\Type("array<Enm\ShopwareSdk\Model\Order\Order>")
+     * @Serializer\SerializedName("data")
      */
     private $data;
 
