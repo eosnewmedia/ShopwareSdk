@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Enm\ShopwareSdk\Serializer;
 
@@ -37,15 +37,20 @@ abstract class AbstractHandler implements JsonSerializerInterface, JsonDeseriali
      * @param string $json
      *
      * @return WrapperInterface
+     * @throws \RuntimeException
      */
     public function deserialize(string $json): WrapperInterface
     {
-        /** @var WrapperInterface $wrapper */
-        $wrapper = $this->jms()->deserialize(
-            $json,
-            $this->wrapperClass(),
-            'json'
-        );
+        try {
+            /** @var WrapperInterface $wrapper */
+            $wrapper = $this->jms()->deserialize(
+                $json,
+                $this->wrapperClass(),
+                'json'
+            );
+        } catch (\Exception $e) {
+            throw new \RuntimeException('Error while deserialize "' . $json . '"', 0, $e);
+        }
 
         return $wrapper;
     }
@@ -54,15 +59,21 @@ abstract class AbstractHandler implements JsonSerializerInterface, JsonDeseriali
      * @param string $json
      *
      * @return CollectionWrapperInterface
+     * @throws \RuntimeException
      */
     public function deserializeCollection(string $json): CollectionWrapperInterface
     {
-        /** @var CollectionWrapperInterface $collectionWrapper */
-        $collectionWrapper = $this->jms()->deserialize(
-            $json,
-            $this->collectionWrapperClass(),
-            'json'
-        );
+        try {
+            /** @var CollectionWrapperInterface $collectionWrapper */
+            $collectionWrapper = $this->jms()->deserialize(
+                $json,
+                $this->collectionWrapperClass(),
+                'json'
+            );
+        } catch (\Exception $e) {
+            throw new \RuntimeException('Error while deserialize "' . $json . '"', 0, $e);
+        }
+
 
         return $collectionWrapper;
     }
