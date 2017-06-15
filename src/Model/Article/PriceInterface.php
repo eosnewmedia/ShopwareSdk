@@ -95,28 +95,28 @@ interface PriceInterface
     public function setPrice(string $price) : PriceInterface;
 
     /**
-     * @return int
+     * @return string
      */
-    public function getPseudoPrice() : int;
+    public function getPseudoPrice() : string;
 
     /**
-     * @param int $pseudoPrice
+     * @param string $pseudoPrice
      *
      * @return PriceInterface
      */
-    public function setPseudoPrice(int $pseudoPrice) : PriceInterface;
+    public function setPseudoPrice(string $pseudoPrice) : PriceInterface;
 
     /**
-     * @return int
+     * @return string
      */
-    public function getBasePrice() : int;
+    public function getBasePrice() : string;
 
     /**
-     * @param int $basePrice
+     * @param string $basePrice
      *
      * @return PriceInterface
      */
-    public function setBasePrice(int $basePrice) : PriceInterface;
+    public function setBasePrice(string $basePrice) : PriceInterface;
 
     /**
      * @return int
