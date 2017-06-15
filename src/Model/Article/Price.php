@@ -63,14 +63,14 @@ class Price implements PriceInterface
 
     /**
      * @var int
-     * @Serializer\Type("integer")
+     * @Serializer\Type("string")
      * @Serializer\SerializedName("pseudoPrice")
      */
     private $pseudoPrice;
 
     /**
      * @var int
-     * @Serializer\Type("integer")
+     * @Serializer\Type("string")
      * @Serializer\SerializedName("basePrice")
      */
     private $basePrice;
@@ -230,19 +230,19 @@ class Price implements PriceInterface
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getPseudoPrice(): int
+    public function getPseudoPrice(): string
     {
         return (int)$this->pseudoPrice;
     }
 
     /**
-     * @param int $pseudoPrice
+     * @param string $pseudoPrice
      *
      * @return PriceInterface
      */
-    public function setPseudoPrice(int $pseudoPrice): PriceInterface
+    public function setPseudoPrice(string $pseudoPrice): PriceInterface
     {
         $this->pseudoPrice = $pseudoPrice;
 
@@ -250,19 +250,19 @@ class Price implements PriceInterface
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getBasePrice(): int
+    public function getBasePrice(): string
     {
         return (int)$this->basePrice;
     }
 
     /**
-     * @param int $basePrice
+     * @param string $basePrice
      *
      * @return PriceInterface
      */
-    public function setBasePrice(int $basePrice): PriceInterface
+    public function setBasePrice(string $basePrice): PriceInterface
     {
         $this->basePrice = $basePrice;
 
