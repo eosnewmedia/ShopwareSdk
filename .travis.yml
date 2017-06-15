@@ -16,6 +16,4 @@ script: php vendor/bin/phpunit --coverage-text
 notifications:
   email:
     - bogomolov@eosnewmedia.de
-    - heyka@eosnewmedia.de
-    - reincke@eosnewmedia.de
     - marien@eosnewmedia.de
