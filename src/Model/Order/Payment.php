@@ -151,12 +151,6 @@ class Payment implements PaymentInterface
     private $source;
 
     /**
-     * @var string
-     * @deprecated not serialized anymore because not type safe
-     */
-    private $attribute;
-
-    /**
      * @return int
      */
     public function getId(): int
@@ -562,7 +556,9 @@ class Payment implements PaymentInterface
      */
     public function getAttribute(): string
     {
-        return (string)$this->attribute;
+        @trigger_error('Deprecated!');
+
+        return '';
     }
 
     /**
@@ -573,7 +569,7 @@ class Payment implements PaymentInterface
      */
     public function setAttribute(string $attribute): PaymentInterface
     {
-        $this->attribute = $attribute;
+        @trigger_error('Deprecated!');
 
         return $this;
     }
