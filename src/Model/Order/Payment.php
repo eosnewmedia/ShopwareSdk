@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Enm\ShopwareSdk\Model\Order;
 
@@ -152,8 +152,7 @@ class Payment implements PaymentInterface
 
     /**
      * @var string
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("attribute")
+     * @deprecated not serialized anymore because not type safe
      */
     private $attribute;
 
@@ -559,6 +558,7 @@ class Payment implements PaymentInterface
 
     /**
      * @return string
+     * @deprecated can not be deserialized because not type safe
      */
     public function getAttribute(): string
     {
@@ -569,6 +569,7 @@ class Payment implements PaymentInterface
      * @param string $attribute
      *
      * @return PaymentInterface
+     * @deprecated can not be serialized because not type safe
      */
     public function setAttribute(string $attribute): PaymentInterface
     {
