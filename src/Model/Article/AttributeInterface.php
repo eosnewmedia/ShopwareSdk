@@ -247,6 +247,17 @@ interface AttributeInterface
     public function setAttr20(string $attr20): AttributeInterface;
 
     /**
+     * @return string
+     */
+    public function getVariant(): string;
+
+    /**
+     * @param string $variantArticle
+     * @return AttributeInterface
+     */
+    public function setVariant(string $variantArticle): AttributeInterface;
+
+    /**
      * @return int
      */
     public function getArticleId(): int;
