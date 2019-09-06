@@ -151,6 +151,14 @@ class Attribute implements AttributeInterface
      */
     private $attr20;
 
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("variantenartikel")
+     */
+    private $variantenartikel;
+
     /**
      * @var int
      * @Serializer\Type("integer")
@@ -564,6 +572,27 @@ class Attribute implements AttributeInterface
 
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getVariant(): string
+    {
+        return $this->variantenartikel;
+    }
+
+    /**
+     * @param string $variantArticle
+     * @return AttributeInterface
+     */
+    public function setVariant(string $variantArticle): AttributeInterface
+    {
+        $this->variantenartikel = $variantArticle;
+
+        return $this;
+    }
+
+
 
     /**
      * @return int
